@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Pattern for half-teaser-person.
+ *
+ * Available variables:
+ * -
+ */
+#}
+{% set container_width = entity.width.value == 'narrow' ? 'component-width--narrow' : '' %}
+
+<div {{ attributes.addClass(["o-person-cards", container_width]) }}>
+  {{ content.people }}
+</div>

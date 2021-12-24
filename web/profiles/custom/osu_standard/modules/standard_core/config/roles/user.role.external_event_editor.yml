@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_mixin
+third_party_settings:
+  role_mixin:
+    parent_roles:
+      site_developer: site_developer
+      site_manager: site_manager
+      content_editor: content_editor
+id: external_event_editor
+label: 'External Event Editor'
+weight: 10
+is_admin: null
+permissions:
+  - 'create external_event content'
+  - 'delete any external_event content'
+  - 'edit any external_event content'
+  - 'view external_event revisions'

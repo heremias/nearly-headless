@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.highlight
+  module:
+    - crop
+name: highlight_small
+label: 'Highlight (1.65) - Small'
+effects:
+  b9c7892b-0d8e-45b2-ae5c-c4a7c130edef:
+    uuid: b9c7892b-0d8e-45b2-ae5c-c4a7c130edef
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: highlight
+  d597b3a8-5b18-4ea5-a5c1-d4766aaf10f2:
+    uuid: d597b3a8-5b18-4ea5-a5c1-d4766aaf10f2
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 320
+      height: 195
+      anchor: center-center
+  36ddc2a9-1d05-4c13-a068-c575f78dd065:
+    uuid: 36ddc2a9-1d05-4c13-a068-c575f78dd065
+    id: image_scale
+    weight: 3
+    data:
+      width: 320
+      height: 195
+      upscale: true

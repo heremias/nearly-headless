@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.variant
+    - paragraphs.paragraphs_type.cta
+  module:
+    - options
+id: paragraph.cta.variant
+field_name: variant
+entity_type: paragraph
+bundle: cta
+label: Type
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: subscribe
+default_value_callback: ''
+settings: {  }
+field_type: list_string

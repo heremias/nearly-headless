@@ -1,0 +1,6 @@
+name: 'OSU / Media / Responsive View Modes'
+description: 'Large, Medium, Small view modes.'
+package: 'OSU / Media'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.attribution
+    - paragraphs.paragraphs_type.quote
+id: paragraph.quote.attribution
+field_name: attribution
+entity_type: paragraph
+bundle: quote
+label: Attribution
+description: 'Entity to which a quote is attributed.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

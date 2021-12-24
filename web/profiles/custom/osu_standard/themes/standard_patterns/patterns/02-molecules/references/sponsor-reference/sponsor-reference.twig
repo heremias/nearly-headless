@@ -1,0 +1,10 @@
+<div class="m-sponsor-reference">
+  {% if website %}
+    {% include "@atoms/emulsify/01-links/link/link.twig" with {
+      "link_url": website,
+      "link_content": name
+    } %}
+  {% else %}
+    {{ name }}
+  {% endif %}
+</div>

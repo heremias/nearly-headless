@@ -1,0 +1,16 @@
+{% set heading_level = entity.heading_level.value|length==2 ? entity.heading_level.value : "h2" %}
+<div {{ attributes.addClass(['c-component', class]) }} >
+
+  {% if entity.heading and entity.heading.value %}
+  <{{ heading_level }} class="c-component--heading" >{{ entity.heading.value }}</{{ heading_level }}>
+  {% endif %}
+
+  {% block component %}
+    <div class="c-component--sample">
+      This text should be replaced in the template.
+    </div>
+  {% endblock %}
+
+  {{ content.link }}
+
+</div>

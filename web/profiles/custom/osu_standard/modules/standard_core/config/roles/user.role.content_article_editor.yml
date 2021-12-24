@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_mixin
+third_party_settings:
+  role_mixin:
+    parent_roles:
+      site_developer: site_developer
+      site_manager: site_manager
+      content_editor: content_editor
+id: content_article_editor
+label: 'Content Article Editor'
+weight: 10
+is_admin: null
+permissions:
+  - 'create content_article content'
+  - 'delete any content_article content'
+  - 'edit any content_article content'
+  - 'view content_article revisions'

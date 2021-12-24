@@ -1,0 +1,27 @@
+langcode: en
+status: false
+dependencies: {  }
+id: front
+label: 'Front page'
+tags:
+  shortlink: '[site:url]'
+  title: '[node:standard_seo_title]'
+  canonical_url: '[site:url]'
+  description: '[node:standard_description]'
+  image_src: '[node:standard_image_path]'
+  og_image_width: '1200'
+  og_image: '[node:standard_image_path]'
+  og_image_height: '630'
+  og_image_alt: '[node:standard_image_alt]'
+  og_image_secure_url: '[node:standard_image_path]'
+  og_description: '[node:standard_description]'
+  og_title: '[node:standard_title]'
+  twitter_cards_creator: '@OhioState'
+  twitter_cards_image: '[node:standard_image_path]'
+  twitter_cards_image_width: '1200'
+  twitter_cards_site: '@OhioState'
+  twitter_cards_description: '[node:standard_description]'
+  twitter_cards_image_alt: '[node:standard_image_alt]'
+  twitter_cards_type: summary_large_image
+  twitter_cards_image_height: '630'
+  twitter_cards_title: '[node:standard_title]'

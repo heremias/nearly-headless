@@ -1,0 +1,21 @@
+.c-directory {
+  @include media-breakpoint-up(sm) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .m-half-teaser-person {
+    margin: 0 0 30px;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      flex: 0 0 auto;
+      width: calc(50% - 15px);
+    }
+  }
+}

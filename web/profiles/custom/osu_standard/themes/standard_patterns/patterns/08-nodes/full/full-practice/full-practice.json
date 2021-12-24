@@ -1,0 +1,77 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "requirement": "fields-node-requirement",
+    "error": "fields-node-error",
+    "description": "fields-node-description",
+    "rationale": "fields-node-rationale",
+    "how_to": "fields-node-howto",
+    "example": "fields-node-example",
+    "sources": "fields-node-sources",
+    "site_tags": [
+      {
+        "id": "priority",
+        "name": "Priority Level",
+        "terms": [
+          {
+            "id": 123,
+            "name": "High"
+          }
+        ]
+      },
+      {
+        "id": "media_type",
+        "name": "Media Type",
+        "terms": [
+          {
+            "id": 123,
+            "name": "Images"
+          },
+          {
+            "id": 123,
+            "name": "Video"
+          }
+        ]
+      },
+      {
+        "id": "impact",
+        "name": "Impact",
+        "terms": [
+          {
+            "id": 123,
+            "name": "Accessibility"
+          }
+        ]
+      },
+      {
+        "id": "roles",
+        "name": "Role",
+        "terms": [
+          {
+            "id": 123,
+            "name": "UX"
+          },
+          {
+            "id": 123,
+            "name": "Content"
+          }
+        ]
+      }
+    ]
+  },
+  "entity": {
+  },
+  "label": "Practice Title",
+  "linkable": true,
+  "url": "#",
+  "revision": {
+    "message": "Added a non-compliant example",
+    "user": "Kelli Chesler",
+    "date": {
+      "ago": "13 days ago",
+      "modified": "Nov. 18, 2018"
+    }
+  }
+}

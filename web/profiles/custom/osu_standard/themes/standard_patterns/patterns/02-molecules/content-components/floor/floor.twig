@@ -1,0 +1,55 @@
+<div {{ attributes.addClass(["m-floor"]) }}>
+
+  {% if entity.bundle == "agenda_listing" %}
+    PLACEHOLDER AGENDA LISTING
+
+  {% elseif entity.bundle == "audio_story" %}
+    {% include "@molecules/content-components/audio-story-component/audio-story-component.twig" %}
+
+  {% elseif entity.bundle == "callout" %}
+    {% include "@molecules/content-components/callout/callout.twig" %}
+
+  {% elseif entity.bundle == "cards" %}
+    {% include "@molecules/content-components/cards/cards.twig" %}
+
+  {% elseif entity.bundle == "columns" %}
+    {% include "@molecules/content-components/columns/columns.twig" %}
+
+  {% elseif entity.bundle == "countdown" %}
+    PLACEHOLDER COUNTDOWN
+
+  {% elseif entity.bundle == "cta" %}
+    PLACEHOLDER CTA
+
+  {% elseif entity.bundle == "directory" %}
+    PLACEHOLDER DIRECTORY
+
+  {% elseif entity.bundle == "formatted_text" %}
+    {% include "@molecules/content-components/formatted-text/formatted-text.twig" %}
+
+  {% elseif entity.bundle == "list" %}
+    {% include "@molecules/content-components/list/list.twig" %}
+
+  {% elseif entity.bundle == "news_listing" %}
+    PLACEHOLDER NEWS LISTING
+
+  {% elseif entity.bundle == "parousel" %}
+    PLACEHOLDER PAROUSEL
+
+  {% elseif entity.bundle == "qa_list" %}
+    {% include "@molecules/content-components/qa-list/qa-list.twig" %}
+
+  {% elseif entity.bundle == "quote" %}
+    {% include "molecules/quote" %}
+
+  {% elseif entity.bundle == "speaker_listing" %}
+    PLACEHOLDER
+
+  {% elseif entity.bundle == "video" %}
+    {% include "@molecules/content-components/video-component/video-component.twig" %}
+
+  {% else %}
+    DEFAULT PLACEHOLDER
+
+  {% endif %}
+</div>

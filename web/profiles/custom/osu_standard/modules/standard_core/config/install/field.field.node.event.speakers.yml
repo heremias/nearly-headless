@@ -1,0 +1,72 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.speakers
+    - node.type.event
+    - paragraphs.paragraphs_type.speaker
+  module:
+    - entity_reference_revisions
+id: node.event.speakers
+field_name: speakers
+entity_type: node
+bundle: event
+label: 'Featured Speakers'
+description: "A small number of featured speakers.<br>\r\nIn a large event, these may be your keynotes."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      speaker: speaker
+    target_bundles_drag_drop:
+      callout:
+        weight: 16
+        enabled: false
+      cta:
+        weight: 17
+        enabled: false
+      formatted_text:
+        weight: 18
+        enabled: false
+      linkable_text:
+        weight: 19
+        enabled: false
+      list:
+        weight: 20
+        enabled: false
+      list_item:
+        weight: 21
+        enabled: false
+      parousel:
+        weight: 22
+        enabled: false
+      parousel_item:
+        weight: 23
+        enabled: false
+      qa_item:
+        weight: 24
+        enabled: false
+      qa_list:
+        weight: 25
+        enabled: false
+      quote:
+        weight: 26
+        enabled: false
+      speaker:
+        enabled: true
+        weight: 27
+      timeline:
+        weight: 28
+        enabled: false
+      timeline_item:
+        weight: 29
+        enabled: false
+      video:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

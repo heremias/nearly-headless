@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.deadline
+    - node.type.meeting
+  module:
+    - datetime
+id: node.meeting.deadline
+field_name: deadline
+entity_type: node
+bundle: meeting
+label: 'Deadline for Materials'
+description: 'Date by which materials should be submitted.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

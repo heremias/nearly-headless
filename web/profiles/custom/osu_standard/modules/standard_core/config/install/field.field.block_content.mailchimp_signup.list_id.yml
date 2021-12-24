@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mailchimp_signup
+    - field.storage.block_content.list_id
+id: block_content.mailchimp_signup.list_id
+field_name: list_id
+entity_type: block_content
+bundle: mailchimp_signup
+label: 'List Id'
+description: 'Your Mailchimp list id.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

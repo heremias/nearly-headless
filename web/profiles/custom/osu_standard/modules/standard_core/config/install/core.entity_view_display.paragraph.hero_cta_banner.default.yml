@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_cta_banner.ctas
+    - field.field.paragraph.hero_cta_banner.h1_field
+    - field.field.paragraph.hero_cta_banner.heading
+    - field.field.paragraph.hero_cta_banner.image
+    - field.field.paragraph.hero_cta_banner.preserve
+    - paragraphs.paragraphs_type.hero_cta_banner
+  module:
+    - link
+id: paragraph.hero_cta_banner.default
+targetEntityType: paragraph
+bundle: hero_cta_banner
+mode: default
+content:
+  ctas:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  image:
+    type: entity_reference_entity_view
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+hidden:
+  h1_field: true
+  preserve: true
+  search_api_excerpt: true

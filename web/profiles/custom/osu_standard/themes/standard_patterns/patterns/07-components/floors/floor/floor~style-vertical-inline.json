@@ -1,0 +1,20 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "entity": {
+    "heading": {
+      "value": "Floor Inline"
+    },
+    "heading_level": {
+      "value": "h3"
+    },
+    "introduction": {
+      "value": ""
+    }
+  },
+  "style": {
+    "horizontal": "narrow",
+    "vertical": "inline"
+  }
+}

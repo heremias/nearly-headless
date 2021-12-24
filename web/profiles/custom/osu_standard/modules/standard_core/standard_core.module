@@ -1,0 +1,270 @@
+<?php
+
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\taxonomy\TermStorage;
+use Drupal\core\Entity\FieldableEntityInterface;
+use Drupal\Component\Utility\SafeMarkup;
+use Drupal\block\Entity\Block;
+use \Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
+use Drupal\node\NodeInterface;
+use Drupal\standard_core\Listing\MeetingListing;
+use Drupal\standard_core\Processor\PersonProcessor;
+use Drupal\standard_core\Processor\PracticeProcessor;
+use Drupal\standard_core\Processor\ContentListingProcessor;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+use Drupal\standard_core\PrimaryHeaderDeterminer;
+use Drupal\Core\Render\Markup;
+
+require_once __DIR__ . '/inc/datalayer.inc.php';
+require_once __DIR__ . '/inc/preprocess.inc.php';
+
+/**
+ * Implements hook_block_access().
+ */
+function standard_core_block_access(Block $block, $operation, AccountInterface $account) {
+  if ($operation == 'view') {
+    if (in_array($block->getPluginId(), ['system_breadcrumb_block', 'page_title_block'])) {
+      $node = \Drupal::routeMatch()->getParameter('node');
+      if ($node instanceof NodeInterface) {
+
+        switch ($node->bundle()) {
+
+          // Hide 'system_breadcrumb_block' and 'page_title_block' with hero.
+          case 'content_page':
+            $hero_present = $node->hasField('hero') && !$node->get('hero')->isEmpty();
+            if ($hero_present) {
+              // If a hero is present, check and see if we're showing this particular block.
+              $p = $node->get('hero')->first()->entity;
+              // First check breadcrumbs.
+              switch ($block->getPluginId()) {
+                case 'system_breadcrumb_block':
+                  $include = $p->hasField('include_breadcrumbs')
+                    && ($p->get('include_breadcrumbs')->first()->value == '1');
+                  $injected = ($p->bundle() == 'hero_banner') && $p->get('heading')->first();
+                  return $include && !$injected ? AccessResult::allowed() : AccessResult::forbidden();
+
+                case 'page_title_block':
+                  $include =  $p->hasField('include_page_title')
+                    && $p->get('include_page_title')->first()
+                    && ($p->get('include_page_title')->first()->value == '1');
+
+                  $use_banner_heading = ($p->bundle() == 'hero_banner') && $p->get('heading')->first();
+                  return $include && !$use_banner_heading ? AccessResult::allowed() : AccessResult::forbidden();
+              }
+            }
+            else {
+              return AccessResult::allowed();
+            }
+            break;
+
+          // Hide 'system_breadcrumb_block' only without menu entry.
+          case 'meeting':
+          case 'person':
+            $mlm = \Drupal::service('plugin.manager.menu.link');
+            $links = $mlm->loadLinksByRoute('entity.node.canonical', array('node' => $node->id()));
+            $no_menu =  !is_array($links) || (count($links) == 0);
+            return $no_menu && ($block->getPluginId() == 'system_breadcrumb_block') ? AccessResult::forbidden() : AccessResult::allowed();
+            break;
+          default:
+            return AccessResult::neutral();
+        }
+      }
+    }
+  }
+
+  return AccessResult::neutral();
+}
+
+function standard_core_preprocess_paragraph__floor_meetings(&$variables) {
+  \Drupal\standard_core\Processor\MeetingProcessor::processUpcomingFloor($variables);
+}
+
+function standard_core_preprocess_paragraph__rss_news_feed(&$variables) {
+  \Drupal\standard_core\Processor\RssFeedProcessor::process($variables);
+}
+
+function standard_core_preprocess_paragraph__listing_meeting(&$variables) {
+  $listing = new MeetingListing();
+  $listing->process($variables);
+}
+
+function standard_core_preprocess_paragraph__floor_content_listing(&$variables) {
+  ContentListingProcessor::process($variables);
+}
+
+function standard_core_preprocess_paragraph__card_listing(&$variables) {
+  ContentListingProcessor::process($variables);
+}
+
+/**
+ * Alter the card listing view for listings (embed_2) but not components (embed_1).
+ */
+function standard_core_views_query_alter(Drupal\views\ViewExecutable $view, Drupal\views\Plugin\views\query\Sql $query) {
+  if ($view->id() == 'content_card_listing' && $view->getDisplay()->display['id'] == 'embed_2') {
+    if (isset($view->args[1]) && (strlen($view->args[1]) > 0)) {
+      // Find all the nodes referencing these tags.
+      $tags = explode('+', $view->args[1]);
+      $tags = array_map(function ($id) { return (int) $id;}, $tags);
+      $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($view->args[1]);
+      $children = Drupal::entityTypeManager()->getStorage('taxonomy_term')->getChildren($term);
+      $childIDs = array_keys($children);
+      $tags = join(',', array_merge($tags, $childIDs));
+      $nids = Drupal::entityQuery('node')
+        ->condition('site_tags', $tags, 'IN')
+        ->execute();
+      // Drupal throws error when running addWhere on empty value
+      if(!empty($nids)) {
+        // Explicitly exclude them from our view.
+        $query->addWhere(0, 'nid', $nids, 'NOT IN');
+      }
+    }
+  }
+}
+
+function standard_core_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  if ($paragraph->hasField('link') && !$paragraph->get('link')->isEmpty()) {
+    $variables['content']['link'][0]['#title'] = Markup::create(preg_replace('/\{([^\{]+)\}/', '<span class="sr-only">$1</span>', $variables['content']['link'][0]['#title']));
+  }
+}
+
+function standard_core_menu_allowed_values(FieldStorageConfig $definition, FieldableEntityInterface $entity = NULL, &$cacheable = TRUE) {
+  $menu = \Drupal::service('menu.parent_form_selector');
+
+  $options = $menu->getParentSelectOptions(null, ['main' => 'Main Navigation']);
+
+  array_shift($options);
+
+  $return_options = [];
+
+  foreach( $options as $k => $v){
+      $k = preg_replace('/^main:/', '', $k);
+      $v = \Drupal\Component\Utility\Html::escape($v);
+      $return_options[$k] = $v;
+  }
+
+
+  return $return_options;
+}
+
+/**
+ * Specify the display modes to allow for images in WYSIWYG embed buttons.
+ * @return array
+ */
+function standard_core_osu_image_embed_displays() {
+  return [
+    'large',
+    'medium_large',
+    'medium',
+    'small',
+    'tiny',
+    'thumbnail'
+  ];
+}
+
+/**
+ * Specify the crops to show on the basic entity edit form.
+ * @return array
+ */
+function standard_core_osu_media_image_crops() {
+  return [
+    'highlight',
+    'social',
+    'square',
+  ];
+}
+
+/**
+ * Remove paragraph variants that aren't approved for this distribution.
+ */
+function standard_core_options_list_alter(array &$options, array $context) {
+
+  $allowed = FALSE;
+
+  // Set approved options if any are defined.
+  // This gets called in some contexts when there is no id method.
+  if (method_exists($context['fieldDefinition'], 'id')) {
+    switch ($context['fieldDefinition']->id()) {
+      case 'paragraph.directory.directory_variant':
+        $allowed = ['directory'];
+        break;
+      default:
+        if (preg_match('/^paragraph\.[a-z|_]+\.width$/', $context['fieldDefinition']->id())) {
+          $allowed = ['narrow', 'wide', 'xwide'];
+        }
+        break;
+    }
+  }
+
+  // Redact any except for the allowed options.
+  if ($allowed) {
+    foreach (array_keys($options) as $key) {
+      if (!in_array($key, $allowed)) {
+        unset($options[$key]);
+      }
+    }
+  }
+}
+
+/**
+ * Attach our css everywhere. This could be more targeted.
+ */
+function standard_core_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'standard_core/core';
+}
+
+/**
+ * Defines tokens provided by standard_core. See hook_token_info().
+ * @return array
+ */
+function standard_core_token_info() {
+  return \Drupal\standard_core\Tokenizer::info();
+}
+
+/**
+ * Implements tokens provided by standard core. See hook_tokens().
+ */
+function standard_core_tokens($type, $tokens, $data, $options, $bubbleable_metadata) {
+  return \Drupal\standard_core\Tokenizer::tokens($type, $tokens, $data, $options, $bubbleable_metadata);
+}
+
+function standard_core_preprocess_block__sitebranding(&$variables) {
+  $variables['is_h1'] = PrimaryHeaderDeterminer::determine() == 'site.title';
+
+  // We need cache contexts on paths and cache tags for the node in order
+  // to change the behavior based on node heroes.
+  $variables['#cache']['contexts'][] = 'url.path';
+  $variables['#cache']['contexts'][] = 'url.query_args';
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof NodeInterface) {
+    $variables['#cache']['tags'] = $node->getCacheTags();
+  }
+}
+
+function standard_core_preprocess_node__person(&$variables) {
+  PersonProcessor::process($variables);
+}
+
+function standard_core_preprocess_node__practice(&$variables) {
+  PracticeProcessor::process($variables);
+}
+
+function standard_core_preprocess_field(&$variables) {
+  if ($variables['element']['#field_type'] == 'link') {
+    foreach ($variables['items'] as $key => $item) {
+      $variables['items'][$key]['content']['#title'] = Markup::create(preg_replace('/\{([^\{]+)\}/', '<span class="sr-only">$1</span>', $variables['items'][$key]['content']['#title']));
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_bundle_field_info_alter().
+ */
+function standard_core_entity_bundle_field_info_alter(&$fields, \Drupal\Core\Entity\EntityTypeInterface $entity_type, $bundle) {
+
+  if (isset($fields['slug'])) {
+    // Use the ID as defined in the annotation of the constraint definition
+    $fields['slug']->addConstraint('Slug', []);
+  }
+}

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.link
+    - paragraphs.paragraphs_type.formatted_text
+  module:
+    - link
+id: paragraph.formatted_text.link
+field_name: link
+entity_type: paragraph
+bundle: formatted_text
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

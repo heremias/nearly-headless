@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.building
+    - taxonomy.vocabulary.locations
+  module:
+    - options
+id: taxonomy_term.locations.building
+field_name: building
+entity_type: taxonomy_term
+bundle: locations
+label: Building
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

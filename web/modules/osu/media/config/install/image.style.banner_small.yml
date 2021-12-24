@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.banner
+  module:
+    - crop
+name: banner_small
+label: 'Banner (4:1) - Small'
+effects:
+  72a06c74-b605-4768-9458-a545bbfb9dc1:
+    uuid: 72a06c74-b605-4768-9458-a545bbfb9dc1
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: banner
+  770c8c53-cbdf-4606-9a77-c87dc2d4823f:
+    uuid: 770c8c53-cbdf-4606-9a77-c87dc2d4823f
+    id: image_scale
+    weight: -8
+    data:
+      width: 320
+      height: 80
+      upscale: true
+  bc8a180c-0b86-4df5-bb1b-eb98c7f24a20:
+    uuid: bc8a180c-0b86-4df5-bb1b-eb98c7f24a20
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 320
+      height: 80
+      anchor: center-center

@@ -1,0 +1,22 @@
+services:
+
+  standard_core.route_subscriber:
+    class: Drupal\standard_core\Routing\AutocompleteRouteSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  standard_core.autocomplete_matcher:
+    class: Drupal\standard_core\EntityAutocompleteMatcher
+    arguments: ['@plugin.manager.entity_reference_selection']
+
+  standard_core.overrider:
+    class: \Drupal\standard_core\Service\Overrider
+    tags:
+      - {name: config.factory.override, priority: 5}
+  standard_drush_commands.commands:
+    class: \Drupal\standard_core\Commands\StandardDrushCommands
+    tags:
+      - { name: drush.command }
+  maintenance_mode: # same ID as declared in core.services.yml
+    class: Drupal\standard_core\Service\CustomMaintenanceMode # point to your class
+    arguments: ['@state']

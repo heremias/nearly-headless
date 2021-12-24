@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.small
+    - field.field.node.external_article.canonical_link
+    - field.field.node.external_article.ours
+    - field.field.node.external_article.publish_date
+    - field.field.node.external_article.site_tags
+    - field.field.node.external_article.summary
+    - field.field.node.external_article.teaser_image
+    - node.type.external_article
+  module:
+    - datetime
+    - link
+    - user
+id: node.external_article.small
+targetEntityType: node
+bundle: external_article
+mode: small
+content:
+  canonical_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  publish_date:
+    weight: 0
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  summary:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  teaser_image:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: teaser_medium
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  links: true
+  ours: true
+  search_api_excerpt: true
+  site_tags: true

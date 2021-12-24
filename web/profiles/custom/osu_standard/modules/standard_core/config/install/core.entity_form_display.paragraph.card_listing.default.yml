@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_listing.card_components
+    - field.field.paragraph.card_listing.content_types
+    - field.field.paragraph.card_listing.page_size
+    - field.field.paragraph.card_listing.site_tags
+    - paragraphs.paragraphs_type.card_listing
+  module:
+    - chosen_field
+id: paragraph.card_listing.default
+targetEntityType: paragraph
+bundle: card_listing
+mode: default
+content:
+  card_components:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  content_types:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  site_tags:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+hidden:
+  created: true
+  page_size: true
+  status: true

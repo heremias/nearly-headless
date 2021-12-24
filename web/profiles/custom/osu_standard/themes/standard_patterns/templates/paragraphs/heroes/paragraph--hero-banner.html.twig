@@ -1,0 +1,8 @@
+{% include "@components/heroes/hero-banner/hero-banner.twig" with {
+  attributes: attributes,
+  content: content,
+  entity: paragraph,
+  image_url: "https://placeimg.com/800/600/tech",
+  breadcrumbs: paragraph.include_breadcrumbs.value ? drupal_block('system_breadcrumb_block') : ''
+}
+%}

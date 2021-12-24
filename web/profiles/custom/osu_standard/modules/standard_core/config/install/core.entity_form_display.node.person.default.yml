@@ -1,0 +1,252 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.node.person.body
+    - field.field.node.person.featured
+    - field.field.node.person.image
+    - field.field.node.person.include_share_links
+    - field.field.node.person.intro
+    - field.field.node.person.liason_email
+    - field.field.node.person.liason_name
+    - field.field.node.person.liason_phone
+    - field.field.node.person.linkedin
+    - field.field.node.person.meta_title
+    - field.field.node.person.preferred_email
+    - field.field.node.person.preferred_organization
+    - field.field.node.person.preferred_phone
+    - field.field.node.person.preferred_title
+    - field.field.node.person.site_tags
+    - field.field.node.person.slug
+    - field.field.node.person.summary
+    - field.field.node.person.twitter
+    - node.type.person
+  module:
+    - chosen_field
+    - entity_browser
+    - field_group
+    - link
+    - path
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_preferred_information:
+      children:
+        - preferred_title
+        - preferred_organization
+        - preferred_phone
+        - preferred_email
+      parent_name: ''
+      weight: 5
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: true
+        required_fields: true
+      label: 'Preferred Information'
+      region: content
+    group_social_networking:
+      children:
+        - linkedin
+        - twitter
+      parent_name: ''
+      weight: 9
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: 'Social Networking'
+      region: content
+    group_liason_details:
+      children:
+        - liason_name
+        - liason_email
+        - liason_phone
+      parent_name: ''
+      weight: 6
+      format_type: details
+      region: content
+      format_settings:
+        show_empty_fields: false
+        id: ''
+        classes: ''
+        effect: none
+        open: false
+        required_fields: true
+      label: 'Liason Details'
+id: node.person.default
+targetEntityType: node
+bundle: person
+mode: default
+content:
+  body:
+    weight: 7
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  image:
+    weight: 8
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: preview
+      field_widget_replace: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  include_share_links:
+    weight: 11
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  intro:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  liason_email:
+    type: email_default
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  liason_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  liason_phone:
+    type: telephone_default
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  linkedin:
+    weight: 126
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  meta_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  path:
+    type: path
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  preferred_email:
+    weight: 125
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  preferred_organization:
+    weight: 123
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  preferred_phone:
+    weight: 124
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  preferred_title:
+    weight: 122
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  site_tags:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  slug:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  summary:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  twitter:
+    weight: 127
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  url_redirects:
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  featured: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

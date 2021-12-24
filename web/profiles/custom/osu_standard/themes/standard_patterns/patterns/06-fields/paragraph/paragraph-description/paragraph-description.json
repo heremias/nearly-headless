@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "description",
+  "field_type": "string",
+  "label": "Description",
+  "label_hidden": true,
+  "multiple": false,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus tempor risus in tristique. Aardvarkum assylum potatoem puppyum. Consectetur adipiscing elit. Maecenas rhoncus tempor."
+    }
+  ]
+}

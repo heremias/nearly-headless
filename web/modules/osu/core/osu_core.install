@@ -1,0 +1,163 @@
+<?php
+
+function osu_core_install() {
+  \Drupal::configFactory()->getEditable('views.view.moderated_content')->delete();
+}
+
+/**
+ * Removes osu_acquia, osu_roles, and all format modules (merged).
+ */
+function osu_core_update_8101(&$sandbox)
+{
+  $add = [
+    'codesnippet'
+  ];
+  $remove = [
+    'osu_acquia', 'osu_roles',
+    'osu_dates', 'osu_linkit', 'osu_plain', 'osu_rich', 'osu_simple', 'osu_unrestricted'
+  ];
+
+  \Drupal::service('module_installer')->uninstall(osu_core_filter_existing($remove), FALSE);
+  \Drupal::service('module_installer')->install($add, FALSE);
+  \Drupal::service('features.manager')->import(['osu_core']);
+}
+
+/**
+ * Removes old features during consolidation effort.
+ */
+function osu_core_update_8102(&$sandbox)
+{
+  $remove = [
+    'osu_admin', 'osu_authentication', 'osu_devel', 'osu_foundation', 'osu_frame', 'osu_secrets'
+  ];
+  \Drupal::service('module_installer')->uninstall(osu_core_filter_existing($remove), FALSE);
+  \Drupal::service('features.manager')->import(['osu_core']);
+
+  $source = \Drupal::config('osu_verify.settings');
+  $dest = \Drupal::configFactory()->getEditable('osu_core.search_ownership');
+  foreach (['baidu', 'bing', 'google', 'norton_safe_web', 'pinterest', 'yandex'] as $key) {
+    $dest->set($key, $source->get($key));
+  }
+  $dest->save();
+}
+
+/**
+ * Enables content_moderation and sets view unpublished/revision permissions
+ * @param $sandbox
+ */
+function osu_core_update_8103(&$sandbox) {
+  \Drupal::service('module_installer')->install(['content_moderation', 'workflows'], TRUE);
+  \Drupal::service('features.manager')->import(['osu_core']);
+
+  // If this view exists, it seems to take precedence over our route alters.
+  \Drupal::configFactory()->getEditable('views.view.moderated_content')->delete();
+  \Drupal::service("router.builder")->rebuild();
+}
+
+/**
+ * Enables mail sending functionality.
+ * @param $sandbox
+ */
+function osu_core_update_8104(&$sandbox) {
+  // This hook previously installed smtp which we no longer plan to use.
+  // Since the update was not completely rolled out, I just emptied out the hook.
+}
+
+/**
+ * Enables mail sending functionality.
+ * @param $sandbox
+ */
+function osu_core_update_8105(&$sandbox) {
+  \Drupal::service('module_installer')->uninstall(osu_core_filter_existing(['smtp']), FALSE);
+  \Drupal::service('module_installer')->install(['swiftmailer'], TRUE);
+  \Drupal::service('features.manager')->import(['osu_core']);
+
+  $config = \Drupal::service('config.factory')->getEditable('system.site');
+  $config->set('mail', 'ADV-svc-umar-web@osu.edu');
+  $config->save();
+}
+
+/**
+ * Increases log size to 10k.
+ * @param $sandbox
+ */
+function osu_core_update_8106(&$sandbox) {
+  $config = \Drupal::service('config.factory')->getEditable('dblog.settings');
+  $config->set('row_limit', 10000);
+  $config->save();
+}
+
+/**
+ * Reimporting core feature for changes to rich/unrestricted.
+ */
+function osu_core_update_8107(&$sandbox) {
+  \Drupal::service('features.manager')->import(['osu_core']);
+}
+
+/**
+ * Updates permissions for site developers and managers.
+ */
+function osu_core_update_8108(&$sandbox) {
+  \Drupal::service('features.manager')->import(['osu_core']);
+}
+
+/**
+ * Adds asset injector and rich text changes.
+ */
+function osu_core_update_8109(&$sandbox) {
+  \Drupal::service('module_installer')->install(['asset_injector'], TRUE);
+  \Drupal::service('features.manager')->import(['osu_core']);
+}
+
+/**
+ * Fixes a few things missing from rich text.
+ */
+function osu_core_update_8110(&$sandbox) {
+  \Drupal::service('features.manager')->import(['osu_core']);
+}
+
+/**
+ * Adds name fields to users.
+ */
+function osu_core_update_8111(&$sandbox) {
+  \Drupal::service('features.manager')->import(['osu_core']);
+}
+
+/**
+ * Enables healthcheck and reimports
+ */
+function osu_core_update_8112(&$sandbox) {
+  \Drupal::service('module_installer')->install(['healthcheck'], TRUE);
+  \Drupal::service('features.manager')->import(['osu_core']);
+}
+
+/**
+ * Updates core settings with improvements to editor and formats.
+ */
+function osu_core_update_8113(&$sandbox) {
+  \Drupal::service('features.manager')->import(['osu_core']);
+}
+
+/**
+ * Enables datalayer module.
+ */
+function osu_core_update_8114(&$sandbox) {
+  \Drupal::service('module_installer')->install(['datalayer'], TRUE);
+}
+
+/**
+ * Reimports feature with new roles.
+ */
+function osu_core_update_8115(&$sandbox) {
+  \Drupal::service('features.manager')->import(['osu_core']);
+}
+
+function osu_core_filter_existing($modules) {
+  $existing = [];
+  foreach ($modules as $module) {
+    if (\Drupal::moduleHandler()->moduleExists($module)) {
+      $existing[] = $module;
+    }
+  }
+  return $existing;
+}

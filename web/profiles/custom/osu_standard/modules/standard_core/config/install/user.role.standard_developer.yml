@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_mixin
+third_party_settings:
+  role_mixin:
+    parent_roles:
+      site_developer: site_developer
+id: standard_developer
+label: 'Standard Developer'
+weight: 10
+is_admin: null
+permissions:
+  - 'administer standard core devel settings'
+  - 'clone node entity'
+  - 'clone paragraph entity'
+  - 'access site in maintenance mode'
+  - 'create url aliases'
+  - 'rabbit hole administer node'
+  - 'rabbit hole bypass node'

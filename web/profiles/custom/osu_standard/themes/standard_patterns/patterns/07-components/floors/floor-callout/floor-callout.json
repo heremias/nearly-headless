@@ -1,0 +1,31 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "body": "This is the callout",
+    "heading": "fields-paragraph-heading",
+    "introduction": "fields-paragraph-introduction",
+    "link": "fields-paragraph-link",
+    "tweet_text": "This is the tweet text"
+  },
+  "entity": {
+    "heading": {
+      "value": "Callout Floor"
+    },
+    "heading_level": {
+      "value": "h2"
+    },
+    "introduction": {
+      "value": "This is an introduction for a callout."
+    },
+    "tweetable": {
+      "value": "true"
+    }
+  },
+  "url_to_tweet": "https://google.com",
+  "style": {
+    "horizontal": "narrow",
+    "vertical": "regular"
+  }
+}

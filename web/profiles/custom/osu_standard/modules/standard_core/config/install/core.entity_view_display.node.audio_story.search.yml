@@ -1,0 +1,96 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search
+    - field.field.node.audio_story.audiences
+    - field.field.node.audio_story.audio
+    - field.field.node.audio_story.buckets
+    - field.field.node.audio_story.colleges
+    - field.field.node.audio_story.meta_title
+    - field.field.node.audio_story.places
+    - field.field.node.audio_story.publish_date
+    - field.field.node.audio_story.quote
+    - field.field.node.audio_story.slug
+    - field.field.node.audio_story.subject
+    - field.field.node.audio_story.subject_description
+    - field.field.node.audio_story.summary
+    - field.field.node.audio_story.teaser_image
+    - field.field.node.audio_story.topics
+    - field.field.node.audio_story.types
+    - node.type.audio_story
+  module:
+    - datetime
+    - user
+id: node.audio_story.search
+targetEntityType: node
+bundle: audio_story
+mode: search
+content:
+  audio:
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: reference
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  publish_date:
+    weight: 0
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  quote:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  subject:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  subject_description:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  summary:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  teaser_image:
+    weight: 6
+    label: hidden
+    settings:
+      view_mode: square_small
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  audiences: true
+  buckets: true
+  colleges: true
+  links: true
+  meta_title: true
+  places: true
+  search_api_excerpt: true
+  slug: true
+  topics: true
+  types: true

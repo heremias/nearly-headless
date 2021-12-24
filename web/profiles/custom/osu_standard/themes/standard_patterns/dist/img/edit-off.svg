@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>edit_off</title>
+    <path d="M18,4,17,5l2,2,1-1Z" fill="#666" fill-rule="evenodd"/>
+    <rect x="12.2" y="7.6" width="5.7" height="2.83" transform="translate(-2 13.2) rotate(-45)" fill="#666"/>
+    <polygon points="11 11 4 18 4 20 6 20 13 13 11 11" fill="#666" fill-rule="evenodd"/><rect x="10.3" y="1.7" width="2" height="22" transform="translate(-5.7 11.7) rotate(-45)" fill="#666" fill-rule="evenodd"/>
+</svg>

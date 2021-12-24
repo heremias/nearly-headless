@@ -1,0 +1,171 @@
+.c-hero-cta-banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: 'proximanova', Arial, san-serif;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  @media (min-height: 700px) {
+    min-height: 65vh;
+    position: relative;
+  }
+
+  &.c-hero-cta-banner--preserve-top {
+    background-position: center top;
+  }
+
+  &.c-hero-cta-banner--preserve-middle {
+    background-position: center center;
+  }
+
+  &.c-hero-cta-banner--preserve-bottom {
+    background-position: center bottom;
+  }
+
+  .c-hero-cta-banner--title {
+    color: #fff;
+    font-size: 2.5rem;
+  }
+
+  .c-hero-cta-banner--wrapper {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+
+    @media (min-height: 700px) {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 45px;
+    }
+  }
+
+  .c-hero-cta-banner--ctas {
+    div {
+      display: inline-block;
+    }
+
+    a {
+      margin: 20px 40px 0 0;
+      background: #b00;
+      border: 1px solid #b00;
+      color: #fff;
+      font-size: 20px;
+      display: inline-block;
+      text-align: center;
+      text-transform: uppercase;
+      min-width: 255px;
+      padding: 0.8rem;
+
+      &:hover {
+        background: #fff;
+        color: #b00;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .o-hero-with-cta {
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+    position: relative;
+  }
+
+  .o-hero-with-cta::after {
+    background: rgba(0, 0, 0, 0.2);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .o-hero-with-cta__container {
+    height: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .o-hero-with-cta__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-flow: wrap;
+    flex-flow: column wrap;
+    -ms-flex-direction: column;
+    justify-content: center;
+    -ms-flex-pack: center;
+    height: 100%;
+  }
+
+  .m-hero-text {
+    font-size: 36px;
+    line-height: 43px;
+    padding: 0 0 20px;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .c-hero-cta-banner--container::before {
+    content: ' ';
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 100%;
+    top: 0;
+  }
+
+  .c-hero-cta-banner--container {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    width: auto;
+    align-self: center;
+    padding: 40px;
+    margin: 0;
+    padding-left: 15px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    .c-hero-cta-banner--wrapper {
+      padding: 0;
+      position: initial;
+    }
+
+    .c-hero-cta-banner--container {
+      position: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: block;
+      width: 100%;
+      padding: 30px;
+      padding-left: 30px;
+    }
+
+    .c-hero-cta-banner--ctas .field__item {
+      width: 100%;
+    }
+
+    .field--name-ctas a {
+      width: 100%;
+    }
+  }
+}

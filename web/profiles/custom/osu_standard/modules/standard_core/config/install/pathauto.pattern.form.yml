@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: form
+label: form
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:parent:title]/[node:slug]'
+selection_criteria:
+  7dc3403c-2a9c-4ded-b26a-5e590c1241f9:
+    id: node_type
+    bundles:
+      form: form
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 7dc3403c-2a9c-4ded-b26a-5e590c1241f9
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "body",
+  "field_type": "text-long",
+  "label": "Body",
+  "label_hidden": true,
+  "multiple": false,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. Neque viverra justo nec ultrices dui sapien eget. Augue interdum velit euismod in pellentesque massa placerat duis ultricies. Varius sit amet mattis vulputate enim. Augue ut lectus arcu bibendum. </p><ol><li>First thing in an ordered list.</li><li>Second thing in a list.</li><li>Thirng thing in a list</li></ol>"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Pattern for full-search.
+ *
+ * Available variables:
+ * - full_search_type: if type is not null, then it is either "news" or "events",
+ * and then display the m-full-search__header-wrap
+ * - m-full-search__title and m-full-search__description should always
+ * display for a search result
+ */
+#}
+<div class="m-full-search">
+  <div class="m-full-search__inner">
+
+    {% if full_search_type != '' %}
+    <div class="m-full-search__header-wrap d-flex">
+      <div class="m-full-search__type">
+        {{ full_search_type }}
+      </div>
+      {% if full_search_date != '' %}
+      <div class="m-full-search__date">
+        {{ full_search_date }}
+      </div>
+      {% endif %}
+      {% if full_search_all_link != '' %}
+      <div class="m-full-search__link">
+        <a href="{{ full_search_all_link }}">View all {{ full_search_type }}&nbsp;<span class="rang">&rang;</span></a>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="m-full-search__title">
+      <a href="{{ full_search_item_link }}">{{ full_search_title }}&nbsp;<span class="rang">&rang;</span></a>
+    </div>
+    <div class="m-full-search__description">
+      {{ full_search_description }}
+    </div>
+
+  </div>
+</div>

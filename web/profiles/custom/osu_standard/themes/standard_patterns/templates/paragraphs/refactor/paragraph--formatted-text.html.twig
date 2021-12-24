@@ -1,0 +1,17 @@
+{# For legacy reasons, video an be a floor or a component. #}
+{% if 'node' == paragraph.getParentEntity.getEntityTypeId %}
+  {% include "@components/floors/floor-formatted-text/floor-formatted-text.twig" with {
+    attributes: attributes,
+    content: content,
+    entity: paragraph
+  }
+  %}
+{% else %}
+  {% include "@components/components/component-formatted-text/component-formatted-text.twig" with {
+    "attributes": attributes,
+    "entity": paragraph,
+    "content": content
+  }
+  %}
+{% endif %}
+

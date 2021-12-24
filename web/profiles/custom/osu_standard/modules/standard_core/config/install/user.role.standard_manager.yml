@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_mixin
+third_party_settings:
+  role_mixin:
+    parent_roles:
+      site_manager: site_manager
+id: standard_manager
+label: 'Standard Manager'
+weight: 10
+is_admin: null
+permissions:
+  - 'clone node entity'
+  - 'clone paragraph entity'
+  - 'access site in maintenance mode'
+  - 'rabbit hole administer node'
+  - 'rabbit hole bypass node'

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: directory
+label: 'People / Directory Floor'
+icon_uuid: null
+icon_default: null
+description: 'A list of people on the site in a floor context. We need to figure out how to add multiple styles here... but first we need to figure out what is driving those styles (see board of trustees differences).'
+behavior_plugins: {  }

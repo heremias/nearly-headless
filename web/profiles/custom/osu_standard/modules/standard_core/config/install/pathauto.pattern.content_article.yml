@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content_article
+label: content_article
+type: 'canonical_entities:node'
+pattern: 'story/[node:slug]'
+selection_criteria:
+  be05788a-d777-4331-a733-5e5e454bb072:
+    id: node_type
+    bundles:
+      content_article: content_article
+    negate: false
+    context_mapping:
+      node: node
+    uuid: be05788a-d777-4331-a733-5e5e454bb072
+selection_logic: and
+weight: -5
+relationships: {  }

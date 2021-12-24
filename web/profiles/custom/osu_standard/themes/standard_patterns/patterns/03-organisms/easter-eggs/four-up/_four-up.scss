@@ -1,0 +1,67 @@
+.rich-four-up {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+
+  & > div {
+    /* Mobile styles */
+    flex: 1 0 40%;
+    margin: 5px;
+    padding: 0 8px;
+
+    /* Tablet and up */
+    @include media-breakpoint-up(lg) {
+      flex: 1 0 21%;
+      margin: 5px;
+    }
+  }
+}
+
+.rich-3x4 {
+  &--inner {
+    padding-bottom: 133%;
+    position: relative;
+  }
+
+  a,
+  a:hover {
+    text-decoration: none !important;
+  }
+
+  .rich-3x4--button {
+    background: #fff;
+    bottom: 16px;
+    border-bottom: none !important;
+    color: #222;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0 10px;
+    line-height: 24px;
+    padding: 16px;
+    position: absolute;
+    width: calc(100% - 20px);
+    background-image: none !important;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: none !important;
+
+    span {
+      position: relative;
+
+      &::after {
+        color: #b00;
+        content: '\203A';
+        font-size: 27px;
+        padding-left: 0.5rem;
+        text-decoration: none;
+      }
+    }
+
+    &:hover {
+      span::after {
+        padding-left: 1rem;
+        text-decoration: none;
+      }
+    }
+  }
+}

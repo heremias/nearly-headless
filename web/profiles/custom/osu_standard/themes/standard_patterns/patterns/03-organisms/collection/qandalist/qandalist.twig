@@ -1,0 +1,8 @@
+<div class="qandalist">
+  {% for item in items %}
+  <div class="qandalist__item">
+    <div class="qandalist__question">{{ item.question }}</div>
+    <div class="qandalist__answer">{{ item.answer }}</div>
+  </div>
+  {% endfor %}
+</div>

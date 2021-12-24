@@ -1,0 +1,6 @@
+name: 'Occurrences'
+description: 'Dates and times at which an event occurs'
+type: module
+package: 'OSU Content / Node Fields'
+core_version_requirement: '^8.8 || ^9'
+dependencies:

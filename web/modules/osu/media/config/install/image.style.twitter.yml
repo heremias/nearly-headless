@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.twitter
+  module:
+    - crop
+name: twitter
+label: 'Twitter (2:1)'
+effects:
+  90ad7636-e1ad-431b-a052-4fa0ad05cdd2:
+    uuid: 90ad7636-e1ad-431b-a052-4fa0ad05cdd2
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: twitter

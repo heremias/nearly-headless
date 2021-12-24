@@ -1,0 +1,151 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "meetings": {
+      "June 6": {
+        "9:00 AM - 1:00 PM": [
+          {
+            "name": "Wexner Medical Center Board Meeting",
+            "url": "#",
+            "linkable": false,
+            "location": {
+              "name": "Advancement",
+              "building": {
+                "code": "HI",
+                "url": "https://www.osu.edu/map/building.php?building=HI"
+              },
+              "address": {
+                "given_name": "",
+                "additional_name": "",
+                "family_name": "",
+                "organization": "",
+                "address_line1": "1480 West Lane",
+                "address_line2": "",
+                "postal_code": "43201",
+                "sorting_code": "",
+                "administrative_area": {
+                  "code": "OH",
+                  "name": "Ohio"
+                },
+                "locality": "Columbus",
+                "dependent_locality": "",
+                "country": {
+                  "code": "US",
+                  "name": "United States"
+                },
+                "url": "#googledirectionslink"
+              }
+            }
+          }
+        ]
+      },
+      "June 7": {
+        "9:00 AM - 11:00 AM": [
+          {
+            "name": "Master Planning Faciliities Committee Meeting",
+            "url": "#",
+            "linkable": true,
+            "location": {
+              "name": "Advancement",
+              "building": {
+                "code": "HI",
+                "url": "https://www.osu.edu/map/building.php?building=HI"
+              },
+              "address": {
+                "given_name": "",
+                "additional_name": "",
+                "family_name": "",
+                "organization": "",
+                "address_line1": "1480 West Lane",
+                "address_line2": "",
+                "postal_code": "43201",
+                "sorting_code": "",
+                "administrative_area": {
+                  "code": "OH",
+                  "name": "Ohio"
+                },
+                "locality": "Columbus",
+                "dependent_locality": "",
+                "country": {
+                  "code": "US",
+                  "name": "United States"
+                },
+                "url": "#googledirectionslink"
+              }
+            }
+          },
+          {
+            "name": "Talent and Compensation Committee",
+            "url": "#",
+            "linkable": false,
+            "location": {
+              "name": "Advancement",
+              "building": {
+                "code": "HI",
+                "url": "https://www.osu.edu/map/building.php?building=HI"
+              },
+              "address": {
+                "given_name": "",
+                "additional_name": "",
+                "family_name": "",
+                "organization": "",
+                "address_line1": "1480 West Lane",
+                "address_line2": "",
+                "postal_code": "43201",
+                "sorting_code": "",
+                "administrative_area": {
+                  "code": "OH",
+                  "name": "Ohio"
+                },
+                "locality": "Columbus",
+                "dependent_locality": "",
+                "country": {
+                  "code": "US",
+                  "name": "United States"
+                },
+                "url": "#googledirectionslink"
+              }
+            }
+          }
+        ],
+        "1:00 PM - 2:00 PM": [
+          {
+            "name": "Meeting Title",
+            "url": "#",
+            "linkable": true,
+            "location": {
+              "name": "Advancement",
+              "building": {
+                "code": "HI",
+                "url": "https://www.osu.edu/map/building.php?building=HI"
+              },
+              "address": {
+                "given_name": "",
+                "additional_name": "",
+                "family_name": "",
+                "organization": "",
+                "address_line1": "1480 West Lane",
+                "address_line2": "",
+                "postal_code": "43201",
+                "sorting_code": "",
+                "administrative_area": {
+                  "code": "OH",
+                  "name": "Ohio"
+                },
+                "locality": "Columbus",
+                "dependent_locality": "",
+                "country": {
+                  "code": "US",
+                  "name": "United States"
+                },
+                "url": "#googledirectionslink"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

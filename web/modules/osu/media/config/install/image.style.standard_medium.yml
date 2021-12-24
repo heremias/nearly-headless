@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.standard
+  module:
+    - crop
+name: standard_medium
+label: 'Standard (4:3) - Medium'
+effects:
+  8acb85d9-1274-4033-80eb-bd85a7abf6ac:
+    uuid: 8acb85d9-1274-4033-80eb-bd85a7abf6ac
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: standard
+  aecfcef4-9911-445e-a7d4-ae0e5a13ccf8:
+    uuid: aecfcef4-9911-445e-a7d4-ae0e5a13ccf8
+    id: image_scale
+    weight: -8
+    data:
+      width: 640
+      height: 480
+      upscale: true
+  7bb21c01-8e42-4943-974f-8faaf9a65cf1:
+    uuid: 7bb21c01-8e42-4943-974f-8faaf9a65cf1
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 640
+      height: 480
+      anchor: center-center

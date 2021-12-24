@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "content": {
+        "include()": {
+          "pattern": "molecules-full-teaser-news",
+          "with": {
+
+          }
+        }
+      }
+    },
+    {
+      "content": {
+        "include()": {
+          "pattern": "molecules-full-teaser-news",
+          "with": {
+            "content": {
+              "title": "Lorem ipsum dolor"
+            }
+          }
+        }
+      }
+    },
+    {
+      "content": {
+        "include()": {
+          "pattern": "molecules-full-teaser-news",
+          "with": {
+            "content": {
+              "title": "Consec vent ipsum lorem"
+            }
+          }
+        }
+      }
+    },
+    {
+      "content": {
+        "include()": {
+          "pattern": "molecules-full-teaser-news",
+          "with": {
+
+          }
+        }
+      }
+    },
+    {
+      "content": {
+        "include()": {
+          "pattern": "molecules-full-teaser-news",
+          "with": {
+
+          }
+        }
+      }
+    }
+  ]
+}

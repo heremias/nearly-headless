@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.social
+  module:
+    - crop
+name: social_large
+label: 'Social (1.91) - Large'
+effects:
+  8bb360b7-fd6f-45b8-989a-bf1753ede10a:
+    uuid: 8bb360b7-fd6f-45b8-989a-bf1753ede10a
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: social
+  7c72c625-6ae8-4068-91a4-e0d6219c3b84:
+    uuid: 7c72c625-6ae8-4068-91a4-e0d6219c3b84
+    id: image_scale
+    weight: -8
+    data:
+      width: 1200
+      height: 630
+      upscale: true
+  2dab6cd8-0ede-4328-a405-01f20966b0b4:
+    uuid: 2dab6cd8-0ede-4328-a405-01f20966b0b4
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 1200
+      height: 630
+      anchor: center-center

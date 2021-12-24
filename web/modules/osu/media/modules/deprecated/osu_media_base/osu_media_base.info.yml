@@ -1,0 +1,6 @@
+name: 'OSU / Media / Base'
+description: 'Includes base dependencies for all media.'
+package: 'OSU / Media'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,96 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.floor_content_listing.card_components
+    - field.field.paragraph.floor_content_listing.content_types
+    - field.field.paragraph.floor_content_listing.heading
+    - field.field.paragraph.floor_content_listing.heading_level
+    - field.field.paragraph.floor_content_listing.introduction
+    - field.field.paragraph.floor_content_listing.link
+    - field.field.paragraph.floor_content_listing.page_size
+    - field.field.paragraph.floor_content_listing.site_tags
+    - field.field.paragraph.floor_content_listing.vertical_style
+    - field.field.paragraph.floor_content_listing.width
+    - paragraphs.paragraphs_type.floor_content_listing
+  module:
+    - link
+    - options
+id: paragraph.floor_content_listing.default
+targetEntityType: paragraph
+bundle: floor_content_listing
+mode: default
+content:
+  card_components:
+    weight: 8
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  content_types:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  heading_level:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  introduction:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  site_tags:
+    type: entity_reference_label
+    weight: 7
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  vertical_style:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  width:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  page_size: true
+  search_api_excerpt: true

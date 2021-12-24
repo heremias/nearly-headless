@@ -1,0 +1,10 @@
+<div class="t-audio-story">
+{% include "@molecules/person-quote-audio/person-quote-audio.twig" %}
+
+  {% if content.transcript %}
+  <div class="col-md-10 ml-auto mr-auto">
+    <h2 class="t-audio-story-transcript">TRANSCRIPT</h2>
+    {{ content.transcript }}
+  </div>
+  {% endif %}
+</div>

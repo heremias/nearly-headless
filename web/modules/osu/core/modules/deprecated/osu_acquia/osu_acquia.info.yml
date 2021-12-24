@@ -1,0 +1,6 @@
+name: 'OSU / Core / Acquia'
+description: 'Packages settings and code for hosting sites on Acquia'
+type: module
+core: 8.x
+package: 'OSU / Core'
+core_version_requirement: ^8 || ^9

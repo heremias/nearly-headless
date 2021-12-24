@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.ctas
+    - paragraphs.paragraphs_type.hero_cta_banner
+  module:
+    - link
+id: paragraph.hero_cta_banner.ctas
+field_name: ctas
+entity_type: paragraph
+bundle: hero_cta_banner
+label: 'Calls to Action'
+description: 'Add up to two calls to action.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

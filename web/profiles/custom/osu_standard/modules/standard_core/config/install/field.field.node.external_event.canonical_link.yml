@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.canonical_link
+    - node.type.external_event
+  module:
+    - link
+id: node.external_event.canonical_link
+field_name: canonical_link
+entity_type: node
+bundle: external_event
+label: 'External Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

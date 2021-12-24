@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_mixin
+third_party_settings:
+  role_mixin:
+    parent_roles:
+      content_editor: content_editor
+      site_developer: site_developer
+      site_manager: site_manager
+id: standard_editor
+label: 'Standard Editor'
+weight: 10
+is_admin: null
+permissions:
+  - 'clone node entity'
+  - 'clone paragraph entity'
+  - 'create content_page content'
+  - 'delete any content_page content'
+  - 'access site in maintenance mode'
+  - 'edit any content_page content'
+  - 'rabbit hole administer node'
+  - 'rabbit hole bypass node'
+  - 'view content_page revisions'

@@ -1,0 +1,15 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "items",
+  "field_type": "unknown",
+  "label": "Quote",
+  "label_hidden": true,
+  "multiple": false,
+  "items": [
+    {
+      "content": "<p>Wherever you go, there you are.</p>"
+    }
+  ]
+}

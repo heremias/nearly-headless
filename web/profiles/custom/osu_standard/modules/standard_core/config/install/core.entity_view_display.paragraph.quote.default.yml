@@ -1,0 +1,106 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quote.attribution
+    - field.field.paragraph.quote.context
+    - field.field.paragraph.quote.heading
+    - field.field.paragraph.quote.heading_level
+    - field.field.paragraph.quote.image
+    - field.field.paragraph.quote.introduction
+    - field.field.paragraph.quote.link
+    - field.field.paragraph.quote.quote
+    - field.field.paragraph.quote.tweet_text
+    - field.field.paragraph.quote.tweetable
+    - field.field.paragraph.quote.vertical_style
+    - field.field.paragraph.quote.width
+    - paragraphs.paragraphs_type.quote
+  module:
+    - link
+    - text
+id: paragraph.quote.default
+targetEntityType: paragraph
+bundle: quote
+mode: default
+content:
+  attribution:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  context:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  image:
+    weight: 7
+    label: hidden
+    settings:
+      view_mode: square_small
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  introduction:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  link:
+    weight: 8
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  quote:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  tweet_text:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  tweetable:
+    weight: 6
+    label: hidden
+    settings:
+      format: true-false
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+hidden:
+  heading_level: true
+  search_api_excerpt: true
+  vertical_style: true
+  width: true

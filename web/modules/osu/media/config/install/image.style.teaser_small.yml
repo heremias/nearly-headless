@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.social
+  module:
+    - crop
+name: teaser_small
+label: 'Teaser (1.91) - Small'
+effects:
+  7315d248-8923-489d-bdfb-764d889dfcdb:
+    uuid: 7315d248-8923-489d-bdfb-764d889dfcdb
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: social
+  45962363-19dd-43e1-8fc8-96f59b970290:
+    uuid: 45962363-19dd-43e1-8fc8-96f59b970290
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 320
+      height: 168
+      anchor: center-center

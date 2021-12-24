@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.context
+    - paragraphs.paragraphs_type.speaker
+id: paragraph.speaker.context
+field_name: context
+entity_type: paragraph
+bundle: speaker
+label: 'Organization / Title / Qualification / Context'
+description: "A self explanatory context in which this person is notable.<br>\r\n<em>Ohio State University</em><br>\r\n<em>Director for the Center for Automation</em><br>\r\n<em>First man on the moon</em>\r\n\r\n"
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.link
+    - paragraphs.paragraphs_type.floor_meetings
+  module:
+    - link
+id: paragraph.floor_meetings.link
+field_name: link
+entity_type: paragraph
+bundle: floor_meetings
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

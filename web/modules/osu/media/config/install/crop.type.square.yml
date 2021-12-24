@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: square
+label: 'Square (1:1)'
+description: 'Square aspect ratio, often used for thumbnails.'
+aspect_ratio: '1:1'
+soft_limit_width: 1024
+soft_limit_height: 1024
+hard_limit_width: null
+hard_limit_height: null

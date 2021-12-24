@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Audio Story'
+type: audio_story
+description: 'A narrated story about a person, place, or event.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,39 @@
+.n-teaser-person {
+  color: $black;
+  height: 100%;
+
+  /* Set a base font for this which is a little more compact than our regular copy. */
+  @include copy-compact();
+
+  /* Set our layout with the image always to the left at 150px square. */
+  .n-teaser-person__inner {
+    background: $gray-6;
+    display: flex;
+    height: 100%;
+    min-height: 150px;
+    width: 100%;
+
+    .n-teaser-person__image {
+      background: $gray-3;
+      height: 150px;
+      width: 150px;
+    }
+
+    .n-teaser-person__summary {
+      padding: 20px;
+      flex: 1;
+    }
+  }
+
+  /* Adjust fonts for key elements. */
+  .n-teaser-person__name {
+    font-weight: bold;
+    font-size: 1.429em;
+  }
+
+  .n-teaser-person__job-title,
+  .n-teaser-person__email,
+  .n-teaser-person__phone {
+    font-size: 1.071em;
+  }
+}

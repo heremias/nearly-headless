@@ -1,0 +1,92 @@
+.o-subscribe-footer {
+  background: $gray-5;
+  padding: 30px 0;
+  vertical-align: middle;
+
+  .subscribe-form-header {
+    font-size: 1.786em;
+    margin: 0;
+    padding: 0;
+  }
+
+  .subscribe-form-text {
+    font-size: 1.143em;
+  }
+
+  input {
+    background: $white;
+    border: none;
+    border-bottom: 1px solid $white;
+    border-radius: 0;
+    color: $gray-0;
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    height: 40px;
+    line-height: 40px;
+    min-width: 150px;
+    width: 100%;
+    vertical-align: top;
+
+    @include media-breakpoint-up(lg) {
+      min-width: 285px;
+    }
+  }
+
+  form {
+    font-size: 0;
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+  }
+
+  .cta {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    vertical-align: top;
+
+    @include media-breakpoint-up(sm) {
+      text-align: right;
+    }
+
+    @include media-breakpoint-up(md) {
+      text-align: left;
+    }
+  }
+
+  .email-signup {
+    margin: 10px 0 20px;
+    text-align: left;
+
+    @include media-breakpoint-up(lg) {
+      margin: 0;
+      text-align: right;
+    }
+  }
+
+  .button__subscribe--footer {
+    background: $scarlet;
+    border: none;
+    color: $white;
+    font-size: 17px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    width: 130px;
+  }
+
+  .help-block {
+    text-align: left;
+    margin: 0;
+    padding: 5px;
+  }
+}

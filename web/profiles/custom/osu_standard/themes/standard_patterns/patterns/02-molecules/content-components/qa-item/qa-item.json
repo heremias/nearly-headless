@@ -1,0 +1,42 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "paragraph": {},
+  "content": {
+    "question": {
+      "include()": {
+        "pattern": "atoms-field",
+        "with": {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "label_hidden": true,
+          "multiple": false,
+          "items": [
+            {
+              "content": "What is the Dolor to the Lorem, Ipsum, and Everything?"
+            }
+          ]
+        }
+      }
+    },
+    "answer": {
+      "include()": {
+        "pattern": "atoms-field-wysiwyg",
+        "with": {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "label_hidden": true,
+          "multiple": false,
+          "items": [
+            {
+              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel vestibulum nulla. Mauris sit amet nisl in elit ultrices tristique in vestibulum orci. Fusce quis justo leo. Vestibulum aliquam diam libero. In hac habitasse platea dictumst. Sed id lacinia leo. Aliquam dictum ligula et elementum vulputate. Praesent pellentesque suscipit hendrerit.</p>"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

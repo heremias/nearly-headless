@@ -1,0 +1,20 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "entity": {
+    "heading": {
+      "value": ""
+    },
+    "heading_level": {
+      "value": "h3"
+    },
+    "introduction": {
+      "value": ""
+    }
+  },
+  "style": {
+    "horizontal": "xwide",
+    "vertical": "regular"
+  }
+}

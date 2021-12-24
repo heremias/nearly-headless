@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.file
+    - media.type.audio
+  module:
+    - file
+id: media.audio.file
+field_name: file
+entity_type: media
+bundle: audio
+label: File
+description: "Upload an mp3 for longer items (1 min+), wavs for short clips<br>\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'audio/[date:custom:Y]/[date:custom:m]'
+  file_extensions: 'mp3 wav'
+  max_filesize: 20M
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

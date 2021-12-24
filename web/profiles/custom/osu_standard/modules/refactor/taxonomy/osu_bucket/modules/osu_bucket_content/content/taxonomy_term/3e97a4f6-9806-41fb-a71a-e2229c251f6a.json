@@ -1,0 +1,60 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/local.hub.osu.edu\/taxonomy\/term\/29?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/bucket"
+        }
+    },
+    "tid": [
+        {
+            "value": 29
+        }
+    ],
+    "uuid": [
+        {
+            "value": "3e97a4f6-9806-41fb-a71a-e2229c251f6a"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "bucket"
+        }
+    ],
+    "name": [
+        {
+            "value": "Community engagement",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": 1498836311,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "analytics_code": [
+        {
+            "value": "Comm",
+            "lang": "en"
+        }
+    ]
+}

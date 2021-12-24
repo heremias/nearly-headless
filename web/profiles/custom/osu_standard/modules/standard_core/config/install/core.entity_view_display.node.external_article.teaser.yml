@@ -1,0 +1,32 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.external_article.canonical_link
+    - field.field.node.external_article.ours
+    - field.field.node.external_article.publish_date
+    - field.field.node.external_article.site_tags
+    - field.field.node.external_article.summary
+    - field.field.node.external_article.teaser_image
+    - node.type.external_article
+  module:
+    - user
+id: node.external_article.teaser
+targetEntityType: node
+bundle: external_article
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  canonical_link: true
+  ours: true
+  publish_date: true
+  search_api_excerpt: true
+  site_tags: true
+  summary: true
+  teaser_image: true

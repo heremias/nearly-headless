@@ -1,0 +1,23 @@
+.button-audio {
+  background: $scarlet;
+  border: none;
+  color: $white;
+  font-family: $ff--proxima;
+  font-size: 16px;
+  line-height: 50px;
+  padding: 0 22px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 17px;
+  }
+
+  .button-audio__text {
+    &::before {
+      content: "\f028";
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 18px;
+      padding: 0 10px 3px 0;
+      vertical-align: middle;
+    }
+  }
+}

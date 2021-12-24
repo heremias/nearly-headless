@@ -1,0 +1,15 @@
+name: Publishing Dropbutton
+type: module
+description: 'Restore publishing dropbuttons for node and content_moderation.'
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - drupal:system (>=8.4)
+
+test_dependencies:
+  - workbench_moderation
+
+# Information added by Drupal.org packaging script on 2020-06-30
+version: '8.x-1.0-alpha6'
+project: 'publishing_dropbutton'
+datestamp: 1593503036

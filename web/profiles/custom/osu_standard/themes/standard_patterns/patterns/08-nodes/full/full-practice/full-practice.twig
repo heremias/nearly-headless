@@ -1,0 +1,83 @@
+{% extends "@nodes/full/full/full.twig" %}
+
+{% set class = 'n-full-practice' %}
+{% set width = 'wide' %}
+
+{% block content %}
+  <div class="n-full-practice__aside">
+    {% if revision.date.isRecent %}
+    <div class="n-full-practice__alert">
+      <img src="{{ base_path ~ directory }}/images/icons/bell.png" alt="Bell icon" class="n-full-practice__alert-icon" />
+      <h2>Recent Update</h2>
+
+      <div class="n-full-practice__alert-text">
+        Updated best practice{% if revision.message %}: {{ revision.message }}{% endif %}
+      </div>
+
+      <div class="n-full-practice__alert-author">
+         {{ revision.date.ago }} ago by {{ revision.user }}
+      </div>
+    </div>
+    {% endif %}
+    <div class="n-full-practice__tags">
+      {# Add in dynamic vocabulary / tag based fields #}
+      {% for vocab in content.site_tags  %}
+        {% if vocab.terms | length > 0 %}
+          <div class="n-full-practice__tags-{{ vocab.id }}">
+            <h3>{{ vocab.name }}</h3>
+            {% for term in vocab.terms %}
+              {{ term.name }}{% if not loop.last %}<br />{% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="n-full-practice__messaging">
+      <div class="n-full-practice__messaging-label">
+        Updated:
+      </div>
+      <div class="n-full-practice__messaging-text">
+        {{ revision.date.modified }} by {{ revision.user }}
+      </div>
+    </div>
+
+    <a href="/practice-activity-stream" class="n-full-practice__messaging-button"><img src="{{ base_path ~ directory }}/images/icons/time.png" alt="time icon" class="n-full-practice__messaging-button-icon" />View activity stream</a>
+  </div>
+  <div class="n-full-practice__main">
+    {% if content.requirement[0] is not empty %}
+    <h2>Requirement</h2>
+    {{ content.requirement }}
+    {% endif %}
+
+    {% if content.error[0] is not empty %}
+    <h2>Error</h2>
+    {{ content.error }}
+    {% endif %}
+
+    {% if content.description[0] is not empty %}
+    <h2>Description</h2>
+    {{ content.description }}
+    {% endif %}
+
+    {% if content.rationale[0] is not empty %}
+    <h2>Rationale</h2>
+    {{ content.rationale }}
+    {% endif %}
+
+    {% if content.how_to[0] is not empty%}
+    <h2>How to</h2>
+    {{ content.how_to }}
+    {% endif %}
+
+    {% if content.example[0] is not empty %}
+    <h2>Example</h2>
+    {{ content.example }}
+    {% endif %}
+
+    {% if content.sources[0] is not empty%}
+    <h2>Sources</h2>
+    {{ content.sources }}
+    {% endif %}
+  </div>
+{% endblock %}

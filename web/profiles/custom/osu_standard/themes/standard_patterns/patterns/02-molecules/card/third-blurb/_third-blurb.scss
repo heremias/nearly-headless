@@ -1,0 +1,58 @@
+.m-third-blurb {
+  font-family: $ff--proxima;
+  margin: 0 0 10px;
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    margin: 0 0 20px;
+  }
+
+  .m-third-blurb__inner {
+    border: 1px solid $gray-6;
+    margin: 0 0 20px;
+    padding: 40px;
+  }
+
+  .m-third-blurb__header {
+    border-top: 6px solid $scarlet;
+    color: $gray-7;
+    font-size: 1.786em;
+    padding: 25px 0 20px;
+  }
+
+  .m-third-blurb__content {
+    color: $gray-2;
+    font-size: 1.214em;
+  }
+
+  .m-third-blurb__content a {
+    color: $scarlet;
+
+    &:hover {
+      color: $scarlet;
+      text-decoration: underline;
+    }
+  }
+
+  .m-third-blurb__button {
+    a {
+      width: 100%;
+      background: $white;
+      border: 2px solid $gray-8;
+      color: $gray-7;
+      display: block;
+      font-size: 1.214em;
+      margin: 0;
+      padding: 0;
+      line-height: 45px;
+      text-align: center;
+
+      &:hover {
+        background: $scarlet;
+        border: 2px solid $scarlet;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+}

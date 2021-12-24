@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: audio_story
+label: audio_story
+type: 'canonical_entities:node'
+pattern: 'story/[node:slug]'
+selection_criteria:
+  ead0c15b-efef-43c5-b00b-ea5254434527:
+    id: node_type
+    bundles:
+      audio_story: audio_story
+    negate: false
+    context_mapping:
+      node: node
+    uuid: ead0c15b-efef-43c5-b00b-ea5254434527
+selection_logic: and
+weight: -5
+relationships: {  }

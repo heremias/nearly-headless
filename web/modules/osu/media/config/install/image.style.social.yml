@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.social
+  module:
+    - crop
+name: social
+label: 'Social (1.91)'
+effects:
+  585ee075-0e01-43db-9bc2-9e3f8457a9ed:
+    uuid: 585ee075-0e01-43db-9bc2-9e3f8457a9ed
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: social

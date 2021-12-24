@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.editor_image_banner_large
+label: 'Banner (4:1)'
+targetEntityType: media
+cache: true

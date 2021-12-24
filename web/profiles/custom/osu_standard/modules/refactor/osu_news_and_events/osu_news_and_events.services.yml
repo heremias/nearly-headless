@@ -1,0 +1,5 @@
+services:
+ osu_news_and_events.breadcrumb:
+   class: Drupal\osu_news_and_events\Breadcrumb\Builder
+   tags:
+    - { name: breadcrumb_builder, priority: 100 }

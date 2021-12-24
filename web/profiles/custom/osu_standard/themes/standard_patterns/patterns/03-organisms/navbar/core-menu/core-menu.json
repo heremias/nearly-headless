@@ -1,0 +1,118 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {
+          "class": ["menu__item--active"]
+        }
+      },
+      "title": "About",
+      "url": "#",
+      "below": [
+        {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "title": "Guiding Principles",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "title": "Initiatives/Programs",
+      "url": "#",
+      "below": [
+        {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "title": "Advocates & Allies for Equity",
+          "url": "#",
+          "below": [
+            {
+              "attributes": {
+                "Attribute()": {}
+              },
+              "title": "A flyout menu",
+              "url": "#"
+            },
+            {
+              "attributes": {
+                "Attribute()": {}
+              },
+              "title": "Another menu item",
+              "url": "#"
+            },
+            {
+              "attributes": {
+                "Attribute()": {}
+              },
+              "title": "Yet another menu item",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "title": "NSF Grant for Male Advocates & Allies Program",
+          "url": "#"
+        },
+        {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "title": "An Ohio State Woman Who Changed My Life",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "title": "Resources",
+      "url": "#",
+      "below": [
+
+      ]
+    },
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "title": "News & Events",
+      "url": "#",
+      "below": [
+
+      ]
+    },
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "title": "Council on Women",
+      "url": "#",
+      "below": [
+
+      ]
+    },
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "title": "Donate",
+      "url": "#",
+      "below": [
+
+      ]
+    }
+  ]
+}

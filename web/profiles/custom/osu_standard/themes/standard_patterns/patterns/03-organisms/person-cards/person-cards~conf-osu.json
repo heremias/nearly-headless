@@ -1,0 +1,48 @@
+{
+  "variant": "conference",
+  "color_scheme": "osu-light",
+  "attributes": {
+    "Attribute()": {}
+  },
+  "entity": {
+    "directory_variant": {
+      "value": "speakers"
+    },
+    "width": {
+      "value": "xwide"
+    }
+  },
+  "content": {
+    "heading": "fields-paragraph-heading",
+    "introduction": "fields-paragraph-introduction",
+    "link": "fields-paragraph-link",
+    "people": {
+      "include()": {
+        "pattern": "atoms-field-people",
+        "with": {
+          "multiple": true,
+          "items": [
+            {
+              "content": "molecules-half-teaser-person"
+            },
+            {
+              "content": "molecules-half-teaser-person"
+            },
+            {
+              "content": "molecules-half-teaser-person"
+            },
+            {
+              "content": "molecules-half-teaser-person"
+            },
+            {
+              "content": "molecules-half-teaser-person"
+            },
+            {
+              "content": "molecules-half-teaser-person"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

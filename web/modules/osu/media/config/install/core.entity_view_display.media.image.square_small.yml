@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.square_small
+    - field.field.media.image.caption
+    - field.field.media.image.credit
+    - field.field.media.image.image
+    - image.style.square_small
+    - media.type.image
+  module:
+    - image
+id: media.image.square_small
+targetEntityType: media
+bundle: image
+mode: square_small
+content:
+  image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: square_small
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  caption: true
+  created: true
+  credit: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

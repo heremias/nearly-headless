@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.social
+  module:
+    - crop
+name: teaser
+label: 'Teaser (1.91)'
+effects:
+  32e8e163-30ef-40d8-afaa-6b9ec05ceb82:
+    uuid: 32e8e163-30ef-40d8-afaa-6b9ec05ceb82
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: social

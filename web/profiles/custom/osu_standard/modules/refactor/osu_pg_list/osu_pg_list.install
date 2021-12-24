@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Add and initialize width field to list paragraphs.
+ */
+function osu_pg_list_update_8401 (&$sandbox) {
+  osu_pg_width_add_and_initialize($sandbox, 'list', 'narrow');
+}

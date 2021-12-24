@@ -1,0 +1,21 @@
+.o-agenda-timeslot {
+  border-top: 2px solid #eee;
+  margin-top: 24px;
+
+  .o-agenda-timeslot--heading {
+    background-color: #eee;
+    display: block;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-bottom: 24px;
+  }
+
+  .o-agenda-timeslot--rows {
+    padding-left: 24px;
+  }
+
+  .o-agenda-timeslot--heading,
+  .o-agenda-timeslot--rows {
+    padding-top: 24px;
+  }
+}

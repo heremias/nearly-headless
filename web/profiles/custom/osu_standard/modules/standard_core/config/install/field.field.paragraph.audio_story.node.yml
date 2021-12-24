@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.node
+    - node.type.audio_story
+    - paragraphs.paragraphs_type.audio_story
+id: paragraph.audio_story.node
+field_name: node
+entity_type: paragraph
+bundle: audio_story
+label: Story
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      audio_story: audio_story
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

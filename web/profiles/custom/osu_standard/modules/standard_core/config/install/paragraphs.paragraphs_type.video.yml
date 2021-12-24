@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: video
+label: 'Video Floor'
+icon_uuid: null
+icon_default: null
+description: 'Video in a floor context. While I believe this was allowed in non-floor contexts, I think we were lucky in that it was never used that way.'
+behavior_plugins: {  }

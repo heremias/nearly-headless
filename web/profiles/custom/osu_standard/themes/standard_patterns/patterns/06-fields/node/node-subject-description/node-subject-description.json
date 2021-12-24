@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "subject",
+  "field_type": "string-long",
+  "label": "Description",
+  "label_hidden": true,
+  "multiple": false,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "Program coordinator for Advising and Scholarship Services through Diversity Services Office"
+    }
+  ]
+}

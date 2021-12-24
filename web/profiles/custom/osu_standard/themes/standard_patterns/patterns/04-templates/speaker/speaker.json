@@ -1,0 +1,27 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "body": "fields-node-body",
+    "email": "fields-node-email",
+    "image": "fields-node-image-small-square",
+    "linkedin": "fields-node-linkedin",
+    "preferred_organization": "fields-node-preferred-organization",
+    "preferred_phone": "fields-node-preferred-phone",
+    "preferred_title": "fields-node-preferred-title",
+    "twitter": "fields-node-twitter",
+    "sessions": "<ul class=\"t-speaker__sessions-list\"><li><a href=\"#\">Introduction to Drupal</a></li><li><a href=\"#\">How Not to Be Seen</a></li></ul>"
+  },
+  "entity": {
+    "featured": {
+      "value": true
+    },
+    "linkedin": {
+      "uri": "http://linkedin.com"
+    },
+    "twitter": {
+      "uri": "http://twitter.com"
+    }
+  }
+}

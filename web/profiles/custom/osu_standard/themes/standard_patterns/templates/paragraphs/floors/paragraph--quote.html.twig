@@ -1,0 +1,14 @@
+{% include "@components/floors/floor-quote/floor-quote.twig" with {
+  attributes: attributes,
+  content: content,
+  entity: paragraph,
+  variant: variant,
+  quote: content.quote,
+  attribution: paragraph.attribution.value,
+  context: paragraph.context.value,
+  shareable: paragraph.tweetable.value,
+  share_text: paragraph.tweet_text.value,
+  share_url: url_to_tweet,
+  share_handle: ""
+}
+%}

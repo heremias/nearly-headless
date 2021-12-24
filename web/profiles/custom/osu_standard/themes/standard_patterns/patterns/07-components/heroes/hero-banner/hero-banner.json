@@ -1,0 +1,16 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "image_url": "https://placeimg.com/800/600/tech"
+  },
+  "entity": {
+    "height": {
+      "value": "medium"
+    },
+    "preserve": {
+      "value": "middle"
+    }
+  }
+}

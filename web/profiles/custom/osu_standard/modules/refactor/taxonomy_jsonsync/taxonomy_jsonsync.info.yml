@@ -1,0 +1,6 @@
+name: Media Magnet
+type: module
+description: Field and vocab settings for OSU media magnet
+core_version_requirement: '^8.8 || ^9'
+package: OSU
+

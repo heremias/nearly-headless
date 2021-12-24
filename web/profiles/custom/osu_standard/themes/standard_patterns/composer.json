@@ -1,0 +1,27 @@
+{
+    "name": "umarketing/standard_patterns",
+    "description": "Theme for our Standard Websites",
+    "type": "drupal-custom-theme",
+    "homepage": "https://code.osu.edu/ucom/standard_patterns",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arnell Damasco",
+            "email": "damasco.2@osu.edu"
+        },
+        {
+            "name": "Jason Little",
+            "email": "little.129@osu.edu"
+        }
+    ],
+    "repositories": {
+    },
+    "require": {
+        "composer/installers": "~1.0"
+    },
+    "require-dev": {},
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {},
+    "extra": []
+}

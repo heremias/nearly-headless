@@ -1,0 +1,6 @@
+name: 'OSU / Core / Frame Embedding'
+description: 'Makes it possible to embed a site in an iframe on particular domains'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'OSU / Core'

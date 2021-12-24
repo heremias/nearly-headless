@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.vertical_style
+    - paragraphs.paragraphs_type.video
+  module:
+    - options
+id: paragraph.video.vertical_style
+field_name: vertical_style
+entity_type: paragraph
+bundle: video
+label: 'Vertical Style'
+description: "The vertical style primarily impacts top and bottom margins:\r\n<ul>\r\n<li>Regular adds ample margins above and below the component.</li>\r\n<li>Inline does not add margins, but adjacent or internal elements may still add margins.</li>\r\n<li>Automatic inspects the component's contents and tries to guess at appropriate margins.</li>\r\n</ul>"
+required: true
+translatable: true
+default_value:
+  -
+    value: regular
+default_value_callback: ''
+settings: {  }
+field_type: list_string

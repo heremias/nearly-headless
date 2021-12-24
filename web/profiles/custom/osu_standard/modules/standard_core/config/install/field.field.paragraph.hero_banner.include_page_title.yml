@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.include_page_title
+    - paragraphs.paragraphs_type.hero_banner
+id: paragraph.hero_banner.include_page_title
+field_name: include_page_title
+entity_type: paragraph
+bundle: hero_banner
+label: 'Page Title'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

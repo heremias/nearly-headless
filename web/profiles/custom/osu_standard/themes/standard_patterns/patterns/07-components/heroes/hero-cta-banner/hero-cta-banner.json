@@ -1,0 +1,32 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "heading": "fields-paragraph-heading",
+    "image": "fields-paragraph-image",
+    "ctas": "fields-paragraph-ctas",
+    "image_url": "https://placeimg.com/800/600/tech"
+  },
+  "entity": {
+    "heading": {
+      "value": "A Fantastic Hero that is Just a Little Too Long"
+    },
+    "h1_field": {
+      "value": "component.heading"
+    },
+    "ctas": [
+      {
+        "uri": "#",
+        "text": "Click Me"
+      },
+      {
+        "uri": "#",
+        "text": "Bro, Click Me Bro. Click Me!"
+      }
+    ],
+    "preserve": {
+      "value": "middle"
+    }
+  }
+}

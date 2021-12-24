@@ -1,0 +1,6 @@
+name: 'OSU / Media / Image'
+description: 'Locally uploaded image with crops.'
+package: 'OSU / Media'
+type: module
+core_version_requirement: '^8.9 || ^9'
+

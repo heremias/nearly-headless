@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.highlight_medium
+label: 'Highlight - Medium (1.65)'
+targetEntityType: media
+cache: true

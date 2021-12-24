@@ -1,0 +1,20 @@
+{% extends "@components/floors/floor/floor.twig" %}
+{% set class = 'c-floor-callout' %}
+{% block component %}
+  {% if entity.tweetable.value %}
+    {% include "@molecules/other/tweetable/tweetable.twig"
+      with {
+      "visible_text": content.body,
+      "tweetable_text": content.tweet_text | striptags,
+      "url": url_to_tweet,
+      "handle": "",
+      "class": "callout"
+    }
+    %}
+  {% else %}
+    <div {{ attributes.addClass(["callout", "container"]) }}>
+      {{ content.body }}
+    </div>
+  {% endif %}
+{% endblock %}
+

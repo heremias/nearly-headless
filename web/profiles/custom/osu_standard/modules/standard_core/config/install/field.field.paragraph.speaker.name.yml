@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.name
+    - paragraphs.paragraphs_type.speaker
+id: paragraph.speaker.name
+field_name: name
+entity_type: paragraph
+bundle: speaker
+label: 'Full Name'
+description: "Full name and honorific as you would like it to be shown.<br>\r\nExample: Dr. Bobbie Bobbertson"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

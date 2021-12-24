@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_mixin
+third_party_settings:
+  role_mixin:
+    parent_roles:
+      site_manager: site_manager
+      content_editor: content_editor
+id: sponsor_editor
+label: 'Sponsor Editor'
+weight: 10
+is_admin: null
+permissions:
+  - 'create terms in sponsors'
+  - 'delete terms in sponsors'
+  - 'edit terms in sponsors'

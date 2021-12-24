@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - osu_brand
+  theme:
+    - standard_patterns
+id: osufooter
+theme: standard_patterns
+region: site_footer
+weight: 0
+provider: null
+plugin: osu_brand_footer
+settings:
+  id: osu_brand_footer
+  label: 'OSU Footer'
+  provider: osu_brand
+  label_display: '0'
+visibility: {  }

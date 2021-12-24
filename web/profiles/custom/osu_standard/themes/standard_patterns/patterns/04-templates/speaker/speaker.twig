@@ -1,0 +1,52 @@
+<div {{ attributes.addClass("t-speaker") }} >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="m-speaker">
+          <div class="m-speaker__image">
+            {{ content.image }}
+          </div>
+
+          <div class="m-speaker__title{% if entity.session_type and entity.session_type.entity and entity.session_type.entity.name %} featured{% endif %}">
+            {{ entity.session_type.entity.name.value }}
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <div class="t-speaker__name">
+          {{ entity.label }}
+        </div>
+
+        <div class="t-speaker__title">
+          {{ content.preferred_title }}
+        </div>
+
+        {% if entity.twitter.uri %}
+        <div class="t-speaker__social-link">
+          <span class="fa fa-twitter"></span>
+          {{ content.twitter }}
+        </div>
+        {% endif %}
+
+        {% if entity.linkedin.uri %}
+        <div class="t-speaker__social-link">
+          <span class="fa fa-linkedin"></span>
+          {{ content.linkedin }}
+        </div>
+        {% endif %}
+
+        <div class="t-speaker__content">
+          {{ content.body }}
+        </div>
+
+        <div class="t-speaker__sessions">
+          <h2 class="t-speaker__header">Sessions</h2>
+
+          {{ content.sessions }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

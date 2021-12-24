@@ -1,0 +1,3 @@
+services:
+  osu_sharer.node_mapper:
+    class: Drupal\entity_mapper_service\EmptyMapperService

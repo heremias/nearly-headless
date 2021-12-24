@@ -1,0 +1,19 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "body": "fields-paragraph-body"
+  },
+  "entity": {
+    "heading": {
+      "value": "Formatted Text Section"
+    },
+    "heading_level": {
+      "value": "h2"
+    },
+    "introduction": {
+      "value": "This is an introduction for a formatted text section."
+    }
+  }
+}

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.directory_variant
+    - paragraphs.paragraphs_type.directory
+  module:
+    - options
+id: paragraph.directory.directory_variant
+field_name: directory_variant
+entity_type: paragraph
+bundle: directory
+label: Variant
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: directory
+default_value_callback: ''
+settings: {  }
+field_type: list_string

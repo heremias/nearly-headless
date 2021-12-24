@@ -1,0 +1,16 @@
+{
+  "region": "page-header",
+  "content": {
+    "join()": [
+      {
+        "include()": {
+          "pattern": "molecules-page-title-block",
+          "with": {
+            "title": "About the Conference",
+            "variant": "conference"
+          }
+        }
+      }
+    ]
+  }
+}

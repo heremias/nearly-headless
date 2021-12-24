@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rss_news_feed.feed_url
+    - field.field.paragraph.rss_news_feed.feed_website
+    - field.field.paragraph.rss_news_feed.heading
+    - field.field.paragraph.rss_news_feed.heading_level
+    - field.field.paragraph.rss_news_feed.introduction
+    - field.field.paragraph.rss_news_feed.link
+    - field.field.paragraph.rss_news_feed.vertical_style
+    - field.field.paragraph.rss_news_feed.width
+    - paragraphs.paragraphs_type.rss_news_feed
+  module:
+    - link
+id: paragraph.rss_news_feed.default
+targetEntityType: paragraph
+bundle: rss_news_feed
+mode: default
+content:
+  feed_website:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  introduction:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  feed_url: true
+  heading_level: true
+  search_api_excerpt: true
+  vertical_style: true
+  width: true

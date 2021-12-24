@@ -1,0 +1,40 @@
+# Build tools Dockerfile
+image: php:7.3-cli
+
+before_script:
+    - npm ci web/profiles/custom/osu_standard/themes/standard_patterns --cache .npm --prefer-offline --no-audit
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .npm
+
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  script:
+    - apt-get update
+    - apt-get install -y software-properties-common
+    - apt-add-repository packages.sury.org/php
+    - apt-get update
+    - apt-get install -y openssh-client git curl unzip wget php7.3-gd
+    - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    - HASH="$(wget -q -O - https://composer.github.io/installer.sig)"
+    - php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+    - php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+    - npm run build
+    - eval "$(ssh-agent -s)"
+    - echo "$SSH_PRIVATE_KEY" > /tmp/deploy_rsa
+    - chmod 600 /tmp/deploy_rsa
+    - ssh-add /tmp/deploy_rsa
+    - whoami
+    - mkdir -p /root/.ssh
+    - chmod 0700 /root/.ssh
+    - touch /root/.ssh/known_hosts
+    - ssh-keyscan code.osu.edu > /root/.ssh/known_hosts
+    - ./scripts/release/to-upstream.sh
+  when: manual
+  only:
+    - master

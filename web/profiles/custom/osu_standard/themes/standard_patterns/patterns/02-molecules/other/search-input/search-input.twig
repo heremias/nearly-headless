@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Pattern for search-input.
+ *
+ * Available variables:
+ * -
+ */
+#}
+<div class="search-input container-fluid">
+  <div class="container d-flex">
+    <input type="text" value="Search" />
+    <div class="search-input__button-wrap text-right d-flex align-items-center justify-content-end">
+      {% include "@atoms/button/button-close/button-close.twig" with {
+        button_class: "",
+        aria_label: "Clear search input",
+        alt_text: "Clear search input"
+      } %}
+      {% include "@atoms/button/button-search/button-search.twig" with {
+        button_class: "ml-4 d-none d-lg-block",
+        button_text: "Search"
+      } %}
+    </div>
+  </div>
+</div>

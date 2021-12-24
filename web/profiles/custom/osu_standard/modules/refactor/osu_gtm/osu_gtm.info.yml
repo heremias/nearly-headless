@@ -1,0 +1,5 @@
+name: 'OSU / GTM'
+description: 'empty gtm module.'
+package: 'OSU '
+type: module
+core_version_requirement: '^8.8 || ^9'

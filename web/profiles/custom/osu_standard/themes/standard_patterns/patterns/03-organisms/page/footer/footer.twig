@@ -1,0 +1,30 @@
+{% set color = (color_scheme == 'osu-light') ? 'light' : 'dark' %}
+<div class="o-page-footer {{color_scheme}}">
+  <div class="footer-main container">
+    <div class="row">
+      <div class="footer-logo col-xs-12 col-sm-6 order-2 order-sm-1">
+        <a href="https://www.osu.edu/">
+          <img src="{{ base_path ~ directory }}/images/logo/wordmark-{{color}}.png" width="259" alt="The Ohio State University" />
+        </a>
+      </div>
+
+      <div class="footer-social col-xs-12 col-sm-6 order-1 order-sm-2">
+        <div class="social-icons">
+          <div class="social-icons-label">Connect with us:</div>
+          <ul class="social-icons-list">
+            <li><a href="{{facebook_link|default('https://www.facebook.com/osu')}}" class="social-link footerFacebook" target="_blank"><i class="icon-facebook"></i><span class="sr-only">on Facebook</span></a></li>
+            <li><a href="{{twitter_link|default('https://www.twitter.com/ohiostate')}}" class="social-link footerTwitter" target="_blank"><i class="icon-twitter"></i><span class="sr-only">on Twitter</span></a></li>
+            <li><a href="{{instagram_link|default('https://instagram.com/theohiostateuniversity/')}}" class="social-link footerInstagram" target="_blank"><i class="icon-instagram"></i><span class="sr-only">on Instagram</span></a></li>
+            <li><a href="{{linkedin_link|default('https://www.linkedin.com/school/the-ohio-state-university/')}}" class="social-link" target="_blank"><i class="icon-linkedin"></i><span class="sr-only">on LinkedIn</span></a></li>
+            <li><a href="{{youtube_link|default('https://www.youtube.com/user/OhioStateUniversity')}}" class="social-link footerYoutube" target="_blank"><i class="icon-youtube"></i><span class="sr-only">on YouTube</span></a></li>
+            <li><a href="{{tiktok_link|default('https://vm.tiktok.com/TTPdYEkbnP/')}}" class="social-link footerTiktok" target="_blank"><i class="icon-tiktok"></i><span class="sr-only">on TikTok</span></a></li>
+          </ul>
+        </div>
+      </div><!-- /footer_social -->
+
+    </div>
+    <div class="row">
+      {% include "@organisms/page/footer/_institutional-info.twig" %}
+    </div><!-- /institutional_info -->
+  </div>
+</div>

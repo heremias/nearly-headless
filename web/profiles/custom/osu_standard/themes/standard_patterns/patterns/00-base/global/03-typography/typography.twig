@@ -1,0 +1,13 @@
+<div class="sg-typography">
+  {% for item in items %}
+    <div class="sg-info" style="padding: 10px;">
+      <span style="font-size: 30px; font-family: {{item.value}}">{{item.name}}</span>
+    </div>
+    <div class="sg-info" style="padding: 10px;">
+      <span style="font-size: 30px; font-weight: bold; font-family: {{item.value}}">{{item.name}} Bold</span>
+    </div>
+  {% endfor %}
+</div>
+{% if meta %}
+  <p> <small>{{ meta.description }}</small> </p>
+{% endif %}

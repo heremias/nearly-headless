@@ -1,0 +1,29 @@
+{
+  "variant": "conference",
+  "color_scheme": "osu-light",
+  "content": {
+    "attribution": "fields-paragraph-attribution",
+    "context": "fields-paragraph-context",
+    "quote": "fields-paragraph-quote",
+    "tweetable": "fields-paragraph-tweetable",
+    "tweet_text": "fields-paragraph-tweet-text"
+  },
+  "entity": {
+    "bundle": "quote",
+    "attribution": {
+      "value": "Buckaroo Bonzai"
+    },
+    "context": {
+      "value": "Bonzai Institute"
+    },
+    "quote": {
+      "value": "Wherever you go, there you are."
+    },
+    "tweetable": {
+      "value": false
+    },
+    "width": {
+      "value": "narrow"
+    }
+  }
+}

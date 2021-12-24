@@ -1,0 +1,10 @@
+{% extends "@components/floors/floor/floor.twig" %}
+{% set class = 'c-floor-video' %}
+{% block component %}
+  {% include "@molecules/content-components/video-component/video-component.twig" with {
+    "entity": entity,
+    "content": content,
+    "attributes": attributes
+  }%}
+{% endblock %}
+

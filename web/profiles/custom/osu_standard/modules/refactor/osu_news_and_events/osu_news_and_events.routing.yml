@@ -1,0 +1,24 @@
+osu_news_and_events.events:
+  path: '/events/{type}'
+  defaults:
+      _controller: '\Drupal\osu_news_and_events\Controller\EventsController::index'
+      _title: 'News and Events'
+      type: 'all'
+  requirements:
+    _permission: 'access content'
+osu_news_and_events.archive:
+  path: '/event/archive/{type}'
+  defaults:
+      _controller: '\Drupal\osu_news_and_events\Controller\EventArchiveController::index'
+      _title: 'News and Events'
+      type: 'all'
+  requirements:
+    _permission: 'access content'
+osu_news_and_events.news:
+  path: '/news/{type}'
+  defaults:
+      _controller: '\Drupal\osu_news_and_events\Controller\NewsController::index'
+      _title: 'News and Events'
+      type: 'all'
+  requirements:
+    _permission: 'access content'

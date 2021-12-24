@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - field.storage.block_content.preserve
+  module:
+    - options
+id: block_content.banner.preserve
+field_name: preserve
+entity_type: block_content
+bundle: banner
+label: 'Preserve (Do Not Crop)'
+description: "Banner images are cropped <strong>vertically</strong> depending on the size of the visitor's viewport (ie. window size). <br>\r\nThis setting allows you to designate a region to be cropped last.<br>\r\nFor example, set <em>preserve</em> to <em>top</em> to protect faces at the top of a picture at the expense of shoes at the bottom."
+required: true
+translatable: false
+default_value:
+  -
+    value: middle
+default_value_callback: ''
+settings: {  }
+field_type: list_string

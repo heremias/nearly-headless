@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: highlight_list_item
+label: 'Highlight List Item'
+icon_uuid: null
+icon_default: null
+description: 'An item in a highlight list.'
+behavior_plugins: {  }

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.people_filter_listing.site_tags
+    - paragraphs.paragraphs_type.people_filter_listing
+id: paragraph.people_filter_listing.default
+targetEntityType: paragraph
+bundle: people_filter_listing
+mode: default
+content:
+  site_tags:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true

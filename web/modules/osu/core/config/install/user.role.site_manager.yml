@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies: {  }
+id: site_manager
+label: 'Site Manager'
+weight: 1
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access site reports'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer editorial users'
+  - 'administer main menu items'
+  - 'administer nodes'
+  - 'administer osu core ownership settings'
+  - 'administer osu siteinfo'
+  - 'administer redirects'
+  - 'assign content_editor role'
+  - 'assign employee role'
+  - 'assign site_manager role'
+  - 'assign student role'
+  - 'clone node entity'
+  - 'clone paragraph entity'
+  - 'use text format plain'
+  - 'use text format rich'
+  - 'use text format simple'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view the administration theme'

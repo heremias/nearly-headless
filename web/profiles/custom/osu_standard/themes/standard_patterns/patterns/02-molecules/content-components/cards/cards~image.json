@@ -1,0 +1,16 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "items": "fields-paragraph-items-card-image-titles"
+  },
+  "entity": {
+    "items": {
+      "getvalue": [null, null, null]
+    },
+    "width": {
+      "value": "narrow"
+    }
+  }
+}

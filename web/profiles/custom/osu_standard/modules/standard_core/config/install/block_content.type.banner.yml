@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: banner
+label: Banner
+revision: 1
+description: 'An image banner without top/bottom margins. This feature should probably not be used since only developers can add blocks, block placements are configuration, and the weights of blocks added as "content" may conflict with other blocks added in the future in unpredictable ways.'

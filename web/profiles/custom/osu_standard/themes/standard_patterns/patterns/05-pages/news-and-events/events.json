@@ -1,0 +1,143 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "page": {
+    "highlighted": "",
+    "site_header": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "site-header",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-brand-navbar"
+                }
+              },
+              {
+                "include()": {
+                  "pattern": "organisms-brand_masthead",
+                  "with": {
+                    "variant": "left",
+                    "site_name": "Women's Place"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "page_header": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "page-header",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "molecules-page-title-block",
+                  "with": {
+                    "title": "News &amp; Events"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "primary_menu": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "primary-menu",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-core-menu"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "content": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "content",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-tab-filter",
+                  "with": {
+                    "page_type": "page--events",  "tabs": [
+                      {
+                        "title": "Events",
+                        "href": "/events",
+                        "active": true
+                      },
+                      {
+                        "title": "News",
+                        "href": "/news",
+                        "active": false
+                      },
+                      {
+                        "title": "Archive",
+                        "href": "/event/archive",
+                        "active": false
+                      }
+                    ],
+                    "filters": [
+                      {
+                        "title": "All",
+                        "href": "#",
+                        "active": false
+                      },
+                      {
+                        "title": "Womens Place",
+                        "href": "#",
+                        "active": false
+                      },
+                      {
+                        "title": "Other",
+                        "href": "#",
+                        "active": false
+                      }
+                    ],
+                    "listing": "templates-news-and-events"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "page_footer": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "page-footer",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-footer"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "site_footer": ""
+  }
+}

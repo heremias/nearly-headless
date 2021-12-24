@@ -1,0 +1,30 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "source": {
+    "text": "Ohio State News",
+    "url": "https://news.osu.edu",
+    "heading_level": 3
+  },
+  "items": [
+    {
+      "title": "Dogs barking, can't fly without umbrella.",
+      "description": "Department C is not home right now. Please leave a message.",
+      "image": "https://via.placeholder.com/200x150",
+      "url": "#"
+    },
+    {
+      "title": "Outside of a dog, a book is man's best friend.",
+      "description": "My dog ate my books.",
+      "image": "https://via.placeholder.com/200x300",
+      "url": "#"
+    },
+    {
+      "title": "Inside of a dog, it is very dark.",
+      "description": "Oh, there they are.",
+      "image": "https://via.placeholder.com/150x150",
+      "url": "#"
+    }
+  ]
+}

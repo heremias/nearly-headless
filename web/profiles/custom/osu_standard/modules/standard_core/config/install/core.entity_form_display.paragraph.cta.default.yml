@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cta.variant
+    - field.field.paragraph.cta.width
+    - paragraphs.paragraphs_type.cta
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_style:
+      children:
+        - width
+      parent_name: ''
+      weight: 20
+      format_type: details
+      format_settings:
+        id: osu-pg-style
+        classes: ''
+        open: false
+        required_fields: false
+      label: Style
+      region: content
+id: paragraph.cta.default
+targetEntityType: paragraph
+bundle: cta
+mode: default
+content:
+  variant:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  width:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,7 @@
+osu_siteinfo.admin_settings_form:
+  path: '/admin/config/system/osu-siteinfo'
+  defaults:
+    _form: '\Drupal\osu_siteinfo\Form\InfoForm'
+    _title: 'Site Information'
+  requirements:
+    _permission: 'administer osu siteinfo'

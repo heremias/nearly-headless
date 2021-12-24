@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: media_type_document
+entity_type_id: null
+entity_id: null
+action: page_redirect
+allow_override: 0
+redirect: '[media:file:entity:url]'
+redirect_code: 301
+redirect_fallback_action: null

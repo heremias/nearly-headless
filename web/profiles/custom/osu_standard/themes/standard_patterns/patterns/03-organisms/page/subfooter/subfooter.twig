@@ -1,0 +1,58 @@
+<div class="o-page-subfooter">
+  <div class="o-page-subfooter-background container-fluid full-width">
+    <div class="container">
+      <div class="o-page-subfooter__column-wrapper">
+        <div class="o-page-subfooter__column">
+          <h2>SAVE THE DATE</h2>
+
+          <div class="o-page-subfooter__text-primary">
+            <span class="font-weight-bold">{{ days }}</span>
+          </div>
+          <div class="o-page-subfooter__text-secondary">
+            {{ dates }}
+          </div>
+          <div class="o-page-subfooter__text-secondary">
+            {{ times }}
+          </div>
+        </div>
+
+        <div class="o-page-subfooter__column">
+          <h2>WHERE</h2>
+
+          <div class="o-page-subfooter__text-primary">
+            {{ location1 }}
+          </div>
+          {% if location2 %}
+          <div class="o-page-subfooter__text-primary">
+            <span class="font-weight-bold">{{ location2 }}</span>
+          </div>
+          {% endif %}
+          <div class="o-page-subfooter__text-secondary">
+            {{ address1 }}
+            {% if address1 and address2 %}<br />{% endif %}
+            {{ address2 }}
+          </div>
+          <div class="o-page-subfooter__text-secondary">
+            {{ city }}{% if city and state %}, {% endif %}{{ state }}
+          </div>
+        </div>
+
+        <div class="o-page-subfooter__column">
+          <h2>CONTACT</h2>
+
+          <div class="o-page-subfooter__text-primary">
+            <span class="font-weight-bold">Questions?</span>
+          </div>
+          <div class="o-page-subfooter__text-secondary">
+            <a href="#">{{ email }}</a>
+          </div>
+          {% if twitter_handle %}
+          <div class="o-page-subfooter__text-secondary">
+            <a href="https://twitter.com/{{ twitter_handle }}">@{{ twitter_handle }}</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "upcoming_meetings": {
+      "Nov. 14": [
+        {
+          "name": "Wexner Medical Center Board",
+          "linkable": true,
+          "url": "#"
+        }
+      ],
+      "Nov. 15": [
+        {
+          "name": "Master Planning and Facilities Committee",
+          "linkable": true,
+          "url": "#"
+        },
+        {
+          "name": "Talent and Compensation Committee",
+          "linkable": true,
+          "url": "#"
+        },
+        {
+          "name": "Advancement Committee",
+          "linkable": false,
+          "url": "#"
+        },
+        {
+          "name": "Audit and Compliance Committee",
+          "linkable": true,
+          "url": "#"
+        },
+        {
+          "name": "Academic Affairs and Student Life Committee",
+          "linkable": false,
+          "url": "#"
+        },
+        {
+          "name": "Finance Committee",
+          "linkable": true,
+          "url": "#"
+        },
+        {
+          "name": "Executive Session",
+          "linkable": true,
+          "url": "#"
+        }
+      ],
+      "Nov. 16": [
+        {
+          "name": "Governance Committee",
+          "linkable": true,
+          "url": "#"
+        }
+      ]
+    },
+    "recent_meetings": {
+      "Oct. 14": [
+        {
+          "name": "Wexner Medical Center Board",
+          "linkable": true,
+          "url": "#",
+          "minutes": {
+            "extension": "pdf",
+            "name": "We should probably use the meeting name, text above, instead of the document name",
+            "mime": "application/pdf",
+            "size": "1.5MB",
+            "url": "#"
+          }
+        }
+      ],
+      "Oct. 16": [
+        {
+          "name": "University Board",
+          "linkable": true,
+          "url": "#",
+          "minutes": {
+            "extension": "pdf",
+            "name": "We should probably use the meeting name, text, above, instead of the document name",
+            "mime": "application/pdf",
+            "size": "1.4MB",
+            "url": "#"
+          }
+        }
+      ]
+    }
+  },
+  "entity": {
+    "heading": {
+      "value": "Upcoming/Recent Meeting Floor"
+    },
+    "heading_level": {
+      "value": "h2"
+    },
+    "introduction": {
+      "value": "This is an introduction for a meeting floor."
+    }
+  },
+  "style": {
+    "horizontal": "narrow",
+    "vertical": "regular"
+  }
+}

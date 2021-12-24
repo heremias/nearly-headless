@@ -1,0 +1,8 @@
+<div class="m-dated-list">
+  {% for date, links in items %}
+    {{ date }}
+    {% for link in links %}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
+  {% endfor %}
+</div>

@@ -1,0 +1,104 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.column_narrow
+    - paragraphs.paragraphs_type.card_formatted_text
+    - paragraphs.paragraphs_type.card_image_titles
+    - paragraphs.paragraphs_type.floor_uneven_columns
+    - paragraphs.paragraphs_type.formatted_text_component
+    - paragraphs.paragraphs_type.link_list
+    - paragraphs.paragraphs_type.menu_component
+  module:
+    - entity_reference_revisions
+id: paragraph.floor_uneven_columns.column_narrow
+field_name: column_narrow
+entity_type: paragraph
+bundle: floor_uneven_columns
+label: 'Narrow Column'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      formatted_text_component: formatted_text_component
+      card_image_titles: card_image_titles
+      card_formatted_text: card_formatted_text
+      link_list: link_list
+      menu_component: menu_component
+    target_bundles_drag_drop:
+      audio_story:
+        weight: -47
+        enabled: false
+      callout:
+        weight: -46
+        enabled: false
+      formatted_text_component:
+        enabled: true
+        weight: -45
+      card_image_titles:
+        enabled: true
+        weight: -44
+      card_formatted_text:
+        enabled: true
+        weight: -43
+      cards:
+        weight: -42
+        enabled: false
+      hero_cta_banner:
+        weight: -41
+        enabled: false
+      columns:
+        weight: -40
+        enabled: false
+      cta:
+        weight: -39
+        enabled: false
+      directory:
+        weight: -38
+        enabled: false
+      section_cards:
+        weight: -37
+        enabled: false
+      floor_uneven_columns:
+        weight: -36
+        enabled: false
+      formatted_text:
+        weight: -35
+        enabled: false
+      parousel:
+        weight: -34
+        enabled: false
+      link_list:
+        enabled: true
+        weight: -33
+      menu_component:
+        enabled: true
+        weight: -32
+      parousel_item:
+        weight: -31
+        enabled: false
+      qa_item:
+        weight: -30
+        enabled: false
+      qa_list:
+        weight: -29
+        enabled: false
+      quote:
+        weight: -28
+        enabled: false
+      speaker:
+        weight: -27
+        enabled: false
+      section_formatted_text:
+        weight: -26
+        enabled: false
+      video:
+        weight: -25
+        enabled: false
+field_type: entity_reference_revisions

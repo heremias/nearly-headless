@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.image
+    - media.type.image
+    - paragraphs.paragraphs_type.hero_cta_banner
+id: paragraph.hero_cta_banner.image
+field_name: image
+entity_type: paragraph
+bundle: hero_cta_banner
+label: Background
+description: "This image should be at least 1200 pixels tall and 1600 pixels wide.<br />\r\nIt's width will be scaled to exactly fill the available space with the top or bottom cropped.<br />\r\nYou will not be able to control what gets cropped or overlayed so pick pictures without semantics."
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.site_tags
+    - paragraphs.paragraphs_type.people_filter_listing
+id: paragraph.people_filter_listing.site_tags
+field_name: site_tags
+entity_type: paragraph
+bundle: people_filter_listing
+label: 'Category to Show'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings: {  }
+field_type: entity_reference

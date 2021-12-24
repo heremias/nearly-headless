@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.standard
+  module:
+    - crop
+name: standard_small
+label: 'Standard (4:3) - Small'
+effects:
+  2f00e92f-8c7b-4100-aa4e-a32f8b310806:
+    uuid: 2f00e92f-8c7b-4100-aa4e-a32f8b310806
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: standard
+  0f5d07ff-e6cc-449c-b9a5-95668add6a7d:
+    uuid: 0f5d07ff-e6cc-449c-b9a5-95668add6a7d
+    id: image_scale
+    weight: -8
+    data:
+      width: 320
+      height: 240
+      upscale: true
+  b5fc381f-103e-49f9-96cc-71a5e68d4226:
+    uuid: b5fc381f-103e-49f9-96cc-71a5e68d4226
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 320
+      height: 240
+      anchor: center-center

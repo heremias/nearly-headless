@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies: {  }
+id: modx_paragraph_migration
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: null
+label: 'Modx Paragraph Migration'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  urls: 'http://newmedia.osu.edu/migrate/modx.json'
+  ids:
+    id:
+      type: integer
+  item_selector: /
+  fields:
+    -
+      name: id
+      label: Id
+      selector: /id
+    -
+      name: content
+      label: Content
+      selector: /content
+process:
+  body/value: content
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: formatted_text
+migration_dependencies: {  }

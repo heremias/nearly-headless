@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_mixin
+third_party_settings:
+  role_mixin:
+    parent_roles:
+      site_developer: site_developer
+      site_manager: site_manager
+      content_editor: content_editor
+id: media_editor
+label: 'Media Editor'
+weight: 9
+is_admin: null
+permissions:
+  - 'access audio_browser entity browser pages'
+  - 'access audio_browser_iframe entity browser pages'
+  - 'access document_browser entity browser pages'
+  - 'access document_browser_iframe entity browser pages'
+  - 'access image_browser entity browser pages'
+  - 'access image_browser_iframe entity browser pages'
+  - 'access media overview'
+  - 'access media_browser entity browser pages'
+  - 'access photo_gallery_browser entity browser pages'
+  - 'access video_browser entity browser pages'
+  - 'access video_browser_iframe entity browser pages'
+  - 'create media'
+  - 'delete any media'
+  - 'dropzone upload files'
+  - 'update any media'
+  - 'update media'

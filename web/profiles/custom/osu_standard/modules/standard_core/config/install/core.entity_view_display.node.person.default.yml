@@ -1,0 +1,147 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.person.body
+    - field.field.node.person.featured
+    - field.field.node.person.image
+    - field.field.node.person.include_share_links
+    - field.field.node.person.intro
+    - field.field.node.person.liason_email
+    - field.field.node.person.liason_name
+    - field.field.node.person.liason_phone
+    - field.field.node.person.linkedin
+    - field.field.node.person.meta_title
+    - field.field.node.person.preferred_email
+    - field.field.node.person.preferred_organization
+    - field.field.node.person.preferred_phone
+    - field.field.node.person.preferred_title
+    - field.field.node.person.site_tags
+    - field.field.node.person.slug
+    - field.field.node.person.summary
+    - field.field.node.person.twitter
+    - node.type.person
+  module:
+    - link
+    - telephone
+    - text
+    - user
+id: node.person.default
+targetEntityType: node
+bundle: person
+mode: default
+content:
+  body:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  image:
+    weight: 7
+    label: hidden
+    settings:
+      view_mode: editor_image_square_large
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  intro:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  liason_email:
+    weight: 12
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
+  liason_name:
+    weight: 10
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  liason_phone:
+    weight: 11
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  linkedin:
+    weight: 8
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  preferred_email:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  preferred_organization:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  preferred_phone:
+    weight: 5
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  preferred_title:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  twitter:
+    weight: 9
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  featured: true
+  include_share_links: true
+  meta_title: true
+  search_api_excerpt: true
+  site_tags: true
+  slug: true
+  summary: true

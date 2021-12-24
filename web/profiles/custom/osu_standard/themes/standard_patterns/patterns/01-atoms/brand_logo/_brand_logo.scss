@@ -1,0 +1,27 @@
+.a-brand-logo-vertical {
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+
+  &.horizontal {
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+}
+
+.a-brand-logo-horizontal {
+  display: block;
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+
+  &.horizontal {
+    @include media-breakpoint-up(lg) {
+      display: block;
+    }
+  }
+}

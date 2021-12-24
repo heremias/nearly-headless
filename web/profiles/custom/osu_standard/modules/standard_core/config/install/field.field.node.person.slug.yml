@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.slug
+    - node.type.person
+id: node.person.slug
+field_name: slug
+entity_type: node
+bundle: person
+label: Slug
+description: "Fragment of a path specific to this page. <br>\r\nAllowed characters: lowercase, numbers, hyphens"
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

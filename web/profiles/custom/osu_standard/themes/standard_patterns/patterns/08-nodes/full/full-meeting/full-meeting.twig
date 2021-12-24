@@ -1,0 +1,111 @@
+{% extends "@nodes/full/full/full.twig" %}
+{% set class = 'n-full-meeting' %}
+
+{% block content %}
+  {% if content.occurrence.passed %}
+    <div class="n-full-meeting__alert">
+      This meeting has passed.
+    </div>
+  {% elseif entity.deadline.value | length %}
+    <div class="n-full-meeting__alert">
+      Deadline for materials: {{ content.deadline }}
+    </div>
+  {% endif %}
+  <div class="n-full-meeting__content">
+    <div class="n-full-meeting__left">
+      <div class="n-full-meeting__datetime">
+        <div class="n-full-meeting__date">
+          {{ content.occurrence.start_time }} - {{ content.occurrence.end_time }}
+        </div>
+        <div class="n-full-meeting__time">
+          {{ content.occurrence.start_date }}
+        </div>
+      </div>
+      {% if content.location and content.location.name %}
+        <div class="n-full-meeting__location">
+          <span class="n-full-meeting__location-label">Location:</span>
+
+          <div class="n-full-meeting__location-name">
+            {{ content.location.name }}
+          </div>
+          {# Include building name if one exists #}
+          {% if content.location.building and content.location.building.name %}
+          <div class="n-full-meeting__location-building">
+            {{ content.location.building.name }}
+          </div>
+          {% endif %}
+          {# Conditionally output the first two lines of the address. #}
+          {% if content.location.address %}
+            {% if content.location.address.address_line1 or content.location.address.address_line2 %}
+              <div class="n-full-meeting__location-address">
+                {{ content.location.address.address_line1 }}
+                {% if content.location.address.address_line1 and content.location.address.address_line2 %}
+                  <br />
+                {% endif %}
+                {{ content.location.address.address_line2 }}
+                {% if content.location.address.locality | trim != 'Columbus' %}
+                  <br>
+                  {{ content.location.address.locality }},
+                  {{ content.location.address.administrative_area.code}}
+                  {{ content.location.address.postal_code }}
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="n-full-meeting__main">
+      <div class="n-full-meeting__body">
+        {{ content.body }}
+      </div>
+
+      {% if content.meeting_minutes and content.meeting_minutes.url or (content.documents|length > 0) %}
+      <div class="n-full-meeting__resources">
+        <h2>Resources</h2>
+        {% if content.meeting_minutes and content.meeting_minutes.url %}
+          {% include "@molecules/document/document.twig" with {
+            extension: content.meeting_minutes.extension,
+            name: 'Meeting Minutes',
+            mime: content.meeting_minutes.mime,
+            size: content.meeting_minutes.size,
+            url: content.meeting_minutes.url
+          } %}
+        {% endif %}
+        {% for document in content.documents %}
+          {% include "@molecules/document/document.twig" with document %}
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if content.related_meetings|length > 0 %}
+      <div class="n-full-meeting__related">
+        <h2>Related meetings</h2>
+        {% for date, links in content.related_meetings %}
+        <div class="n-full-meeting__date-links-wrapper">
+          <div class="n-full-meeting__related-date">
+          {{ date }}
+          </div>
+          {% if links %}
+          <ul class="n-full-meeting__related-links">
+          {% endif %}
+            {% for link in links %}
+              <li>
+                {% if link.linkable %}
+                  <a href="{{ link.url }}">{{ link.text }}</a>
+                {% else %}
+                  {{ link.text }}
+                {% endif %}
+              </li>
+            {% endfor %}
+          {% if links %}
+          </ul>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

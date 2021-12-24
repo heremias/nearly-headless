@@ -1,0 +1,68 @@
+.rich-mailchimp {
+  text-align: center;
+
+  div div {
+    display: inline-block;
+    margin: 0;
+  }
+
+  div,
+  input {
+    height: 46px;
+  }
+
+  input[type="email"] {
+    height: 44px;
+    font-size: 17px;
+    width: 100%;
+    min-width: 300px;
+    margin: 0;
+    padding-left: 0.5rem;
+    display: inline-block;
+    border: solid 1px #ccc;
+    border-bottom: solid 2px black;
+  }
+
+  input[type="submit"] {
+    background-color: #c00;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    height: 44px;
+    line-height: 1.4;
+    margin: 2px 1px;
+    padding: 0.5rem 2.25rem 0.5rem 1.5rem;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    text-transform: none;
+    width: 8rem;
+
+    &:hover {
+      background-color: #700000;
+    }
+  }
+
+  /* Errors probably not necessary. */
+  &#mc_embed_signup .mce_inline_error {
+    background-color: transparent;
+    color: black;
+    clear: both;
+    display: block;
+    font-weight: normal;
+  }
+
+  #mce-responses {
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    display: block;
+    font-weight: normal;
+    clear: both;
+  }
+
+  #mc_embed_signup_scroll {
+    padding: 2.5rem 0 4rem;
+    display: block;
+  }
+}

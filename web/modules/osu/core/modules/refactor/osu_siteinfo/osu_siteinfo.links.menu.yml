@@ -1,0 +1,5 @@
+osu_siteinfo.admin_settings_form:
+  title: 'Site Information'
+  parent: system.admin_config_system
+  description: 'Configure organizational information (address, phone, email, etc)'
+  route_name: osu_siteinfo.admin_settings_form

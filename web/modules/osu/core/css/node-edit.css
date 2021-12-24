@@ -1,0 +1,86 @@
+
+/****************************************************
+ * Add more definition around details and nested details.
+ *****************************************************/
+
+/* Create a background color for details boxes. */
+details.field-group-details {
+  background-color: #d8d8d8;
+}
+
+/* And another lighter color for details within details. */
+details.field-group-details details {
+  background-color: #eeeeff;
+}
+
+/****************************************************
+ * Make content titles a little more prominent and scoped.
+ *****************************************************/
+
+/* Make titles more prominent */
+#content-values thead {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #002266;
+}
+
+/* Make titles more prominent */
+.paragraph-type-title {
+  font-size: 1.2em;
+  color: #002266;
+  font-weight: bold;
+}
+
+/****************************************************
+ * Add more definition around draggable things.
+ *****************************************************/
+
+tr.draggable td:nth-child(2) {
+  padding-right:1em;
+}
+
+tr.draggable {
+  border-bottom: 2px dashed #999999;
+}
+tr.draggable:last-child {
+  border-bottom: none;
+}
+
+/* Use slightly different striping and containers for odd paragraphs. */
+tr.draggable.odd:not(.dragg-previous) {
+  background-color: #eeeeee;
+}
+tr.draggable.odd tr.draggable:not(.drag-previous) {
+  padding-top:0.5em;
+  background-color: #fefefe;
+}
+
+/* Use slightly different striping and containers for even paragraphs. */
+tr.draggable.even:not(.drag-previous) {
+  background-color: #dfdfdf;
+}
+tr.draggable.even tr.draggable:not(.drag-previous) {
+  padding-top:0.5em;
+  background-color: #eeeeff;
+}
+
+.paragraph-type-label {
+  font-weight: bold;
+}
+
+/****************************************************
+ * Remove labels unecessary for sighted users.
+ *****************************************************/
+
+/* Hide the items label for paragraphs with item lists.
+.paragraphs-subform .field-multiple-table thead {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+*/
+

@@ -1,0 +1,5 @@
+name: 'OSU / Media / URL Field'
+description: 'Provides media bundles for twitter.'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9

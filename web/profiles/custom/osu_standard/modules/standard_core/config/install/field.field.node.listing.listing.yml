@@ -1,0 +1,151 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.listing
+    - node.type.listing
+    - paragraphs.paragraphs_type.activity_listing
+    - paragraphs.paragraphs_type.calendar_listing
+    - paragraphs.paragraphs_type.card_listing
+    - paragraphs.paragraphs_type.listing_meeting
+    - paragraphs.paragraphs_type.listing_practice
+    - paragraphs.paragraphs_type.people_filter_listing
+  module:
+    - entity_reference_revisions
+id: node.listing.listing
+field_name: listing
+entity_type: node
+bundle: listing
+label: Listing
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      activity_listing: activity_listing
+      card_listing: card_listing
+      listing_meeting: listing_meeting
+      listing_practice: listing_practice
+      calendar_listing: calendar_listing
+      people_filter_listing: people_filter_listing
+    target_bundles_drag_drop:
+      activity_listing:
+        enabled: true
+        weight: -65
+      activity_stream:
+        weight: -64
+        enabled: false
+      audio_story:
+        weight: -71
+        enabled: false
+      calendar_listing:
+        enabled: true
+        weight: 40
+      callout:
+        weight: -70
+        enabled: false
+      card_formatted_text:
+        weight: -69
+        enabled: false
+      card_image_titles:
+        weight: -68
+        enabled: false
+      card_listing:
+        enabled: true
+        weight: -57
+      cards:
+        weight: -67
+        enabled: false
+      columns:
+        weight: -66
+        enabled: false
+      cta:
+        weight: 49
+        enabled: false
+      directory:
+        weight: -63
+        enabled: false
+      floor_content_listing:
+        weight: -60
+        enabled: false
+      floor_highlight_list:
+        weight: -62
+        enabled: false
+      floor_meetings:
+        weight: -58
+        enabled: false
+      floor_uneven_columns:
+        weight: -61
+        enabled: false
+      form:
+        weight: -41
+        enabled: false
+      formatted_text:
+        weight: -59
+        enabled: false
+      formatted_text_component:
+        weight: -56
+        enabled: false
+      hero_banner:
+        weight: -51
+        enabled: false
+      hero_cta_banner:
+        weight: -55
+        enabled: false
+      hero_text:
+        weight: -49
+        enabled: false
+      highlight_list_item:
+        weight: -54
+        enabled: false
+      link_list:
+        weight: -53
+        enabled: false
+      listing_meeting:
+        enabled: true
+        weight: -52
+      listing_practice:
+        enabled: true
+        weight: -44
+      menu_component:
+        weight: -50
+        enabled: false
+      parousel:
+        weight: -48
+        enabled: false
+      parousel_item:
+        weight: -47
+        enabled: false
+      people_filter_listing:
+        enabled: true
+        weight: 68
+      qa_item:
+        weight: -46
+        enabled: false
+      qa_list:
+        weight: -45
+        enabled: false
+      quote:
+        weight: -43
+        enabled: false
+      rss_news_feed:
+        weight: -37
+        enabled: false
+      section_cards:
+        weight: -42
+        enabled: false
+      section_formatted_text:
+        weight: -40
+        enabled: false
+      speaker:
+        weight: -39
+        enabled: false
+      video:
+        weight: -38
+        enabled: false
+field_type: entity_reference_revisions

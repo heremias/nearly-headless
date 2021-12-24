@@ -1,0 +1,32 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "heading": "fields-paragraph-heading",
+    "image": "fields-paragraph-image",
+    "ctas": "fields-paragraph-ctas",
+    "image_url": "https://placeimg.com/800/600/tech"
+  },
+  "entity": {
+    "heading": {
+      "value": "A Fantastic Hero"
+    },
+    "h1_field": {
+      "value": "component.heading"
+    },
+    "ctas": [
+      {
+        "uri": "#",
+        "text": "Click Me"
+      },
+      {
+        "uri": "#",
+        "text": "No, Click Me"
+      }
+    ],
+    "preserve": {
+      "value": "bottom"
+    }
+  }
+}

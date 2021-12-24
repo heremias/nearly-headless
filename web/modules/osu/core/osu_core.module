@@ -1,0 +1,215 @@
+<?php
+
+/**
+ * @file
+ * The create user permission module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Url;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\osu_core\Service\NodeProtector;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function osu_core_theme($existing, $type, $theme, $path) {
+  $variables = array(
+    'osu_core_sharelinks' => [
+      'template' => 'osu-core-sharelinks',
+      'variables' => [
+        'facebook' => NULL,
+        'linkedin' => NULL,
+        'twitter' => NULL,
+        'email' => NULL
+      ],
+    ]
+
+  );
+  return $variables;
+}
+
+/**
+ * Use the shibboleth set display name when showing a user's display name.
+ * @param $name
+ * @param AccountInterface $account
+ */
+function osu_core_user_format_name_alter(&$name, AccountInterface $account) {
+  if ($account->id()) {
+    $user = \Drupal\user\Entity\User::load($account->id());
+    if ($user) {
+      $name = $user->get('display_name')->value ? $user->get('display_name')->value : $name;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function osu_core_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $register_setting = \Drupal::config('user.settings')
+    ->get('register');
+
+  if ($register_setting != 'visitors') {
+    // Set the admin value to true, so that our user actually gets created with
+    // no intervention.
+    $form['administer_users']['#value'] = TRUE;
+    $form['account']['status']['#default_value'] = 1;
+  }
+  // Make it possible to send an email to the newly created user.
+  $form['account']['notify']['#access'] = \Drupal::currentUser()->hasPermission('administer editorial users');
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ * Makes it so that folks who can access rich_text get that as the default format.
+ * Some of this code was ripped off of the allowed_formats module.
+ */
+function osu_core_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  /** @var \Drupal\Core\Field\FieldDefinitionInterface $field_definition */
+  $field_definition = $context['items']->getFieldDefinition();
+
+  // Base fields are not configurable.
+  if (!$field_definition instanceof FieldConfig) {
+    return;
+  }
+  // This field is supposed to be plain text.
+  if ($field_definition->getFieldStorageDefinition()->id() == 'node.teaser') {
+    return;
+  }
+
+  // We can't use the protected isDefaultValueWidget() method.
+  $is_default_value_widget = (bool) $form_state->get('default_value_widget');
+
+  if (in_array($field_definition->getType(), ['text', 'text_long', 'text_with_summary']) && !$is_default_value_widget) {
+    if (array_key_exists('#default_value', $element) && is_null($element['#default_value'])) {
+      if (\Drupal::currentUser()->hasPermission('use text format rich')
+        && ($field_definition->getThirdPartySetting('allowed_formats', 'rich') == 'rich')) {
+        $element['#format'] = 'rich';
+      }
+    }
+  }
+}
+
+function osu_core_editor_js_settings_alter(array &$settings) {
+  // Set default CKEditor format tags
+  $settings['editor']['formats']['rich']['editorSettings']['format_tags'] = "p;h2;h3;h4;h5;h6";
+}
+
+/**
+ * We need the figure/caption to include view modes classes of the thing being captioned
+ * so we can set relative widths at the containing caption figure.
+ *
+ * Entity embed is somehow adding an article tag (with no attributes) around our entity.
+ *
+ * Filter caption inspects the rendered html in variables[child] and adds the classes of the child
+ * to the caption/figure. The unclassed article botches this.
+ *
+ * Overriding entity-embed-container.html.twig to not output an article resulted in the caption
+ * disappearing entirely.
+ *
+ * This hack, which is pretty awful, looks at the child and adds class to the caption itself.
+ *
+ * @param $variables
+ */
+function osu_core_preprocess_filter_caption(&$variables) {
+  // A preg_match is not full proof.
+  if (preg_match('/view-mode-[^ ]+/', $variables['node']->__toString(), $matches)) {
+    $variables['classes'] .= ' ' . $matches[0];
+  }
+  // Above stopped working at some point...? Possibly a reordering of filters?
+  if (preg_match('/view_mode:media.([^"]+)/', $variables['node']->__toString(), $matches)) {
+    $variables['classes'] .= ' ' . 'view-mode-' . $matches[1];
+  }
+}
+
+/**
+ * Same problem but with embedded entities without captions
+ * @param $variables
+ */
+function osu_core_preprocess_entity_embed_container(&$variables) {
+
+  // A preg_match is not full proof.
+  if (preg_match('/view-mode-[^ ]+/', $variables['children']->__toString(), $matches)) {
+    $variables['attributes']['class'][] = $matches[0];
+  }
+}
+
+/**
+ * Make this last so it can alter the editor link dialog.
+ * @param $implementations
+ * @param $hook
+ */
+function osu_core_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'form_editor_link_dialog_alter') {
+    $group = $implementations['osu_core'];
+    unset($implementations['osu_core']);
+    $implementations['osu_core'] = $group;
+  }
+}
+
+/**
+ * Alter help text, given priority by module_implements_alter above.
+ * @param $form
+ * @param FormStateInterface $form_state
+ * @param $form_id
+ */
+function osu_core_form_editor_link_dialog_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Unset these as we don't really want them set through this interface.
+  unset($form['attributes']['class']);
+  unset($form['attributes']['id']);
+
+  if (isset($form['attributes']['target'])) {
+    $form['attributes']['target']['#description'] = ''
+      . '<h3>Just don\'t do it. </h3>'
+      . '<p>'
+      . ''
+      . 'New windows...'
+      . '<ul>'
+      . '<li>Are a '
+      . '    <a target="_blank" href="http://go.osu.edu/link-anti-pattern"><strong>usability anti-pattern</strong> [new window]</a>.</li> '
+      . '<li>Take away an expected user control.</li>'
+      . '<li>Create accessibility problems for some users.</li>'
+      . '</ul>'
+      . '</p>'
+      . '<h3>But you just did it?!?</h3>'
+      . '<p>'
+      . 'Like many design rules, there is an exception. '
+      . 'If the user is engaged in a process (editing content, doing taxes), it is preferred to open a link in a new window to minimize disruption and prevent loss of work. '
+      . 'Reading an article does not constitute an ongoing process.'
+      . '</p>';
+  }
+}
+
+function osu_core_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'osu_core/styles';
+}
+
+function osu_core_form_node_form_alter(&$form, $form_state) {
+  $form['#attached']['library'][] = 'osu_core/node-edit';
+}
+
+function osu_core_datalayer_alter(&$data) {
+  // Add Google Optimize Container if it is set.
+  $devel = \Drupal::config('osu_core.developer_settings');
+  if ($devel->get('optimize_container', NULL)) {
+    $data['univ_ga_optimize_container'] = $devel->get('optimize_container', NULL);
+  }
+}
+
+function osu_core_allowed_roles_values() {
+  return [
+    'employee' => 'Employees',
+    'student' => 'Students'
+  ];
+}
+
+/**
+ * Restrict access based on allowed_roles field.
+ * Perhaps obviously, Bypass node access bypasses this!
+ */
+function osu_core_node_access(NodeInterface $node, $op, AccountInterface $account) {
+  return NodeProtector::access($node, $op, $account);
+}

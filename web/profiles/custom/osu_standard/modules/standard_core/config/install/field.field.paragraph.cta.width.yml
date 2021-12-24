@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.width
+    - paragraphs.paragraphs_type.cta
+  module:
+    - options
+id: paragraph.cta.width
+field_name: width
+entity_type: paragraph
+bundle: cta
+label: Width
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: narrow
+default_value_callback: ''
+settings: {  }
+field_type: list_string

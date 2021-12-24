@@ -1,0 +1,20 @@
+.t-news-and-events {
+  .t-news-and-events__column {
+    margin-right: 0;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      flex: 0 0 auto;
+      width: calc(33% - 15px);
+    }
+  }
+
+  .m-third-teaser-event {
+    height: 100%;
+    padding-bottom: 1em;
+
+    .m-third-teaser-event__inner {
+      height: 100%;
+    }
+  }
+}

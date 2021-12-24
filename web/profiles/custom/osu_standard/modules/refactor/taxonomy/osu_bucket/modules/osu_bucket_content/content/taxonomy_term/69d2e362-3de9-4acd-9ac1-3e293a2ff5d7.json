@@ -1,0 +1,60 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/local.hub.osu.edu\/taxonomy\/term\/28?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/bucket"
+        }
+    },
+    "tid": [
+        {
+            "value": 28
+        }
+    ],
+    "uuid": [
+        {
+            "value": "69d2e362-3de9-4acd-9ac1-3e293a2ff5d7"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "bucket"
+        }
+    ],
+    "name": [
+        {
+            "value": "Education\/academic profile",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": 1498836299,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "analytics_code": [
+        {
+            "value": "Acad",
+            "lang": "en"
+        }
+    ]
+}

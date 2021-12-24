@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_mixin
+third_party_settings:
+  role_mixin:
+    parent_roles:
+      anonymous: anonymous
+      authenticated: authenticated
+id: media_consumer
+label: 'Media Consumer'
+weight: 8
+is_admin: null
+permissions:
+  - 'view media'

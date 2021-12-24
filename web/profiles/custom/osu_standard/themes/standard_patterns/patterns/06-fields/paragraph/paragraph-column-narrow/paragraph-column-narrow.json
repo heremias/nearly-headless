@@ -1,0 +1,15 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "items",
+  "field_type": "unknown",
+  "label": "Items",
+  "label_hidden": true,
+  "multiple": true,
+  "items": [
+    {
+      "content": "components-component-linked-list"
+    }
+  ]
+}

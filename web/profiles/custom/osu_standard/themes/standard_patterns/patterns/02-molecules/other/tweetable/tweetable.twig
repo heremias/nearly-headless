@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Quote pattern
+ *
+ * Available variables:
+ * - visible_text: text that appears on screen.
+ * - tweetable_text: Text to tweet if tweetable.
+ * - url: URL to be shared
+ * - handle: Twitter handle
+#}
+<div class="tweetable {{ class }}">
+{% spaceless %}{{ visible_text }}{{ endquote | raw }}{% endspaceless %}
+  <span class="fa fa-twitter" aria-hidden="true"></span>
+  <a href="#" class="js-tweetable tweetable__link" data-tweetable-text="{{ tweetable_text | trim }}" data-tweetable-url="{{ url }}" data-tweetable-handle="{{ handle }}"></a>
+</div>

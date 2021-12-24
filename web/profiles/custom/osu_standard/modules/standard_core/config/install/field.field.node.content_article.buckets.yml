@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.buckets
+    - node.type.content_article
+    - taxonomy.vocabulary.bucket
+id: node.content_article.buckets
+field_name: buckets
+entity_type: node
+bundle: content_article
+label: Buckets
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      bucket: bucket
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.meta_title
+    - node.type.person
+id: node.person.meta_title
+field_name: meta_title
+entity_type: node
+bundle: person
+label: 'Meta Title'
+description: 'Used in search engines and in sharing as the title.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,151 @@
+{
+  "variant": "conference",
+  "attributes": {
+    "Attribute()": {}
+  },
+  "cta_text": "Reserve my seat",
+  "cta_url": "https://google.com",
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {
+          "class": ["menu__item--active"]
+        }
+      },
+      "title": "Home",
+      "url": "#",
+      "below": ""
+    },
+    {
+      "attributes": {
+        "Attribute()": {
+        }
+      },
+      "title": "About",
+      "url": "#",
+      "below": [
+        {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "title": "About menu item 1",
+          "url": "#"
+        },
+        {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "title": "About menu item 2",
+          "url": "#",
+          "below": [
+            {
+              "attributes": {
+                "Attribute()": {}
+              },
+              "title": "A flyout menu",
+              "url": "#"
+            },
+            {
+              "attributes": {
+                "Attribute()": {}
+              },
+              "title": "Another menu item",
+              "url": "#"
+            },
+            {
+              "attributes": {
+                "Attribute()": {}
+              },
+              "title": "Yet another menu item",
+              "url": "#"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "attributes": {
+        "Attribute()": {
+        }
+      },
+      "title": "Agenda",
+      "url": "#",
+      "below": ""
+    },
+    {
+      "attributes": {
+        "Attribute()": {
+        }
+      },
+      "title": "Speakers",
+      "url": "#",
+      "below": [
+        {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "title": "Speakers menu item 1",
+          "url": "#"
+        },
+        {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "title": "Speakers menu item 2",
+          "url": "#"
+        },
+        {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "title": "Speakers menu item 3",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "attributes": {
+        "Attribute()": {
+        }
+      },
+      "title": "Call for Abstracts",
+      "url": "#",
+      "below": ""
+    },
+    {
+      "attributes": {
+        "Attribute()": {
+        }
+      },
+      "title": "Contact",
+      "url": "#",
+      "below": [
+        {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "title": "Contact menu item 1",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "attributes": {
+        "Attribute()": {
+        }
+      },
+      "title": "Hotel and Travel",
+      "url": "#",
+      "below": ""
+    },
+    {
+      "attributes": {
+        "Attribute()": {
+        }
+      },
+      "title": "Pricing",
+      "url": "#",
+      "below": ""
+    }
+  ]
+}

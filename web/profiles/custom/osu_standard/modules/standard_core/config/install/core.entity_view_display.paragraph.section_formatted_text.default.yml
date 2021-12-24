@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section_formatted_text.body
+    - field.field.paragraph.section_formatted_text.heading
+    - field.field.paragraph.section_formatted_text.heading_level
+    - paragraphs.paragraphs_type.section_formatted_text
+  module:
+    - text
+id: paragraph.section_formatted_text.default
+targetEntityType: paragraph
+bundle: section_formatted_text
+mode: default
+content:
+  body:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  heading_level: true
+  search_api_excerpt: true

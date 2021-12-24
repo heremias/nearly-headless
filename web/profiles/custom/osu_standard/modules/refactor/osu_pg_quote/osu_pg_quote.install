@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Add and initialize width field to quote paragraphs.
+ */
+function osu_pg_quote_update_8401 (&$sandbox) {
+  osu_pg_width_add_and_initialize($sandbox, 'quote', 'narrow');
+}

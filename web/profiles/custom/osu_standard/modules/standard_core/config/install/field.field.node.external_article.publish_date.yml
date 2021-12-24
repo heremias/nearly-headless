@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.publish_date
+    - node.type.external_article
+  module:
+    - datetime
+id: node.external_article.publish_date
+field_name: publish_date
+entity_type: node
+bundle: external_article
+label: 'Publish Date'
+description: 'Date at which you would like to indicate this article was published.'
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

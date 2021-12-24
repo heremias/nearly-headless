@@ -1,0 +1,36 @@
+.c-floor-content-listing {
+  @include media-breakpoint-up(md) {
+    .views-infinite-scroll-content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .m-card {
+        flex: 0 32%;
+        margin-bottom: 2%; /* (100-32*3)/2 */
+      }
+
+      &::after {
+        content: "";
+        flex: 0 32%;
+      }
+    }
+  }
+
+  .c-listing-card--exclude-date .m-card--date,
+  .c-listing-card--exclude-heading .m-card--heading,
+  .c-listing-card--exclude-body .m-card--body,
+  .c-listing-card--exclude-tags .m-card--tags,
+  .c-listing-card--exclude-links .m-card--links,
+  .c-listing-card--exclude-image .m-card--image {
+    display: none;
+  }
+
+  .rich-button {
+    @include button-secondary();
+
+    margin: 0;
+    padding: 0 20px;
+    line-height: 56px;
+  }
+}

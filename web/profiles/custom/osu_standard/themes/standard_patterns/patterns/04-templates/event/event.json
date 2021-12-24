@@ -1,0 +1,138 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "body": {
+      "include()": {
+        "pattern": "atoms-field-wysiwyg",
+        "only": true,
+        "with": {
+          "items": [
+            {
+              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+            }
+          ]
+        }
+      }
+    },
+    "contact_link": {
+      "include()": {
+        "pattern": "atoms-field",
+        "with": {
+          "multiple": false,
+          "items": [
+            {
+              "content": "<a href='mailto:example@example.org'>Suzy Subertson</a>"
+            }
+          ]
+        }
+      }
+    },
+    "documents": "fields-node-documents",
+    "occurrences": "NOT USED",
+    "speakers": {
+      "include()": {
+        "pattern": "atoms-field",
+        "with": {
+          "multiple": true,
+          "items": [
+            {
+              "content": "molecules-speaker"
+            }
+          ]
+        }
+      }
+    },
+    "host": {
+      "include()": {
+        "pattern": "atoms-field",
+        "only": true,
+        "with": {
+          "items": [
+            {
+              "content": "molecules-sponsor-reference"
+            }
+          ]
+        }
+      }
+    },
+    "introduction": {
+      "include()": {
+        "pattern": "molecules-introduction",
+        "only": true,
+        "with": {
+          "content": "<p>Dr. Scott will open the discussion of how to create initiatives for underrepresented girls, the accompanying challenges, and affordances in creating the nationally renowned program, COMPUGIRLS.</p>"
+        }
+      }
+    },
+    "location": {
+      "include()": {
+        "pattern": "atoms-field",
+        "only": true,
+        "with": {
+          "items": [
+            {
+              "content": {
+                "include()": {
+                  "pattern": "molecules-location-reference"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "pricing": {
+      "include()": {
+        "pattern": "atoms-field",
+        "only": true,
+        "with": {
+          "items": [
+            {
+              "content": "Free for ASFW members, $5 for Non-ASFW members"
+            }
+          ]
+        }
+      }
+    },
+    "registration_link": "NOT USED",
+    "registration_window": "NOT USED",
+    "sponsors": {
+      "include()": {
+        "pattern": "atoms-field",
+        "only": true,
+        "with": {
+          "items": [
+            {
+              "content": "molecules-sponsor-reference"
+            }
+          ]
+        }
+      }
+    },
+    "teaser_image": "fields-node-teaser-image-full",
+    "occurrence_year_range_string": "2017-2018",
+    "occurrence_month_day_range_string": "Dec 29-30, Jan 1, 31 - Feb 1",
+    "occurrence_weekday_times": [
+      "Friday 1-2:30pm",
+      "Saturday 11:30am-4pm",
+      "Monday 11pm-1am",
+      "Wednesday 8am-4:30pm",
+      "Thursday 10-11:59pm"
+    ],
+    "registration_window_opens_string": "July 1, 2017",
+    "registration_window_closes_string": "July 22, 2017",
+    "registration_link_uri_bare": "https://eventbrite.com"
+  },
+  "control": {
+    "registration_window_is_open": true,
+    "registration_window_is_past": false,
+    "registration_window_is_future": false
+  },
+  "share_links": {
+    "twitter": "#",
+    "facebook": "#",
+    "linkedin": "#"
+  }
+}

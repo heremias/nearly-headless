@@ -1,0 +1,4 @@
+{% set base_class = 'rich-button' %}
+{% set variant_class = base_class ~ '--' ~ variant %}
+
+<a {{ attributes.addClass([base_class, variant_class]) }} href="#">Stop Clicking Me</a>

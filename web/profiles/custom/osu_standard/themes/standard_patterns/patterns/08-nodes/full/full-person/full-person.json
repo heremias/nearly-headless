@@ -1,0 +1,49 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "body": "fields-node-body",
+    "email": "fields-node-email",
+    "image": "fields-node-image-small-square",
+    "intro": "fields-node-intro",
+    "linkedin": "fields-node-linkedin",
+    "preferred_organization": "fields-node-preferred-organization",
+    "preferred_phone": "fields-node-preferred-phone",
+    "preferred_title": "fields-node-preferred-title",
+    "twitter": "fields-node-twitter",
+    "site_tags": [
+      {
+        "id": "committees",
+        "name": "Committees",
+        "terms": [
+          {
+            "id": 123,
+            "name": "University Board"
+          }
+        ]
+      }
+    ]
+  },
+  "entity": {
+    "image": {
+      "entity": true
+    },
+    "featured": {
+      "value": true
+    },
+    "intro": {
+      "value": "My person introduction"
+    },
+    "linkedin": {
+      "uri": "http://linkedin.com"
+    },
+    "twitter": {
+      "uri": "http://twitter.com"
+    },
+    "label": "Barbra Bobertson"
+  },
+  "label": "Barbara Barbrason",
+  "linkable": true,
+  "url": "#"
+}

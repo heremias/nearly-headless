@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.heading_level
+    - paragraphs.paragraphs_type.menu_component
+  module:
+    - options
+id: paragraph.menu_component.heading_level
+field_name: heading_level
+entity_type: paragraph
+bundle: menu_component
+label: 'Heading Level'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: h2
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,16 @@
+.t-audio-story {
+  color: $gray-2;
+  font-family: $ff--proxima;
+  font-size: 1.143em;
+  line-height: 2.143em;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.214em;
+  }
+
+  .t-audio-story-transcript {
+    color: $gray-2;
+    font-size: 2em;
+    margin-top: 1em;
+  }
+}

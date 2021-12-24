@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: rss_news_feed
+label: 'RSS News Feed'
+icon_uuid: null
+icon_default: null
+description: 'A short list of stories from an RSS feed.'
+behavior_plugins: {  }

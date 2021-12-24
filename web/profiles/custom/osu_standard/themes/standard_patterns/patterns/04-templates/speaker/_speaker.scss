@@ -1,0 +1,144 @@
+.t-speaker {
+  color: $gray-2;
+  font-family: $ff--proxima;
+
+  .field--type-link {
+    display: inline;
+  }
+
+  .field--name-linkedin {
+    a::before {
+      content: "/";
+    }
+  }
+
+  .field--name-twitter {
+    a::before {
+      content: "@";
+    }
+  }
+
+  .m-speaker__image {
+    background: $gray-0;
+    padding-top: 100%;
+    position: relative;
+    width: 100%;
+
+    img {
+      border: none;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  .m-speaker__title {
+    border-top: 4px solid $scarlet;
+    color: $gray-11;
+    font-size: 1.071em;
+    line-height: 30px;
+    padding: 0;
+    position: relative;
+    text-transform: uppercase;
+  }
+
+  .m-speaker__title.featured {
+    padding: 0 0 0 25px;
+
+    &::before {
+      border-top: 25px solid $scarlet;
+      border-right: 25px solid transparent;
+      content: '';
+      height: 0;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 0;
+    }
+  }
+
+  .t-speaker__name {
+    font-size: 2.285em;
+  }
+
+  .t-speaker__title {
+    font-size: 1.571em;
+  }
+
+  .t-speaker__social-link {
+    .fa {
+      color: $gray-10;
+      font-size: 20px;
+      margin: 0 10px 0 0;
+    }
+
+    a {
+      color: $scarlet;
+      font-size: 1.214em;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .t-speaker__content {
+    margin: 30px 0 0;
+    padding: 30px 0;
+    position: relative;
+
+    p {
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    &::before {
+      background: $gray-light;
+      height: 2px;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+    }
+
+    &::after {
+      background: $gray-light;
+      height: 2px;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+    }
+
+    p {
+      font-size: 1.214em;
+      line-height: 28px;
+    }
+  }
+
+  .t-speaker__sessions {
+    margin: 30px 0 0;
+  }
+
+  .t-speaker__sessions-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      color: $scarlet;
+      font-size: 1.428em;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

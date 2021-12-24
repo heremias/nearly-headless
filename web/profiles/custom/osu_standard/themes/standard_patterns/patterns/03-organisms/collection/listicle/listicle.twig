@@ -1,0 +1,9 @@
+<div class="listicle">
+    {% for item in items %}
+        <div class="listicle__item">
+            <div class="listicle__index">{{ starts_at + loop.index0 }}</div>
+            <div class="listicle__heading">{{ item.heading }}</div>
+            <div class="listicle__body">{{ item.body }}</div>
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+    - views.view.photo_gallery_browser
+  module:
+    - dropzonejs_eb_widget
+    - media
+    - views
+name: photo_gallery_browser
+label: 'Photo Gallery Browser'
+display: modal
+display_configuration:
+  width: '1245'
+  height: ''
+  link_text: 'Select images'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  1fc51757-3063-4096-a301-9a2f289b6239:
+    settings:
+      form_mode: default
+      media_type: image
+      upload_location: 'public://[date:custom:Y]-[date:custom:m]'
+      dropzone_description: 'Drop files here to upload them'
+      max_filesize: 4M
+      extensions: 'png gif jpg jpeg'
+      clientside_resize: false
+      resize_width: null
+      resize_height: null
+      resize_quality: !!float 1
+      resize_method: contain
+      thumbnail_method: contain
+      submit_text: 'Select entities'
+    uuid: 1fc51757-3063-4096-a301-9a2f289b6239
+    weight: -9
+    label: 'Upload New Image(s)'
+    id: dropzonejs_media_entity_inline_entity_form
+  2889cc68-408a-404d-8446-87f3cccaba87:
+    settings:
+      view: photo_gallery_browser
+      view_display: entity_browser_1
+      submit_text: 'Select Photos'
+      auto_select: false
+    uuid: 2889cc68-408a-404d-8446-87f3cccaba87
+    weight: -10
+    label: 'Select Existing'
+    id: view

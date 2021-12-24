@@ -1,0 +1,53 @@
+//
+// Generic header styles:
+// All arguments are optional. If not defined, the defaults below will be used
+//
+
+/* Used for headings in floors, sections, and components. Should this be moved to @components. */
+@mixin component-heading {
+  color: #333;
+  font-size: 2.5rem;
+  margin-top: 0;
+  font-family: $ff--proxima;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.1em;
+}
+
+@mixin heading-large() {
+  @include component-heading();
+}
+
+@mixin heading-medium() {
+  color: #333;
+  font-size: 1.75rem;
+  margin-top: 0;
+  font-family: $ff--proxima;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.2em;
+}
+
+@mixin heading-small() {
+  color: #333;
+  font-size: 1.5rem;
+  margin-top: 0;
+  font-family: $ff--proxima;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.1em;
+}
+
+.h2 {
+  @include heading-large();
+}
+
+.h3 {
+  @include heading-medium();
+}
+
+.h4,
+.h5,
+.h6 {
+  @include heading-small();
+}

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.liason_phone
+    - node.type.person
+  module:
+    - telephone
+id: node.person.liason_phone
+field_name: liason_phone
+entity_type: node
+bundle: person
+label: 'Liason Phone'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

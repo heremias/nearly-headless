@@ -1,0 +1,24 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "videos",
+  "field_type": "entity-reference",
+  "label": "Videos",
+  "label_hidden": true,
+  "multiple": false,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "molecules-video"
+    },
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "molecules-video"
+    }
+  ]
+}

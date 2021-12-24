@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Pattern for person-quote-audio.
+ *
+ * Available variables:
+ * -
+ */
+#}
+<div class="m-person-quote-audio d-md-flex">
+  <div class="m-person-quote-audio__image-wrapper">
+    {{ content.teaser_image }}
+    <div class="m-person-quote-audio__bio">
+      <strong>{{ content.subject }}</strong>
+      {{ content.subject_description }}
+    </div>
+  </div>
+
+  <div class="m-person-quote-audio__summary-wrapper">
+    <div class="m-person-quote-audio__quote">
+      &ldquo;{{ content.quote }}&rdquo;
+    </div>
+    <div class="m-person-quote-audio__summary">
+      {{ content.summary }}
+    </div>
+    {% if not full %}
+    <div class="m-person-quote-audio__button-wrapper">
+      {% include "@atoms/button/button-audio/button-audio.twig" with {
+        button_text: "Listen"
+      } %}
+      <a href="{{ url }}" class="m-person-quote-audio__link">
+        View Transcript&nbsp;<span class="rang">&rang;</span>
+      </a>
+    </div>
+    {% endif %}
+    <div class="m-person-quote-audio-playback {% if full %}visible{% endif %}">
+      {{ content.audio }}
+
+      {% if not full %}
+      <a href="{{ url }}" class="m-person-quote-audio__link">
+        View Transcript&nbsp;<span class="rang">&rang;</span>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</div>

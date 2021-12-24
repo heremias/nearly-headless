@@ -1,0 +1,36 @@
+.c-section-cards {
+  .slick-prev {
+    position: absolute;
+    top: 0;
+    left: -20px;
+  }
+
+  .slick-next {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 10px);
+  }
+
+  .slick-list {
+    margin: 0 -10px;
+  }
+
+  .slick-slide {
+    margin: 0 10px;
+  }
+}
+
+.c-section-cards-1,
+.c-section-cards-2 {
+  @include media-breakpoint-up(lg) {
+    .field--name-items {
+      @include make-row();
+    }
+
+    &.c-section-cards-1 > .field--name-items > div,
+    &.c-section-cards-2 > .field--name-items > div {
+      @include make-col(1, 2);
+      @include make-col-ready();
+    }
+  }
+}

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: highlight
+label: 'Highlight (1.65)'
+description: 'A crop designed to be used in smaller spaces, like within a column.'
+aspect_ratio: '51:31'
+soft_limit_width: 1275
+soft_limit_height: 775
+hard_limit_width: null
+hard_limit_height: null

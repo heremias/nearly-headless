@@ -1,0 +1,14 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "screen_name": "OhioState",
+  "limit": 1,
+  "width": 300,
+  "height": 300,
+  "borders": false,
+  "footer": false,
+  "header": false,
+  "scrollbar": false,
+  "transparent": false
+}

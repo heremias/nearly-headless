@@ -1,0 +1,7 @@
+{% set container_width = entity.width.value == 'narrow' ? 'component-width--narrow' : '' %}
+{% set base_class = 'm-content-components-formatted-text' %}
+{% set variant_class = base_class ~ '--' ~ variant %}
+
+<div {{ attributes.addClass(["clearfix", base_class, variant_class, container_width]) }}>
+  {{ content.body }}
+</div>

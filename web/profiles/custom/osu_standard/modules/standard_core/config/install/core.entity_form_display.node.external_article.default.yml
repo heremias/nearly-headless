@@ -1,0 +1,87 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.node.external_article.canonical_link
+    - field.field.node.external_article.ours
+    - field.field.node.external_article.publish_date
+    - field.field.node.external_article.site_tags
+    - field.field.node.external_article.summary
+    - field.field.node.external_article.teaser_image
+    - node.type.external_article
+  module:
+    - chosen_field
+    - datetime
+    - entity_browser
+    - link
+id: node.external_article.default
+targetEntityType: node
+bundle: external_article
+mode: default
+content:
+  canonical_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  ours:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  publish_date:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  site_tags:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  summary:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  teaser_image:
+    weight: 4
+    settings:
+      entity_browser: image_browser
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      open: false
+      field_widget_display_settings: {  }
+      field_widget_replace: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

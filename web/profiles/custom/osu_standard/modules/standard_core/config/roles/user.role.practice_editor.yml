@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_mixin
+third_party_settings:
+  role_mixin:
+    parent_roles:
+      site_manager: site_manager
+      content_editor: content_editor
+id: practice_editor
+label: 'Practice Editor'
+weight: 10
+is_admin: null
+permissions:
+  - 'create practice content'
+  - 'delete any practice content'
+  - 'edit any practice content'
+  - 'view practice revisions'

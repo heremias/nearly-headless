@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: speaker
+label: Speaker
+icon_uuid: null
+icon_default: null
+description: 'Defines a speaker in an event content type.'
+behavior_plugins: {  }

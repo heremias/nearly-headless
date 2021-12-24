@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "preferred_title",
+  "field_type": "string",
+  "label": "Title",
+  "label_hidden": true,
+  "multiple": false,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "Senior Lecturer"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+.m-person-quote-audio {
+  font-family: $ff--proxima;
+  padding: 0;
+
+  .m-person-quote-audio__quote {
+    .field {
+      display: inline;
+    }
+  }
+
+  .m-person-quote-audio-playback {
+    padding: 20px 0 0;
+    display: none;
+
+    &.visible {
+      display: block;
+    }
+  }
+
+  .m-person-quote-audio__image-wrapper {
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      vertical-align: top;
+      max-width: 235px;
+    }
+
+    .m-media-image img {
+      max-width: 235px;
+    }
+  }
+
+  .m-person-quote-audio__summary-wrapper {
+    padding: 20px 0 0;
+
+    @include media-breakpoint-up(md) {
+      flex: 1;
+      padding: 0 0 0 30px;
+      vertical-align: top;
+    }
+  }
+
+  .m-person-quote-audio__bio {
+    color: $gray-2;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 15px 0 0;
+  }
+
+  .m-person-quote-audio__quote {
+    color: $gray-2;
+    font-family: $ff--capita;
+    font-size: 20px;
+    line-height: 41px;
+
+    @include media-breakpoint-up(md) {
+      font-size: 29px;
+    }
+  }
+
+  .m-person-quote-audio__summary {
+    color: $gray-2;
+    font-size: 1.143em;
+    margin: 20px 0 0;
+
+    @include media-breakpoint-up(md) {
+      font-size: 1.214em;
+    }
+  }
+
+  .m-person-quote-audio__button-wrapper {
+    margin: 30px 0 0;
+
+    .button-audio {
+      margin: 0 20px 0 0;
+    }
+  }
+
+  .m-person-quote-audio__link {
+    color: $scarlet;
+    font-size: 1.143em;
+    margin: 0;
+
+    @include media-breakpoint-up(md) {
+      font-size: 1.214em;
+    }
+  }
+
+  .rang {
+    color: $scarlet;
+    font-size: 0.714em;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+}
+
+/*
+ * This is an ugly hack and this should be removed as part of a list content type refactor.
+ */
+.views-row {
+  .m-person-quote-audio {
+    border-bottom: 1px solid $gray-6;
+    padding: 1.5em 0;
+  }
+}

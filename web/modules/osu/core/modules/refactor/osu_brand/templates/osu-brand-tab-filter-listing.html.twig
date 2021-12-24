@@ -1,0 +1,19 @@
+<div class="o-tab-filter">
+  <ul class="o-tab-filter__tab-list d-flex">
+    {% for tab in tabs %}
+      <li class="{% if tab.active %}active{% endif %}"><a href="{{ tab.href }}">{{ tab.title }}</a></li>
+    {% endfor %}
+  </ul>
+  <div class="o-tab-filter__filter-wrapper d-lg-flex">
+    <div class="o-tab-filter__label">
+      Filter by:
+    </div>
+    <ul class="o-tab-filter__filter-list d-none d-lg-flex">
+      {% for filter in filters %}
+        <li class="{% if filter.active %}active{% endif %}"><a href="{{ filter.href }}">{{ filter.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{{ listing }}

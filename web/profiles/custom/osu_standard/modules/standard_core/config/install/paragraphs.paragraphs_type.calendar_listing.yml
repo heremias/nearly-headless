@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: calendar_listing
+label: 'Calendar Listing'
+icon_uuid: null
+icon_default: null
+description: 'List events in an interactive calendar.'
+behavior_plugins: {  }

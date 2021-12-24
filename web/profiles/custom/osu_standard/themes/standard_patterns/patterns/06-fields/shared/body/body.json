@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "body",
+  "field_type": "text-long",
+  "label": "Body",
+  "label_hidden": true,
+  "multiple": false,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "<p>This is an example body for all body fields.<p>"
+    }
+  ]
+}

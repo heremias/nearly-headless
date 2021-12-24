@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.square
+  module:
+    - crop
+name: square_thumb
+label: 'Square (1:1) - Thumbnail'
+effects:
+  619c7b6f-2ed7-4716-81cc-e7dab1fa766d:
+    uuid: 619c7b6f-2ed7-4716-81cc-e7dab1fa766d
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: square
+  05b4386f-ae73-493a-b32f-53f171a27045:
+    uuid: 05b4386f-ae73-493a-b32f-53f171a27045
+    id: image_scale
+    weight: 2
+    data:
+      width: 120
+      height: 120
+      upscale: true
+  59c9539b-5e6e-4163-912e-9c37a15e4a42:
+    uuid: 59c9539b-5e6e-4163-912e-9c37a15e4a42
+    id: image_scale_and_crop
+    weight: 3
+    data:
+      width: 120
+      height: 120
+      anchor: center-center

@@ -1,0 +1,26 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "media": {},
+  "name": "Sample Video",
+  "content": {
+    "video": {
+      "include()": {
+        "pattern": "atoms-field",
+        "with": {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "label_hidden": true,
+          "multiple": false,
+          "items": [
+            {
+              "content": "<iframe width='854' height='480' frameborder='0' allowfullscreen='allowfullscreen' src='https://www.youtube.com/embed/OgcsHTw2sc4?autoplay=0&amp;start=0&amp;rel=0'></iframe>"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

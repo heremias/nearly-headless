@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.occurrences
+    - node.type.event
+  module:
+    - datetime_range
+id: node.event.occurrences
+field_name: occurrences
+entity_type: node
+bundle: event
+label: 'Dates and Times'
+description: "Days and times at which this event occurs. <br>\r\nIf an event spans non-consecutive days, make separate events to prevent confusion in listings."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

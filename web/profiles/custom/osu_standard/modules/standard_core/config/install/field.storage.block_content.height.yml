@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.height
+field_name: height
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: small
+      label: Short
+    -
+      value: medium
+      label: Average
+    -
+      value: large
+      label: Tall
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

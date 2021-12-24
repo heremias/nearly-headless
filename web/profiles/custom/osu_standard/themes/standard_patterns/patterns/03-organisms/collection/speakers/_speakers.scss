@@ -1,0 +1,13 @@
+.o-speakers {
+  margin: 20px 0 0;
+
+  .o-speakers-column {
+    margin-right: 0;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      flex: 0 0 auto;
+      width: calc(25% - 15px);
+    }
+  }
+}

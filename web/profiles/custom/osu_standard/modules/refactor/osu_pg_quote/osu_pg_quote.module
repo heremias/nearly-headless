@@ -1,0 +1,43 @@
+<?php
+
+function osu_pg_quote_preprocess_paragraph(&$variables) {
+
+  $paragraph = $variables['elements']['#paragraph'];
+  if ($paragraph->bundle() == 'quote') {
+    // This attempt to autodetect the url of the parent entity may be fragile in some cases.
+    $variables['url_to_tweet'] = osu_pg_callout_get_tweet_url();
+  }
+}
+
+/**
+ * return object
+ *   Entity object of current menu callback page.
+ */
+function osu_pg_quote_get_tweet_url() {
+  $url = NULL;
+  $entity = osu_pg_callout_get_entity();
+  if ($entity) {
+    if (\Drupal::service('module_handler')->moduleExists('osu_shortener')){
+      $uri = \Drupal\osu_shortener\RouteMapper::shortenedUrl($entity->getEntityTypeId(), $entity->id(), 'twitter');
+      $url = \Drupal\Core\Url::fromUri($uri, ['absolute' => TRUE]);
+    }
+    else {
+      $url = $entity->toUrl('canonical', [
+        'absolute' => TRUE,
+      ]);
+    }
+    $url = $url->toString(TRUE)->getGeneratedUrl();
+  }
+  return $url;
+}
+
+/**
+ * Attempt to get the entity on which this paragraph is being displayed.
+ * This approach is horrible in that it assumes these paragraphs will
+ * only ever be displayed on their parent entities full page view.
+ * @return ContentEntityInterface
+ */
+function osu_pg_quote_get_entity() {
+  $node = Drupal::request()->attributes->get('node');
+  return $node;
+}

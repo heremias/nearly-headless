@@ -1,0 +1,38 @@
+.list {
+  ol {
+    margin: 0;
+    padding: 0;
+
+    li {
+      //list-style: decimal inside none;
+      line-height: auto;
+      margin: 30px 0 0;
+      padding-top: 0;
+
+      .container {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+      }
+
+      .container::before,
+      .container::after {
+        content: "";
+        display: block;
+        height: 0;
+      }
+
+      .col-md-10 {
+        width: 100%;
+      }
+
+      .col-md-offset-1 {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .field--name-heading {
+    font-weight: bold;
+  }
+}

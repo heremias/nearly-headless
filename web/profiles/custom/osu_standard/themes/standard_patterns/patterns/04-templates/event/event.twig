@@ -1,0 +1,143 @@
+{% set classes = ["t-event"] %}
+<div {{ attributes.addClass(classes) }}>
+
+  <div class="t-event__summary-wrap d-lg-flex">
+    {{ content.teaser_image }}
+
+    <div class="t-event__summary-wrap--inner d-flex flex-column">
+
+      {% include "@molecules/dates/dates.twig" with {
+        "occurrence_month_day_range_string": content.occurrence_month_day_range_string,
+        "occurrence_year_range_string": content.occurrence_year_range_string
+      } %}
+
+      <div class="t-event__weekday--times align-content-stretch">
+        <strong>Time:</strong> {{ content.occurrence_weekday_times | join('; ') }}
+      </div>
+
+      {% if entity.location and entity.location.value %}
+      <div class="t-event__location">
+        <div class="t-event__location--label">Location:</div>{{ content.location }}
+      </div>
+      {% endif %}
+
+      {% if entity.speakers.getvalue | length > 0 %}
+        <div class="t-event__speakers">
+          <div class="t-event__speakers--label">Featured speaker{% if entity.speakers.getvalue | length > 1 %}s{% endif %}: </div>
+          {{ content.speakers }}
+        </div>
+      {% endif %}
+        {% if entity.sponsors.getvalue | length > 0  %}
+        <div class="t-event__sponsors">
+          <div class="t-event__sponsors--label">Sponsor:</div>
+          {{ content.sponsors }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="t-event__content-wrapper d-flex flex-column flex-md-row align-items-start">
+    <div class="t-event__aside order-2 order-md-1">
+      {% if content.registration_link_uri_bare %}
+      <div class="t-event__registration d-none d-md-block">
+          {% if entity.pricing and entity.pricing.value %}
+        <div class="t-event__pricing">
+          <div class="t-event__pricing--label">Fee:</div>
+          {{ content.pricing }}
+        </div>
+        {% endif %}
+
+        {% if content.registration_link_uri_bare %}
+          <div class="t-event__registration--limit">
+            {% if control.registration_window_is_open %}
+              {% if content.registration_window_closes_string %}
+              <p>
+                Deadline to register: {{ content.registration_window_closes_string }}
+              </p>
+              {% endif %}
+              <a href="{{ content.registration_link_uri_bare }}">Register</a>
+            {% elseif control.registration_window_is_future and content.registration_window_opens_string %}
+              <p>
+                Registration opens: {{ content.registration_window_opens_string }}
+              </p>
+            {% elseif control.registration_window_is_past and content.registration_window_closes_string %}
+              Registration closed: {{ content.registration_window_closes_string }}
+            {% endif %}
+          </div>
+
+        {% endif %}
+      </div>
+      {% endif %}
+      {% if content.documents %}
+      <div class="t-event__info">
+        <div class="t-event__info--label">
+          <span>More information</span>
+        </div>
+        {{ content.documents }}
+        {{ content.extra_links }}
+      </div>
+      {% endif %}
+      {% if share_links %}
+      <div class="t-event__share">
+        <div class="t-event__share--label">
+          <span>Share this event</span>
+        </div>
+        <ul>
+          <li><a href="{{ share_links.facebook }}" target="_blank"><span class="fa fa-facebook"></span><span class="sr-only">on Facebook</span></a></li>
+          <li><a href="{{ share_links.twitter }}" target="_blank"><span class="fa fa-twitter"></span><span class="sr-only">on Twitter</span></a></li>
+          <li><a href="{{ share_links.linkedin }}" target="_blank"><span class="fa fa-linkedin"></span><span class="sr-only">on Instagram</span></a></li>
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="t-event__content order-1 order-md-2">
+      {{ content.introduction }}
+
+      <div class="t-event__registration d-block d-md-none">
+        {% if content.pricing %}
+        <div class="t-event__pricing">
+          <div class="t-event__pricing--label">Fee:</div>
+          {{ content.pricing }}
+        </div>
+        {% endif %}
+
+        <div class="t-event__registration--limit">
+          {% if control.registration_window_is_open %}
+            {% if content.registration_window_closes_string %}
+              Deadline to register: {{ content.registration_window_closes_string }} <br />
+            {% endif %}
+            {% if content.registration_link_uri_bare %}
+              <a href="{{ content.registration_link_uri_bare }}">Register</a>
+            {% endif %}
+          {% elseif control.registration_window_is_future and content.registration_window_opens_string%}
+            Registration opens: {{ content.registration_window_opens_string }} <br />
+          {% elseif control.registration_window_is_past and content.registration_window_closes_string %}
+            Registration closed: {{ content.registration_window_closes_string }} <br />
+          {% endif %}
+          </div>
+
+      </div>
+
+      <div class="t-event__body">
+      {{ content.body }}
+      </div>
+
+      <div class="t-event__contact">
+        {% if entity.host and entity.host.value %}
+          <div class="d-flex">
+            <div class="t-event__contact--label">Host:</div>
+            {{ content.host }}
+          </div>
+        {% endif %}
+
+        {% if entity.contact_link and entity.contact_link.value %}
+        <div class="d-flex">
+          <div class="t-event__contact--label">Contact:</div>
+          {{ content.contact_link }}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

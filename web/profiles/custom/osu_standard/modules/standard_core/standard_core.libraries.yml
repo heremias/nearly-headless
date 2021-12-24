@@ -1,0 +1,4 @@
+core:
+  css:
+    component:
+      css/core.css: {}

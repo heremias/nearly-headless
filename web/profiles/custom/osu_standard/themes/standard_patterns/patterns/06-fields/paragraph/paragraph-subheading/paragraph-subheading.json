@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "subheading",
+  "field_type": "string",
+  "label": "Subheading",
+  "label_hidden": true,
+  "multiple": false,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "Dorem elit cheetos adipiscing lorem."
+    }
+  ]
+}

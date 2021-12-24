@@ -1,0 +1,8 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "variant": "standard",
+  "region": "content_after",
+  "content": "<div style=\"text-align:center;width:400px;height:300px;background-color:blue;\">PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER PLACEHOLDER </div>"
+}

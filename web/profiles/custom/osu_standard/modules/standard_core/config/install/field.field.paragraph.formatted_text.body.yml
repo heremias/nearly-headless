@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.body
+    - paragraphs.paragraphs_type.formatted_text
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich: rich
+    unrestricted: unrestricted
+    plain: '0'
+    simple: '0'
+    plain_text: '0'
+id: paragraph.formatted_text.body
+field_name: body
+entity_type: paragraph
+bundle: formatted_text
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

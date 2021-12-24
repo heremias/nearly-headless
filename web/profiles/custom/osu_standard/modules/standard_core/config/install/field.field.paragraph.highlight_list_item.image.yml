@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.image
+    - media.type.image
+    - paragraphs.paragraphs_type.highlight_list_item
+id: paragraph.highlight_list_item.image
+field_name: image
+entity_type: paragraph
+bundle: highlight_list_item
+label: Image
+description: 'Uses the highlight image crop.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

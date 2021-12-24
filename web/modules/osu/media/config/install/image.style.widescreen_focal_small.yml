@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: widescreen_focal_small
+label: 'Widescreen (16:9) Focal - Small'
+effects:
+  176ca0a9-4b01-411f-b637-c2dc21088c89:
+    uuid: 176ca0a9-4b01-411f-b637-c2dc21088c89
+    id: focal_point_scale_and_crop
+    weight: 4
+    data:
+      width: 320
+      height: 180
+      crop_type: focal_point

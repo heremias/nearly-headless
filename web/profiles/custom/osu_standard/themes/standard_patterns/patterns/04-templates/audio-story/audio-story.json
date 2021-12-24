@@ -1,0 +1,12 @@
+{
+  "content": {
+    "subject": "fields-node-subject",
+    "subject_description": "fields-node-subject-description",
+    "summary": "fields-node-summary",
+    "teaser_image": "fields-node-teaser-image-small-square",
+    "audio": "fields-node-audio",
+    "quote": "fields-node-quote",
+    "transcript": "fields-media-transcript"
+  },
+  "full": true
+}

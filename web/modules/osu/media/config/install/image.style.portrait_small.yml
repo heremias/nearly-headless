@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.portrait
+  module:
+    - crop
+name: portrait_small
+label: 'Portrait (3:4) - Small'
+effects:
+  56fab9dd-6310-4c50-8cae-369abc2f7dd0:
+    uuid: 56fab9dd-6310-4c50-8cae-369abc2f7dd0
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: portrait
+  9395b5eb-90d5-4ea2-a575-cdb725e12eeb:
+    uuid: 9395b5eb-90d5-4ea2-a575-cdb725e12eeb
+    id: image_scale
+    weight: 2
+    data:
+      width: 300
+      height: 400
+      upscale: true

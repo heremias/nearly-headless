@@ -1,0 +1,8 @@
+<div class="speaker">
+  {% if content.link_uri_bare %}
+  <a href="{{ content.link_uri_bare }}">{{ content.name_bare }}</a>{% if content.name_bare %},{% endif %}
+  {% else %}
+    {% if content.name_bare %}{{ content.name_bare }},{% endif %}
+  {% endif %}
+  {{ content.context_bare }}
+</div>

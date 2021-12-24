@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Add datalayer components to node full views.
+ */
+function osu_siteinfo_datalayer_alter(&$data) {
+  // Globally set this value.
+  $data['site_owner'] = \Drupal::config('osu_siteinfo.settings')->get('publisher');
+}

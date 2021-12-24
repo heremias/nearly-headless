@@ -1,0 +1,99 @@
+.c-floor-meetings {
+  &.c-floor {
+    .c-floor-meetings__heading {
+      @include component-heading();
+
+      font-size: 2.286rem;
+      font-weight: normal;
+      line-height: 2.571rem;
+    }
+
+    .c-floor--content {
+      @include media-breakpoint-up(sm) {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-between;
+        -ms-flex-pack: justify;
+
+        &::after {
+          content: none;
+        }
+      }
+    }
+
+    .c-floor-meetings__date-range-text {
+      display: inline-block;
+      font-size: 1.214rem;
+      line-height: 2rem;
+      padding: 2px 35px;
+      position: relative;
+      text-transform: uppercase;
+    }
+
+    .c-floor-meetings__upcoming {
+      @include media-breakpoint-up(sm) {
+        width: calc(50% - 20px);
+      }
+    }
+
+    .c-floor-meetings__recent {
+      @include media-breakpoint-up(sm) {
+        width: calc(50% - 20px);
+      }
+    }
+
+    .c-floor-meetings__date-links-wrapper {
+      @include media-breakpoint-up(md) {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+      }
+    }
+
+    .c-floor-meetings__related-date {
+      color: $gray-2;
+      font-size: 1.429rem;
+      font-weight: bold;
+
+      @include media-breakpoint-up(md) {
+        text-align: right;
+        width: 29%;
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: 20%;
+      }
+
+      @include media-breakpoint-up(xl) {
+        width: 17%;
+      }
+    }
+
+    .c-floor-meetings__related-links {
+      color: $gray-2;
+      flex: 1;
+      -ms-flex-positive: 1;
+      list-style-type: none;
+      margin: 0 0 20px;
+      padding: 0;
+
+      @include media-breakpoint-up(md) {
+        margin: 0 0 20px 30px;
+      }
+
+      a {
+        font-weight: normal;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

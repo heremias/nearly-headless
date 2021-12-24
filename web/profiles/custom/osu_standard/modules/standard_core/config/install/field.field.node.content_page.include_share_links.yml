@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.include_share_links
+    - node.type.content_page
+id: node.content_page.include_share_links
+field_name: include_share_links
+entity_type: node
+bundle: content_page
+label: 'Include Share Links'
+description: '"On" if you would like to include social sharing links on this page.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

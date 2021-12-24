@@ -1,0 +1,40 @@
+.video-component {
+  .media-video {
+    .container {
+      padding: 0;
+    }
+  }
+
+  .video-share {
+    font-size: 0;
+    padding: 5px 0;
+
+    .label-video-share {
+      color: #222;
+      display: inline-block;
+      font-size: 14px;
+      font-style: italic;
+      line-height: 19px;
+      vertical-align: middle;
+      width: 80%;
+    }
+
+    .wrap-share {
+      color: #666;
+      display: inline-block;
+      font-size: 0;
+      padding: 0;
+      text-align: right;
+      vertical-align: middle;
+      width: 20%;
+
+      label {
+        color: #666;
+        font-size: 14px;
+        vertical-align: middle;
+        margin: 0;
+        padding: 0 5px 0 0;
+      }
+    }
+  }
+}

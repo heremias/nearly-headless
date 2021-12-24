@@ -1,0 +1,6 @@
+name: 'OSU / Core / Site Verification (Metatag)'
+description: 'Verify ownership of your site to search engines.'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'OSU / Core'

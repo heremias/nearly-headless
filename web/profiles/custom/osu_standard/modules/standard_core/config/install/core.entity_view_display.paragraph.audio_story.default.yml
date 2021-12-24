@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.audio_story.heading
+    - field.field.paragraph.audio_story.heading_level
+    - field.field.paragraph.audio_story.introduction
+    - field.field.paragraph.audio_story.link
+    - field.field.paragraph.audio_story.node
+    - field.field.paragraph.audio_story.vertical_style
+    - field.field.paragraph.audio_story.width
+    - paragraphs.paragraphs_type.audio_story
+  module:
+    - link
+id: paragraph.audio_story.default
+targetEntityType: paragraph
+bundle: audio_story
+mode: default
+content:
+  heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  introduction:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  node:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: large
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  heading_level: true
+  search_api_excerpt: true
+  vertical_style: true
+  width: true

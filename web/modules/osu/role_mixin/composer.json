@@ -1,0 +1,7 @@
+{
+    "name": "umarketing/role_mixin",
+    "type": "drupal-custom-module",
+    "require": {
+        "composer/installers": "~1.9.0"
+    }
+}

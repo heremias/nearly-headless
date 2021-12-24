@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: standard_focal_medium
+label: 'Standard (4:3) Focal - Medium'
+effects:
+  903de899-a1b2-4398-acc8-f0baaaabb59c:
+    uuid: 903de899-a1b2-4398-acc8-f0baaaabb59c
+    id: focal_point_scale_and_crop
+    weight: 4
+    data:
+      width: 640
+      height: 480
+      crop_type: focal_point

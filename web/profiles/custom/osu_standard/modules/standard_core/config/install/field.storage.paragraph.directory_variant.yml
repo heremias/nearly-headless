@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.directory_variant
+field_name: directory_variant
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: directory
+      label: Directory
+    -
+      value: speakers
+      label: Speakers
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

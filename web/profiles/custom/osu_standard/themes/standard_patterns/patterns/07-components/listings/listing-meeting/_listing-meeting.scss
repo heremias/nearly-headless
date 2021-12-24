@@ -1,0 +1,165 @@
+.c-listing-meeting {
+  font-size: 20px;
+
+  .c-listing-meeting__empty {
+    text-align: center;
+  }
+
+  .c-listing-meeting__navigation {
+    margin: 0 0 25px;
+
+    @include media-breakpoint-up(md) {
+      border-bottom: 5px solid $scarlet-2;
+    }
+  }
+
+  .c-listing-meeting__navigation-years {
+    padding: 1.5em 0;
+    text-align: center;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    .c-listing-meeting__navigation-years-last {
+      float: left;
+    }
+
+    .c-listing-meeting__navigation-years-next {
+      float: right;
+    }
+  }
+
+  .c-listing-meeting__navigation-months {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      border-color: $scarlet;
+      border-bottom: 2px;
+      display: block;
+      text-align: center;
+    }
+
+    .c-listing-meeting__navigation-months-inner {
+      font-size: 0;
+    }
+
+    a {
+      background-color: #eee;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      color: #b00;
+      display: inline-block;
+      font-size: 20px;
+      padding: 20px;
+      margin-right: 3px;
+      text-align: center;
+
+      @include media-breakpoint-up(md) {
+        min-width: 172px;
+      }
+
+      @media (max-width: 1199px) {
+        min-width: auto;
+        padding: 17px;
+      }
+
+      @media (max-width: 991px) {
+        font-size: 17px;
+      }
+
+      @media (max-width: 767px) {
+        padding: 10px;
+      }
+
+      &:active,
+      &:hover {
+        background-color: #b00;
+        color: #fff;
+      }
+    }
+
+    a.c-listing-meeting__active {
+      background-color: $scarlet;
+      color: #fff;
+    }
+
+    a:not(.c-listing-meeting__active) + li:not(.c-listing-meeting__active) {
+      border-left: 1px solid #ccc;
+    }
+  }
+
+  .c-listing-meeting__navigation-months--mobile {
+    position: relative;
+
+    .c-listing-meeting__navigation-months__selected {
+      background: $gray-6;
+      border-bottom: 5px solid $scarlet-2;
+      color: $scarlet;
+      cursor: pointer;
+      padding: 10px;
+      text-align: center;
+
+      &::after {
+        color: $scarlet;
+        content: '\25BE';
+        position: absolute;
+        right: 15px;
+        top: 48%;
+        transform: translateY(-50%);
+      }
+    }
+
+    ul {
+      border-bottom: 5px solid $scarlet-2;
+      display: none;
+      margin: 0 auto;
+      left: 0;
+      padding: 0;
+      position: absolute;
+      top: 53px;
+      width: 100%;
+      z-index: 100;
+
+      li {
+        list-style-type: none;
+
+        a {
+          background: $gray-6;
+          display: block;
+          padding: 10px;
+          text-align: center;
+          text-decoration: none;
+
+          &:hover {
+            background: $white;
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  .c-listing-meeting__date {
+    color: $gray-2;
+    font-size: 32px;
+    line-height: 38px;
+    margin: 0 0 30px;
+  }
+
+  .c-listing-meeting__notification {
+    background: $vanilla;
+    border: 1px solid $gray-8;
+    color: $gray-2;
+    font-size: 17px;
+    margin: 0 0 35px;
+    padding: 10px 20px;
+  }
+
+  .m-full-teaser-news__location-label {
+    font-weight: bold;
+  }
+}

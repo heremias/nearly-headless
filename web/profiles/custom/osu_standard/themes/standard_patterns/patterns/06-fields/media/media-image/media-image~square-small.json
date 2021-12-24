@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "image",
+  "field_type": "image",
+  "label": "Image",
+  "label_hidden": true,
+  "multiple": false,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "<img src=\"/pattern-lab/public/images/stock/320x320.jpg\" width=\"320\" height=\"320\" alt=\"brief description\" typeof=\"foaf:Image\" />"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+<div {{ attributes.addClass("m-card", image ? 'm-card--with-image' : 'm-card--without-image') }}>
+  {% if image %}
+    <picture class="m-card--image">
+      <source
+        media="(min-width:760px)"
+        srcset="{{ image.srcset.desktop }}" />
+      <img alt="{{ image.alt }}" src="{{ image.src }}" />
+    </picture>
+  {% endif %}
+
+  {% if date %}
+    <div class="m-card--date">
+      <span class="m-card--date-inner">{{ date }}</span>
+    </div>
+  {% endif %}
+
+  <div class="m-card--content">
+    {% if heading or body %}
+      <div class="m-card--text">
+        {% if heading %}
+
+          <h3 class="m-card--heading">
+            {% if url %} <a href="{{ url }}"> {% endif %}
+            {{ heading }}
+            {% if url %} <i class="fa fa-chevron-right" aria-hidden="true"></i> </a> {% endif %}
+          </h3>
+        {% endif %}
+
+        {% if body %}
+          <div class="m-card--body">{{ body }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if tags %}
+      <div class="m-card--tags">
+        {% for tag in tags %}
+          <div class="m-card--tag">{{ tag }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% if links %}
+      <div class="m-card--links">
+        <hr />
+        {% for link in links %}
+          <a href="{{ link.href }}">
+            {{ link.text }}
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>

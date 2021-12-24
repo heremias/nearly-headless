@@ -1,0 +1,17 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "introduction": "fields-node-introduction",
+    "body": "fields-node-body",
+    "room": "fields-node-room",
+    "session_speakers": "fields-node-session-speakers",
+    "track": "fields-node-track",
+    "session_type": "fields-node-session-type",
+    "documents": "fields-node-documents",
+    "videos": "fields-node-videos",
+    "timeslot": "12:30 PM - 1:30 PM",
+    "date": "DEC. 28, 2018"
+  }
+}

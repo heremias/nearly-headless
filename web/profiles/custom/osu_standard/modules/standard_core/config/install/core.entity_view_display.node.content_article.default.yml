@@ -1,0 +1,84 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.content_article.audiences
+    - field.field.node.content_article.buckets
+    - field.field.node.content_article.colleges
+    - field.field.node.content_article.content
+    - field.field.node.content_article.introduction
+    - field.field.node.content_article.meta_title
+    - field.field.node.content_article.ours
+    - field.field.node.content_article.places
+    - field.field.node.content_article.publish_date
+    - field.field.node.content_article.site_tags
+    - field.field.node.content_article.slug
+    - field.field.node.content_article.summary
+    - field.field.node.content_article.teaser_image
+    - field.field.node.content_article.topics
+    - field.field.node.content_article.types
+    - node.type.content_article
+  module:
+    - datetime
+    - entity_reference_revisions
+    - text
+    - user
+id: node.content_article.default
+targetEntityType: node
+bundle: content_article
+mode: default
+content:
+  buckets:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  content:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  introduction:
+    type: text_default
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  publish_date:
+    weight: 2
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: month_date_year
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  site_tags:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  audiences: true
+  colleges: true
+  links: true
+  meta_title: true
+  ours: true
+  places: true
+  search_api_excerpt: true
+  slug: true
+  summary: true
+  teaser_image: true
+  topics: true
+  types: true

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: banner
+label: 'Banner (4:1)'
+description: 'A very wide and narrow format often used for banners or feature stories.'
+aspect_ratio: '4:1'
+soft_limit_width: 1920
+soft_limit_height: 480
+hard_limit_width: null
+hard_limit_height: null

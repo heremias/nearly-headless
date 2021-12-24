@@ -1,0 +1,12 @@
+{% extends "@components/sections/section/section.twig" %}
+{% set class = 'c-section-cards' %}
+
+{% block component %}
+  {% set card_count =  entity.items.getvalue | length %}
+  {% set card_inality = card_count > 2 ? 'many' : card_count %}
+
+  <div class="c-section-cards c-section-cards-{{ card_inality }}">
+    {{ content.items }}
+  </div>
+
+{% endblock %}

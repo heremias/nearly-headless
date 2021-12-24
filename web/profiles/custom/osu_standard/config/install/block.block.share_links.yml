@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - osu_core
+  theme:
+    - standard_patterns
+id: share_links
+theme: standard_patterns
+region: content_before
+weight: -1000
+provider: null
+plugin: share_links
+settings:
+  id: share_links
+  label: 'Share Links'
+  provider: osu_core
+  label_display: '0'
+visibility: {  }

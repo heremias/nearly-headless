@@ -1,0 +1,16 @@
+{
+  "variant": "conference",
+  "color_scheme": "osu-light",
+  "attributes": {
+    "Attribute()": {}
+  },
+  "introduction": {
+    "include()": {
+      "pattern": "molecules-introduction",
+      "with": {
+        "content": "<p>An introduction is the beginning of a page.</p>"
+      }
+    }
+  },
+  "content": "fields-node-content"
+}

@@ -1,0 +1,89 @@
+{
+  "variant": "standard",
+  "color_scheme": "osu-dark",
+  "attributes": {
+    "Attribute()": {}
+  },
+  "page": {
+    "highlighted": "",
+    "site_header": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "site-header",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-brand-navbar"
+                }
+              },
+              {
+                "include()": {
+                  "pattern": "organisms-brand_masthead",
+                  "with": {
+                    "variant": "left",
+                    "site_name": "Women's Place"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "primary_menu": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "primary-menu",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-core-menu"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "local_tasks": "",
+    "content_before": "",
+    "content": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "content",
+          "content": {
+            "include()": {
+              "pattern": "templates-content-page",
+              "with": {
+
+              }
+            }
+          }
+        }
+      }
+    },
+    "page_footer": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "page-footer",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-footer"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "site_footer": ""
+  }
+}

@@ -1,0 +1,15 @@
+.button-search {
+  background: $scarlet;
+  border: 1px solid $white;
+  color: $white;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+  line-height: 45px;
+  width: 96px;
+
+  &:hover {
+    background: $white;
+    color: $scarlet;
+  }
+}

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.h1_field
+    - paragraphs.paragraphs_type.hero_cta_banner
+  module:
+    - options
+id: paragraph.hero_cta_banner.h1_field
+field_name: h1_field
+entity_type: paragraph
+bundle: hero_cta_banner
+label: 'Page Heading (H1)'
+description: 'Every page must have a visible H1 tag for accessibility and search engine optimization. When a hero is displayed, the page title, which normally serves this purpose, is suppressed. Consequently, you need to choose a different field to be this page''s top level heading.'
+required: true
+translatable: false
+default_value:
+  -
+    value: component.heading
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * The views infinite scroll pager template.
+ * http://cgit.drupalcode.org/views_infinite_scroll/tree/templates/views-infinite-scroll-pager.html.twig
+ */
+#}
+{% if items.next %}
+    <ul{{ attributes.addClass('infinite-scroll-pager') }}>
+        <li class="pager__item">
+            <a class="rich-button" href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" rel="next">{{ options.button_text }}</a>
+        </li>
+    </ul>
+{% endif %}

@@ -1,0 +1,3 @@
+services:
+  osu_buildings.building_service:
+    class: \Drupal\osu_buildings\Service\BuildingService

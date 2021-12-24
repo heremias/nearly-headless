@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: standard_focal_small
+label: 'Standard (4:3) Focal - Small'
+effects:
+  f513d20b-a825-485e-9e83-ac9169262227:
+    uuid: f513d20b-a825-485e-9e83-ac9169262227
+    id: focal_point_scale_and_crop
+    weight: 4
+    data:
+      width: 320
+      height: 240
+      crop_type: focal_point

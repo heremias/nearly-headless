@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mailchimp_signup
+    - field.field.block_content.mailchimp_signup.field_values
+    - field.field.block_content.mailchimp_signup.heading
+    - field.field.block_content.mailchimp_signup.host
+    - field.field.block_content.mailchimp_signup.introduction
+    - field.field.block_content.mailchimp_signup.list_id
+    - field.field.block_content.mailchimp_signup.success_message
+    - field.field.block_content.mailchimp_signup.user_id
+id: block_content.mailchimp_signup.default
+targetEntityType: block_content
+bundle: mailchimp_signup
+mode: default
+content: {  }
+hidden:
+  field_values: true
+  heading: true
+  host: true
+  introduction: true
+  list_id: true
+  search_api_excerpt: true
+  success_message: true
+  user_id: true

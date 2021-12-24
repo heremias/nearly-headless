@@ -1,0 +1,17 @@
+{% set heading = 'qa-item--collapsible--' ~ entity.id() ~ '--heading' %}
+{% set collapse = 'qa-item--collapsible--' ~ entity.id() ~ '--collapse' %}
+<div {{ attributes.addClass('qa-item--collapsible') }}>
+  <div class="qa-item--collapsible--question" id="{{ heading }}">
+
+    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#{{ collapse }}" aria-expanded="true" aria-controls="{{ 'qa-item--collapsible' ~ entity.id() }}">
+      {{ content.question }}
+    </button>
+
+  </div>
+
+  <div id="{{ collapse }}" class="qa-item--collapsible--answer collapse" aria-labelledby="{{ heading }}">
+    <div>
+      {{ content.answer }}
+    </div>
+  </div>
+</div>

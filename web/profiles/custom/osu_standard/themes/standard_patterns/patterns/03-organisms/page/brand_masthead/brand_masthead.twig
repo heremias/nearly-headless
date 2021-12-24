@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Pattern for brand_masthead.
+ *
+ * Available variables:
+ * - site_title: unstyled title of site.
+ * - variant: determine align right, otherwise
+ * - default left logo placement
+ */
+#}
+<div class="o-brand_masthead {{ logo_style }} {{ color_scheme }}">
+  <div class="container">
+    <div class="o-brand-masthead-wrapper">
+
+    {% if logo_position == 'left' %}
+      <div class="order-1 order-lg-1 pl-0 pr-0">
+        <a href="https://www.osu.edu">{% include "@atoms/brand_logo/brand_logo.twig" with { style: logo_style } %}</a>
+      </div>
+      <div class="order-2 order-lg-2 pl-0 pr-0">
+        <h1><a href="/">{{ site_name }}</a></h1>
+      </div>
+
+    {% else %}
+
+      <div class="order-2 order-lg-1 pl-0 pr-0">
+        <div class="o-brand-masthead__site-name">
+        {% if is_h1 %}
+          <h1><a href="/">{{ site_name }}</a></h1>
+        {% else %}
+          <a href="/">{{ site_name }}</a>
+        {% endif %}
+        </div>
+      </div>
+      <div class="order-1 order-lg-2 pl-0 pr-0">
+        <a href="https://www.osu.edu">{% include "@atoms/brand_logo/brand_logo.twig"  with { style: logo_style } %}</a>
+      </div>
+
+    {% endif %}
+    </div>
+  </div>
+</div>

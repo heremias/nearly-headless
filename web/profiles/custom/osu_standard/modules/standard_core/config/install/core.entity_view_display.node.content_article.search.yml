@@ -1,0 +1,76 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search
+    - field.field.node.content_article.audiences
+    - field.field.node.content_article.buckets
+    - field.field.node.content_article.colleges
+    - field.field.node.content_article.content
+    - field.field.node.content_article.introduction
+    - field.field.node.content_article.meta_title
+    - field.field.node.content_article.ours
+    - field.field.node.content_article.places
+    - field.field.node.content_article.publish_date
+    - field.field.node.content_article.site_tags
+    - field.field.node.content_article.slug
+    - field.field.node.content_article.summary
+    - field.field.node.content_article.teaser_image
+    - field.field.node.content_article.topics
+    - field.field.node.content_article.types
+    - node.type.content_article
+  module:
+    - datetime
+    - text
+    - user
+id: node.content_article.search
+targetEntityType: node
+bundle: content_article
+mode: search
+content:
+  introduction:
+    type: text_default
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  publish_date:
+    weight: 2
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: month_date_year
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  summary:
+    type: basic_string
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  teaser_image:
+    type: entity_reference_entity_view
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      view_mode: teaser_medium
+      link: false
+    third_party_settings: {  }
+hidden:
+  audiences: true
+  buckets: true
+  colleges: true
+  content: true
+  links: true
+  meta_title: true
+  ours: true
+  places: true
+  search_api_excerpt: true
+  site_tags: true
+  slug: true
+  topics: true
+  types: true

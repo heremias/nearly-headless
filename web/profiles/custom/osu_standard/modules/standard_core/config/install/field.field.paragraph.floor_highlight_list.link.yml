@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.link
+    - paragraphs.paragraphs_type.floor_highlight_list
+  module:
+    - link
+id: paragraph.floor_highlight_list.link
+field_name: link
+entity_type: paragraph
+bundle: floor_highlight_list
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

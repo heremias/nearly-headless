@@ -1,0 +1,24 @@
+{
+  "region": "page-header",
+  "content": {
+    "join()": [
+      {
+        "include()": {
+          "pattern": "atoms-block",
+          "with": {
+            "content": "molecules-page-banner-conference"
+          }
+        }
+      },
+      {
+        "include()": {
+          "pattern": "molecules-page-title-block",
+          "with": {
+            "title": "About the Conference",
+            "variant": "conference"
+          }
+        }
+      }
+    ]
+  }
+}

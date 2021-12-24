@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.document
+    - views.view.document_browser
+  module:
+    - dropzonejs_eb_widget
+    - media
+    - views
+name: document_browser
+label: document_browser
+display: modal
+display_configuration:
+  width: '1245'
+  height: ''
+  link_text: 'Select document(s)'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  28cdefec-a813-4095-98f3-b67ca8af07df:
+    settings:
+      view: document_browser
+      view_display: entity_browser_1
+      submit_text: 'Select document(s)'
+      auto_select: false
+    uuid: 28cdefec-a813-4095-98f3-b67ca8af07df
+    weight: 1
+    label: 'Select existing'
+    id: view
+  7eb31175-6efc-4a9b-b679-032e4a1b6300:
+    settings:
+      form_mode: default
+      media_type: document
+      upload_location: 'public://documents/[date:custom:Y]/[date:custom:m]'
+      dropzone_description: 'Drop files here to upload them'
+      max_filesize: 20M
+      extensions: 'csv doc docx pdf ppt pptx txt xls xlsx'
+      clientside_resize: false
+      resize_width: 0
+      resize_height: 0
+      resize_quality: !!float 1
+      resize_method: contain
+      thumbnail_method: contain
+      submit_text: 'Select document(s)'
+    uuid: 7eb31175-6efc-4a9b-b679-032e4a1b6300
+    weight: 2
+    label: 'Import document'
+    id: dropzonejs_media_entity_inline_entity_form

@@ -1,0 +1,8 @@
+<div class="m-location-reference">
+  <div class="m-location-reference-name">{{ name }}</div>
+  {% if campus_map_url %}
+    <a class="m-location-reference-directions" href="{{ campus_map_url }}">Get directions</a>
+  {% elseif google_map_directions_url%}
+    <a class="m-location-reference-directions" href="{{ google_map_directions_url }}">Get directions</a>
+  {% endif %}
+</div>

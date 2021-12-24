@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Pattern for xup-blurb.
+ *
+ * Available variables:
+ * -
+ */
+#}
+<div class="o-xup-blurb d-md-flex justify-content-between">
+  {% for item in items %}
+    {% include "@molecules/card/third-blurb/third-blurb.twig"
+    with {
+      third_blurb_header: item.third_blurb_header,
+      third_blurb_content: item.third_blurb_content,
+      third_blurb_button: item.third_blurb_button
+    }
+    %}
+  {% endfor %}
+</div>

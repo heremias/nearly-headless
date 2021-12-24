@@ -1,0 +1,70 @@
+.c-floor-rss-news {
+  article {
+    clear: both;
+  }
+
+  .c-floor-rss-news--items {
+    .c-floor-rss-news--image-container {
+      position: relative;
+      float: left;
+      width: 33%;
+      margin-right: 0.8rem;
+    }
+
+    .c-floor-rss-news--image-container::after {
+      content: "";
+      display: block;
+      padding-bottom: 75%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
+    }
+
+    @include media-breakpoint-up(md) {
+      .c-floor-rss-news--image-container::after {
+        padding-bottom: 100%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
+      }
+    }
+
+    img {
+      position: absolute; /* Take your picture out of the flow */
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0; /* Make the picture taking the size of it's parent */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    a {
+      min-height: 140px;
+      background-color: #fff;
+      text-decoration: none;
+      color: #333;
+      padding: 20px;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .c-floor-rss-news--items {
+      @include make-row();
+
+      /*
+      article:first-child {
+        padding-left: 0;
+      }
+
+      article:last-child {
+        padding-right: 0;
+      }
+      */
+    }
+
+    article {
+      @include make-col(1, 3);
+      @include make-col-ready();
+    }
+  }
+}

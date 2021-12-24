@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.facebook
+  module:
+    - crop
+name: facebook_large
+label: 'Facebook (1.91) - Large'
+effects:
+  04b19f45-8869-42b7-aacd-24ea6bf0eed2:
+    uuid: 04b19f45-8869-42b7-aacd-24ea6bf0eed2
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: facebook
+  b282bfca-66b8-4fa1-9dc3-cb8c7b58ef33:
+    uuid: b282bfca-66b8-4fa1-9dc3-cb8c7b58ef33
+    id: image_scale
+    weight: 2
+    data:
+      width: 1200
+      height: 630
+      upscale: false

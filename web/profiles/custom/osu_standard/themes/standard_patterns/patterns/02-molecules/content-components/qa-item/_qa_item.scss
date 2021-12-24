@@ -1,0 +1,46 @@
+.qa-item--collapsible {
+  border-bottom: #b00 solid 2px;
+  padding: 20px 0;
+
+  .qa-item--collapsible--question {
+    .btn-link {
+      color: #333;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 30px;
+      padding: 5px 50px 5px 0;
+      text-align: left;
+      text-decoration: none;
+      width: 100%;
+      white-space: normal;
+
+      &:active,
+      &:hover,
+      &:visited {
+        text-decoration: none;
+      }
+
+      &::before {
+        color: #b00;
+        content: "-";
+        display: block;
+        float: right;
+        font-size: 55px;
+        margin-left: 30px;
+        text-align: center;
+        width: 70px;
+        z-index: -1;
+      }
+
+      &.collapsed::before {
+        content: '+';
+      }
+    }
+  }
+
+  .qa-item--collapsible--answer {
+    font-size: 17px;
+    line-height: 28px;
+    margin-right: 90px;
+  }
+}

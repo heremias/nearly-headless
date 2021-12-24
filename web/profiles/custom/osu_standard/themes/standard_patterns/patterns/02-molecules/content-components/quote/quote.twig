@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Quote pattern
+ */
+#}
+{# Set some container classes. #}
+{% set base_class = 'quote' %}
+{% set variant_class = base_class ~ '--' ~ variant %}
+{% set context_class = entity.context.value ? base_class ~ '--with-context' : '' %}
+{% set tweetable_class = entity.tweetable.value ? 'quote--tweetable' : '' %}
+
+<div class="quote {{ variant_class }} {{ context_class}} {{ tweetable_class}} "
+    data-tweetable-url="{{ share_url }}"
+    data-tweetable-handle="{{ share_handle }}"
+    data-tweetable-text="{{ entity.tweet_text.value }}">
+
+  {# Output the Quote. #}
+  <div class="quote--quote">
+    {{ content.quote }}
+  </div>
+
+  {# If there is an attribution and context, output that. #}
+  {% if entity.attribution %}
+    <div class="quote--attribution">
+      {% if variant == 'conference' %}
+      <div class="quote--attribution__image">
+        <img src="{{ base_path ~ directory }}{{ content.image }}" alt="Attribution photo" />
+      </div>
+      {% endif %}
+      {% if variant == 'conference' %}
+      <div class="quote--attribution__content">
+      {% endif %}
+      <span class="quote--attribution-name"><span class="inner">{{ content.attribution }}</span></span>
+      {% if entity.context.value %}<span class="quote--attribution-context">{{ content.context }}</span>{% endif %}
+      {% if variant == 'conference' %}
+      </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {# Add a twitter icon if it is tweetable. #}
+  {% if entity.tweetable.value %}<span class="fa fa-twitter" aria-hidden="true"></span>{% endif %}
+
+</div>

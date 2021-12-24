@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.listing_practice
+id: paragraph.listing_practice.default
+targetEntityType: paragraph
+bundle: listing_practice
+mode: default
+content: {  }
+hidden:
+  search_api_excerpt: true

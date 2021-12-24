@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.publish_date
+    - node.type.audio_story
+  module:
+    - datetime
+id: node.audio_story.publish_date
+field_name: publish_date
+entity_type: node
+bundle: audio_story
+label: 'Publish Date'
+description: 'Date on which the story is considered published.'
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

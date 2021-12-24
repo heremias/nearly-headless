@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.context
+    - paragraphs.paragraphs_type.quote
+id: paragraph.quote.context
+field_name: context
+entity_type: paragraph
+bundle: quote
+label: Context
+description: 'Context for the attribution of a quote. If the quote is by a person, this could be their title.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

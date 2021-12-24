@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.rationale
+    - node.type.practice
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich: rich
+    unrestricted: unrestricted
+    simple: '0'
+    plain_text: '0'
+id: node.practice.rationale
+field_name: rationale
+entity_type: node
+bundle: practice
+label: Rationale
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

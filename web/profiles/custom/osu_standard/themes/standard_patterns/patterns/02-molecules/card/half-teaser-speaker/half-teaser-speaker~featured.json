@@ -1,0 +1,35 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "name": "Jennifer Beard",
+    "image": {
+      "include()": {
+        "pattern": "atoms-field",
+        "with": {
+          "items": [
+            {
+              "content": "<img src='../../images/fpo_avatar.png' alt='person image' />"
+            }
+          ]
+        }
+      }
+    },
+    "title": {
+      "include()": {
+        "pattern": "atoms-field",
+        "with": {
+          "items": [
+            {
+              "content": "Director"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "entity": {
+    "featured": true
+  }
+}

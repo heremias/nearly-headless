@@ -1,0 +1,78 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.callout.body
+    - field.field.paragraph.callout.heading
+    - field.field.paragraph.callout.heading_level
+    - field.field.paragraph.callout.introduction
+    - field.field.paragraph.callout.link
+    - field.field.paragraph.callout.tweet_text
+    - field.field.paragraph.callout.tweetable
+    - field.field.paragraph.callout.vertical_style
+    - field.field.paragraph.callout.width
+    - paragraphs.paragraphs_type.callout
+  module:
+    - link
+    - text
+id: paragraph.callout.default
+targetEntityType: paragraph
+bundle: callout
+mode: default
+content:
+  body:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  introduction:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  link:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  tweet_text:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  tweetable:
+    weight: 4
+    label: hidden
+    settings:
+      format: true-false
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+hidden:
+  heading_level: true
+  search_api_excerpt: true
+  vertical_style: true
+  width: true

@@ -1,0 +1,8 @@
+styles:
+  css:
+    layout:
+      css/styles.css: {}
+node-edit:
+  css:
+    layout:
+      css/node-edit.css: {}

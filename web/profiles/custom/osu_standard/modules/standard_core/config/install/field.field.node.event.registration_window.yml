@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.registration_window
+    - node.type.event
+  module:
+    - datetime_range
+id: node.event.registration_window
+field_name: registration_window
+entity_type: node
+bundle: event
+label: 'Registration Window'
+description: 'Timeframe during which the registration link will appear.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

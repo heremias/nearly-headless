@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: floor_uneven_columns
+label: 'Uneven Columns Floor'
+icon_uuid: null
+icon_default: null
+description: 'A layout with one wide and one narrow column in a floor context. Uneven columns are unusual in that they should not have a callout link because we cannot guarantee both columns will be the same height.'
+behavior_plugins: {  }

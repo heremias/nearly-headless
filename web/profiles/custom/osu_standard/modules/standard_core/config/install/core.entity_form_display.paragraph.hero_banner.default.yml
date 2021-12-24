@@ -1,0 +1,114 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.hero_banner.heading
+    - field.field.paragraph.hero_banner.height
+    - field.field.paragraph.hero_banner.image
+    - field.field.paragraph.hero_banner.include_breadcrumbs
+    - field.field.paragraph.hero_banner.include_page_title
+    - field.field.paragraph.hero_banner.preserve
+    - field.field.paragraph.hero_banner.subheading
+    - paragraphs.paragraphs_type.hero_banner
+  module:
+    - entity_browser
+    - field_group
+third_party_settings:
+  field_group:
+    group_included_page_elements:
+      children:
+        - include_page_title
+        - include_breadcrumbs
+      parent_name: ''
+      weight: 20
+      format_type: details
+      format_settings:
+        label: 'Included Page Elements'
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+      label: 'Included Page Elements'
+      region: content
+    group_inset:
+      children:
+        - heading
+        - subheading
+      parent_name: ''
+      weight: 20
+      format_type: details
+      format_settings:
+        label: 'Inset Heading (Optional)'
+        required_fields: true
+        id: ''
+        classes: ''
+        open: false
+      label: 'Inset Heading (Optional)'
+      region: content
+id: paragraph.hero_banner.default
+targetEntityType: paragraph
+bundle: hero_banner
+mode: default
+content:
+  heading:
+    weight: 21
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  height:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  image:
+    weight: 0
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: preview
+      field_widget_replace: false
+      open: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  include_breadcrumbs:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  include_page_title:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  preserve:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  subheading:
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

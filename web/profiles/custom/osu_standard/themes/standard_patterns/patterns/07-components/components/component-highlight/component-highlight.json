@@ -1,0 +1,19 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "description": "fields-paragraph-description",
+    "heading": "fields-paragraph-heading",
+    "image": "fields-paragraph-image-highlight-medium",
+    "link": "fields-paragraph-link"
+  },
+  "entity": {
+    "heading": {
+      "value": "Highlight Component"
+    },
+    "heading_level": {
+      "value": "h2"
+    }
+  }
+}

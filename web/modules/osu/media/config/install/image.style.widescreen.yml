@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.widescreen
+  module:
+    - crop
+name: widescreen
+label: 'Widescreen (16:9)'
+effects:
+  797973b2-f8a2-42d2-9797-c3e66f9a95a4:
+    uuid: 797973b2-f8a2-42d2-9797-c3e66f9a95a4
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: widescreen

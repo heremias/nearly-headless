@@ -1,0 +1,68 @@
+.c-component-highlight {
+  color: $gray-2;
+  font-size: 14px;
+  min-height: 250px;
+  margin: 0 0 50px;
+  position: relative;
+
+  .c-component-highlight__wrapper {
+    background: $gray-6;
+    padding: 0 15px 30px;
+
+    @include media-breakpoint-up(md) {
+      padding: 0 240px 30px 30px;
+      width: calc(100% - 144px);
+    }
+  }
+
+  .c-component-highlight__heading {
+    color: $gray-2;
+    font-size: 2.286em;
+    line-height: 1.429em;
+    margin: 0;
+    padding: 15px 0;
+  }
+
+  .m-media-image {
+    padding-top: 15px;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 0;
+      margin: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  img {
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      width: 349px;
+    }
+  }
+
+  .field--name-description {
+    font-size: 1.214em;
+    line-height: 28px;
+  }
+
+  a:visited,
+  a:link,
+  a:active {
+    background: $white;
+    border: 2px solid #b00;
+    display: inline-block;
+    font-size: 1.214em;
+    line-height: 21px;
+    margin: 30px 0 0;
+    padding: 15px;
+    text-decoration: none;
+
+    &:hover {
+      background: #b00;
+      color: #fff;
+    }
+  }
+}

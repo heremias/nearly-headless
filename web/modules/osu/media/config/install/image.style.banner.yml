@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.banner
+  module:
+    - crop
+name: banner
+label: 'Banner (4:1)'
+effects:
+  ea13c8ca-4840-44da-8e61-37700e18e854:
+    uuid: ea13c8ca-4840-44da-8e61-37700e18e854
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: banner

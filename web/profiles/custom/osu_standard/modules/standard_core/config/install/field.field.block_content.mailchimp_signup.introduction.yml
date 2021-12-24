@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mailchimp_signup
+    - field.storage.block_content.introduction
+id: block_content.mailchimp_signup.introduction
+field_name: introduction
+entity_type: block_content
+bundle: mailchimp_signup
+label: Introduction
+description: 'A very short introduction, one sentence or less.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,8 @@
+{% include "@molecules/card/full-search/full-search.twig" with {
+  "full_search_type": "Events",
+  "full_search_date": content.occurrence_first_month ~ " " ~ content.occurrence_first_day ~ ", " ~ content.occurrence_first_year ,
+  "full_search_title": label,
+  "full_search_item_link": url,
+  "full_search_all_link": "/events/archive",
+  "full_search_description": content.summary ? content_summary : content.introduction
+}%}

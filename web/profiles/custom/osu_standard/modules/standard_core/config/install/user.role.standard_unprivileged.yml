@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_mixin
+third_party_settings:
+  role_mixin:
+    parent_roles:
+      anonymous: anonymous
+      authenticated: authenticated
+id: standard_unprivileged
+label: 'Standard Unprivileged'
+weight: 10
+is_admin: null
+permissions:
+  - 'search content'

@@ -1,0 +1,100 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.directory.directory_variant
+    - field.field.paragraph.directory.heading
+    - field.field.paragraph.directory.heading_level
+    - field.field.paragraph.directory.introduction
+    - field.field.paragraph.directory.link
+    - field.field.paragraph.directory.people
+    - field.field.paragraph.directory.vertical_style
+    - field.field.paragraph.directory.width
+    - paragraphs.paragraphs_type.directory
+  module:
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_style:
+      children:
+        - directory_variant
+        - width
+        - vertical_style
+      parent_name: ''
+      weight: 5
+      format_type: details
+      format_settings:
+        id: ''
+        classes: osu-pg-style
+        open: false
+        required_fields: false
+      label: Style
+      region: content
+id: paragraph.directory.default
+targetEntityType: paragraph
+bundle: directory
+mode: default
+content:
+  directory_variant:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  heading_level:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  introduction:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  people:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  vertical_style:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  width:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

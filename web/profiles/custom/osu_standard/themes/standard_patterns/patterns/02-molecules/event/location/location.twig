@@ -1,0 +1,14 @@
+{#
+/**
+ * A location either on campus or elsewhere.
+ *
+ * Available variables:
+ * - location_name - Name of the location
+ * - directions_link - Link to directions
+ */
+#}
+
+<div class="event--location">
+  {% trans %}Location: {{ location_name }}{%  endtrans %}
+  <a href="{{ directions_link }}">{% trans %}Get directions{%  endtrans %}</a>
+</div>

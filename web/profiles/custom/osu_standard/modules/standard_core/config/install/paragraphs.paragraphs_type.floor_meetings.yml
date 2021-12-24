@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: floor_meetings
+label: 'Meetings Floor'
+icon_uuid: null
+icon_default: null
+description: 'A short list of upcoming and recently past meetings.'
+behavior_plugins: {  }

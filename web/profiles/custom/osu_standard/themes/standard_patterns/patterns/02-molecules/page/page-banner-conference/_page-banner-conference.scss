@@ -1,0 +1,17 @@
+.m-page-banner-conference {
+  .m-page-banner-conference__image {
+    background-image: none;
+
+    img {
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(md) {
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 244px;
+      width: 100%;
+    }
+  }
+}

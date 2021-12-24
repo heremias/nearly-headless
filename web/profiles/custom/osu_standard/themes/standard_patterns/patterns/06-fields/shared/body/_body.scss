@@ -1,0 +1,35 @@
+.f-body {
+  font-size: 16px;
+  line-height: 28px;
+
+  h2 {
+    @include heading-large();
+  }
+
+  h3 {
+    @include heading-medium();
+  }
+
+  h4,
+  h5,
+  h6 {
+    @include heading-small();
+  }
+
+  a:not(.rich-button):hover {
+    border-color: #b00;
+    background-size: 100% 100%;
+    text-decoration: none;
+  }
+
+  a:not(.rich-button) {
+    color: inherit;
+    border-bottom: 1px solid #b00;
+    background-image: linear-gradient(120deg, #ddd 0%, #ddd 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0;
+    background-position: 0 100%;
+    transition: background-size 0.125s ease-in;
+    text-decoration: none;
+  }
+}

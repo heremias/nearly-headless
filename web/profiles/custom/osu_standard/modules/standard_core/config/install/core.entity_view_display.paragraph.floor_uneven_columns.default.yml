@@ -1,0 +1,71 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.floor_uneven_columns.column_narrow
+    - field.field.paragraph.floor_uneven_columns.column_wide
+    - field.field.paragraph.floor_uneven_columns.heading
+    - field.field.paragraph.floor_uneven_columns.heading_level
+    - field.field.paragraph.floor_uneven_columns.introduction
+    - field.field.paragraph.floor_uneven_columns.link
+    - field.field.paragraph.floor_uneven_columns.vertical_style
+    - field.field.paragraph.floor_uneven_columns.width
+    - paragraphs.paragraphs_type.floor_uneven_columns
+  module:
+    - entity_reference_revisions
+    - link
+id: paragraph.floor_uneven_columns.default
+targetEntityType: paragraph
+bundle: floor_uneven_columns
+mode: default
+content:
+  column_narrow:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  column_wide:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  introduction:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  link:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  heading_level: true
+  search_api_excerpt: true
+  vertical_style: true
+  width: true

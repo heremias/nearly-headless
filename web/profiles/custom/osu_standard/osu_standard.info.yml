@@ -1,0 +1,117 @@
+name: Marketing Standard Platform
+type: profile
+description: 'A platform for building, simple yet powerful, standardized websites'
+version: 8.x-1.0
+core_version_requirement: '^8.8 || ^9'
+dependencies:
+  - address_map_link
+  - asset_injector
+  - block
+  - block_content
+  - breakpoint
+  - ckeditor
+  - color
+  - components
+  - config
+  - config_update
+  - config_update_ui
+  - content_moderation
+  - contextual
+  - datalayer
+  - datetime
+  - dblog
+  - dynamic_page_cache
+  - editor
+  - features
+  - file
+  - google_tag
+  - hal
+  - history
+  - image
+  - libraries
+  - menu_block
+  - menu_link_content
+  - menu_breadcrumb
+  - menu_ui
+  - metatag
+  - metatag_open_graph
+  - metatag_twitter_cards
+  - node
+  - options
+  - page_cache
+  - path
+  - pathauto
+  - publishing_dropbutton
+  - rh_media
+  - rdf
+  - search
+  - secrets
+  - shortcut
+  - taxonomy
+  - toolbar
+  - unified_twig_ext
+  - views
+  - workflows
+  # Core
+  - osu_admin
+  - osu_authentication
+  - osu_brand
+  - osu_core
+  - osu_foundation
+  - osu_redirect
+  - osu_siteinfo
+  - osu_verify
+  - osu_video_embed
+  - osu_video_browser
+  # Analytics
+  - osu_datalayer
+  # Content - should largely be included by "standard_" wrappers.
+  - osu_news_and_events
+  # Media
+  - osu_cropstyles
+  - osu_media
+  - media_entity_audio
+  - osu_document_browser
+  - osu_document_embed
+  - osu_image_embed
+  - osu_image_browser
+  - osu_media_base
+  - osu_media_browser
+  - osu_media_roles
+  - osu_media_audio
+  - osu_media_document
+  - osu_media_file
+  - osu_media_image
+  - osu_media_image_field
+  - osu_media_mode_reference
+  - osu_media_transcript
+  - osu_media_video
+  - osu_media_video_field
+  - standard_core
+
+  # This list contains all the things that are still in refactor.
+  - osu_buildings
+  - osu_audience
+  - osu_bucket
+  - osu_college
+  - osu_location
+  - osu_place
+  - osu_sponsor
+  - osu_topic
+  - osu_type
+  - osu_news_and_events
+  - osu_pg_quote
+  - taxonomy_jsonsync
+  - osu_pg_callout
+  - osu_pg_list
+  - mediamagnet
+  - osu_node_sharer
+  - osu_pg_news_listing
+  - osu_tax_building
+  - osu_audio_stories
+  - osu_node_occurrences
+  - osu_taxonomy_api
+
+themes:
+  - seven
+  - standard_patterns

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.host
+    - node.type.event
+    - taxonomy.vocabulary.sponsors
+id: node.event.host
+field_name: host
+entity_type: node
+bundle: event
+label: Host
+description: "Organization acting as the primary host for the event (organizationally/logistically).<br>\r\nHosts must be chosen from the list of sponsors."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sponsors: sponsors
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

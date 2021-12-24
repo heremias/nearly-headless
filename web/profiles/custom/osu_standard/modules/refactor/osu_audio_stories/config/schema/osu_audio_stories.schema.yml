@@ -1,0 +1,14 @@
+# Schema for the configuration files of the google_analytics module.
+
+osu_audio_stories.settings:
+  type: config_object
+  label: 'Audio Stories'
+  title:
+    type: string
+    label: 'Page Title'
+  introduction:
+    type: string
+    label: 'Introduction'
+  items_per_page:
+    type: integer
+    label: 'Items per page'

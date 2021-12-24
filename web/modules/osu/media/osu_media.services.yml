@@ -1,0 +1,5 @@
+services:
+  osu_document_embed.overrider:
+    class: \Drupal\osu_media\Service\Overrides
+    tags:
+      - {name: config.factory.override, priority: 5}

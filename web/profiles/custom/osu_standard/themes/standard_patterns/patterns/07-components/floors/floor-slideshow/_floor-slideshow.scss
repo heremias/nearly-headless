@@ -1,0 +1,76 @@
+.c-floor-slideshow {
+  img {
+    max-width: 100%;
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: 60px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+  }
+
+  .slick-dots li {
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    position: relative;
+    vertical-align: top;
+    width: 20px;
+  }
+
+  .slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+
+    &::before {
+      color: #fff;
+      content: '\25A1';
+      font-size: 30px;
+      opacity: 1;
+    }
+  }
+
+  .slick-dots li.slick-active button::before {
+    content: '\25A0';
+    font-size: 30px;
+    opacity: 1;
+  }
+
+  .slick-arrow {
+    background: #000;
+    border: none;
+    border-radius: 0;
+    height: 50px;
+    opacity: 0.6;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+  }
+
+  .slick-prev {
+    left: 0;
+    z-index: 5;
+  }
+
+  .slick-next {
+    right: 0;
+    z-index: 5;
+  }
+}

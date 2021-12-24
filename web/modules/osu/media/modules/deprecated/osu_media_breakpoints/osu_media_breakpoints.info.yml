@@ -1,0 +1,7 @@
+name: 'OSU / Media / Breakpoints'
+description: 'A collection of breakpoints based on bootstrap'
+package: 'OSU / Media'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+

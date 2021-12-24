@@ -1,0 +1,7 @@
+standard_core.devel_settings_form:
+  path: '/admin/config/system/standard-core-devel'
+  defaults:
+    _form: '\Drupal\standard_core\Form\DevelForm'
+    _title: 'Standard Core Developer Settings'
+  requirements:
+    _permission: 'administer standard core devel settings'

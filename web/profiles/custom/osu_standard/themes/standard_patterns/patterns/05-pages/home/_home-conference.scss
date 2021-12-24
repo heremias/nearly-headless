@@ -1,0 +1,17 @@
+.page--home--conference {
+  .m-page-banner-conference {
+    .m-page-banner-conference__image {
+      @include media-breakpoint-up(md) {
+        height: 495px;
+      }
+    }
+  }
+
+  .region--content_before {
+    .o-info-cards {
+      @include media-breakpoint-up(lg) {
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

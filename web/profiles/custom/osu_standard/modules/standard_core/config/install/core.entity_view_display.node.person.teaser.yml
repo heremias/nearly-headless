@@ -1,0 +1,88 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.person.body
+    - field.field.node.person.featured
+    - field.field.node.person.image
+    - field.field.node.person.include_share_links
+    - field.field.node.person.intro
+    - field.field.node.person.liason_email
+    - field.field.node.person.liason_name
+    - field.field.node.person.liason_phone
+    - field.field.node.person.linkedin
+    - field.field.node.person.meta_title
+    - field.field.node.person.preferred_email
+    - field.field.node.person.preferred_organization
+    - field.field.node.person.preferred_phone
+    - field.field.node.person.preferred_title
+    - field.field.node.person.site_tags
+    - field.field.node.person.slug
+    - field.field.node.person.summary
+    - field.field.node.person.twitter
+    - node.type.person
+  module:
+    - telephone
+    - user
+id: node.person.teaser
+targetEntityType: node
+bundle: person
+mode: teaser
+content:
+  image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: square_small
+      link: false
+    third_party_settings: {  }
+  preferred_email:
+    type: email_mailto
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  preferred_organization:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  preferred_phone:
+    type: telephone_link
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+  preferred_title:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  body: true
+  featured: true
+  include_share_links: true
+  intro: true
+  liason_email: true
+  liason_name: true
+  liason_phone: true
+  linkedin: true
+  links: true
+  meta_title: true
+  search_api_excerpt: true
+  site_tags: true
+  slug: true
+  summary: true
+  twitter: true

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mailchimp_signup
+    - field.storage.block_content.field_values
+id: block_content.mailchimp_signup.field_values
+field_name: field_values
+entity_type: block_content
+bundle: mailchimp_signup
+label: 'Field Values'
+description: 'Enter keys and values separated by pipe characters and newlines.<br>my_key|123<br>my_other_key|456'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

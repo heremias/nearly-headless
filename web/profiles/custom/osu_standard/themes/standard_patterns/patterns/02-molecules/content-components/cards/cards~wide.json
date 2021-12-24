@@ -1,0 +1,16 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "items": "fields-paragraph-items-card-formatted-text"
+  },
+  "entity": {
+    "items": {
+      "getvalue": [null, null]
+    },
+    "width": {
+      "value": "wide"
+    }
+  }
+}

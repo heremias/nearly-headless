@@ -1,0 +1,60 @@
+<div {{ attributes.addClass("n-teaser-person") }}>
+  <div class="n-teaser-person__inner ">
+    <div class="n-teaser-person__image">
+      {% if entity.image is not empty %}
+        {{ content.image }}
+      {% else %}
+        <img alt="" src="{{ base_path ~ directory }}/images/buckeye-leaf.svg" />
+      {% endif %}
+    </div>
+    <div class="n-teaser-person__summary">
+      <div class="n-teaser-person__name">
+        {% if linkable %}
+          <a href="{{ url }}">{{ label }}</a>
+        {% else %}
+          {{ label }}
+        {% endif %}
+      </div>
+      <div class="n-teaser-person__job-title">
+        {{ content.preferred_title }}
+        {% if content.preferred_organization %}
+          {{ content.preferred_organization }}
+        {% endif %}
+      </div>
+      <div class="n-teaser-person__email">
+        {{ content.preferred_email }}
+      </div>
+      <div class="n-teaser-person__phone">
+        {{ content.preferred_phone }}
+      </div>
+
+      {# Add in dynamic vocabulary / tag based fields #}
+      {% for vocab in content.site_tags  %}
+        {% if vocab.terms | length > 0 %}
+          <div class="n-teaser-person__tags n-teaser-person__tags-{{ vocab.id }}">
+            {{ vocab.name }}:
+            {% for term in vocab.terms %}
+              {{ term.name }}{% if not loop.last %}, {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="n-teaser-person__liason" style="padding:20px;">
+    {% set liason_email = content.liason_email[0]['#title'] %}
+    {% set liason_name = content.liason_name[0]['#title'] %}
+    {% set liason_phone = content.liason_phone[0]['#title'] %}
+      {% if (liason_name | length > 0) or (liason_phone | length > 0) or (liason_email | length > 0)  %}
+      <div>
+        <b>Liason Information:</b> {{content.liason_name}}
+        {% if liason_email | length > 0 %}
+          {{content.liason_email}}
+        {% endif %}
+        {% if liason_phone | length > 0 %}
+          {{content.liason_phone}}
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

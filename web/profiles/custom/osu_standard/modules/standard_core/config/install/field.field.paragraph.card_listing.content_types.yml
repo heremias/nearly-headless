@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.content_types
+    - paragraphs.paragraphs_type.card_listing
+  module:
+    - options
+id: paragraph.card_listing.content_types
+field_name: content_types
+entity_type: paragraph
+bundle: card_listing
+label: 'Types of Content'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

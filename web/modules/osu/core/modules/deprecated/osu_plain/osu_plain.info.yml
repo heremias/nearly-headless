@@ -1,0 +1,6 @@
+name: 'OSU / Core / Plain Text'
+description: 'Plain text format.'
+type: module
+package: 'OSU / Core'
+core: 8.x
+core_version_requirement: ^8 || ^9

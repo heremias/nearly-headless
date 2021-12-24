@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.description
+    - paragraphs.paragraphs_type.highlight_list_item
+id: paragraph.highlight_list_item.description
+field_name: description
+entity_type: paragraph
+bundle: highlight_list_item
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

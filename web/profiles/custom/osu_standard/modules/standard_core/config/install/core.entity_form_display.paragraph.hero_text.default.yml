@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_text.description
+    - paragraphs.paragraphs_type.hero_text
+id: paragraph.hero_text.default
+targetEntityType: paragraph
+bundle: hero_text
+mode: default
+content:
+  description:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,11 @@
+{# This doesn't extend the standard component because it has an integrated header. #}
+<div {{ attributes.addClass(['c-component-highlight']) }} >
+  <div class="c-component-highlight__wrapper">
+    {{ content.image }}
+    {% if entity.heading and entity.heading.value %}
+    <{{ entity.heading_level.value }} class="c-component-highlight__heading" >{{ entity.heading.value }}</{{ entity.heading_level.value }}>
+    {% endif %}
+    {{ content.description }}
+    {{ content.link }}
+  </div>
+</div>

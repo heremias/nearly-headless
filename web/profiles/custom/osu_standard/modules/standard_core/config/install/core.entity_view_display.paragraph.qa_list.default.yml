@@ -1,0 +1,70 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.qa_list.heading
+    - field.field.paragraph.qa_list.heading_level
+    - field.field.paragraph.qa_list.introduction
+    - field.field.paragraph.qa_list.items
+    - field.field.paragraph.qa_list.link
+    - field.field.paragraph.qa_list.qa_list_variant
+    - field.field.paragraph.qa_list.vertical_style
+    - field.field.paragraph.qa_list.width
+    - paragraphs.paragraphs_type.qa_list
+  module:
+    - entity_reference_revisions
+    - link
+    - options
+id: paragraph.qa_list.default
+targetEntityType: paragraph
+bundle: qa_list
+mode: default
+content:
+  heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  heading_level:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  introduction:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  items:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  qa_list_variant: true
+  search_api_excerpt: true
+  vertical_style: true
+  width: true

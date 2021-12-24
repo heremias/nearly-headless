@@ -1,0 +1,10 @@
+<?php
+
+function osu_audience_mediamagnet_vocab() {
+  return [
+    'audience' => [
+      'category' => 'audience',
+      'name' => 'slug',
+    ]
+  ];
+}

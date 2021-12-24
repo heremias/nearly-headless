@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.description
+    - paragraphs.paragraphs_type.parousel_item
+id: paragraph.parousel_item.description
+field_name: description
+entity_type: paragraph
+bundle: parousel_item
+label: Description
+description: 'A brief description of the image which will be shown in an overlay.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

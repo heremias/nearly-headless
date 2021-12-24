@@ -1,0 +1,70 @@
+$ff--proxima: 'proximanova', Arial, san-serif;
+$ff--capita: 'Capita', serif;
+
+/* These variables were part of emulsify and probably shouldn't exist. */
+$font-body: $ff--proxima;
+$font-heading: $ff--proxima;
+
+body {
+  font-family: $ff--proxima;
+}
+
+a,
+a:visited,
+a:hover {
+  color: $scarlet;
+}
+
+/**
+ * Removes link animations.
+ */
+.f-body div div a.rich-reset,
+.f-body div div a.reset {
+  background-image: none;
+  text-decoration: none;
+  transition: none;
+  border-bottom: none;
+}
+
+/* Reset for drupal menu links */
+.tabs__nav--local-tasks,
+.toolbar-menu {
+  a,
+  a:visited,
+  a:hover {
+    color: initial;
+  }
+}
+
+/* Used for regular copy. */
+@mixin copy {
+  font-size: 17px;
+  line-height: 28px;
+}
+
+/* Used for more compact copy like the text in directory people teasers. */
+@mixin copy-compact {
+  font-size: 15px;
+  line-height: 21px;
+}
+
+/* Used to style text adjacent to links when rabbit hole is in play */
+@mixin unlinkable-text {
+  color: #333;
+}
+
+blockquote {
+  border-left: 3px solid #700;
+  color: #222;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-family: $ff--capita;
+  line-height: 2rem;
+  padding-left: 32px;
+}
+
+p.rich-large-text {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}

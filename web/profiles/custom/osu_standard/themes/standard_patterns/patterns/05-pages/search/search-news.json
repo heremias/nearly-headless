@@ -1,0 +1,193 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "page": {
+    "highlighted": "",
+    "site_header": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "site-header",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-brand-navbar"
+                }
+              },
+              {
+                "include()": {
+                  "pattern": "organisms-brand_masthead",
+                  "with": {
+                    "variant": "left",
+                    "site_name": "Women's Place"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "page_header": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "page-header",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "molecules-page-title-block",
+                  "with": {
+                    "title": "About and History"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "primary_menu": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "primary-menu",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-core-menu"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "content_before": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "content",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-tab-filter",
+                  "with": {
+                    "page_type": "page--news"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "content": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "content",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-news",
+                  "with": {
+                    "items": [
+                      {
+                        "location_type": "internal",
+                        "date": "Jul 28, 2017",
+                        "title": "News title lorem ipsum dolor consec amet elit",
+                        "description": "Lorem ipsum dolar amet, consec tetur, adipiscing elit, sedi eiusmod tempor",
+                        "location": "The Women's Place"
+                      },
+                      {
+                        "location_type": "external",
+                        "date": "Jul 28, 2017",
+                        "title": "News title lorem ipsum dolor consec amet elit",
+                        "description": "Lorem ipsum dolar amet, consec tetur, adipiscing elit, sedi eiusmod tempor",
+                        "location": "other"
+                      },
+                      {
+                        "location_type": "internal",
+                        "date": "Jul 28, 2017",
+                        "title": "News title lorem ipsum dolor consec amet elit",
+                        "description": "Lorem ipsum dolar amet, consec tetur, adipiscing elit, sedi eiusmod tempor",
+                        "location": "The Women's Place"
+                      },
+                      {
+                        "location_type": "external",
+                        "date": "Jul 28, 2017",
+                        "title": "News title lorem ipsum dolor consec amet elit",
+                        "description": "Lorem ipsum dolar amet, consec tetur, adipiscing elit, sedi eiusmod tempor",
+                        "location": "other"
+                      },
+                      {
+                        "location_type": "internal",
+                        "date": "Jul 28, 2017",
+                        "title": "News title lorem ipsum dolor consec amet elit",
+                        "description": "Lorem ipsum dolar amet, consec tetur, adipiscing elit, sedi eiusmod tempor",
+                        "location": "The Women's Place"
+                      },
+                      {
+                        "location_type": "internal",
+                        "date": "Jul 28, 2017",
+                        "title": "News title lorem ipsum dolor consec amet elit",
+                        "description": "Lorem ipsum dolar amet, consec tetur, adipiscing elit, sedi eiusmod tempor",
+                        "location": "The Women's Place"
+                      },
+                      {
+                        "location_type": "internal",
+                        "date": "Jul 28, 2017",
+                        "title": "News title lorem ipsum dolor consec amet elit",
+                        "description": "Lorem ipsum dolar amet, consec tetur, adipiscing elit, sedi eiusmod tempor",
+                        "location": "The Women's Place"
+                      },
+                      {
+                        "location_type": "internal",
+                        "date": "Jul 28, 2017",
+                        "title": "News title lorem ipsum dolor consec amet elit",
+                        "description": "Lorem ipsum dolar amet, consec tetur, adipiscing elit, sedi eiusmod tempor",
+                        "location": "The Women's Place"
+                      },
+                      {
+                        "location_type": "external",
+                        "date": "Jul 28, 2017",
+                        "title": "News title lorem ipsum dolor consec amet elit",
+                        "description": "Lorem ipsum dolar amet, consec tetur, adipiscing elit, sedi eiusmod tempor",
+                        "location": "oThEr"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "page_footer": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "page-footer",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-footer"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "site_footer": ""
+  }
+}

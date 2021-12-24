@@ -1,0 +1,59 @@
+{
+  "variant": "conference",
+  "color_scheme": "osu-light",
+  "attributes": {
+    "Attribute()": {}
+  },
+  "page": {
+    "highlighted": "",
+    "site_header": "templates-region-site-header-conference",
+    "page_header": {
+      "include()": {
+        "pattern": "templates-region",
+        "with": {
+          "region": "page-header",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "atoms-block",
+                  "with": {
+                    "content": "molecules-page-banner-conference"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "primary_menu": "templates-region-primary-menu-conference",
+    "breadcrumb": "",
+    "local_tasks": "",
+    "content_before": {
+      "include()": {
+        "pattern": "templates-region-content-before",
+        "with": {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "region": "content_before",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-info-cards"
+                }
+              }
+            ]
+          }
+        },
+        "only": true
+      }
+    },
+    "content": "templates-region-content-conference",
+    "content_after": "templates-region-content-after-conference",
+    "page_footer": "templates-region-page-footer-conference",
+    "site_footer": "templates-region-site-footer"
+  }
+}

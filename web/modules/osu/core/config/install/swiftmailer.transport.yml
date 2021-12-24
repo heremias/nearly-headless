@@ -1,0 +1,12 @@
+transport: smtp
+smtp_host: smtp.service.osu.edu
+smtp_port: 587
+smtp_encryption: tls
+smtp_credential_provider: swiftmailer
+smtp_credentials:
+  swiftmailer:
+    username: ADV-svc-umar-web@osu.edu
+    password: 'DO NOT EXPORT'
+sendmail_path: /usr/sbin/sendmail
+sendmail_mode: bs
+spool_directory: ''

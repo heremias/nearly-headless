@@ -1,0 +1,15 @@
+.c-floor-columns {
+  .m-columns {
+    @include media-breakpoint-up(md) {
+      .field--name-items {
+        > div.field__item:first-child {
+          padding-left: 15px;
+        }
+
+        > div.field__item:last-child {
+          padding-right: 15px;
+        }
+      }
+    }
+  }
+}

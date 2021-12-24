@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: quote
+label: 'Quote Floor'
+icon_uuid: null
+icon_default: null
+description: 'A large, potentially tweetable, quotation in a floor context.'
+behavior_plugins: {  }

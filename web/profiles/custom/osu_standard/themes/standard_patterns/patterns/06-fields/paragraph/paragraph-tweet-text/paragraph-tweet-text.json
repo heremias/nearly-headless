@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "tweet_text",
+  "field_type": "string",
+  "label": "Tweet Text",
+  "label_hidden": true,
+  "multiple": false,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "Wherever you go to tweet, there you are."
+    }
+  ]
+}

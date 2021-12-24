@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: mailchimp_signup
+label: 'Mailchimp Signup'
+revision: 1
+description: 'A mailchimp signup form that is embedded using their javascript api.'

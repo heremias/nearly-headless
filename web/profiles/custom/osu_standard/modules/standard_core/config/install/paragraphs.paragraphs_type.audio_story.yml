@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: audio_story
+label: 'Audio Story Floor'
+icon_uuid: null
+icon_default: null
+description: 'Audio stories are, at this point,  a largely women''s place specific component which references audio story nodes. We should probably refactor the paragraph type into something generic like a way to display a single referenced node in a one of a couple view modes.'
+behavior_plugins: {  }

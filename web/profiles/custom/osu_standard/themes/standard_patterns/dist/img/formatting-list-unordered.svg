@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <title>list-unordered</title>
+    <circle cx="6" cy="6" r="2" fill="currentColor"/>
+    <circle cx="6" cy="12" r="2" fill="currentColor"/>
+    <circle cx="6" cy="18" r="2" fill="currentColor"/>
+    <rect x="10" y="17" width="10" height="2" fill="currentColor"/>
+    <rect x="10" y="11" width="10" height="2" fill="currentColor"/>
+    <rect x="10" y="5" width="10" height="2" fill="currentColor"/>
+</svg>

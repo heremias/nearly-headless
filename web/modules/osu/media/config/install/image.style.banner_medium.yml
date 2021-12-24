@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.banner
+  module:
+    - crop
+name: banner_medium
+label: 'Banner (4:1) - Medium'
+effects:
+  4f685a5e-2626-461e-b3e9-571e89e2eef5:
+    uuid: 4f685a5e-2626-461e-b3e9-571e89e2eef5
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: banner
+  939b1a5e-fe03-4536-bc8b-c14928bfea5c:
+    uuid: 939b1a5e-fe03-4536-bc8b-c14928bfea5c
+    id: image_scale
+    weight: -8
+    data:
+      width: 640
+      height: 160
+      upscale: true
+  7bc1b81c-a8d6-452a-9b8f-a6426e7ab158:
+    uuid: 7bc1b81c-a8d6-452a-9b8f-a6426e7ab158
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 640
+      height: 160
+      anchor: center-center

@@ -1,0 +1,23 @@
+{% extends "@components/floors/floor/floor.twig" %}
+{% set class = 'c-floor-formatted-text-list' %}
+{% block component %}
+  {% if variant == "accordion" %}
+    {% include "@organisms/collection/accordion/accordion.twig" with { id: id, items: items } only %}
+
+  {% elseif variant == "listicle" %}
+    {% include "@organisms/collection/listicle/listicle.twig" with { starts_at: 1, items: items } only %}
+
+  {% elseif variant == "qalist" %}
+    {# We first need to reformat the item list for qandas. #}
+    {% set qandalist = [] %}
+    {% for item in items %}
+      {% set qandalist = qandalist|merge([{ question: item.heading, answer: item.body }]) %}
+    {% endfor %}
+    {% include "@organisms/collection/qandalist/qandalist.twig" with { "items": qandalist } only %}
+
+  {% else %}
+    UNSUPPORTED FORMATTED TEXT LIST TYPE
+
+  {% endif %}
+
+{% endblock %}

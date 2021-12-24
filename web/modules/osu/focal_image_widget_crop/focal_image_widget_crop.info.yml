@@ -1,0 +1,7 @@
+name: 'Focal + Image Widget Crop'
+description: 'Extends image widget crop with focal point.'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - focal_point
+  - image_widget_crop

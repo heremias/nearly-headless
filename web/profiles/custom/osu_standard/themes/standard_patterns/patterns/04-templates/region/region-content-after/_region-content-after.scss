@@ -1,0 +1,27 @@
+.region-content-after-conference {
+  padding: 50px 0;
+  position: relative;
+
+  & > .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .top {
+    background: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50%;
+    padding-top: 40px;
+  }
+
+  .bottom {
+    background: $gray-6;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    padding-bottom: 40px;
+  }
+}

@@ -1,0 +1,23 @@
+.tweetable {
+  position: relative;
+  text-align: left;
+
+  .tweetable__link {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .field {
+    cursor: pointer;
+    display: inline;
+    line-height: 60px;
+  }
+
+  .fa {
+    color: #55acee;
+    font-size: 35px;
+  }
+}

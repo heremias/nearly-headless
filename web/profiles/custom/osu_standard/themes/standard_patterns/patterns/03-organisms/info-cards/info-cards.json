@@ -1,0 +1,11 @@
+{
+  "variant": "conference",
+  "color_scheme": "osu-light",
+  "attributes": {
+    "Attribute()": {}
+  },
+  "NOTE": "Since this isn't a pattern for a content entity, it doesn't need the 'content' or 'entity' keys",
+  "title": "Lorem Ipsum Dolar Amet Dolar Conference 2018",
+  "dates": "September 28-29, 2018",
+  "location": "Ohio Union"
+}

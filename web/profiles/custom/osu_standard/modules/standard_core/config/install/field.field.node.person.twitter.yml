@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.twitter
+    - node.type.person
+  module:
+    - link
+id: node.person.twitter
+field_name: twitter
+entity_type: node
+bundle: person
+label: Twitter
+description: 'A link to the person''s twitter profile. The link text should be the screen name.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link

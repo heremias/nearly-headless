@@ -1,0 +1,9 @@
+{% include "@components/floors/floor-callout/floor-callout.twig" with {
+  attributes: attributes,
+  content: content,
+  entity: paragraph,
+  share_url: url_to_tweet,
+  share_text: content.tweet_text|render|striptags,
+  shareable: paragraph.tweetable.value,
+}
+%}

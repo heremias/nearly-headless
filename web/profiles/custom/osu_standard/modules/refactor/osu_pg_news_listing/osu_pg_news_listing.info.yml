@@ -1,0 +1,5 @@
+name: osu_pg_news_listing
+type: module
+core_version_requirement: '^8.8 || ^9'
+dependencies:
+

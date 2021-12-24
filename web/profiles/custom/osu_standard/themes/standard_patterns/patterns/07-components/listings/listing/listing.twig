@@ -1,0 +1,13 @@
+<div {{ attributes.addClass(['c-listing', class]) }} >
+  {% block navigation %}
+    <div class="c-navigation--sample">
+      The listing...
+    </div>
+  {% endblock %}
+  {% block listing %}
+    <div class="c-listing--sample">
+      The rendered view: {{ content.view }}
+    </div>
+  {% endblock %}
+
+</div>

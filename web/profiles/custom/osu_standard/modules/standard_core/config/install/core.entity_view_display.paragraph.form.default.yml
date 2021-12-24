@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.form.form
+    - field.field.paragraph.form.heading
+    - field.field.paragraph.form.heading_level
+    - field.field.paragraph.form.introduction
+    - field.field.paragraph.form.link
+    - field.field.paragraph.form.vertical_style
+    - field.field.paragraph.form.width
+    - paragraphs.paragraphs_type.form
+  module:
+    - link
+    - webform
+id: paragraph.form.default
+targetEntityType: paragraph
+bundle: form
+mode: default
+content:
+  form:
+    weight: 2
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+  heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  introduction:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  heading_level: true
+  search_api_excerpt: true
+  vertical_style: true
+  width: true

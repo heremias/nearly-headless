@@ -1,0 +1,7 @@
+name: 'Hub Bucket'
+package: 'OSU Content / Taxonomy / Content'
+description: 'This contains the primary public topics associated with stories on the content hub.'
+type: module
+core_version_requirement: '^8.8 || ^9'
+dependencies:
+  - osu_bucket

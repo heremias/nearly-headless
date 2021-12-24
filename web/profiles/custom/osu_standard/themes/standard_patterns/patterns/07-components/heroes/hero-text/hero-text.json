@@ -1,0 +1,13 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "description": "fields-paragraph-description"
+  },
+  "entity": {
+    "description": {
+      "value": "A Fantastic Hero"
+    }
+  }
+}

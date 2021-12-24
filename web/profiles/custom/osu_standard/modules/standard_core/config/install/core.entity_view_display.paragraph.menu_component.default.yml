@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.menu_component.heading
+    - field.field.paragraph.menu_component.heading_level
+    - field.field.paragraph.menu_component.root
+    - paragraphs.paragraphs_type.menu_component
+id: paragraph.menu_component.default
+targetEntityType: paragraph
+bundle: menu_component
+mode: default
+content: {  }
+hidden:
+  heading: true
+  heading_level: true
+  root: true
+  search_api_excerpt: true

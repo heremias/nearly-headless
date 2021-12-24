@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_formatted_text.body
+    - field.field.paragraph.card_formatted_text.heading
+    - field.field.paragraph.card_formatted_text.link
+    - paragraphs.paragraphs_type.card_formatted_text
+  module:
+    - link
+    - text
+id: paragraph.card_formatted_text.default
+targetEntityType: paragraph
+bundle: card_formatted_text
+mode: default
+content:
+  body:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

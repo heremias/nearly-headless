@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - standard_core
+  theme:
+    - standard_patterns
+id: standardhero
+theme: standard_patterns
+region: page_header
+weight: -30
+provider: null
+plugin: standard_hero
+settings:
+  id: standard_hero
+  label: 'Standard Hero'
+  provider: standard_core
+  label_display: '0'
+visibility: {  }

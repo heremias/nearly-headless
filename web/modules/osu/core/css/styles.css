@@ -1,0 +1,35 @@
+/**
+ * Rich Text Editor Styles
+ */
+ol.rich-list-decimal {
+  list-style-type: decimal;
+}
+
+ol.rich-list-alpha-upper {
+  list-style-type: upper-alpha;
+}
+
+ol.rich-list-alpha-lower {
+  list-style-type: lower-alpha;
+}
+
+ol.rich-list-roman-upper {
+  list-style-type: upper-roman;
+}
+
+ol.rich-list-roman-lower {
+  list-style-type: lower-roman;
+}
+
+p.rich-large-text {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+
+/**
+ * Toolbar adjustments for Healthcheck.
+ */
+.toolbar .toolbar-bar .healthcheck-toolbar-tab.toolbar-tab {
+  float: right; /* LTR */
+}

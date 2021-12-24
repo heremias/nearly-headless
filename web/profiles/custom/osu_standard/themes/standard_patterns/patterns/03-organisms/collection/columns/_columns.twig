@@ -1,0 +1,24 @@
+{#
+THIS DOES NOT WORK AND IS NOT USED.
+It is an attempt to get rid of columns-two and columns-three
+#}
+{% set columns_desired = columns|length %}
+
+{# Keeps track of the index of the current item #}
+{% set item_current = 0 %}
+
+{# iterate over items in batches of 2 and assign each to a column #}
+{% for item in items %}
+  {% set col = item_current % columns_desired %}
+  {% set columns = columns|merge({(col): columns[col] ~ item.content}) %}
+
+  {# Increment our counter #}
+  {% set item_current = item_current + 1 %}
+{% endfor %}
+
+{# Output our column #}
+{% for column in columns %}
+  <div class="">
+    {{ column }}
+  </div>
+{% endfor %}

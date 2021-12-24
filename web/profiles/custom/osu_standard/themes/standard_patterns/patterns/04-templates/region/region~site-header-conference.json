@@ -1,0 +1,21 @@
+{
+  "region": "site-header",
+  "content": {
+    "join()": [
+      {
+        "include()": {
+          "pattern": "organisms-brand-navbar-osu-light"
+        }
+      },
+      {
+        "include()": {
+          "pattern": "organisms-brand-masthead-conference",
+          "with": {
+            "variant": "left",
+            "site_name": "Clinicians Well Being"
+          }
+        }
+      }
+    ]
+  }
+}

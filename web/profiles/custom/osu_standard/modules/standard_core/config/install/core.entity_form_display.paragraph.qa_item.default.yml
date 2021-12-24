@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.qa_item.answer
+    - field.field.paragraph.qa_item.question
+    - paragraphs.paragraphs_type.qa_item
+  module:
+    - text
+id: paragraph.qa_item.default
+targetEntityType: paragraph
+bundle: qa_item
+mode: default
+content:
+  answer:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  question:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

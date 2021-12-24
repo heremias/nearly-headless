@@ -1,0 +1,102 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.floor_highlight_list.heading
+    - field.field.paragraph.floor_highlight_list.heading_level
+    - field.field.paragraph.floor_highlight_list.introduction
+    - field.field.paragraph.floor_highlight_list.items
+    - field.field.paragraph.floor_highlight_list.link
+    - field.field.paragraph.floor_highlight_list.vertical_style
+    - field.field.paragraph.floor_highlight_list.width
+    - paragraphs.paragraphs_type.floor_highlight_list
+  module:
+    - field_group
+    - link
+    - paragraphs
+third_party_settings:
+  field_group:
+    group_style:
+      children:
+        - width
+        - vertical_style
+      parent_name: ''
+      weight: 20
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: Style
+      region: content
+id: paragraph.floor_highlight_list.default
+targetEntityType: paragraph
+bundle: floor_highlight_list
+mode: default
+content:
+  heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  heading_level:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  introduction:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  items:
+    weight: 3
+    settings:
+      title: Highlight
+      title_plural: Highlights
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: highlight_list_item
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  vertical_style:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  width:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

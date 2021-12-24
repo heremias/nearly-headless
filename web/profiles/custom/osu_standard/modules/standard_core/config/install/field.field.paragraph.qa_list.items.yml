@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.items
+    - paragraphs.paragraphs_type.qa_item
+    - paragraphs.paragraphs_type.qa_list
+  module:
+    - entity_reference_revisions
+id: paragraph.qa_list.items
+field_name: items
+entity_type: paragraph
+bundle: qa_list
+label: Items
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      qa_item: qa_item
+    target_bundles_drag_drop:
+      qa_item:
+        enabled: true
+        weight: 9
+field_type: entity_reference_revisions

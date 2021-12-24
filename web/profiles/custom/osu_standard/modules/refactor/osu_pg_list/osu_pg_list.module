@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Adds starts_at to the list field's variables.
+ * @param $variables
+ */
+function osu_pg_list_preprocess_field(&$variables) {
+
+  $element = $variables['element'];
+  if (($element['#field_name'] == 'items') && ($element['#bundle'] == 'list')) {
+    $paragraph = $element['#object'];
+    $variables['starts_at'] = $paragraph->get('starts_at')->value ? $paragraph->get('starts_at')->value : 1;
+  }
+
+}

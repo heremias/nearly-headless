@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.editor_image_highlight_large
+label: 'Highlight (1.65)'
+targetEntityType: media
+cache: true

@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: practice
+label: practice
+type: 'canonical_entities:node'
+pattern: 'practice/[node:slug]'
+selection_criteria:
+  382ca9b2-7c70-443a-8152-f280c2d4a919:
+    id: node_type
+    bundles:
+      practice: practice
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 382ca9b2-7c70-443a-8152-f280c2d4a919
+selection_logic: and
+weight: -5
+relationships: {  }

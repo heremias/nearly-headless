@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "hero",
+  "field_type": "???",
+  "label": "Hero",
+  "label_hidden": true,
+  "multiple": true,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "molecules-formatted-text-wide"
+    }
+  ]
+}

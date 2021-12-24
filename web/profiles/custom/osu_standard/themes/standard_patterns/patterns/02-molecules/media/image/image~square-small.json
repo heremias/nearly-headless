@@ -1,0 +1,12 @@
+{
+  "attributes": {
+    "Attribute()": {
+      "class": ["media", "media-image", "view-mode-square-small", "contextual-region"]
+    }
+  },
+  "media": {},
+  "name": "Sample Image",
+  "content": {
+    "image": "fields-media-image-square-small"
+  }
+}

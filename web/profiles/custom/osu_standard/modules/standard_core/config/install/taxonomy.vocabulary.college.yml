@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Colleges (Media Magnet)'
+vid: college
+description: null
+weight: 0

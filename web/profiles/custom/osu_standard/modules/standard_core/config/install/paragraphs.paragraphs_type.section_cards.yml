@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: section_cards
+label: 'Cards Section'
+icon_uuid: null
+icon_default: null
+description: "A row or gallery of cards in a section. Original behavior here was to carousel after 3 items. However, I think we may need to add more options to allow grid layouts as well.\r\n"
+behavior_plugins: {  }

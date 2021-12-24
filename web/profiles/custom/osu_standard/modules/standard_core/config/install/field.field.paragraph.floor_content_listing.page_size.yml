@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.page_size
+    - paragraphs.paragraphs_type.floor_content_listing
+  module:
+    - options
+id: paragraph.floor_content_listing.page_size
+field_name: page_size
+entity_type: paragraph
+bundle: floor_content_listing
+label: 'Items to Show'
+description: 'The number of items to show.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 3
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

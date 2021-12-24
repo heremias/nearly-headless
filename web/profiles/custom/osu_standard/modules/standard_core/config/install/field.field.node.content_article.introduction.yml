@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.introduction
+    - node.type.content_article
+  module:
+    - text
+id: node.content_article.introduction
+field_name: introduction
+entity_type: node
+bundle: content_article
+label: Introduction
+description: 'A single introductory paragraph'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

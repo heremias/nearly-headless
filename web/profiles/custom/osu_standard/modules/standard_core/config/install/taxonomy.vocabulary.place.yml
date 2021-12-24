@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Place (Media Magnet Location)'
+vid: place
+description: ''
+weight: 0

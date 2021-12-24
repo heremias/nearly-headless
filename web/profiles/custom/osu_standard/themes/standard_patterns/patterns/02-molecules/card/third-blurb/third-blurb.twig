@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Pattern for third-blurb.
+ *
+ * Available variables:
+ * -
+ */
+<div class="m-third-blurb">
+  <div class="m-third-blurb__inner">
+    <div class="m-third-blurb__header">
+      {{ third_blurb_header }}
+    </div>
+    <div class="m-third-blurb__content">
+      {{ third_blurb_content }}
+    </div>
+    <div class="m-third-blurb__button">
+      {% include "@atoms/button/button-cta/button-cta.twig" with {
+        button_text: third_blurb_button
+      } %}
+    </div>
+  </div>
+</div>
+
+#}
+
+<div class="m-third-blurb">
+  <div class="m-third-blurb__inner clearfix">
+    <div class="m-third-blurb__header">
+      {{ content.heading }}
+    </div>
+    <div class="m-third-blurb__content">
+      {{ content.body }}
+    </div>
+    {% if content.link %}
+    <div class="m-third-blurb__button">
+      {{ content.link }}
+    </div>
+    {% endif %}
+  </div>
+</div>

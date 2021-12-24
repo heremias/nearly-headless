@@ -1,0 +1,13 @@
+{% set bare = {
+  registration_link_uri_bare: node.registration_link.uri
+} %}
+{% set content = content|merge(bare) %}
+{% include "@templates/event/event.twig" with {
+  attributes: attributes,
+  content: content,
+  control: control,
+  entity: node,
+  registration_window_opens: registration_window_opens,
+  registration_window_closes: registration_window_closes,
+  share_links: share_links
+} %}

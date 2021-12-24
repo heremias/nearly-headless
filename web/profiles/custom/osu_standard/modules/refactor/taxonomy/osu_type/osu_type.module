@@ -1,0 +1,10 @@
+<?php
+
+function osu_type_mediamagnet_vocab() {
+  return [
+    'type' => [
+      'category' => 'format',
+      'name' => 'slug',
+    ]
+  ];
+}

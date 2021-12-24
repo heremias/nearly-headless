@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.editor_image_teaser_large
+    - field.field.media.image.caption
+    - field.field.media.image.credit
+    - field.field.media.image.image
+    - image.style.teaser_large
+    - media.type.image
+  module:
+    - image
+id: media.image.editor_image_teaser_large
+targetEntityType: media
+bundle: image
+mode: editor_image_teaser_large
+content:
+  image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: teaser_large
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  caption: true
+  created: true
+  credit: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

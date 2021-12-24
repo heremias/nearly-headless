@@ -1,0 +1,6 @@
+name: 'OSU / Media / Video Browser'
+description: 'Video specific browser.'
+package: 'OSU / Media'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,60 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/local.hub.osu.edu\/taxonomy\/term\/32?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/bucket"
+        }
+    },
+    "tid": [
+        {
+            "value": 32
+        }
+    ],
+    "uuid": [
+        {
+            "value": "dbfc2e43-a471-4e75-ba53-8a181cb2ed4e"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "bucket"
+        }
+    ],
+    "name": [
+        {
+            "value": "Philanthropy (time, treasure)",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": 1498836351,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "analytics_code": [
+        {
+            "value": "Philan",
+            "lang": "en"
+        }
+    ]
+}

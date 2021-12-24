@@ -1,0 +1,22 @@
+<div {{ attributes.addClass("o-info-cards") }}>
+  <div class="o-info-cards__wrapper">
+    <img src="https://www.osu.edu/assets/web/logo-web/1.1.0/osu-web-header-horiz.png" alt="The Ohio State University" />
+
+    <div class="o-info-cards__title">
+      {{ title }}
+    </div>
+
+    <div class="o-info-cards__date">
+      {{ dates }}
+    </div>
+
+    <div class="o-info-cards__location">
+      {% if location %}
+      <div class="disc-separator">
+      &#9679;
+      </div>
+      {% endif %}
+      {{ location }}
+    </div>
+  </div>
+</div>

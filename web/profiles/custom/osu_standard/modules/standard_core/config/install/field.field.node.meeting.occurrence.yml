@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.occurrence
+    - node.type.meeting
+  module:
+    - datetime_range
+id: node.meeting.occurrence
+field_name: occurrence
+entity_type: node
+bundle: meeting
+label: 'Date and Time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

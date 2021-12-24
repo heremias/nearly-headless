@@ -1,0 +1,23 @@
+{
+  "name": "umarketing/media",
+  "type": "drupal-custom-module",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@code.osu.edu:umarketing/focal_image_widget_crop.git"
+    }
+  ],
+  "require": {
+    "composer/installers": "~1.0",
+    "drupal/allowed_formats": "^1.1",
+    "drupal/dropzonejs": "^2.0-alpha3",
+    "drupal/embed": "^1.0",
+    "drupal/entity_browser": "^2.0-alpha2",
+    "drupal/entity_embed": "^1.0-beta2",
+    "drupal/focal_point": "^1.0",
+    "drupal/rabbit_hole": "^1.0-beta4",
+    "drupal/svg_image": "^1.9",
+    "drupal/video_embed_field": "^2.0-alpha2",
+    "umarketing/focal_image_widget_crop": "master"
+  }
+}

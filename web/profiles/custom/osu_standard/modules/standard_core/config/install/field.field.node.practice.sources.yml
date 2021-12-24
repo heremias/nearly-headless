@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.sources
+    - node.type.practice
+  module:
+    - link
+id: node.practice.sources
+field_name: sources
+entity_type: node
+bundle: practice
+label: Sources
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

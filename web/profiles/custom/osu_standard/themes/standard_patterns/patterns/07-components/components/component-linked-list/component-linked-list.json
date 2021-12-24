@@ -1,0 +1,17 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "heading": "fields-paragraph-heading",
+    "links": "fields-paragraph-links"
+  },
+  "entity": {
+    "heading": {
+      "value": "Link List Component"
+    },
+    "heading_level": {
+      "value": "h2"
+    }
+  }
+}

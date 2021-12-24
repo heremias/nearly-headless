@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: formatted_text_component
+label: 'Formatted Text Component'
+icon_uuid: null
+icon_default: null
+description: 'Formatted text in a component context. '
+behavior_plugins: {  }

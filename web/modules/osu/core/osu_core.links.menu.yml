@@ -1,0 +1,20 @@
+osu_core.unaliased_report:
+  title: 'Unaliased Content Report'
+  parent: system.admin_reports
+  description: 'See a report of all unaliased content.'
+  route_name: osu_core.unaliased_report
+osu_core.aliased_report:
+  title: 'Aliased Content Report'
+  parent: system.admin_reports
+  description: 'Quickly determine if a list of aliases exist on this site'
+  route_name: osu_core.aliased_report
+osu_core.ownership_settings:
+  title: 'Site Ownership Verification'
+  parent: system.admin_config_system
+  description: 'Prove site ownership to search engines.'
+  route_name: osu_core.ownership_settings
+osu_core.developer_settings:
+  title: 'Core Developer Settings'
+  parent: system.admin_config_system
+  description: 'Advanced settings common to all Drupal sites'
+  route_name: osu_core.developer_settings

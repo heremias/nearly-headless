@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.upcoming_days
+    - paragraphs.paragraphs_type.floor_meetings
+  module:
+    - options
+id: paragraph.floor_meetings.upcoming_days
+field_name: upcoming_days
+entity_type: paragraph
+bundle: floor_meetings
+label: 'Show Upcoming Meetings Within...'
+description: 'Amount of time forward to include in the upcoming list.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 28
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

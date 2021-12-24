@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Pattern for third-cta.
+ *
+ * Available variables:
+ * -
+ */
+<div class="m-third-cta">
+  <div class="m-third-cta__inner">
+
+    <img src="{{ third_cta_image }}" alt="cta image" class="m-third-cta-image" />
+
+    <div class="m-third-cta__summary">
+      <div class="m-third-cta__title">
+        {{ third_cta_title }}
+      </div>
+      <div class="m-third-cta__label">
+        {{ third_cta_label }}
+      </div>
+      <div class="m-third-cta__link">
+        <a href="{{ url }}">{{ title }}</a>&nbsp;<span class="rang">&rang;</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+#}
+<div class="m-third-cta">
+  <div class="m-third-cta__inner">
+
+    {{ content.image }}
+
+    <div class="m-third-cta__summary">
+      <div class="m-third-cta__title">
+        {{ content.heading }}
+      </div>
+      <div class="m-third-cta__label">
+        {{ content.subheading }}
+      </div>
+      <div class="m-third-cta__link">
+        {{ content.link }}&nbsp;<span class="rang">&rang;</span>
+      </div>
+    </div>
+  </div>
+</div>

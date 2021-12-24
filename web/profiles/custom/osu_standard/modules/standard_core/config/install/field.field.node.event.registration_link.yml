@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.registration_link
+    - node.type.event
+  module:
+    - link
+id: node.event.registration_link
+field_name: registration_link
+entity_type: node
+bundle: event
+label: 'Registration Link'
+description: 'Link behind the registration button.<br />To use an email address, enter "mailto:example@osu.edu"'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

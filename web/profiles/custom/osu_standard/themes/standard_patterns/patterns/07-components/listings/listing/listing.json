@@ -1,0 +1,16 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "view": "A Rendered view"
+  },
+  "entity": {
+    "heading": {
+      "value": "Listing"
+    },
+    "heading_level": {
+      "value": "h2"
+    }
+  }
+}

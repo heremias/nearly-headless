@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: link_list
+label: 'Link List Component'
+icon_uuid: null
+icon_default: null
+description: 'A list of links in a component context.'
+behavior_plugins: {  }

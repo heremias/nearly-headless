@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.width
+    - paragraphs.paragraphs_type.audio_story
+  module:
+    - options
+id: paragraph.audio_story.width
+field_name: width
+entity_type: paragraph
+bundle: audio_story
+label: 'Horizontal Style'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: narrow
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,7 @@
+osu_audio_stories.admin_settings_form:
+  path: '/admin/config/system/osu-audio-stories'
+  defaults:
+    _form: '\Drupal\osu_audio_stories\Form\ListingConfigForm'
+    _title: 'Audio Stories'
+  requirements:
+    _permission: 'administer audio stories'

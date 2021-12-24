@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Pattern for brand-navbar.
+ *
+ * Available variables:
+ * - skip_target: target for accessibility skip to content link
+ */
+#}
+{% set base_class = 'osu-utility-navbar' %}
+{% set color_scheme_class = color_scheme %}
+
+<!-- OSU Navbar markup -->
+<div role="navigation" id="osu_navbar" aria-labelledby="osu_navbar_heading" {{ attributes.addClass([base_class, color_scheme_class]) }}>
+
+    <h2 id="osu_navbar_heading" class="osu-semantic">Ohio State nav bar</h2>
+
+	<div class="container">
+    	<div class="univ_info">
+    		<p class="univ_name"><a href="https://www.osu.edu" title="The Ohio State University">The Ohio State University</a></p>
+    	</div><!-- /univ_info -->
+    	<div class="univ_links">
+    		<div class="links">
+    			<ul>
+    				<li><a href="https://www.osu.edu/help.php" class="help">Help</a></li>
+    				<li><a href="https://buckeyelink.osu.edu/" class="buckeyelink" >BuckeyeLink</a></li>
+    				<li><a href="https://www.osu.edu/map/" class="map">Map</a></li>
+    				<li><a href="https://www.osu.edu/findpeople/" class="findpeople">Find People</a></li>
+    				<li><a href="https://email.osu.edu/" class="webmail">Webmail</a></li>
+            {% if color_scheme != 'osu-light' %}
+            <li><a href="https://www.osu.edu/search/" class="search">Search Ohio State</a></li>
+            {% else %}
+            <li class="visible-xs"><a href="https://www.osu.edu/search/" class="search"><span class="linktext">Search Ohio State</span></a></li>
+            {% endif %}
+    			</ul>
+    		</div><!-- /links -->
+
+      </div><!-- /univ_links -->
+    </div><!-- /container -->
+
+</div><!-- /osu_navbar -->

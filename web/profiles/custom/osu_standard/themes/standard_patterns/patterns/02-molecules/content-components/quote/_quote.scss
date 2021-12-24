@@ -1,0 +1,130 @@
+.quote {
+  &.quote--tweetable {
+    cursor: pointer;
+  }
+
+  .quote--quote {
+    color: $gray-2;
+    display: inline;
+    font-family: $ff--capita;
+    font-size: 29px;
+    font-weight: 300;
+    line-height: 41px;
+    text-align: left;
+    width: 100%;
+
+    &::before {
+      content: "\201C";
+      position: absolute;
+      margin-left: -0.45em;
+    }
+
+    p:last-child::after {
+      content: "\201D";
+    }
+
+    p {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .quote--attribution {
+    font-family: $ff--proxima;
+    font-size: 16px;
+    padding: 0;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  .fa {
+    margin-top: 0.5rem;
+    color: #55acee;
+    font-size: 23px;
+  }
+
+  /* Different styles for the standard pseudo pattern. */
+  &.quote--standard {
+    .quote--attribution-name {
+      .inner {
+        font-weight: bold;
+      }
+    }
+
+    &.quote--with-context {
+      .quote--attribution-name {
+        .inner {
+          &::after {
+            content: ", ";
+          }
+        }
+      }
+    }
+  }
+
+  /* Different styles for the conference pseudo pattern. */
+  &.quote--conference {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    align-items: center;
+    -ms-flex-line-pack: center;
+    justify-content: flex-start;
+    -ms-flex-pack: start;
+    margin: 0 20px 0 25px;
+    position: relative;
+    text-align: center;
+
+    .quote--quote {
+      display: inline-block;
+      font-size: 2.285em;
+      width: auto;
+
+      &::before {
+        text-align: left;
+      }
+    }
+
+    .quote--attribution {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+      align-items: center;
+      -ms-flex-line-pack: center;
+      justify-content: flex-start;
+      -ms-flex-pack: start;
+      font-size: 1.214em;
+      margin: 30px auto 0;
+    }
+
+    .quote--attribution__image {
+      height: 42px;
+      overflow: hidden;
+      position: relative;
+      width: 42px;
+
+      img {
+        height: auto;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    .quote--attribution__content {
+      color: $gray-2;
+      margin: 0 0 0 10px;
+      text-transform: none;
+    }
+
+    .quote--attribution-name {
+      display: block;
+    }
+  }
+}

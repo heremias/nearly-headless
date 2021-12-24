@@ -1,0 +1,40 @@
+services:
+  osu_core.route_subscriber:
+    class: Drupal\osu_core\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  osu_core.frame_event_subscriber:
+    class: Drupal\osu_core\EventSubscriber\OsuFrameEventSubscriber
+    tags:
+      - {name: event_subscriber}
+  osu_core.secrets_overrider:
+    class: \Drupal\osu_core\Service\SecretsOverrider
+    tags:
+      - {name: config.factory.override, priority: 5}
+  osu_core.menu_overrider:
+    class: \Drupal\osu_core\Service\MenuOverrider
+    tags:
+      - {name: config.factory.override, priority: 5}
+  osu_core.ownership_overrider:
+    class: \Drupal\osu_core\Service\OwnershipOverrider
+    tags:
+      - {name: config.factory.override, priority: 5}
+  osu_core.redirect_overrider:
+    class: \Drupal\osu_core\Service\RedirectOverrider
+    tags:
+      - {name: config.factory.override, priority: 5}
+  osu_core.externalauth_event_subscriber:
+    class: Drupal\osu_core\EventSubscriber\ExternalAuthSubscriber
+    arguments: ['@http_client', '@logger.channel.default']
+    tags:
+      - {name: event_subscriber}
+  osu_core.event_subscriber.user_sync:
+    class: Drupal\osu_core\EventSubscriber\UserSyncEventSubscriber
+    arguments: ['@entity_type.manager', '@typed_data_manager', '@logger.channel.default']
+    tags:
+      - { name: event_subscriber }
+  osu_core.access_denied_subscriber:
+    class: Drupal\osu_core\EventSubscriber\AccessDeniedSubscriber
+    arguments: ['@config.factory', '@current_user', '@request_stack', '@path.matcher', '@event_dispatcher']
+    tags:
+      - { name: event_subscriber }

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_text.description
+    - paragraphs.paragraphs_type.hero_text
+id: paragraph.hero_text.default
+targetEntityType: paragraph
+bundle: hero_text
+mode: default
+content:
+  description:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  search_api_excerpt: true

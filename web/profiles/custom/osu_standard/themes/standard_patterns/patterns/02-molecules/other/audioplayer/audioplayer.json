@@ -1,0 +1,12 @@
+{
+  "settings": {
+    "audio_player_autoplay": 0
+  },
+  "files": [
+
+    {
+      "url": "http://local.osu.edu/sites/default/files/audio/2017/10/singing_dogs_0.mp3",
+      "description": "thing"
+    }
+  ]
+}

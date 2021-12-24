@@ -1,0 +1,13 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "entity": {
+    "heading": {
+      "value": "Component"
+    },
+    "heading_level": {
+      "value": "h2"
+    }
+  }
+}

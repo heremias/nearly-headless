@@ -1,0 +1,136 @@
+.n-full-meeting {
+  color: $gray-2;
+  font-size: 1.214em;
+  line-height: 2em;
+  margin-top: 50px;
+
+  .n-full-meeting__alert {
+    background: $vanilla;
+    border: 1px solid $gray-8;
+    margin: 50px 0 30px;
+    padding: 2px 16px;
+
+    div {
+      display: inline;
+    }
+  }
+
+  .n-full-meeting__time {
+    text-transform: uppercase;
+  }
+
+  .n-full-meeting__content {
+    @include media-breakpoint-up(md) {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+      justify-content: space-between;
+      -ms-flex-pack: justify;
+    }
+  }
+
+  .n-full-meeting__left {
+    @include media-breakpoint-up(md) {
+      width: calc(25% - 15px);
+    }
+  }
+
+  .n-full-meeting__datetime {
+    background: $gray-6;
+    font-size: 1.429em;
+    padding: 25px 15px;
+    text-align: center;
+  }
+
+  .n-full-meeting__location {
+    margin: 40px 0 0;
+  }
+
+  .n-full-meeting__location-label {
+    font-weight: bold;
+  }
+
+  .n-full-meeting__main {
+    margin: 40px 0 0;
+
+    @include media-breakpoint-up(md) {
+      margin: 0;
+      width: calc(75% - 15px);
+    }
+  }
+
+  .n-full-meeting__resources {
+    margin: 50px 0 0;
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .n-full-meeting__related {
+    h2 {
+      margin: 0 0 20px;
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .n-full-meeting__date-links-wrapper {
+    @include media-breakpoint-up(md) {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+    }
+  }
+
+  .n-full-meeting__related-date {
+    color: $gray-2;
+    font-size: 1.429rem;
+    font-weight: bold;
+
+    @include media-breakpoint-up(md) {
+      text-align: right;
+      width: 20%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 15%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: 13%;
+    }
+  }
+
+  .n-full-meeting__related-links {
+    list-style-type: none;
+    margin: 0 0 20px;
+    padding: 0;
+    flex: 1;
+    -ms-flex-positive: 1;
+
+    @include media-breakpoint-up(md) {
+      margin: 0 0 20px 30px;
+    }
+  }
+
+  .n-full-meeting__related {
+    margin: 30px 0 0;
+  }
+}

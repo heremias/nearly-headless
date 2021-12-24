@@ -1,0 +1,87 @@
+.m-full-teaser-meetings {
+  border-top: 2px solid $gray-6;
+  font-family: $ff--proxima;
+  font-size: 0;
+  vertical-align: top;
+
+  .m-full-teaser-meetings__publish-date--wrapper {
+    display: inline-block;
+    font-size: 20px;
+    vertical-align: top;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      width: 25%;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 20%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 20%;
+    }
+  }
+
+  .m-full-teaser-meetings__publish-date {
+    background: $gray-6;
+    height: 40px;
+    text-align: center;
+
+    @include media-breakpoint-up(sm) {
+      height: 75px;
+    }
+  }
+
+  .m-full-teaser-meetings__list--wrapper {
+    display: inline-block;
+    font-size: 17px;
+    padding: 30px 0;
+    vertical-align: top;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      padding: 30px 0 10px 20px;
+      width: 75%;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 80%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 80%;
+    }
+
+    .m-full-teaser-meetings__list {
+      list-style-type: none;
+
+      li {
+        border-bottom: 2px solid $gray-6;
+        margin: 0 0 20px;
+        padding: 0 0 20px;
+
+        &:last-child {
+          border-bottom: none;
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .m-full-teaser-meetings__name {
+        color: $gray-2;
+        font-size: 1.429rem;
+        line-height: 1.929rem;
+      }
+
+      a {
+        color: $scarlet;
+      }
+
+      .m-full-teaser-news__location {
+        font-size: 1.214rem;
+        line-height: 2rem;
+      }
+    }
+  }
+}

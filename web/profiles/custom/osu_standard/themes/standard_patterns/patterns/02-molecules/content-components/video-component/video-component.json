@@ -1,0 +1,76 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "entity": {
+    "width": {
+      "value": "narrow"
+    }
+  },
+  "content": {
+    "description": {
+      "include()": {
+        "pattern": "atoms-field",
+        "with": {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "label_hidden": true,
+          "multiple": false,
+          "items": [
+            {
+              "content": "This video includes very interesting things and you should watch it."
+            }
+          ]
+        }
+      }
+    },
+    "video": {
+      "include()": {
+        "pattern": "atoms-field",
+        "with": {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "label_hidden": true,
+          "multiple": false,
+          "items": [
+            {
+              "content": {
+                "include()": {
+                  "pattern": "molecules-video",
+                  "with": {
+                    "attributes": {
+                      "Attribute()": {}
+                    },
+                    "media": {},
+                    "name": "Sample Video",
+                    "content": {
+                      "video": {
+                        "include()": {
+                          "pattern": "atoms-field",
+                          "with": {
+                            "attributes": {
+                              "Attribute()": {}
+                            },
+                            "label_hidden": true,
+                            "multiple": false,
+                            "items": [
+                              {
+                                "content": "<iframe width='1000' height='480' frameborder='0' allowfullscreen='allowfullscreen' src='https://www.youtube.com/embed/OgcsHTw2sc4?autoplay=0&amp;start=0&amp;rel=0'></iframe>"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: abbrev_month_day
+label: abbrev_month_day
+locked: false
+pattern: 'M. j'

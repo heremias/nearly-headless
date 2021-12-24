@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.square
+  module:
+    - crop
+name: square_medium
+label: 'Square (1:1) - Medium'
+effects:
+  fa65978f-73bb-4838-9c03-e45cf4a8ec83:
+    uuid: fa65978f-73bb-4838-9c03-e45cf4a8ec83
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: square
+  b6ac405e-cc1d-4599-84f3-90858fb211fd:
+    uuid: b6ac405e-cc1d-4599-84f3-90858fb211fd
+    id: image_scale
+    weight: -8
+    data:
+      width: 640
+      height: 640
+      upscale: true
+  703af20e-9efa-429a-81c1-6553647d7440:
+    uuid: 703af20e-9efa-429a-81c1-6553647d7440
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 640
+      height: 640
+      anchor: center-center

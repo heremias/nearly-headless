@@ -1,0 +1,54 @@
+.m-full-search {
+  border-bottom: 1px solid $gray-6;
+  font-family: $ff--proxima;
+  padding: 20px 0;
+
+  .m-full-search__header-wrap {
+    margin: 0 0 10px;
+  }
+
+  .m-full-search__type {
+    color: $gray-7;
+    font-size: 1.143em;
+    text-transform: uppercase;
+  }
+
+  .m-full-search__date {
+    color: $scarlet;
+    font-size: 1.071em;
+    margin: 0 0 0 15px;
+    text-transform: uppercase;
+  }
+
+  .m-full-search__link {
+    a {
+      color: $scarlet;
+      font-size: 1.071em;
+      margin: 0 0 0 15px;
+    }
+
+    .rang {
+      font-size: 0.786em;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+  }
+
+  .m-full-search__title a {
+    color: $gray-2;
+    font-size: 1.786em;
+    margin: 0 0 10px;
+
+    .rang {
+      color: $scarlet;
+      font-size: 15px;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+  }
+
+  .m-full-search__description {
+    color: $gray-7;
+    font-size: 1.214em;
+  }
+}

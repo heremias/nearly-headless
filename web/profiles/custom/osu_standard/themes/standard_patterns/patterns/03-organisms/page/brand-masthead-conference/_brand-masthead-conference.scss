@@ -1,0 +1,83 @@
+.o-brand-masthead-conference {
+  background: $gray-6;
+  position: relative;
+  z-index: 100;
+
+  .container {
+    @include media-breakpoint-down(xs) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .o-brand-masthead-wrapper {
+    padding: 0 15px 15px;
+
+    @include media-breakpoint-up(md) {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+      align-items: center;
+      -ms-flex-line-pack: center;
+      justify-content: flex-start;
+      -ms-flex-pack: start;
+      padding: 10px 0;
+    }
+  }
+
+  .logo {
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-width: 250px;
+    width: 100%;
+    vertical-align: middle;
+
+    @include media-breakpoint-up(md) {
+      height: 32px;
+      margin: 0;
+      padding: 0;
+      width: 25px;
+    }
+  }
+
+  .o-brand-masthead__title {
+    @include media-breakpoint-up(md) {
+      margin: 0 0 0 20px;
+    }
+
+    a {
+      color: $gray-2;
+      font-family: $ff--proxima;
+      font-size: 1.143em;
+      font-weight: bold;
+      margin: 0;
+      padding: 0 60px 0 0;
+      text-decoration: none;
+
+      @include media-breakpoint-up(md) {
+        padding: 0;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .o-brand-masthead__date {
+    color: $gray-2;
+    font-family: $ff--proxima;
+    font-size: 1.143em;
+    font-weight: normal;
+    padding: 0 60px 0 0;
+
+    @include media-breakpoint-up(md) {
+      margin: 0 0 0 30px;
+      padding: 0;
+    }
+  }
+}

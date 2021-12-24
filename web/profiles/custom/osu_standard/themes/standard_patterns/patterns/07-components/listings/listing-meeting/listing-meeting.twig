@@ -1,0 +1,63 @@
+{% extends "@components/listings/listing/listing.twig" %}
+{% set class = 'c-listing-meeting' %}
+
+{% block navigation %}
+<div class="container">
+  <div class="c-listing-meeting__navigation">
+    <div class="c-listing-meeting__navigation-years">
+      {% if content.navigation.last_year.exists %}
+        <a class="c-listing-meeting__navigation-years-last" href="{{ content.navigation.last_year.url }}">&lt; {{ content.navigation.last_year.text }}</a>
+      {% endif %}
+      {% if content.navigation.next_year.exists %}
+        <a class="c-listing-meeting__navigation-years-next"href="{{ content.navigation.next_year.url }}">{{ content.navigation.next_year.text }} &gt;</a>
+      {% endif %}
+      <h2>{{ content.navigation.current_year }} Meetings</h2>
+    </div>
+
+    <nav class="c-listing-meeting__navigation-months">
+      <div class="c-listing-meeting__navigation-months-inner">
+      {% for month in content.navigation.months %}
+        <a href="{{ month.url }}" {% if month.active %}class="c-listing-meeting__active"{% endif %}>{{ month.text | upper }}</a>
+      {% endfor %}
+      </div>
+    </nav>
+
+    <nav class="c-listing-meeting__navigation-months--mobile">
+      <div class="c-listing-meeting__navigation-months__selected"></div>
+      <ul>
+      {% for month in content.navigation.months %}
+        <li {% if month.active %}class="c-listing-meeting__navigation-months__active"{% endif %} ><a href="{{ month.url }}">{{ month.text | upper }}</a></li>
+      {% endfor %}
+      </ul>
+    </nav>
+  </div>
+
+{% endblock %}
+
+{% block listing %}
+  {% if content.meetings | length > 0 %}
+    {% for day, time_meetings in content.meetings %}
+      <div class="c-listing-meeting__date">
+      {{ day }}
+      </div>
+      {% for time, meetings in time_meetings %}
+
+          {% include "@molecules/card/full-teaser-meetings/full-teaser-meetings.twig"
+            with {
+              content: {
+                publish_date: time,
+                title: meeting.name,
+                meetings_list: meetings
+              }
+            }
+          %}
+
+      {% endfor %}
+    {% endfor %}
+  {% else %}
+    <div class="c-listing-meeting__empty">
+      <p>No meetings were found in this date range.</p>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

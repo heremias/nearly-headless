@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.form.form
+    - field.field.node.form.include_share_links
+    - field.field.node.form.introduction
+    - field.field.node.form.meta_title
+    - field.field.node.form.slug
+    - field.field.node.form.summary
+    - field.field.node.form.teaser_image
+    - node.type.form
+  module:
+    - text
+    - user
+    - webform
+id: node.form.default
+targetEntityType: node
+bundle: form
+mode: default
+content:
+  form:
+    weight: 1
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+  introduction:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  include_share_links: true
+  links: true
+  meta_title: true
+  search_api_excerpt: true
+  slug: true
+  summary: true
+  teaser_image: true

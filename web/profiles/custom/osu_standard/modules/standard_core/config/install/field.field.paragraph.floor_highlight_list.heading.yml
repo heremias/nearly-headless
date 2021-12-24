@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.heading
+    - paragraphs.paragraphs_type.floor_highlight_list
+id: paragraph.floor_highlight_list.heading
+field_name: heading
+entity_type: paragraph
+bundle: floor_highlight_list
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

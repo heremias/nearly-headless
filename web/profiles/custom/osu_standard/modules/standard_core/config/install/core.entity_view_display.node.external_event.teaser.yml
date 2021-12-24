@@ -1,0 +1,30 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.external_event.canonical_link
+    - field.field.node.external_event.occurrences
+    - field.field.node.external_event.ours
+    - field.field.node.external_event.summary
+    - field.field.node.external_event.teaser_image
+    - node.type.external_event
+  module:
+    - user
+id: node.external_event.teaser
+targetEntityType: node
+bundle: external_event
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  canonical_link: true
+  occurrences: true
+  ours: true
+  search_api_excerpt: true
+  summary: true
+  teaser_image: true

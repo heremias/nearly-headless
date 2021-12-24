@@ -1,0 +1,27 @@
+.c-listing-card {
+  @include media-breakpoint-up(md) {
+    .views-infinite-scroll-content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .m-card {
+        flex: 0 32%;
+        margin-bottom: 2%; /* (100-32*3)/2 */
+      }
+
+      &::after {
+        content: "";
+        flex: 0 32%;
+      }
+    }
+  }
+
+  .rich-button {
+    @include button-secondary();
+
+    margin: 0;
+    padding: 0 20px;
+    line-height: 56px;
+  }
+}

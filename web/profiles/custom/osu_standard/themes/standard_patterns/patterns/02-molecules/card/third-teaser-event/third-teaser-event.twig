@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Pattern for third-teaser-event.
+ *
+ * Available variables:
+ * -
+ */
+#}
+<div class="m-third-teaser-event {% if location == 'internal' %}m-third-teaser-event__internal{% else %}m-third-teaser-event__external{% endif %}">
+
+  <div class="m-third-teaser-event__inner">
+
+    {% include "@molecules/dates/dates.twig" with {
+      "occurrence_month_day_range_string": month ~ ' ' ~ day,
+      "occurrence_year_range_string": year
+    } %}
+
+    <div class="m-third-teaser-event__summary">
+
+      {{ content.teaser_image }}
+
+      <div class="m-third-teaser-event__title">
+        <a href="{{ url }}">{{ title }}</a>&nbsp;<span class="rang">&rang;</span>
+      </div>
+
+      {% if description %}
+        <div class="m-third-teaser-event__description">
+          {{ description }}
+        </div>
+      {% endif %}
+
+      {% if location_text %}
+        <div class="m-third-teaser-event__location">
+          {{ location_text }}
+        </div>
+      {% endif %}
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+{
+  "name": "ucom/content",
+  "type": "drupal-custom-module",
+  "require": {
+    "composer/installers": "~1.0"
+  }
+}

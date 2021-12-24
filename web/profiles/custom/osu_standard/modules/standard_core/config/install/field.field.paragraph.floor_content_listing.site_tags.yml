@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.site_tags
+    - paragraphs.paragraphs_type.floor_content_listing
+    - taxonomy.vocabulary.empty_vocabulary
+id: paragraph.floor_content_listing.site_tags
+field_name: site_tags
+entity_type: paragraph
+bundle: floor_content_listing
+label: 'Site Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      empty_vocabulary: empty_vocabulary
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

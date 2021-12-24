@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.ours
+    - node.type.content_article
+id: node.content_article.ours
+field_name: ours
+entity_type: node
+bundle: content_article
+label: 'Our News'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

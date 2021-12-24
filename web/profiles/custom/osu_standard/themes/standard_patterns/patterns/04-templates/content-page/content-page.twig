@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Pattern for full view of a content page.
+ *
+ * Available variables:
+ * - introduction: introductory content.
+ * - content: array of other templates to render or drupal render array.
+ */
+#}
+<div class="t-content-page">
+  {{ content.hero }}
+  {% if hide_introduction != "yes" %}
+  {{ content.introduction }}
+  {% endif %}
+  {{ content.content }}
+</div>

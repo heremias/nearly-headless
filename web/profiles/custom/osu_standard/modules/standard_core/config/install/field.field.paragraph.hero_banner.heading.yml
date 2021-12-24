@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.heading
+    - paragraphs.paragraphs_type.hero_banner
+id: paragraph.hero_banner.heading
+field_name: heading
+entity_type: paragraph
+bundle: hero_banner
+label: Heading
+description: 'If you provide a heading, the title will be inset.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

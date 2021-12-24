@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Pattern for news collection.
+ *
+ * Available variables:
+ * -
+ */
+#}
+<div class="o-speakers d-md-flex justify-content-between flex-wrap">
+
+  {% for row in items|batch(4, '') %}
+    {% include "@organisms/collection/columns/_columns-four.twig" with {
+      items: row,
+      column_classes: "o-speakers-column flex-column "
+    }%}
+  {% endfor %}
+</div>

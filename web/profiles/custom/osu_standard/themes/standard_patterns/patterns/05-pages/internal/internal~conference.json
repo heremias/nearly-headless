@@ -1,0 +1,56 @@
+{
+  "variant": "conference",
+  "color_scheme": "osu-light",
+  "attributes": {
+    "Attribute()": {}
+  },
+  "page": {
+    "highlighted": "",
+    "site_header": "templates-region-site-header-conference",
+    "page_header": "templates-region-page-header-conference-banner",
+    "primary_menu": "templates-region-primary-menu-conference",
+    "breadcrumb": "",
+    "local_tasks": "",
+    "content_before": "",
+    "content": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "content",
+          "content": {
+            "include()": {
+              "pattern": "templates-content-page",
+              "with": {
+                "introduction": {
+                  "include()": {
+                    "pattern": "molecules-introduction",
+                    "with": {
+                      "content": "<p>Ignore the floor parts of the content components for now. </p>",
+                      "variant": "conference"
+                    }
+                  }
+                },
+                "content": {
+                  "include()": {
+                    "pattern": "atoms-field-content",
+                    "with": {
+                      "items": [
+                        {
+                          "content": "molecules-formatted-text"
+                        }
+                      ]
+                    },
+                    "only": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "content_after": "templates-region-content-after-conference",
+    "page_footer": "templates-region-page-footer-conference",
+    "site_footer": "templates-region-site-footer"
+  }
+}

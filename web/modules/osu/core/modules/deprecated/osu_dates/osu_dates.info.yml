@@ -1,0 +1,6 @@
+name: 'OSU / Core / Date Formats'
+description: 'Commonly used date formats'
+package: 'OSU / Core'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9

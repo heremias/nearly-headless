@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function osu_brand_theme($existing, $type, $theme, $path) {
+  $settings = \Drupal::config('osu_siteinfo.settings');
+  $variables = array(
+    'osu_brand_navbar' => [
+      'template' => 'osu-brand-navbar',
+      'variables' => [],
+    ],
+    'osu_brand_footer' => [
+      'template' => 'osu-brand-footer',
+      'variables' => [
+        'facebook_link' => $settings->get('facebook_link'),
+        'instagram_link' => $settings->get('instagram_link'),
+        'linkedin_link' => $settings->get('linkedin_link'),
+        'twitter_link' => $settings->get('twitter_link'),
+        'ada_unit' => $settings->get('ada_unit'),
+        'ada_email' => $settings->get('ada_email')
+      ],
+    ],
+    'osu_brand_header_image' => [
+      'template' => 'osu-brand-header-image',
+      'variables' => [
+        'image_url'
+      ],
+    ],
+    'osu_brand_tab_filter_listing' => [
+      'variables' => [
+        'tabs' => NULL,
+        'filters' => NULL,
+        'listing' => NULL
+      ],
+    ]
+  );
+  return $variables;
+}
+
+function osu_brand_preprocess_osu_brand_footer(&$variables) {
+  // Lets inject variables if the siteinfo is installed (no hard dependency).
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('osu_siteinfo')){
+    $config = \Drupal::config('osu_siteinfo.settings');
+    foreach (['organization', 'address1', 'address2', 'city', 'state', 'postal', 'phone', 'email'] as $key) {
+      $variables[$key] = $config->get($key);
+    }
+  }
+
+}

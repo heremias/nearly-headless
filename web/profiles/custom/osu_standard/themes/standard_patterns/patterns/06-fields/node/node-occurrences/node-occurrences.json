@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "occurrences",
+  "field_type": "datetime_range",
+  "label": "Date & Time",
+  "label_hidden": true,
+  "multiple": true,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "TODO: node-occurrences"
+    }
+  ]
+}

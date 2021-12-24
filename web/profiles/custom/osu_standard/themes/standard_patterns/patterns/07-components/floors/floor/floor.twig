@@ -1,0 +1,26 @@
+{% set heading_level = entity.heading_level.value|length==2 ? entity.heading_level.value : "h2" %}
+<div {{ attributes.addClass(['c-floor', class, "c-floor--horizontal-" ~ style.horizontal, "c-floor--vertical-" ~ style.vertical]) }} >
+  <div class="c-floor--container {% if entity.width.value == 'xwide' %}container{% endif %} ">
+    {% if entity.heading and entity.heading.value %}
+      <{{ heading_level }} class="c-floor--heading" >{{ entity.heading.value }}</{{ heading_level }}>
+    {% endif %}
+
+    {% if entity.introduction.value %}
+      <div class="c-floor--introduction">
+        {{ entity.introduction.value }}
+      </div>
+    {% endif %}
+
+    <div class="c-floor--content">
+    {% block component %}
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci phasellus egestas tellus rutrum tellus pellentesque. Facilisis sed odio morbi quis commodo odio aenean sed. Tellus integer feugiat scelerisque varius. Risus ultricies tristique nulla aliquet enim tortor at auctor. Mi tempus imperdiet nulla malesuada pellentesque elit. Volutpat commodo sed egestas egestas fringilla. Viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Auctor elit sed vulputate mi. Erat velit scelerisque in dictum. Quis commodo odio aenean sed adipiscing diam donec adipiscing tristique. Elementum nisi quis eleifend quam. Porta non pulvinar neque laoreet suspendisse interdum. Nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. Fermentum leo vel orci porta non pulvinar neque laoreet suspendisse.
+    {% endblock %}
+    </div>
+
+    {% if content.link and content.link.0 and content.link.0['#title'] %}
+      <div class="c-floor--cta--wrapper">
+        <a class="c-floor--cta" href="{{ content.link.0['#url'] }}">{{ content.link.0['#title'] }}</a>
+      </div>
+    {% endif %}
+  </div>
+</div>

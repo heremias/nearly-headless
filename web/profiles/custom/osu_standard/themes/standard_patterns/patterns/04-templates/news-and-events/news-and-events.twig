@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Pattern for news and events template, to include calendar.
+ *
+ * Available variables:
+ * - introduction: introductory content.
+ * - content: array of other templates to render or drupal render array.
+ */
+#}
+<div class="t-news-and-events  d-md-flex justify-content-between flex-wrap">
+  {% for row in items|batch(3, '') %}
+    {% include "@organisms/collection/columns/_columns-three.twig" with {
+      items: row,
+      column_classes: "t-news-and-events__column flex-column"
+    }%}
+  {% endfor %}
+</div>

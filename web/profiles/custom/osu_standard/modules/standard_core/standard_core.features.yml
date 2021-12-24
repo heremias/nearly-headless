@@ -1,0 +1,5 @@
+excluded:
+  - metatag.metatag_defaults.403
+  - metatag.metatag_defaults.404
+  - standard_core.developer_settings
+required: true

@@ -1,0 +1,21 @@
+<div class="c-hero-banner c-hero-banner--height-{{ entity.height.value }} c-hero-banner--preserve-{{ entity.preserve.value }}" style="background-image: url({{ content.image_url }})">
+
+</div>
+{% if entity.heading.value %}
+<div class="c-floor c-floor--horizontal-narrow c-hero-banner--header">
+  <div class="c-floor--container container c-hero-banner--header-inner">
+    {{ breadcrumbs }}
+    <div class="c-hero-banner--header-inner-inner">
+      {% if entity.subheading.value %}
+        <div class="c-hero-banner--subheading">{{ entity.subheading.value }}</div>
+      {% endif %}
+      {% if entity.include_page_title.value %}
+        <h1 class="c-hero-cta-banner--title">{{ entity.heading.value }}</h1>
+      {% else %}
+        <div class="c-hero-cta-banner--title">{{ entity.heading.value }}</div>
+      {% endif %}
+      <hr />
+    </div>
+  </div>
+</div>
+{% endif %}

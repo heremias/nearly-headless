@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: card_formatted_text
+label: 'Text / Link Card'
+icon_uuid: null
+icon_default: null
+description: 'A relatively freeform card with a title, formatted text, and an optional link.'
+behavior_plugins: {  }

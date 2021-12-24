@@ -1,0 +1,6 @@
+name: 'OSU / Media / Crop Styles'
+description: 'A collection of commonly used aspect ratio crops and image styles.'
+package: 'OSU / Media'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9

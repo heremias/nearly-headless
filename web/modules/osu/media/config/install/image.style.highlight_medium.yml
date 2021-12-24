@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.highlight
+  module:
+    - crop
+name: highlight_medium
+label: 'Highlight (1.65) - Medium'
+effects:
+  69c509ee-58ce-43e5-9ed1-193159949089:
+    uuid: 69c509ee-58ce-43e5-9ed1-193159949089
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: highlight
+  ffd2918d-17e5-4dec-aa25-3046a47621a0:
+    uuid: ffd2918d-17e5-4dec-aa25-3046a47621a0
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 640
+      height: 389
+      anchor: center-center
+  fc7f5ccf-fd36-4003-a181-a7d5c5c6725a:
+    uuid: fc7f5ccf-fd36-4003-a181-a7d5c5c6725a
+    id: image_scale
+    weight: -8
+    data:
+      width: 640
+      height: 389
+      upscale: true

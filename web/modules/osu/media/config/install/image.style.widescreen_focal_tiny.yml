@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: widescreen_focal_tiny
+label: 'Widescreen (16:9) Focal - Tiny'
+effects:
+  79210889-0f68-4948-8feb-475715ef539d:
+    uuid: 79210889-0f68-4948-8feb-475715ef539d
+    id: focal_point_scale_and_crop
+    weight: 4
+    data:
+      width: 160
+      height: 90
+      crop_type: focal_point

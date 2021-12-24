@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.qa_item.answer
+    - field.field.paragraph.qa_item.question
+    - paragraphs.paragraphs_type.qa_item
+  module:
+    - text
+id: paragraph.qa_item.default
+targetEntityType: paragraph
+bundle: qa_item
+mode: default
+content:
+  answer:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  question:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

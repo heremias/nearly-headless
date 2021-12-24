@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Pattern for third-teaser-news.
+ *
+ * Available variables:
+ * -
+ */
+#}
+<div class="m-third-teaser-news m-third-teaser-news--{{ location_type }}">
+  <div class="m-third-teaser-news__wrapper">
+
+    <a href="{{ url }}">{{ content.teaser_image }}</a>
+
+    <div class="m-third-teaser-news__date">
+      {{ date }}
+    </div>
+
+    <div class="m-third-teaser-news__title">
+      <a href="{{ url }}">{{ title }}&nbsp;<span class="rang">&rang;</span></a>
+    </div>
+    <div class="m-third-teaser-news__description">
+      {{ description }}
+    </div>
+    <div class="m-third-teaser-news__location">
+      {{ location }}
+    </div>
+  </div>
+</div>

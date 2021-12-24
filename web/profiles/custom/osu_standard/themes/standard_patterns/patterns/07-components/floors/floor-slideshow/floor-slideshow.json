@@ -1,0 +1,48 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "heading": "fields-paragraph-heading",
+    "introduction": "fields-paragraph-introduction",
+    "items_raw": [
+      {
+        "description": "Image caption 1",
+        "image": {
+          "alt": "walternate text",
+          "src": "http://placehold.it/1275x775"
+        }
+      },
+      {
+        "description": "Image caption 2",
+        "image": {
+          "alt": "walternate text",
+          "src": "http://placehold.it/1275x775"
+        }
+      },
+      {
+        "description": "Image caption 3",
+        "image": {
+          "alt": "walternate text",
+          "src": "http://placehold.it/1275x775"
+        }
+      }
+    ],
+    "link": "fields-paragraph-link"
+  },
+  "entity": {
+    "heading": {
+      "value": "Slideshow Floor"
+    },
+    "heading_level": {
+      "value": "h2"
+    },
+    "introduction": {
+      "value": "This is an introduction for a slideshow."
+    }
+  },
+  "style": {
+    "horizontal": "narrow",
+    "vertical": "regular"
+  }
+}

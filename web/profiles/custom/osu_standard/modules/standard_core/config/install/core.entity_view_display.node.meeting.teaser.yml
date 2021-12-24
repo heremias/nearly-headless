@@ -1,0 +1,93 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.meeting.audiences
+    - field.field.node.meeting.body
+    - field.field.node.meeting.buckets
+    - field.field.node.meeting.colleges
+    - field.field.node.meeting.deadline
+    - field.field.node.meeting.documents
+    - field.field.node.meeting.introduction
+    - field.field.node.meeting.location
+    - field.field.node.meeting.meeting_minutes
+    - field.field.node.meeting.meta_title
+    - field.field.node.meeting.occurrence
+    - field.field.node.meeting.parent_meeting
+    - field.field.node.meeting.places
+    - field.field.node.meeting.slug
+    - field.field.node.meeting.summary
+    - field.field.node.meeting.teaser_image
+    - field.field.node.meeting.topics
+    - field.field.node.meeting.types
+    - node.type.meeting
+  module:
+    - datetime
+    - user
+id: node.meeting.teaser
+targetEntityType: node
+bundle: meeting
+mode: teaser
+content:
+  deadline:
+    type: datetime_custom
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F j'
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  location:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  meeting_minutes:
+    type: entity_reference_label
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  summary:
+    type: basic_string
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  teaser_image:
+    type: entity_reference_entity_view
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+hidden:
+  audiences: true
+  body: true
+  buckets: true
+  colleges: true
+  documents: true
+  introduction: true
+  meta_title: true
+  occurrence: true
+  parent_meeting: true
+  places: true
+  search_api_excerpt: true
+  slug: true
+  topics: true
+  types: true

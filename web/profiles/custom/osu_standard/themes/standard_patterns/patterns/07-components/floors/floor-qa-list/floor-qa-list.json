@@ -1,0 +1,29 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "heading": "fields-paragraph-heading",
+    "introduction": "fields-paragraph-introduction",
+    "items": "fields-paragraph-items-qa-list",
+    "link": "fields-paragraph-link"
+  },
+  "entity": {
+    "heading": {
+      "value": "Q&A List Floor"
+    },
+    "heading_level": {
+      "value": "h2"
+    },
+    "introduction": {
+      "value": "This is an introduction for a Q&A list."
+    },
+    "items": {
+      "getvalue": [null, null, null]
+    }
+  },
+  "style": {
+    "horizontal": "narrow",
+    "vertical": "regular"
+  }
+}

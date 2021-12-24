@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.feed_website
+    - paragraphs.paragraphs_type.rss_news_feed
+  module:
+    - link
+id: paragraph.rss_news_feed.feed_website
+field_name: feed_website
+entity_type: paragraph
+bundle: rss_news_feed
+label: 'Feed Website'
+description: 'If a visitor wanted to see more articles, where would the go?'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link

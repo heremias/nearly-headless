@@ -1,0 +1,20 @@
+<?php
+
+function osu_bucket_taxonomy_jsonsync_vocab() {
+
+  return [
+
+    // Vocabulary ID
+    'bucket' => [
+
+      // Machine name for the endpoint fragment.
+      // https://newmedia.osu.edu/api/taxonomy/{endpoint}.json
+      'endpoint' => 'buckets',
+
+      // Name of field which should hold the machine name.
+      // If you don't supply this, it will be skipped and we'll map on display name.
+      'code' => 'analytics_code',
+    ]
+  ];
+
+}

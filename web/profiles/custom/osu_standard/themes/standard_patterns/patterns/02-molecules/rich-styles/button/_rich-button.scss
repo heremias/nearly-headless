@@ -1,0 +1,32 @@
+.rich-button {
+  /* @include button-generic(); */
+  border: 2px solid $gray-8;
+  color: $gray-7;
+  line-height: 50px;
+  margin: 10px 10px 10px 0;
+  padding: 15px 25px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $gray-9;
+    color: $scarlet;
+    text-decoration: none;
+  }
+}
+
+.rich-button--conference {
+  background: $white;
+  border: 1px solid $scarlet;
+  color: $scarlet;
+  line-height: 50px;
+  margin: 10px 10px 10px 0;
+  padding: 15px 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $scarlet;
+    color: $white;
+    text-decoration: none;
+  }
+}

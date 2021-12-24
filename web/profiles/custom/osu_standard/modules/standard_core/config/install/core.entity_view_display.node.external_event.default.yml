@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.external_event.canonical_link
+    - field.field.node.external_event.occurrences
+    - field.field.node.external_event.ours
+    - field.field.node.external_event.summary
+    - field.field.node.external_event.teaser_image
+    - node.type.external_event
+  module:
+    - datetime_range
+    - link
+    - user
+id: node.external_event.default
+targetEntityType: node
+bundle: external_event
+mode: default
+content:
+  canonical_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  occurrences:
+    weight: 0
+    label: hidden
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  summary:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  teaser_image:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: teaser_medium
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  links: true
+  ours: true
+  search_api_excerpt: true

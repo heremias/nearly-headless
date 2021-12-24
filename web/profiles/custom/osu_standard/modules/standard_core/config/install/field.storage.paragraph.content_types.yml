@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.content_types
+field_name: content_types
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: content_article
+      label: 'Content Article'
+    -
+      value: external_article
+      label: 'External Article'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

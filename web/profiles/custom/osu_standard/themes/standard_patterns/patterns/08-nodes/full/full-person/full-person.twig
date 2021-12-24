@@ -1,0 +1,18 @@
+{% extends "@nodes/full/full/full.twig" %}
+
+{% set class = 'n-full-person' %}
+{% set width = 'narrow' %}
+
+{% block content %}
+
+  {% include "@nodes/teaser/teaser-person/teaser-person.twig" with {
+    attributes: attributes,
+    content: content,
+    entity: entity,
+    label: label,
+    linkable: false,
+    url: url
+
+  }%}
+  {{ content.body }}
+{% endblock %}

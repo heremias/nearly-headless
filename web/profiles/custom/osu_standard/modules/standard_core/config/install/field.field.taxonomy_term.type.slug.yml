@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.slug
+    - taxonomy.vocabulary.type
+id: taxonomy_term.type.slug
+field_name: slug
+entity_type: taxonomy_term
+bundle: type
+label: Slug
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,210 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.node.audio_story.audiences
+    - field.field.node.audio_story.audio
+    - field.field.node.audio_story.buckets
+    - field.field.node.audio_story.colleges
+    - field.field.node.audio_story.meta_title
+    - field.field.node.audio_story.places
+    - field.field.node.audio_story.publish_date
+    - field.field.node.audio_story.quote
+    - field.field.node.audio_story.slug
+    - field.field.node.audio_story.subject
+    - field.field.node.audio_story.subject_description
+    - field.field.node.audio_story.summary
+    - field.field.node.audio_story.teaser_image
+    - field.field.node.audio_story.topics
+    - field.field.node.audio_story.types
+    - node.type.audio_story
+  module:
+    - chosen_field
+    - datetime
+    - entity_browser
+    - field_group
+    - path
+third_party_settings:
+  field_group:
+    group_subject:
+      children:
+        - subject
+        - subject_description
+        - teaser_image
+      parent_name: ''
+      weight: 7
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: true
+        required_fields: true
+      label: Subject
+      region: content
+    group_metadata:
+      children:
+        - audiences
+        - buckets
+        - colleges
+        - types
+        - places
+        - topics
+      parent_name: ''
+      weight: 8
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: Metadata
+      region: content
+id: node.audio_story.default
+targetEntityType: node
+bundle: audio_story
+mode: default
+content:
+  audiences:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  audio:
+    weight: 5
+    settings:
+      entity_browser: audio_browser
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      open: false
+      field_widget_display_settings: {  }
+      field_widget_replace: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  buckets:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  colleges:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  meta_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  path:
+    type: path
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  places:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  publish_date:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  quote:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  slug:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  subject:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  subject_description:
+    weight: 3
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  summary:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  teaser_image:
+    weight: 4
+    settings:
+      entity_browser: image_browser
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      open: false
+      field_widget_display_settings: {  }
+      field_widget_replace: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  topics:
+    weight: 32
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  types:
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  url_redirects:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

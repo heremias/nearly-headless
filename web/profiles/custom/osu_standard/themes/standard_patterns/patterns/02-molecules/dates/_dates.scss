@@ -1,0 +1,34 @@
+.m-dates {
+  color: $black;
+  font-family: $ff--proxima;
+  font-size: 1.286em;
+  line-height: 25px;
+  margin: 0;
+  max-width: 100%;
+  text-transform: uppercase;
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.429em;
+    line-height: 50px;
+  }
+}
+
+.m-dates--monthdays {
+  background: $gray-6;
+  color: $gray-2;
+  flex: 1;
+  flex-grow: 3;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 0 20px;
+}
+
+.m-dates--years {
+  background: $gray-9;
+  color: $gray-2;
+  flex: 1;
+  flex-grow: 1;
+  padding: 0 10px;
+  text-align: center;
+}

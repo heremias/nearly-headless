@@ -1,0 +1,60 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/local.hub.osu.edu\/taxonomy\/term\/27?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/bucket"
+        }
+    },
+    "tid": [
+        {
+            "value": 27
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f77d1f9c-f48e-4673-a8f7-68650bfd04df"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "bucket"
+        }
+    ],
+    "name": [
+        {
+            "value": "Research\/thought leadership",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": 1498836288,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "analytics_code": [
+        {
+            "value": "Res",
+            "lang": "en"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+@mixin button-base() {
+  border: 1px solid $scarlet;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $ff--proxima;
+  line-height: 1.4;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  width: auto;
+}
+
+@mixin button-primary() {
+  @include button-base();
+
+  background-color: $scarlet;
+  color: $white;
+
+  &:hover {
+    background-color: #700000;
+  }
+}
+
+@mixin button-secondary() {
+  @include button-base();
+
+  background: $white;
+  color: $scarlet;
+
+  &:hover {
+    background: $scarlet;
+    color: $white;
+  }
+}

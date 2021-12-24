@@ -1,0 +1,122 @@
+{
+  "variant": "standard",
+  "color_scheme": "osu-dark",
+  "attributes": {
+    "Attribute()": {}
+  },
+  "page": {
+    "highlighted": "",
+    "site_header": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "site-header",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-brand-navbar"
+                }
+              },
+              {
+                "include()": {
+                  "pattern": "organisms-brand_masthead",
+                  "with": {
+                    "variant": "left",
+                    "site_name": "Women's Place"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "primary_menu": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "primary-menu",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-core-menu"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "breadcrumb": "",
+    "local_tasks": "",
+    "title": "The Women's Place",
+    "suffix": "at The Ohio State University",
+    "hero_image": "../../images/fpo_hero.jpg",
+    "content_before": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "content",
+          "content": ""
+        }
+      }
+    },
+    "content": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "content",
+          "content": {
+            "include()": {
+              "pattern": "molecules-person-quote-audio",
+              "with": {
+                "audio_bio": "Susan Fisher<br />Program coordinator of the Program for Advising and Scholarship Services through Diversity Services Office",
+                "quote": "“One of the things I learned from Susan is yes, you can have it all, as long as you’re not worried about things like hay in your hair.”",
+                "summary": "Linda Montaño describes how Susan Fisher’s passion and creativity inspired her and how Susan’s confidence in Linda’s abilities helped Linda believe in herself.",
+                "link_text": "View Transcript"
+              }
+            }
+          }
+        }
+      }
+    },
+    "content_after": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "content",
+          "content": {
+            "include()": {
+              "pattern": "molecules-formatted-text",
+              "with": {
+                "content": {
+                  "body": "<p>[THREE UP OF BLURBS FOR LINKS HERE]</p>"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "page_footer": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "page-footer",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-footer"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "site_footer": ""
+  }
+}

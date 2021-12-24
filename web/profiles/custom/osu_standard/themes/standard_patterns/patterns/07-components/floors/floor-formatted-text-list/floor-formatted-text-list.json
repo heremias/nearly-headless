@@ -1,0 +1,44 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "heading": "fields-paragraph-heading",
+    "introduction": "fields-paragraph-introduction",
+    "link": "fields-paragraph-link"
+  },
+  "entity": {
+    "heading": {
+      "value": "Formatted Text List Floor (Accordion)"
+    },
+    "heading_level": {
+      "value": "h2"
+    },
+    "introduction": {
+      "value": "This is an introduction for a Formaatted Text list."
+    },
+    "items": {
+      "getvalue": [null, null, null]
+    }
+  },
+  "style": {
+    "horizontal": "narrow",
+    "vertical": "regular"
+  },
+  "id": "unique-identifier-1234",
+  "items": [
+    {
+      "heading": "Facilisi morbi tempus iaculis urna id volutpat.",
+      "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+    },
+    {
+      "heading": "Feugiat in ante metus dictum at.",
+      "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+    },
+    {
+      "heading": "Ac felis donec et odio pellentesque.",
+      "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+    }
+  ],
+  "variant": "accordion"
+}

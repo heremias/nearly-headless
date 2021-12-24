@@ -1,0 +1,159 @@
+.n-full-practice {
+  color: $gray-3;
+
+  .n-full__wide {
+    padding: 0 0 64px;
+
+    @include media-breakpoint-up(md) {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+      justify-content: space-between;
+      -ms-flex-pack: justify;
+    }
+  }
+
+  .n-full-practice__aside {
+    @include media-breakpoint-up(md) {
+      width: 23%;
+    }
+  }
+
+  .n-full-practice__alert {
+    background: $beige;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    margin: 0 0 8px;
+    padding: 20px;
+
+    .n-full-practice__alert-icon {
+      height: 21px;
+      margin: 0 8px 0 0;
+      width: 18px;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 20px;
+    }
+
+    .n-full-practice__alert-text {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .n-full-practice__alert-author {
+      color: $gray-0;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 18px;
+      margin: 8px 0 0;
+    }
+  }
+
+  .n-full-practice__tags {
+    background: $gray-14;
+    padding: 20px;
+
+    .n-full-practice__tags-priority,
+    .n-full-practice__tags-media_type,
+    .n-full-practice__tags-impact,
+    .n-full-practice__tags-roles {
+      font-size: 16px;
+      line-height: 36px;
+      padding: 0 0 40px;
+
+      h3 {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 26px;
+        padding: 0 0 16px;
+        position: relative;
+
+        &::after {
+          background: $gray-8;
+          content: '';
+          height: 2px;
+          left: 0;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    .n-full-practice__tags-roles {
+      padding: 0;
+    }
+  }
+
+  .n-full-practice__messaging {
+    color: $gray-0;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 24px 0 16px;
+
+    .n-full-practice__messaging-label {
+      font-weight: 700;
+    }
+  }
+
+  .n-full-practice__messaging-button {
+    background: $white;
+    border: 2px solid $scarlet;
+    display: block;
+    max-width: 248px;
+    padding: 12px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .n-full-practice__messaging-button-icon {
+    height: 20px;
+    margin: 0 8px 0 0;
+    width: 20px;
+  }
+
+  .n-full-practice__main {
+    padding: 16px 0 0;
+
+    @include media-breakpoint-up(md) {
+      width: calc(77% - 24px);
+    }
+
+    h2 {
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 32px;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+
+    .f-body,
+    .text-long {
+      font-size: 16px;
+      line-height: 24px;
+      margin: 0 0 24px;
+    }
+
+    .m-media-image img {
+      border: none;
+    }
+  }
+}
+
+#app {
+  margin-top: 20px;
+}

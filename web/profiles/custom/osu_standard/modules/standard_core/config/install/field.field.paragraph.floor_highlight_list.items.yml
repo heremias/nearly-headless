@@ -1,0 +1,102 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.items
+    - paragraphs.paragraphs_type.floor_highlight_list
+    - paragraphs.paragraphs_type.highlight_list_item
+  module:
+    - entity_reference_revisions
+id: paragraph.floor_highlight_list.items
+field_name: items
+entity_type: paragraph
+bundle: floor_highlight_list
+label: Items
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      highlight_list_item: highlight_list_item
+    target_bundles_drag_drop:
+      audio_story:
+        weight: 25
+        enabled: false
+      callout:
+        weight: 26
+        enabled: false
+      card_formatted_text:
+        weight: 27
+        enabled: false
+      card_image_titles:
+        weight: 28
+        enabled: false
+      cards:
+        weight: 29
+        enabled: false
+      columns:
+        weight: 30
+        enabled: false
+      cta:
+        weight: 31
+        enabled: false
+      directory:
+        weight: 32
+        enabled: false
+      floor_highlight_list:
+        weight: 33
+        enabled: false
+      floor_uneven_columns:
+        weight: 34
+        enabled: false
+      formatted_text:
+        weight: 35
+        enabled: false
+      formatted_text_component:
+        weight: 36
+        enabled: false
+      hero_cta_banner:
+        weight: 37
+        enabled: false
+      link_list:
+        weight: 38
+        enabled: false
+      highlight_list_item:
+        enabled: true
+        weight: 39
+      menu_component:
+        weight: 39
+        enabled: false
+      parousel:
+        weight: 40
+        enabled: false
+      parousel_item:
+        weight: 41
+        enabled: false
+      qa_item:
+        weight: 42
+        enabled: false
+      qa_list:
+        weight: 43
+        enabled: false
+      quote:
+        weight: 44
+        enabled: false
+      section_cards:
+        weight: 45
+        enabled: false
+      section_formatted_text:
+        weight: 46
+        enabled: false
+      speaker:
+        weight: 47
+        enabled: false
+      video:
+        weight: 48
+        enabled: false
+field_type: entity_reference_revisions

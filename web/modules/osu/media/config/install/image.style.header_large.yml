@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.header
+  module:
+    - crop
+name: header_large
+label: 'Header (2.21) - Large'
+effects:
+  b2a26bc7-e768-4a6a-88b1-1679fa65a2a1:
+    uuid: b2a26bc7-e768-4a6a-88b1-1679fa65a2a1
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: header
+  a5e56fea-2c3c-494f-b70b-3ac795a46640:
+    uuid: a5e56fea-2c3c-494f-b70b-3ac795a46640
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1200
+      height: 544
+      anchor: center-center
+  3d36ee2e-d6ca-4cb3-8562-c4fa84030e23:
+    uuid: 3d36ee2e-d6ca-4cb3-8562-c4fa84030e23
+    id: image_scale
+    weight: 3
+    data:
+      width: 1200
+      height: 544
+      upscale: true

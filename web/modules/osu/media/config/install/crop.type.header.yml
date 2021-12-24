@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: header
+label: 'Header (2.21)'
+description: 'Used for a high impact header, wider than a banner.'
+aspect_ratio: '75:34'
+soft_limit_width: 1500
+soft_limit_height: 680
+hard_limit_width: null
+hard_limit_height: null

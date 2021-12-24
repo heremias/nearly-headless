@@ -1,0 +1,4 @@
+osu_siteinfo.admin_settings_form_tab:
+  route_name: osu_siteinfo.admin_settings_form
+  title: Settings
+  base_route: osu_siteinfo.admin_settings_form

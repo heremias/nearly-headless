@@ -1,0 +1,46 @@
+{
+  "variant": "standard",
+  "color_scheme": "osu-dark",
+  "attributes": {
+    "Attribute()": {}
+  },
+  "entity": {
+    "heading": {
+      "value": "Quote Heading"
+    },
+    "heading_level": {
+      "value": "h2"
+    },
+    "introduction": {
+      "value": "This is an introduction for a quote."
+    },
+    "attribution": {
+      "value": "Buckaroo Bonzai"
+    },
+    "context": {
+      "value": "Bonzai Institute"
+    },
+    "quote": {
+      "value": "<p>Wherever you go, there you are.</p>"
+    },
+    "tweetable": {
+      "value": true
+    }
+  },
+  "content": {
+    "heading": "fields-paragraph-heading",
+    "introduction": "fields-paragraph-introduction",
+    "link": "fields-paragraph-link",
+    "attribution": "fields-paragraph-attribution",
+    "context": "fields-paragraph-context",
+    "quote": "fields-paragraph-quote",
+    "tweetable": "fields-paragraph-tweetable",
+    "tweet_text": "fields-paragraph-tweet-text"
+  },
+  "share_url": "https://insights.osu.edu",
+  "shareable": true,
+  "style": {
+    "horizontal": "narrow",
+    "vertical": "regular"
+  }
+}

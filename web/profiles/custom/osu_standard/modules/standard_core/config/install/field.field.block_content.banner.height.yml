@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - field.storage.block_content.height
+  module:
+    - options
+id: block_content.banner.height
+field_name: height
+entity_type: block_content
+bundle: banner
+label: Height
+description: 'Select the height of the banner image. '
+required: true
+translatable: false
+default_value:
+  -
+    value: medium
+default_value_callback: ''
+settings: {  }
+field_type: list_string

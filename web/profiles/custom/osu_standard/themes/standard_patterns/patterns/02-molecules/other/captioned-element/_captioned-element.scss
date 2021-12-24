@@ -1,0 +1,66 @@
+.m-captioned-element {
+  width: 100%;
+  text-align: left;
+  margin: 0 0 8px;
+
+  /* Avoid double sizing nested things. */
+  &.view-mode-thumbnail,
+  &.view-mode-tiny,
+  &.view-mode-small,
+  &.view-mode-medium,
+  &.view-mode-medium_large {
+    article {
+      width: 100%;
+    }
+  }
+
+  &.view-mode-thumbnail {
+    @include thumbnail-item();
+  }
+
+  &.view-mode-tiny {
+    @include tiny-item();
+  }
+
+  &.view-mode-small {
+    @include small-item();
+  }
+
+  &.view-mode-medium {
+    @include medium-item();
+  }
+
+  &.view-mode-large {
+    @include large-item();
+  }
+
+  &.view-mode-medium_large {
+    @include medium-large-item();
+  }
+
+  &.align-right {
+    @include right-item();
+  }
+
+  &.align-left {
+    @include left-item();
+  }
+
+  /**
+   * This prevents nested embedded media from being double resized.
+   */
+  .m-embeded-media {
+    .view-mode-tiny,
+    .view-mode-small,
+    .view-mode-medium,
+    .view-mode-medium_large {
+      @include large-item();
+    }
+
+    .align-left,
+    .align-right {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

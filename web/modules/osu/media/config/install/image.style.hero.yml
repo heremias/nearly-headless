@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.hero
+  module:
+    - crop
+name: hero
+label: 'Hero (1.4)'
+effects:
+  f8ad8ad1-3ffd-43bc-a6dd-43e9b77bc9d0:
+    uuid: f8ad8ad1-3ffd-43bc-a6dd-43e9b77bc9d0
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: hero

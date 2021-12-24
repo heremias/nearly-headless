@@ -1,0 +1,174 @@
+<?php
+
+/**
+ * Implements hook_preprocess_node to stringify some of the date and time ranges.
+ *
+ * We need to translate sequences of datetime ranges into something like this.
+ * $variables['occurrence_month_day_range_string'] = "JAN 29, 31 - FEB 2, 4, Mar 6"
+ *
+ * We also need to make some sequences like this.
+ * $variables['occurrence_weekday_times'] = [Saturday 11a-2p, Sunday 10a-3p]
+ * Note, not handling in day ranges yet.
+ *
+ * $variables['occurrence_year_range_string'] = '2017-2018';
+ *
+ */
+function osu_node_occurrences_preprocess_node(&$variables) {
+
+  $node = $variables['node'];
+
+  if ($node->occurrences) {
+    // Identify ranges in an array of start/end date tuples with optional ends.
+    $ranges = osu_node_occurrences_start_ranges($node->occurrences);
+    $variables['content']['occurrence_month_day_range_string'] = osu_node_occurrences_month_day_range_string($ranges);
+    if (count($ranges) > 0) {
+      $variables['content']['occurrence_year_range_string'] = $ranges[0][0]->format('Y');
+      if ($variables['content']['occurrence_year_range_string'] != $ranges[count($ranges)-1][0]->format('Y')) {
+        $variables['content']['occurrence_year_range_string'] .= '-' . $ranges[count($ranges)-1][0]->format('Y');
+      }
+
+      // These are used in listings.
+      $variables['content']['occurrence_first_year'] = $ranges[0][0]->format('Y');
+      $variables['content']['occurrence_first_day'] = $ranges[0][0]->format('j');
+      $variables['content']['occurrence_first_month'] = $ranges[0][0]->format('M');
+    }
+
+    $variables['content']['occurrence_weekday_times'] = [];
+    foreach ($node->occurrences as $occurrence) {
+      $weekday_time = $occurrence->start_date->format('l g');
+
+      // Include minutes only if it is non-zero.
+      if ($occurrence->start_date->format('i') != '00') {
+        $weekday_time .= $occurrence->start_date->format(':i');
+      }
+      // Include am/pm only when there is a mismatch.
+      if ($occurrence->start_date->format('a') != $occurrence->end_date->format('a')) {
+        $weekday_time .= $occurrence->start_date->format('a');
+      }
+
+      // Include end time
+      $weekday_time .= '-' . $occurrence->end_date->format('g');
+      // Include minutes only if it is non-zero.
+      if ($occurrence->end_date->format('i') != '00') {
+        $weekday_time .= $occurrence->end_date->format(':i');
+      }
+      $weekday_time .= $occurrence->end_date->format('a');
+      $variables['content']['occurrence_weekday_times'][] = $weekday_time;
+    }
+  }
+
+}
+
+/**
+ * Creates a string like so... "JAN 29, 31 - FEB 2, 4, Mar 6"
+ * @param $ranges - array of arrays with a start datetime and optional endtime tuple.
+ *
+ * @return string
+ */
+function osu_node_occurrences_month_day_range_string($ranges) {
+  // Next build a string of dates in the above format.
+  $dates = [];
+  $current_month = '';
+  foreach ($ranges as $range) {
+    $current_date = '';
+
+    // If the current month is different, start a new month.
+    $start_month = $range[0]->format('M');
+    if ($current_month != $start_month) {
+      $current_month = $start_month;
+      $current_date = $current_month . ' ';
+    }
+
+    // Add the date associated with the current month.
+    $current_date .= $range[0]->format('j');
+
+    if (count($range) == 2) {
+      // If the current month is different, start a new month
+      $end_month = $range[1]->format('M');
+      if ($current_month != $end_month) {
+        $current_month = $end_month;
+        $current_date .= ' - ' . $end_month . ' ' . $range[1]->format('j');
+      }
+      else {
+        $current_date .= '-' . $range[1]->format('j');
+      }
+    }
+    $dates[] = $current_date;
+  }
+  return join(', ', $dates);
+}
+
+function osu_node_occurrences_start_ranges($occurrences) {
+  // Build a sorted array of start day/time timestamps.
+  $dts = [];
+  foreach ($occurrences as $occurrence) {
+    $dts[] = $occurrence->start_date;
+  }
+  sort($dts);
+
+  // Bucket the sorted timestamps into ranges.
+  $fs = \Drupal::service('date.formatter');
+  $ranges = [];
+  $start = FALSE;
+  $last = FALSE;
+  foreach ($dts as $dt) {
+    if ($start) {
+      if (osu_node_occurrences_consecutive($last, $dt)) {
+        $last = $dt;
+      }
+      else {
+        $vals = [$start];
+        if ($start->format('w') != $last->format('w')) {
+          $vals[] = $last;
+        }
+        $ranges[] = $vals;
+        $start = $last = $dt;
+      }
+    }
+    else {
+      $start = $last = $dt;
+    }
+  }
+
+  // We need to flush the last values out of our start/last buffers.
+  if ($start) {
+    $vals = [$start];
+    if ($start->format('w') != $last->format('w')) {
+      $vals[] = $last;
+    }
+    $ranges[] = $vals;
+  }
+  return $ranges;
+}
+
+/**
+ * Determines if two dates occur on consecutive days in
+ * @param $first
+ * @param $second
+ */
+function osu_node_occurrences_consecutive($first, $second) {
+  /* @var \DateInterval $result */
+  $result = $first->diff($second, TRUE);
+
+  // DateIntervals round days so use 3 instead of 2.
+  $within_3_days = $result->days < 3;
+
+  // w returns 0-6 depending on the weekday. We want to know how many days apart things are.
+  $weekday_delta = abs($first->format('w') - $second->format('w'));
+
+  // Anything fewer than three days apart and 1 "wrapping" day different (6 wraps).
+  return $within_3_days && in_array($weekday_delta, [1, 6]);
+
+}
+
+function osu_node_occurrences_views_data_alter(array &$data) {
+  $data['node_field_data']['nodes_titles'] = array(
+    'title' => t('Node titles'),
+    'filter' => array(
+      'title' => t('Occurrence Filter'),
+      'help' => t('Filter on the past, future, or the inbetween'),
+      'field' => 'entity_id',
+      'id' => 'osu_node_occurrences_filters'
+    ),
+  );
+}

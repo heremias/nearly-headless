@@ -1,0 +1,32 @@
+.listicle__item {
+  position: relative;
+
+  .listicle__index {
+    background: $gray-3;
+    color: $white;
+    font-size: 2.286rem;
+    line-height: 39px;
+    height: 44px;
+    left: 0;
+    padding: 3px 0 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 44px;
+  }
+
+  .listicle__heading {
+    color: $gray-3;
+    font-size: 1.428rem;
+    line-height: 26px;
+    padding: 8px 0 24px 64px;
+    position: relative;
+  }
+
+  .listicle__body {
+    font-size: 1.142rem;
+    line-height: 24px;
+    padding: 3px 0 0 64px;
+    position: relative;
+  }
+}

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.qa_list_variant
+    - paragraphs.paragraphs_type.qa_list
+  module:
+    - options
+id: paragraph.qa_list.qa_list_variant
+field_name: qa_list_variant
+entity_type: paragraph
+bundle: qa_list
+label: Variant
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

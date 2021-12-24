@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.twitter
+  module:
+    - crop
+name: twitter_large
+label: 'Twitter (2:1) - Large'
+effects:
+  780780af-2766-452d-ad29-24175e83ff58:
+    uuid: 780780af-2766-452d-ad29-24175e83ff58
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: twitter
+  ebd125ee-97e9-48c1-9ff1-9a8aab1fd8e0:
+    uuid: ebd125ee-97e9-48c1-9ff1-9a8aab1fd8e0
+    id: image_scale
+    weight: 2
+    data:
+      width: 1280
+      height: 640
+      upscale: false

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: twitter
+label: 'Twitter (2:1)'
+description: "Images for this Card support an aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Images must be less than 5MB in size. JPG, PNG, WEBP and GIF formats are supported.\r\nhttps://dev.twitter.com/cards/types/summary-large-image"
+aspect_ratio: '2:1'
+soft_limit_width: 1024
+soft_limit_height: 512
+hard_limit_width: null
+hard_limit_height: null

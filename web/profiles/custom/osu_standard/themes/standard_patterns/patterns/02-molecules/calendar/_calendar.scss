@@ -1,0 +1,69 @@
+.m-calendar {
+  font-family: $ff--proxima;
+  width: 100%;
+
+  table {
+    width: 100%;
+  }
+
+  .m-calendar-header {
+    line-height: 48px;
+  }
+
+  .m-calendar-control {
+    background: $gray-0;
+    color: $white;
+    flex-grow: 1;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .m-calendar-current {
+    background: $gray-9;
+    color: $gray-2;
+    flex-grow: 3;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .m-calendar-table {
+    border: none;
+    border-spacing: 0;
+    font-size: 1.214em;
+    line-height: 48px;
+    text-align: center;
+
+    thead {
+      background: $gray-6;
+    }
+
+    th {
+      border: none;
+      font-weight: normal;
+      padding: 0;
+    }
+
+    td {
+      border: none;
+      padding: 0;
+
+      &.active {
+        border: 1px solid $gray-8;
+        color: $scarlet;
+      }
+    }
+  }
+
+  .m-calendar-dates {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 24px;
+
+    li {
+      font-size: 1.214em;
+      line-height: 48px;
+      text-align: center;
+      width: 40px;
+    }
+  }
+}

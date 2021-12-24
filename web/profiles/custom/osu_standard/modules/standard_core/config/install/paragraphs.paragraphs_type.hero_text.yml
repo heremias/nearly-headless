@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hero_text
+label: 'Text Hero'
+icon_uuid: null
+icon_default: null
+description: 'A text hero is conceptually similar to an introduction but in a hero context.'
+behavior_plugins: {  }

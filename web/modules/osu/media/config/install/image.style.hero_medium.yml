@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.hero
+  module:
+    - crop
+name: hero_medium
+label: 'Hero (1.4) - Medium'
+effects:
+  bcffb120-9b80-478e-98d2-9d08f6860a34:
+    uuid: bcffb120-9b80-478e-98d2-9d08f6860a34
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: hero
+  899172a5-a43e-48e0-98f4-507d7a8c603a:
+    uuid: 899172a5-a43e-48e0-98f4-507d7a8c603a
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1120
+      height: 800
+      anchor: center-center
+  f6b563ad-b22f-45c8-b258-c3e55e9bea0b:
+    uuid: f6b563ad-b22f-45c8-b258-c3e55e9bea0b
+    id: image_scale
+    weight: 3
+    data:
+      width: 640
+      height: 457
+      upscale: true

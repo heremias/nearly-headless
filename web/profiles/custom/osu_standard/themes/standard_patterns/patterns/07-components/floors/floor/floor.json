@@ -1,0 +1,31 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "link": [
+      {
+        "#title": "Click Me",
+        "#url": "#"
+      }
+    ]
+  },
+  "entity": {
+    "heading": {
+      "value": "Floor H2 + Introduction"
+    },
+    "heading_level": {
+      "value": "h2"
+    },
+    "introduction": {
+      "value": "This is an introduction for an example floor."
+    },
+    "link": {
+    }
+  },
+  "style": {
+    "horizontal": "narrow",
+    "vertical": "regular"
+  }
+
+}

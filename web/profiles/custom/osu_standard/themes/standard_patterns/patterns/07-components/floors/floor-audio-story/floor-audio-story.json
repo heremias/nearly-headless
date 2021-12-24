@@ -1,0 +1,26 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "node": "fields-paragraph-node-audio-story"
+  },
+  "entity": {
+    "heading": {
+      "value": "Audio Story Floor"
+    },
+    "heading_level": {
+      "value": "h2"
+    },
+    "introduction": {
+      "value": "This is an introduction for an audio story."
+    },
+    "tweetable": {
+      "value": "true"
+    }
+  },
+  "style": {
+    "horizontal": "narrow",
+    "vertical": "regular"
+  }
+}

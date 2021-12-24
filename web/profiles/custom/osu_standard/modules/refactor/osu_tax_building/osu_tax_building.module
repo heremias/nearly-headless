@@ -1,0 +1,9 @@
+<?php
+
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\field\Entity\FieldStorageConfig;
+
+function osu_tax_building_allowed_values(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
+  $service = \Drupal::service('osu_buildings.building_service');
+  return $service->map();
+}

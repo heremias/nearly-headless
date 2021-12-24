@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "summary",
+  "field_type": "string-long",
+  "label": "Summary",
+  "label_hidden": true,
+  "multiple": false,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus risus quis rutrum ornare. Mauris non ligula quis urna mattis euismod sit amet et velit. Curabitur fringilla nunc arcu, sit amet eleifend velit scelerisque a. "
+    }
+  ]
+}

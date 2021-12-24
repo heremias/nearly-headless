@@ -1,0 +1,58 @@
+langcode: en
+status: true
+dependencies: {  }
+id: modx_page_migration
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: null
+label: 'Modx Page Migration'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  urls: 'http://newmedia.osu.edu/migrate/modx.json'
+  ids:
+    id:
+      type: integer
+  item_selector: /
+  fields:
+    -
+      name: id
+      label: Id
+      selector: /id
+    -
+      name: pagetitle
+      label: 'Page Title'
+      selector: /pagetitle
+    -
+      name: longtitle
+      label: 'Long Title'
+      selector: /longtitle
+    -
+      name: alias
+      label: Alias
+      selector: /alias
+process:
+  title: pagetitle
+  slug: alias
+  content:
+    plugin: sub_process
+    source: id
+    process:
+      target_id:
+        -
+          plugin: migration_lookup
+          migration:
+            - modx_paragraph_migration
+          source: id
+        -
+          plugin: extract
+          index:
+            - 0
+      target_revision_id: '@target_id'
+destination:
+  plugin: 'entity:node'
+  default_bundle: content_page
+migration_dependencies: null

@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: square_focal_large
+label: 'Square (1:1) Focal - Large'
+effects:
+  12d4959b-a3ff-4e9f-8152-56b979a25299:
+    uuid: 12d4959b-a3ff-4e9f-8152-56b979a25299
+    id: focal_point_scale_and_crop
+    weight: 4
+    data:
+      width: 1280
+      height: 1280
+      crop_type: focal_point

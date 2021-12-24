@@ -1,0 +1,68 @@
+{
+  "name": "standard_patterns",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "watch": "webpack --config ./node_modules/@vue/cli-service/webpack.config.js --watch",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@osu/bux-source": "^0.2.0",
+    "@umarketing/osu-design-system": "^0.17.13",
+    "@vue/cli": "^4.5.15",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "bootstrap-table": "^1.18.3",
+    "bootstrap-vue": "^2.21.2",
+    "breakpoint-sass": "^2.7.1",
+    "core-js": "^3.6.5",
+    "dayjs": "^1.10.6",
+    "glob": "^7.1.7",
+    "html-loader": "^2.1.2",
+    "jarallax": "^1.12.7",
+    "jquery": "^3.6.0",
+    "kitsu": "^9.1.18",
+    "lodash.intersection": "^4.4.0",
+    "mark.js": "^8.11.1",
+    "node-json-transform": "^1.1.2",
+    "node-sass-glob-importer": "^5.3.2",
+    "normalize.css": "^8.0.1",
+    "retry-axios": "^2.6.0",
+    "sass": "^1.36.0",
+    "sass-loader": "^10.1.1",
+    "sass-resources-loader": "^2.2.3",
+    "singularitygs": "^1.8.0",
+    "valid-url": "^1.0.9",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack-cli": "^4.7.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

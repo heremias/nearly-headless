@@ -1,0 +1,12 @@
+{% extends "@components/floors/floor/floor.twig" %}
+{% set class = 'c-floor-uneven-columns' %}
+{% block component %}
+  <div class="c-floor-uneven-columns-row">
+    <div class="c-floor-uneven-columns--column-wide ">
+      {{ content.column_wide }}
+    </div>
+    <div class="c-floor-uneven-columns--column-narrow ">
+      {{ content.column_narrow }}
+    </div>
+  </div>
+{% endblock %}

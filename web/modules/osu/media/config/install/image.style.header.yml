@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.header
+  module:
+    - crop
+name: header
+label: 'Header (2.21)'
+effects:
+  339e2168-a043-4acb-83b5-2ad98768de58:
+    uuid: 339e2168-a043-4acb-83b5-2ad98768de58
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: header

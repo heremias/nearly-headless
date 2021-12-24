@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: widescreen
+label: 'Widescreen (16:9)'
+description: 'Standard widescreen crop, same general proportion as modern tvs.'
+aspect_ratio: '16:9'
+soft_limit_width: 1920
+soft_limit_height: 1080
+hard_limit_width: null
+hard_limit_height: null

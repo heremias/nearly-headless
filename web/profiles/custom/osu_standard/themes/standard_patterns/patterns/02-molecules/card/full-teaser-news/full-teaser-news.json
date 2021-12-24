@@ -1,0 +1,10 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "title": "Lorem Ipsum Titleum",
+    "summary": "fields-node-summary",
+    "publish_date": "fields-node-publish-date"
+  }
+}

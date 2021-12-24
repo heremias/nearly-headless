@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.image
+    - media.type.image
+    - paragraphs.paragraphs_type.hero_banner
+id: paragraph.hero_banner.image
+field_name: image
+entity_type: paragraph
+bundle: hero_banner
+label: Image
+description: "This image will get cropped in different ways depending on the image size and browser view port.<br>\r\nAvoid semantic images with people, faces, or subjects which could look bad when cropped."
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,5 @@
+standard_core.developer_settings:
+  title: 'Standard Developer Settings'
+  parent: system.admin_config_system
+  description: 'Configure site specific fields and functionality'
+  route_name: standard_core.devel_settings_form

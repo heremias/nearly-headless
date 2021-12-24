@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.website
+    - taxonomy.vocabulary.sponsors
+  module:
+    - link
+id: taxonomy_term.sponsors.website
+field_name: website
+entity_type: taxonomy_term
+bundle: sponsors
+label: Website
+description: 'Link to organization''s website, an individual sponsor''s bio, etc.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

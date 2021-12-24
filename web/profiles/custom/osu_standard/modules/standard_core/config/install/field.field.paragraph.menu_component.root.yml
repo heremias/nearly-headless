@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.root
+    - paragraphs.paragraphs_type.menu_component
+  module:
+    - options
+id: paragraph.menu_component.root
+field_name: root
+entity_type: paragraph
+bundle: menu_component
+label: Root
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

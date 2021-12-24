@@ -1,0 +1,97 @@
+.m-third-teaser-event {
+  font-family: $ff--proxima;
+  margin: 0 0 30px;
+  width: 100%;
+
+  &.m-third-teaser-event__internal {
+    .m-third-teaser-event__date {
+      background: $scarlet;
+    }
+
+    .m-third-teaser-event__year {
+      background: $scarlet-1;
+    }
+
+    .m-third-teaser-event__year {
+      color: $white;
+    }
+
+    .m-third-teaser-event__month {
+      color: $white;
+    }
+
+    .m-third-teaser-event__day {
+      color: $white;
+    }
+
+    .m-third-teaser-event__location {
+      color: $scarlet;
+    }
+  }
+
+  &.m-third-teaser-event__external {
+    .m-third-teaser-event__date {
+      background: $gray-9;
+    }
+
+    .m-third-teaser-event__year {
+      background: $gray-6;
+    }
+
+    .m-third-teaser-event__year {
+      color: $gray-2;
+    }
+
+    .m-third-teaser-event__month {
+      color: $gray-2;
+    }
+
+    .m-third-teaser-event__day {
+      color: $gray-2;
+    }
+
+    .m-third-teaser-event__location {
+      color: $gray-2;
+    }
+  }
+
+  .m-third-teaser-event__inner {
+    border: 2px solid $gray-6;
+    padding: 10px;
+  }
+
+  .m-third-teaser-event__summary {
+    font-size: 14px; /* em base */
+    vertical-align: top;
+    width: 100%;
+  }
+
+  .m-third-teaser-event__title {
+    font-family: $ff--capita;
+    font-size: 1.786em;
+    line-height: 30px;
+    margin: 10px 0;
+
+    a {
+      color: $gray-2;
+    }
+  }
+
+  .m-third-teaser-event__description {
+    color: $gray-2;
+    font-size: 1.071em;
+    margin: 0 0 10px;
+  }
+
+  .m-third-teaser-event__location {
+    font-size: 1.143em;
+    text-transform: uppercase;
+  }
+
+  .rang {
+    color: $scarlet;
+    font-size: 15px;
+    font-weight: bold;
+    vertical-align: top;
+  }
+}

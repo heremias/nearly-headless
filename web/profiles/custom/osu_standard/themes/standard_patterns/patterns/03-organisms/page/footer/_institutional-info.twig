@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Pattern for institutional-info.
+ *
+ * Available variables:
+ * -
+ */
+#}
+<div class="o-institutional-info">
+  <p>&copy; {{ "now"|date("Y") }} The Ohio State University {% if address1 %}| {{ address1 }}{% endif %}{% if address2 %} | {{ address2 }}{% endif %} {% if city and state %}| {{ city }}, {{ state }}{% endif %} {{ postal }} {% if phone %}| <a href="tel:{{ phone }}">{{ phone }}</a> {% endif %}</p>
+  <p>Contact: {% if organization %}{% if email %} <a href="mailto:{{ email }}">{{ organization }}</a>{% else %}{{ organization }}{% endif %} | {% endif %}<a href="https://www.osu.edu/webmaster.html">Webmaster</a></p>
+  <p>If you have a disability and experience difficulty accessing this content, contact {{ada_unit|default("the ADA Coordinator's Office")}} at <a href="mailto:{{ada_email|default("ada-osu@osu.edu")}}">{{ada_email|default("ada-osu@osu.edu")}}</a>.</p>
+  <p><a href="mailto:webmaster@osu.edu">Request an alternate format of this page</a> | <a href="https://go.osu.edu/privacy">Privacy notice</a> | <a href="https://go.osu.edu/nondiscrimination-notice">Nondiscrimination notice</a></p>
+</div>

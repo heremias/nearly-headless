@@ -1,0 +1,24 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "session-speakers",
+  "field_type": "entity-reference",
+  "label": "Speakers",
+  "label_hidden": true,
+  "multiple": true,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "molecules-half-teaser-speaker"
+    },
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "molecules-half-teaser-speaker"
+    }
+  ]
+}

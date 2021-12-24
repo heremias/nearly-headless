@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.standard
+  module:
+    - crop
+name: standard_thumb
+label: 'Standard (4:3) - Thumbnail'
+effects:
+  01162460-6d1a-472c-b644-e0bb333cc771:
+    uuid: 01162460-6d1a-472c-b644-e0bb333cc771
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: standard
+  09eb209d-a143-4b25-a8c6-01449ff1ef7f:
+    uuid: 09eb209d-a143-4b25-a8c6-01449ff1ef7f
+    id: image_scale
+    weight: -8
+    data:
+      width: 120
+      height: 90
+      upscale: true
+  97bfb09f-209f-469e-986a-1477f07d707f:
+    uuid: 97bfb09f-209f-469e-986a-1477f07d707f
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 120
+      height: 90
+      anchor: center-center

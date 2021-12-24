@@ -1,0 +1,83 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.items
+    - paragraphs.paragraphs_type.card_formatted_text
+    - paragraphs.paragraphs_type.card_image_titles
+    - paragraphs.paragraphs_type.cards
+  module:
+    - entity_reference_revisions
+id: paragraph.cards.items
+field_name: items
+entity_type: paragraph
+bundle: cards
+label: Cards
+description: "Two or three identically formatted cards.<br >\r\nIf you add more than three items, they will form carousel.\r\n"
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      card_formatted_text: card_formatted_text
+      card_image_titles: card_image_titles
+    target_bundles_drag_drop:
+      callout:
+        weight: 19
+        enabled: false
+      card_formatted_text:
+        enabled: true
+        weight: 20
+      card_image_titles:
+        enabled: true
+        weight: 21
+      cards:
+        weight: 22
+        enabled: false
+      cta:
+        weight: 23
+        enabled: false
+      directory:
+        weight: 24
+        enabled: false
+      formatted_text:
+        weight: 25
+        enabled: false
+      list:
+        weight: 26
+        enabled: false
+      list_item:
+        weight: 27
+        enabled: false
+      parousel:
+        weight: 28
+        enabled: false
+      parousel_item:
+        weight: 29
+        enabled: false
+      qa_item:
+        weight: 30
+        enabled: false
+      qa_list:
+        weight: 31
+        enabled: false
+      quote:
+        weight: 32
+        enabled: false
+      speaker:
+        weight: 33
+        enabled: false
+      timeline:
+        weight: 34
+        enabled: false
+      timeline_item:
+        weight: 35
+        enabled: false
+      video:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

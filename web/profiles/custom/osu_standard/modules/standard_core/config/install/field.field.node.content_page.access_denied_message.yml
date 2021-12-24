@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.access_denied_message
+    - node.type.content_page
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich: rich
+    simple: simple
+    unrestricted: unrestricted
+    plain: '0'
+    plain_text: '0'
+id: node.content_page.access_denied_message
+field_name: access_denied_message
+entity_type: node
+bundle: content_page
+label: 'Access Denied Message'
+description: 'Use this space to provide a custom access denied message.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

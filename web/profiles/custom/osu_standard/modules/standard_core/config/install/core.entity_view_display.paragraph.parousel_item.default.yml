@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.parousel_item.description
+    - field.field.paragraph.parousel_item.image
+    - paragraphs.paragraphs_type.parousel_item
+id: paragraph.parousel_item.default
+targetEntityType: paragraph
+bundle: parousel_item
+mode: default
+content:
+  description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: editor_image_highlight_large
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true

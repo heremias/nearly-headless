@@ -1,0 +1,11 @@
+.o-news {
+  .o-news-column {
+    margin-right: 0;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      flex: 0 0 auto;
+      width: calc(33% - 15px);
+    }
+  }
+}

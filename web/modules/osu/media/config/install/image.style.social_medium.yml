@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.social
+  module:
+    - crop
+name: social_medium
+label: 'Social (1.91) - Medium'
+effects:
+  c525160e-dc6a-42e2-8239-b46c67137fae:
+    uuid: c525160e-dc6a-42e2-8239-b46c67137fae
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: social
+  3d127137-b271-4086-9150-6d766308508c:
+    uuid: 3d127137-b271-4086-9150-6d766308508c
+    id: image_scale
+    weight: -8
+    data:
+      width: 600
+      height: 315
+      upscale: true
+  2dfce328-a1d5-4612-b8ed-38ad99beb418:
+    uuid: 2dfce328-a1d5-4612-b8ed-38ad99beb418
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 600
+      height: 315
+      anchor: center-center

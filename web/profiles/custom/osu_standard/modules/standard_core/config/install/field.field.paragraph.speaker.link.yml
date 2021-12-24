@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.link
+    - paragraphs.paragraphs_type.speaker
+  module:
+    - link
+id: paragraph.speaker.link
+field_name: link
+entity_type: paragraph
+bundle: speaker
+label: 'Profile Link'
+description: 'An optional link to find out more about this speaker.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

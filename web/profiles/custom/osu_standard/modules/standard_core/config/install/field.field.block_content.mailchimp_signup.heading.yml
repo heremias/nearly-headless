@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mailchimp_signup
+    - field.storage.block_content.heading
+id: block_content.mailchimp_signup.heading
+field_name: heading
+entity_type: block_content
+bundle: mailchimp_signup
+label: Heading
+description: 'A very short heading, three words or less.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

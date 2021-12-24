@@ -1,0 +1,7 @@
+name: Quote
+description: 'Paragraph representing a quote.'
+package: 'OSU Content / Paragraphs'
+type: module
+core_version_requirement: '^8.8 || ^9'
+dependencies:
+

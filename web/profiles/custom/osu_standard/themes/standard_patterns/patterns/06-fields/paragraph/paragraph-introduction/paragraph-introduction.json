@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "introduction",
+  "field_type": "string",
+  "label": "Introduction",
+  "label_hidden": true,
+  "multiple": false,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus tempor risus in tristique."
+    }
+  ]
+}

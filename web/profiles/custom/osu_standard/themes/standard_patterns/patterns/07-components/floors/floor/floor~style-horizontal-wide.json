@@ -1,0 +1,20 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "entity": {
+    "heading": {
+      "value": "Floor Wide"
+    },
+    "heading_level": {
+      "value": "h2"
+    },
+    "introduction": {
+      "value": ""
+    }
+  },
+  "style": {
+    "horizontal": "wide",
+    "vertical": "regular"
+  }
+}

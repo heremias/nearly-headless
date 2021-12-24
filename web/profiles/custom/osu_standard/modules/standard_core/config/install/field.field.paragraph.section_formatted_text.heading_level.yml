@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.heading_level
+    - paragraphs.paragraphs_type.section_formatted_text
+  module:
+    - options
+id: paragraph.section_formatted_text.heading_level
+field_name: heading_level
+entity_type: paragraph
+bundle: section_formatted_text
+label: 'Heading Level'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: h2
+default_value_callback: ''
+settings: {  }
+field_type: list_string

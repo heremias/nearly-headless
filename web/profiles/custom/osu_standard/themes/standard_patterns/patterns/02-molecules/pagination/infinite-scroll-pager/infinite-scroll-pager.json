@@ -1,0 +1,11 @@
+{
+  "options": {
+    "automatically_load_content": false,
+    "button_text": "Load More"
+  },
+  "items": {
+    "next": {
+      "href": "#"
+    }
+  }
+}

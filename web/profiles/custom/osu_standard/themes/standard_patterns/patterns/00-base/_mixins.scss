@@ -1,0 +1,207 @@
+/////////////////////
+// General Mixins (put specific ones in component files where applicable)
+
+/// Mixin - Clearfix.
+/// Adds clearfix based on http://bourbon.io/docs/#clearfix
+/// use example =   @include cleafix
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+/// Mixin - list-reset
+/// Reset list item defaults when no margin, padding, list styles needed
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/// Mixin - With Icon
+/// Precede Text with SVG icon
+@mixin with-icon {
+  background-size: cover;
+  content: "";
+  display: inline-block;
+  margin-right: 0.1em;
+  padding: 0.8em;
+}
+
+/// Mixin - Wrapper
+/// Outer container mixin for large screens
+@mixin wrapper {
+  margin: 0 auto;
+  max-width: $max-width;
+
+  @include clearfix;
+}
+
+/// Mixin - More Link
+/// Used in a number of views
+@mixin more-link {
+  a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    &::before {
+      content: "»";
+      font-size: 1.2rem;
+      margin-right: 0.2em;
+    }
+  }
+}
+
+/// Mixin - Back Link
+/// Used in a number of views
+@mixin back-link {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  &::before {
+    content: "«";
+    font-size: 1.2rem;
+    margin-right: 0.2em;
+  }
+}
+
+/// Mixin - Body Copy
+@mixin body-copy {
+  font-family: $font-body;
+  font-size: 14px;
+  line-height: 1.42857143;
+}
+
+/// Mixin - Transition
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+/// Mixin - Standard Margin
+@mixin margin {
+  margin-bottom: 1em;
+}
+
+/// For items that are 110px in tablet+ but 25% or 100% in phone views.
+@mixin thumbnail-item {
+  height: auto;
+
+  @include media-breakpoint-only(xs) {
+    width: 100%;
+  }
+
+  @include media-breakpoint-only(sm) {
+    width: 25%;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 110px;
+  }
+}
+
+/// For items that are 25% in tablet.
+@mixin tiny-item {
+  height: auto;
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+
+  @include media-breakpoint-only(md) {
+    width: 20%;
+  }
+
+  @include media-breakpoint-only(lg) {
+    width: 20%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 20%;
+  }
+}
+
+/// for items that are 33% in tablet.
+@mixin small-item {
+  height: auto;
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+
+  @include media-breakpoint-only(md) {
+    width: 33%;
+  }
+
+  @include media-breakpoint-only(lg) {
+    width: 33%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 33%;
+  }
+}
+
+/// For items that are 50% in tablet.
+@mixin medium-item {
+  height: auto;
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+
+  @include media-breakpoint-only(md) {
+    width: 50%;
+  }
+
+  @include media-breakpoint-only(lg) {
+    width: 50%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 50%;
+  }
+}
+
+/// For items that are 50% in tablet.
+@mixin medium-large-item {
+  height: auto;
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+
+  @include media-breakpoint-only(md) {
+    width: 50%;
+  }
+
+  @include media-breakpoint-only(lg) {
+    width: 67%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 67%;
+  }
+}
+
+/// For items that are 100% in tablet.
+@mixin large-item {
+  width: 100%;
+}
+
+@mixin left-item {
+  margin-right: 24px;
+}
+
+@mixin right-item {
+  margin-left: 24px;
+}

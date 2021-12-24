@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: columns
+label: 'Columns Floor'
+icon_uuid: null
+icon_default: null
+description: 'A row consisting of 2-3 columns which can contain a variety of content. This component will most likely be replaced in the future as it''s a bit inconsistent now that we''ve added layouts.'
+behavior_plugins: {  }

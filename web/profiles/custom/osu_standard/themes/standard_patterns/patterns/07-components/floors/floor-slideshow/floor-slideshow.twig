@@ -1,0 +1,16 @@
+{% extends "@components/floors/floor/floor.twig" %}
+{% set class = 'c-floor-slideshow' %}
+{% block component %}
+  {% for slides in content.items_raw %}
+  {% if loop.first %}
+  <div class="my-slideshow">
+  {% endif %}
+    <div>
+      <img src="{{ slides.image.src }}" alt="{{ slides.image.alt }}" />
+      <p>{{ slides.description }}</p>
+    </div>
+  {% if loop.last %}
+  </div>
+  {% endif %}
+  {% endfor %}
+{% endblock %}

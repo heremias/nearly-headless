@@ -1,0 +1,60 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/local.hub.osu.edu\/taxonomy\/term\/31?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/bucket"
+        }
+    },
+    "tid": [
+        {
+            "value": 31
+        }
+    ],
+    "uuid": [
+        {
+            "value": "3da3cd5e-09a7-4d11-b068-4668ed7c1c47"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "bucket"
+        }
+    ],
+    "name": [
+        {
+            "value": "Alumni outcomes",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": 1498836333,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "analytics_code": [
+        {
+            "value": "Alum",
+            "lang": "en"
+        }
+    ]
+}

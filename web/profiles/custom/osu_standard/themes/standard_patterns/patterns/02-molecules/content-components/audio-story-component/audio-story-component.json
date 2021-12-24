@@ -1,0 +1,13 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "entity": {
+    "width": {
+      "value": "narrow"
+    }
+  },
+  "content": {
+    "node": "fields-paragraph-node-audio-story"
+  }
+}

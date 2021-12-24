@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.vertical_style
+    - paragraphs.paragraphs_type.floor_content_listing
+  module:
+    - options
+id: paragraph.floor_content_listing.vertical_style
+field_name: vertical_style
+entity_type: paragraph
+bundle: floor_content_listing
+label: 'Vertical Style'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: regular
+default_value_callback: ''
+settings: {  }
+field_type: list_string

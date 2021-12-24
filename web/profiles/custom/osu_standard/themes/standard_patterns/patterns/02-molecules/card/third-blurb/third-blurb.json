@@ -1,0 +1,11 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "heading": "fields-paragraph-heading",
+    "body": "fields-paragraph-body",
+    "link": "fields-paragraph-link"
+  },
+  "entity": {}
+}

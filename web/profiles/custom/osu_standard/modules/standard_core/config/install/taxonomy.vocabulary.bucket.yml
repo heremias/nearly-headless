@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Bucket
+vid: bucket
+description: 'An internal classification used on the hub site'
+weight: 0

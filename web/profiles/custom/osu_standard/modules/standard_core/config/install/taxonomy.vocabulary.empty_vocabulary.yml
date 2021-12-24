@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Empty Vocabulary'
+vid: empty_vocabulary
+description: 'An empty vocabulary used as a placeholder for exports with dynamic fields.'
+weight: 0

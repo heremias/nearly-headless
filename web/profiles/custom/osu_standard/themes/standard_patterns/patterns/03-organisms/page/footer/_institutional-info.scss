@@ -1,0 +1,16 @@
+.o-institutional-info {
+  padding: 30px 15px 0;
+
+  a {
+    color: $white;
+  }
+
+  p {
+    font-size: 1.071em;
+
+    @include media-breakpoint-up(sm) {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

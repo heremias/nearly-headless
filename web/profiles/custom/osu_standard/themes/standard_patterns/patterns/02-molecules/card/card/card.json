@@ -1,0 +1,12 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "heading": "Lorem ipsum dorem potatum",
+  "body": "<div><p>Ipsum florem cabbagum. Enchilada de injera con sauerkraut.</p>",
+  "image": {
+    "alt": "Test Image",
+    "src": "https://picsum.photos/id/827/425/287"
+  },
+  "links": []
+}

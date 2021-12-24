@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.width
+    - paragraphs.paragraphs_type.form
+  module:
+    - options
+id: paragraph.form.width
+field_name: width
+entity_type: paragraph
+bundle: form
+label: 'Horizontal Style'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: narrow
+default_value_callback: ''
+settings: {  }
+field_type: list_string

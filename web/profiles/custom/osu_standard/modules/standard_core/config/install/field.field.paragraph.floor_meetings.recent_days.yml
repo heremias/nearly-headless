@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.recent_days
+    - paragraphs.paragraphs_type.floor_meetings
+  module:
+    - options
+id: paragraph.floor_meetings.recent_days
+field_name: recent_days
+entity_type: paragraph
+bundle: floor_meetings
+label: 'Show Recent Meeting Minutes Within...'
+description: 'Amount of time backward for which to show recent meetings.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 14
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

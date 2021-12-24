@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.header
+  module:
+    - crop
+name: header_huge
+label: 'Header (2.21) - Huge'
+effects:
+  2163a2b9-614d-446e-8af7-f7fb600f4b55:
+    uuid: 2163a2b9-614d-446e-8af7-f7fb600f4b55
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: header
+  dee386b8-2194-4ffc-9960-3908579fd125:
+    uuid: dee386b8-2194-4ffc-9960-3908579fd125
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1500
+      height: 680
+      anchor: center-center
+  75b79964-07bf-495f-8b68-d202b17a426d:
+    uuid: 75b79964-07bf-495f-8b68-d202b17a426d
+    id: image_scale
+    weight: 3
+    data:
+      width: 1500
+      height: 680
+      upscale: true

@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.parousel_item.description
+    - field.field.paragraph.parousel_item.image
+    - paragraphs.paragraphs_type.parousel_item
+  module:
+    - entity_browser
+id: paragraph.parousel_item.default
+targetEntityType: paragraph
+bundle: parousel_item
+mode: default
+content:
+  description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  image:
+    weight: 0
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: preview
+      open: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

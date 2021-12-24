@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_banner.heading
+    - field.field.paragraph.hero_banner.height
+    - field.field.paragraph.hero_banner.image
+    - field.field.paragraph.hero_banner.include_breadcrumbs
+    - field.field.paragraph.hero_banner.include_page_title
+    - field.field.paragraph.hero_banner.preserve
+    - field.field.paragraph.hero_banner.subheading
+    - paragraphs.paragraphs_type.hero_banner
+id: paragraph.hero_banner.default
+targetEntityType: paragraph
+bundle: hero_banner
+mode: default
+content:
+  heading:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  subheading:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  height: true
+  include_breadcrumbs: true
+  include_page_title: true
+  preserve: true
+  search_api_excerpt: true

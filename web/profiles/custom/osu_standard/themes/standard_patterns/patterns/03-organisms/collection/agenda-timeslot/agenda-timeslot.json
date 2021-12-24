@@ -1,0 +1,30 @@
+{
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": {
+        "include()": {
+          "pattern": "molecules-third-teaser-news",
+          "with": {
+
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": {
+        "include()": {
+          "pattern": "molecules-third-teaser-news",
+          "with": {
+            "title": "Lorem ipsum dolor"
+          }
+        }
+      }
+    }
+  ]
+}

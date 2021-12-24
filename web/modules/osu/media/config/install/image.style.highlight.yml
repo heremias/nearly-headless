@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.highlight
+  module:
+    - crop
+name: highlight
+label: Highlight
+effects:
+  2788ff43-6aeb-4f82-b068-6a8d9f1309b9:
+    uuid: 2788ff43-6aeb-4f82-b068-6a8d9f1309b9
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: highlight

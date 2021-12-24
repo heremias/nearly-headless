@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Pattern for introductions.
+ *
+ * Available variables:
+ * - content: rendered contents introduction.
+ */
+#}
+
+{% set variant_class = variant %}
+
+<div {{ attributes.addClass("m-page-introduction", "d-flex", "align-items-center", variant_class) }}>
+  {{ content }}
+</div>

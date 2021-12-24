@@ -1,0 +1,6 @@
+name: 'OSU / Core / Simple Text'
+description: 'Simple html format'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'OSU / Core'

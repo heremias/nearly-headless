@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.subject_description
+    - node.type.audio_story
+id: node.audio_story.subject_description
+field_name: subject_description
+entity_type: node
+bundle: audio_story
+label: 'Subject Description'
+description: 'If the subject of a story is a person, this might include her position or other notable descriptions.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

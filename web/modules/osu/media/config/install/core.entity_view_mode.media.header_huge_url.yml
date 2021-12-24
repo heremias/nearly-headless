@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.header_huge_url
+label: 'Header (2.21) - Huge - URL'
+targetEntityType: media
+cache: true

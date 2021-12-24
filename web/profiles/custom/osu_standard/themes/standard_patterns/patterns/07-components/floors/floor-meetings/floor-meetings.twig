@@ -1,0 +1,64 @@
+{% extends "@components/floors/floor/floor.twig" %}
+{% set class = 'c-floor-meetings' %}
+{% block component %}
+  <div class="c-floor-meetings__upcoming">
+    <div class="c-floor-meetings__heading">Upcoming Meetings</div>
+    {% if content.upcoming_meetings | length == 0 %}
+      <p>There are no upcoming meetings.</p>
+    {% endif %}
+    {% for date, meetings in content.upcoming_meetings %}
+      <div class="c-floor-meetings__date-links-wrapper">
+        <div class="c-floor-meetings__related-date">
+          {{ date }}
+        </div>
+        {% if meetings %}
+        <ul class="c-floor-meetings__related-links">
+          {% endif %}
+          {% for meeting in meetings %}
+            <li>
+              {% if meeting.linkable %}
+                <a href="{{ meeting.url }}">{{ meeting.name }}</a>
+              {% else %}
+                {{ meeting.name }}
+              {% endif %}
+            </li>
+          {% endfor %}
+          {% if meetings %}
+        </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="c-floor-meetings__recent">
+    <div class="c-floor-meetings__heading">Recent Meetings</div>
+    {% if content.recent_meetings | length == 0 %}
+    <p>There are no recent meetings.</p>
+    {% endif %}
+    {% for date, meetings in content.recent_meetings %}
+      <div class="c-floor-meetings__date-links-wrapper">
+        <div class="c-floor-meetings__related-date">
+          {{ date }}
+        </div>
+        {% if meetings %}
+        <ul class="c-floor-meetings__related-links">
+          {% endif %}
+          {% for meeting in meetings %}
+            <li>
+              {% if meeting.linkable %}
+                <a href="{{ meeting.url }}">{{ meeting.name }}</a>
+              {% else %}
+                {{ meeting.name }}
+              {% endif %}
+            </li>
+          {% endfor %}
+          {% if meetings %}
+        </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  {{ content.upcoming }}
+  {{ content.recent }}
+{% endblock %}

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.editor_image_standard_large
+label: 'Standard (4:3)'
+targetEntityType: media
+cache: true

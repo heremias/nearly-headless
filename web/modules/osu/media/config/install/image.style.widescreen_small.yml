@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.widescreen
+  module:
+    - crop
+name: widescreen_small
+label: 'Widescreen (16:9) - Small'
+effects:
+  96206346-07df-4fa6-a6b3-6d45e536983f:
+    uuid: 96206346-07df-4fa6-a6b3-6d45e536983f
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: widescreen
+  91174cae-a8f6-4a23-b73c-840115f9ade7:
+    uuid: 91174cae-a8f6-4a23-b73c-840115f9ade7
+    id: image_scale
+    weight: -8
+    data:
+      width: 320
+      height: 180
+      upscale: true
+  f03491e8-73f9-46e2-9d0e-598b00e2e5b6:
+    uuid: f03491e8-73f9-46e2-9d0e-598b00e2e5b6
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 320
+      height: 180
+      anchor: center-center

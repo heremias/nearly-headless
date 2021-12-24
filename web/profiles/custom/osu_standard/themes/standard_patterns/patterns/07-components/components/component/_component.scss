@@ -1,0 +1,7 @@
+.c-component {
+  margin: 0 0 20px;
+
+  .c-component--heading {
+    @include component-heading();
+  }
+}

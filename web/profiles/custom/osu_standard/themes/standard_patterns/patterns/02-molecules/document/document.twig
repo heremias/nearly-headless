@@ -1,0 +1,18 @@
+{% set map = {
+  csv: 'csv',
+  doc: 'word',
+  docx: 'word',
+  pdf: 'pdf',
+  ppt: 'powerpoint',
+  pptx: 'powerpoint',
+  txt: 'alt',
+  xls: 'excel',
+  xlsx: 'excel',
+} %}
+<div class="m-document">
+  <a href="{{ url }}">{{ name }}</a>
+  <span class="m-document--info">
+    <i class="fas fa-file-{{ attribute(map, extension) is defined ? attribute(map, extension) : 'alt' }}"></i>
+    {{ size }}
+  </span>
+</div>

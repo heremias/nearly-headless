@@ -1,0 +1,45 @@
+{
+  "variant": "standard",
+  "color_scheme": "osu-dark",
+  "attributes": {
+    "Attribute()": {}
+  },
+  "entity": {
+    "directory_variant": {
+      "value": "directory"
+    },
+    "width": {
+      "value": "wide"
+    }
+  },
+  "content": {
+    "people": {
+      "include()": {
+        "pattern": "atoms-field-people",
+        "with": {
+          "multiple": true,
+          "items": [
+            {
+              "content": "molecules-half-teaser-person"
+            },
+            {
+              "content": "molecules-half-teaser-person"
+            },
+            {
+              "content": "molecules-half-teaser-person"
+            },
+            {
+              "content": "molecules-half-teaser-person"
+            },
+            {
+              "content": "molecules-half-teaser-person"
+            },
+            {
+              "content": "molecules-half-teaser-person"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

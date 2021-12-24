@@ -1,0 +1,17 @@
+<div class="c-hero-cta-banner c-hero-cta-banner--preserve-{{ entity.preserve.value }}" style="background-image: url({{ content.image_url }})">
+
+  <div class="c-hero-cta-banner--wrapper container">
+    <div class="c-hero-cta-banner--container">
+      {% if entity.h1_field.value == 'component.heading' %}
+        <h1 class="c-hero-cta-banner--title">{{ entity.heading.value }}</h1>
+      {% else %}
+        <h2 class="c-hero-cta-banner--title">{{ entity.heading.value }}</h2>
+      {% endif %}
+      <div class="suffix">{{ suffix }}</div>
+      <div class="c-hero-cta-banner--ctas">
+        {{ content.ctas }}
+      </div>
+    </div>
+  </div>
+
+</div>

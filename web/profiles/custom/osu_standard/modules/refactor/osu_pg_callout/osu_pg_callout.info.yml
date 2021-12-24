@@ -1,0 +1,12 @@
+name: 'Callout Paragraph'
+description: 'A simple, tweetable callout.'
+package: 'OSU Content / Paragraphs'
+type: module
+core_version_requirement: '^8.8 || ^9'
+dependencies:
+  - field
+  - field_group
+  - link
+  - options
+  - paragraphs
+  - text

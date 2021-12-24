@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.vertical_style
+    - paragraphs.paragraphs_type.rss_news_feed
+  module:
+    - options
+id: paragraph.rss_news_feed.vertical_style
+field_name: vertical_style
+entity_type: paragraph
+bundle: rss_news_feed
+label: 'Vertical Style'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: regular
+default_value_callback: ''
+settings: {  }
+field_type: list_string

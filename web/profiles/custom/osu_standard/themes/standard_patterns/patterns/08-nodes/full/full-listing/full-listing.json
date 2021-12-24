@@ -1,0 +1,12 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "introduction": "fields-node-introduction",
+    "listing": "fields-node-listing"
+  },
+  "entity": {
+    "label": "Example Listing"
+  }
+}

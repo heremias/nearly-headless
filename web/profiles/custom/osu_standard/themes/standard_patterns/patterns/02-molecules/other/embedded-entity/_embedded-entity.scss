@@ -1,0 +1,52 @@
+.m-embedded-entity {
+  width: 100%;
+  text-align: left;
+  margin: 0 0 8px;
+
+  &.align-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Avoid double sizing nested things. */
+  &.view-mode-thumbnail,
+  &.view-mode-tiny,
+  &.view-mode-small,
+  &.view-mode-medium {
+    article {
+      width: 100%;
+    }
+  }
+
+  &.view-mode-thumbnail {
+    @include thumbnail-item();
+  }
+
+  &.view-mode-tiny {
+    @include tiny-item();
+  }
+
+  &.view-mode-small {
+    @include small-item();
+  }
+
+  &.view-mode-medium {
+    @include medium-item();
+  }
+
+  &.view-mode-medium_large {
+    @include medium-large-item();
+  }
+
+  &.view-mode-large {
+    @include large-item();
+  }
+
+  &.align-right {
+    @include right-item();
+  }
+
+  &.align-left {
+    @include left-item();
+  }
+}

@@ -1,0 +1,17 @@
+/**
+ * Contextually floor fields in paragraphs that do double duty as non-floors.
+ */
+.field--name-items .paragraph-type--formatted-text .field--name-introduction,
+.field--name-items .paragraph-type--formatted-text .field--name-link,
+.field--name-items .paragraph-type--formatted-text .osu-pg-style,
+.field--name-items .paragraph-type--video .field--name-heading,
+.field--name-items .paragraph-type--video .field--name-heading-level,
+.field--name-items .paragraph-type--video .field--name-introduction,
+.field--name-items .paragraph-type--video .field--name-link,
+.field--name-items .paragraph-type--video .osu-pg-style
+{
+  visibility: hidden;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}

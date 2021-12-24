@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1{fill:#222;}
+      .cls-2{fill:#b00;}
+      .cls-3{fill:none;}
+    </style>
+  </defs>
+  <title>Asset 134</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Icons_-_Expanded" data-name="Icons - Expanded">
+      <path class="cls-1" d="M12,21a1,1,0,0,1-1-1V19H4.62L6,16.24V11a6,6,0,0,1,5.14-5.93L12,5V5l.86.12A6,6,0,0,1,18,11v5.24L19.38,19H13v1A1,1,0,0,1,12,21Z"/>
+      <path class="cls-1" d="M12,6l.72.1A5,5,0,0,1,17,11v5.47l.21.42L17.76,18H12v0H6.24l.55-1.11L7,16.47V11a5,5,0,0,1,4.28-4.94L12,6m1-4H11V4.08A7,7,0,0,0,5,11v5L3,20h7a2,2,0,0,0,4,0h7l-2-4V11a7,7,0,0,0-6-6.92V2Z"/><circle class="cls-2" cx="17" cy="7" r="2"/>
+      <path class="cls-2" d="M17,6a1,1,0,1,1-1,1,1,1,0,0,1,1-1m0-2a3,3,0,1,0,3,3,3,3,0,0,0-3-3Z"/>
+    </g>
+  </g>
+</svg>

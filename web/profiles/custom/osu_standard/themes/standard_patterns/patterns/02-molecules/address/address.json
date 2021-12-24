@@ -1,0 +1,13 @@
+{
+  "address_line1": "1480 West Lane",
+  "address_line2": "",
+  "locality": "Columbus",
+  "administrative_area": {
+    "code": "OH",
+    "name": "Ohio"
+  },
+  "country_code": {
+    "code": "US",
+    "name": "United States"
+  }
+}

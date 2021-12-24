@@ -1,0 +1,11 @@
+name: 'Form Tips'
+description: 'Form Tips module unclutters forms by turning form descriptions into hover-activated tooltips.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+configure: formtips.setting_form
+type: module
+
+# Information added by Drupal.org packaging script on 2020-10-21
+version: '8.x-1.5'
+project: 'formtips'
+datestamp: 1603251674

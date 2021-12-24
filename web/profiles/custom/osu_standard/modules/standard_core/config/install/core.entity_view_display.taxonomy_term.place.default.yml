@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.place.slug
+    - taxonomy.vocabulary.place
+  module:
+    - text
+id: taxonomy_term.place.default
+targetEntityType: taxonomy_term
+bundle: place
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  search_api_excerpt: true
+  slug: true

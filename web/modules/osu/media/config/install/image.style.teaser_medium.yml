@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.social
+  module:
+    - crop
+name: teaser_medium
+label: 'Teaser (1.91) - Medium'
+effects:
+  cce29aa6-aad7-40de-bc37-48585928d638:
+    uuid: cce29aa6-aad7-40de-bc37-48585928d638
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: social
+  3e5f1eba-8bc2-4b8c-a0eb-fe63497a8b3d:
+    uuid: 3e5f1eba-8bc2-4b8c-a0eb-fe63497a8b3d
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 600
+      height: 315
+      anchor: center-center
+  764c54ef-2431-43ed-92e8-705775e82810:
+    uuid: 764c54ef-2431-43ed-92e8-705775e82810
+    id: image_scale
+    weight: 3
+    data:
+      width: 600
+      height: 315
+      upscale: true

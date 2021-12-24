@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.introduction
+    - node.type.form
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    plain: plain
+    unrestricted: unrestricted
+    rich: '0'
+    simple: '0'
+    plain_text: '0'
+id: node.form.introduction
+field_name: introduction
+entity_type: node
+bundle: form
+label: Introduction
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

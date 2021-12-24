@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Adds direction links to locations.
+ * @param $variables
+ */
+function osu_location_preprocess_taxonomy_term(&$variables) {
+  /** @var \Drupal\taxonomy\TermInterface $term */
+  $term = $variables['term'];
+  if ($term->bundle() == 'locations') {
+
+    $variables['campus_map_url'] = '';
+    if ($term->building && $term->building->value) {
+      $variables['campus_map_url'] = 'https://www.osu.edu/map/building.php?building=' . urlencode($term->building->value);
+    }
+
+    $variables['google_map_directions_url'] = '';
+    if ($term->address && count($term->address) == 1) {
+      /** @var \Drupal\address_map_link\MapLinkManager $mapLinkManager */
+      $mapLinkManager = \Drupal::service('plugin.manager.map_link');
+
+      /** @var \Drupal\address_map_link\MapLinkInterface $mapLinkType */
+      $mapLinkType = $mapLinkManager->createInstance('google_maps_directions');
+      $variables['google_map_directions_url'] = $mapLinkType->getAddressUrl($term->address[0])->toString();
+    }
+  }
+}

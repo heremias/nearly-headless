@@ -1,0 +1,7 @@
+name: 'OSU / Analytics / Datalayer'
+description: 'Exports configuration for the datalayer module.'
+package: 'OSU / Analytics'
+type: module
+core_version_requirement: '^8.8 || ^9'
+dependencies:
+  - datalayer

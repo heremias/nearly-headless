@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_term
+label: 'Taxonomy term'
+tags:
+  title: '[term:standard_seo_title]'
+  description: '[term:description]'

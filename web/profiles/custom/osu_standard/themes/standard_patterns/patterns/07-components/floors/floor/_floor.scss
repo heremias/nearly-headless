@@ -1,0 +1,97 @@
+.c-floor {
+  .c-floor--heading {
+    text-align: center;
+
+    @include component-heading();
+  }
+
+  .c-floor--introduction {
+    font-size: 1.7rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .c-floor--content {
+    @include clearfix();
+
+    ul,
+    ol {
+      padding: 0 0 0 50px;
+
+      ul,
+      ol {
+        padding: 0 0 0 25px;
+      }
+    }
+  }
+
+  .c-floor--cta--wrapper {
+    margin: 1.5em;
+    text-align: center;
+
+    .c-floor--cta {
+      @include a-link-button-cta();
+    }
+  }
+
+  .c-floor--content {
+    @include copy();
+
+    margin: 2.857rem 0 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .c-floor--introduction .c-page-introduction {
+      font-size: 1.5rem !important;
+      line-height: 32px !important;
+    }
+  }
+
+  &.c-floor--horizontal-narrow {
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media-breakpoint-up(md) {
+      @include make-col(10);
+    }
+  }
+
+  &.c-floor--vertical-regular {
+    margin-bottom: 90px;
+    margin-top: 90px;
+  }
+
+  &.c-floor--vertical-inline {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  &:first-child {
+    margin-top: 1.5em !important;
+  }
+
+  &:last-child {
+    margin-bottom: 40px !important;
+  }
+
+  &.c-floor--horizontal-xwide:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  &.c-floor--horizontal-xwide {
+    padding: 45px 0 35px !important;
+    background-color: #eee;
+    width: 100vw;
+    position: relative;
+    left: calc(-1 * (100vw - 100%) / 2);
+
+    .c-floor--content {
+      margin: 0;
+    }
+  }
+}
+
+/* Two consecutive grey areas should only be separated by 10px. */
+.c-floor--horizontal-xwide + .c-floor--horizontal-xwide {
+  margin-top: 10px !important;
+}

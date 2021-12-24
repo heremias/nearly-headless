@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: card_image_titles
+label: 'Image / Text / Link Card'
+icon_uuid: null
+icon_default: null
+description: 'A card with a teaser image, two levels of headings, and a link'
+behavior_plugins: {  }

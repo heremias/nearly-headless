@@ -1,0 +1,563 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Pattern Lab theme.
+ */
+use \Drupal\block_content\BlockContentInterface;
+use \Drupal\node\NodeInterface;
+use \Drupal\standard_core\Processor\DocumentProcessor;
+use \Drupal\standard_core\Processor\LocationProcessor;
+use \Drupal\standard_patterns\Processor\Node\PracticeProcessor;
+use \Drupal\standard_patterns\Processor\Paragraph\MenuComponentProcessor;
+use \Drupal\standard_patterns\Processor\Paragraph\ParouselProcessor;
+use \Drupal\standard_patterns\Processor\Paragraph\QaListProcessor;
+use \Drupal\standard_patterns\Processor\ViewMode\CardProcessor;
+use \Drupal\standard_patterns\ComponentHelper;
+use \Drupal\media\IFrameMarkup;
+use Drupal\image\Entity\ImageStyle;
+
+function standard_patterns_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+
+  $variant_options = [
+    'standard' => 'Standard',
+    'conference' => 'Conference',
+  ];
+
+  $form['standard_patterns_variant'] = array(
+    '#type'          => 'select',
+    '#title'         => t('Style / Variant'),
+    '#default_value' => theme_get_setting('standard_patterns_variant'),
+    '#options'       => $variant_options,
+    '#description'   => t("This option changes the theme's general look and feel."),
+  );
+
+  $color_options = [
+    'osu-light' => 'OSU / Light',
+    'osu-dark'  => 'OSU / Dark',
+  ];
+
+  $form['standard_patterns_color_scheme'] = array(
+    '#type'          => 'select',
+    '#title'         => t('Color Scheme'),
+    '#default_value' => theme_get_setting('standard_patterns_color_scheme'),
+    '#options'       => $color_options,
+    '#description'   => t("This option changes the theme's general look and feel."),
+  );
+
+  $form['#submit'][] = 'standard_patterns_settings_submit';
+}
+
+/**
+ * Clear caches when settings change.
+ */
+function standard_patterns_settings_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  drupal_flush_all_caches();
+}
+
+/**
+ * Set a variable in all templates for the theme variant and color scheme.
+ */
+function standard_patterns_preprocess(&$variables, $hook) {
+  $variables['variant'] = theme_get_setting('standard_patterns_variant');
+  $cs = theme_get_setting('standard_patterns_color_scheme');
+  $variables['color_scheme'] = $cs ? $cs : 'osu-dark';
+  $variables['base_path'] = base_path();
+}
+
+/**
+ * Add content type suggestions to page templates.
+ * @param array $suggestions
+ * @param array $variables
+ */
+function standard_patterns_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+  // Add content type suggestions
+  if ($node = \Drupal::request()->attributes->get('node')) {
+
+    // Revisions come in as an nid string.
+    if (is_string($node) && is_numeric($node)) {
+      $node = \Drupal\node\Entity\Node::load($node);
+    }
+    array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
+  }
+
+  // Add vocabulary suggestions
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical' && $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term')) {
+    $term = Drupal\taxonomy\Entity\Term::load($tid);
+    $suggestions[] = 'page__taxonomy__' . $term->bundle();
+  }
+}
+
+function standard_patterns_preprocess_page(&$variables) {
+  if (isset($variables['node']) && ($variables['node'] instanceof NodeInterface)) {
+    $node = $variables['node'];
+    $variables['page']['title'] = $node->label();
+    if ($node->teaser_image && $node->teaser_image->entity && $node->teaser_image->entity->image && $node->teaser_image->entity->image->entity  ) {
+      $url = Drupal\Core\Url::fromUri(file_create_url($node->teaser_image->entity->image->entity->uri->value));
+      $variables['page']['hero_image'] = $url->toString();
+    }
+  }
+
+  // We can't use route match here to get a node because the route is system.403.
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (\Drupal::routeMatch()->getRouteName() == 'system.403') {
+    $alias = \Drupal::service('path.current')->getPath();
+    $path = \Drupal::service('path_alias.manager')->getPathByAlias($alias);
+    if(preg_match('/node\/(\d+)/', $path, $matches)) {
+      $node = \Drupal\node\Entity\Node::load($matches[1]);
+      if ($node instanceof \Drupal\node\NodeInterface) {
+        if (!$node->get('access_denied_message')->isEmpty()) {
+          $variables['access_denied_message'] = $node->access_denied_message->view([
+            'type' => 'text_default',
+            'label' => 'hidden',
+          ]);
+        }
+      }
+    }
+  }
+
+  $variables['path'] = [
+    'raw' => \Drupal::service('path.current')->getPath(),
+    'encoded' => urlencode(\Drupal::service('path.current')->getPath())
+  ];
+
+}
+
+function standard_patterns_preprocess_media(&$variables) {
+
+  if (isset($variables['elements']) && isset($variables['elements']['#media'])) {
+    $variables['entity'] = $m = $variables['elements']['#media'];
+    $variables['url'] = $m->toUrl();
+    $variables['attributes']['class'][] = 'view-mode-' . $variables['view_mode'];
+
+    // Get the file timestamp.
+    if (($m->bundle() == 'document') && ($m->file && $m->file->entity)) {
+      $f = $m->file->entity;
+      $variables['file_created_at'] = date("M j, Y", $f->getCreatedTime());
+      $variables['file_mime_type'] = $f->getMimeType();
+    }
+  }
+}
+
+function standard_patterns_preprocess_paragraph__qa_list(&$variables) {
+  QaListProcessor::process($variables);
+}
+
+function standard_patterns_preprocess_paragraph__menu_component(&$variables) {
+  MenuComponentProcessor::process($variables);
+}
+
+function standard_patterns_preprocess_paragraph__hero_cta_banner(&$variables) {
+  $p = $variables['paragraph'];
+  if ($p->image && $p->image->entity && $p->image->entity->image && $p->image->entity->image->entity  ) {
+    $url = Drupal\Core\Url::fromUri(file_create_url($p->image->entity->image->entity->uri->value));
+    $variables['content']['image_url'] = $url->toString();
+  }
+}
+
+function standard_patterns_preprocess_paragraph__hero_banner(&$variables) {
+  $p = $variables['paragraph'];
+  if ($p->image && $p->image->entity && $p->image->entity->image && $p->image->entity->image->entity  ) {
+    $url = Drupal\Core\Url::fromUri(file_create_url($p->image->entity->image->entity->uri->value));
+    $variables['content']['image_url'] = $url->toString();
+  }
+}
+
+function standard_patterns_preprocess_paragraph__parousel(&$variables) {
+  ParouselProcessor::process($variables);
+}
+
+
+function standard_patterns_preprocess_paragraph__people_filter_listing(&$variables) {
+  //Read value of the selected term(s) and create
+  // 2 arrays $filteredVocabs & $paragraphTerms to be used
+  // pass the selection to the front end compoent and
+  // remove the filtered Vocab from the grouped filter listing.
+  $paragraph = $variables['elements']['#paragraph'];
+  $site_tags = $paragraph->get('site_tags');
+  $terms = $site_tags->getIterator();
+  foreach($terms as $ref) {
+    $term = $ref->get('entity')->getValue();
+    $vocab = $term->bundle();
+    $paragraphTerms[] = (Object) [
+      'id' => $term->get('uuid')->getString(),
+      'type' => $vocab,
+      'name' => $term->name->getString()
+    ];
+  }
+  $filteredVocabs = array_map(function($t){ return $t->type; }, $paragraphTerms);
+  // $term = $site_tag->get('entity')->getValue();
+  /**
+   * TODO:
+   * 1) read single term passed from paragraph settings
+   * 2) filter people who don't match term (in Vue)
+   * 4) remove passed term from filter groups
+  */
+
+
+  // Auto generate needed images for people listing
+  $config = \Drupal::configFactory()->getEditable('image.settings');
+  $config->set('suppress_itok_output', TRUE);
+  $config->set('allow_insecure_derivatives', TRUE);
+  $config->save();
+
+  $domID = ComponentHelper::getID($variables['paragraph']);
+  $config = \Drupal::config('standard_core.developer_settings');
+  // $taxArray = explode(",", $config->get('person_site_tag_vocabs'));//
+  $taxArray = array_diff(explode(",", $config->get('person_site_tag_vocabs')),$filteredVocabs);
+  $taxonomies = [];
+  $groups = [];
+  $activeTags = ComponentHelper::getActivePersonTagIDs();
+  foreach( $taxArray as $tax) {
+    $vocab = \Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary')->load($tax);
+    if(empty($vocab)) {
+      $taxonomies = (Object) $taxonomies;
+      break;
+    }
+    $type = $vocab->get('vid');
+    $name = $vocab->label();
+    $groups[] = (Object) [
+      'title' => $name,
+      'id' => $vocab->uuid(),
+      'type' => $type
+    ];
+    $items = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($tax, 0, null, true);
+    foreach($items as $item) {
+      $id = $item->get('tid')->value;
+      if(in_array($id, $activeTags)){
+      $taxonomies[$name][] = [
+        'id' => $item->uuid(),
+        'type' => $type,
+        'name' => $item->get('name')->value
+      ];
+      }
+    }
+  }
+  $data  = [
+    'baseFilters' => $paragraphTerms,
+    'filters' => $taxonomies,
+    'groups' => $groups
+  ];
+  $variables['#cache']['tags'] = ['node_list'];
+  $variables['#attached']['drupalSettings']['vue-components'][$domID]['data'] = $data;
+}
+
+function standard_patterns_preprocess_paragraph__calendar_listing(&$variables) {
+  $domID = ComponentHelper::getID($variables['paragraph']);
+  $events = ComponentHelper::getEvents();
+  $data  = [
+    'events' => $events
+  ];
+  $variables['#cache']['tags'] = ['node_list'];
+  $variables['#attached']['drupalSettings']['vue-components'][$domID]['data'] = $data;
+}
+
+
+function standard_patterns_preprocess_paragraph(&$variables)
+{
+  /**
+   * Copy implementation from conference patterns
+   * pass props using drupalSettings
+   * import design system as dependency and use components
+   * instantiate all vue instances in JS file using Behaviors
+   */
+
+  $domID = ComponentHelper::getID($variables['paragraph']);
+
+  $paragraphType =  $variables['paragraph']->type->first()->target_id;
+  $vueParagraphs = [
+    'listing_practice',
+    'activity_listing',
+    'activity_stream',
+    'people_filter_listing',
+    'calendar_listing',
+  ];
+
+  if(in_array($paragraphType, $vueParagraphs)){
+    $variables['#attached']['library'][] = 'standard_patterns/vue-web-components';
+    $variables['#attached']['drupalSettings']['vue-components'][$domID] = ['id' => $domID];
+    $variables['#attached']['drupalSettings']['vue-settings']['paragraph'][] = $paragraphType;
+    $variables['#attached']['drupalSettings']['vue-components'][$domID]['data'] = [];
+  }
+
+  $p = $variables['paragraph'];
+
+  if ($p->hasField('width')) {
+    $variables['style']['horizontal'] = $p->get('width')->value;
+  }
+
+  if ($p->hasField('vertical_style')) {
+    $style = $p->get('vertical_style')->value;
+    if (in_array($style, ['regular', 'inline'])) {
+      $variables['style']['vertical'] = $style;
+    }
+    else {
+      if ($p->get('heading')->value || $p->get('introduction')->value) {
+        $variables['style']['vertical'] = 'regular';
+      }
+      else {
+        $variables['style']['vertical'] = 'inline';
+      }
+    }
+  }
+}
+
+function standard_patterns_preprocess_node(&$variables) {
+  $config = \Drupal::config('system.site');
+  $variables['site']['name'] = $config->get('name');
+
+  $node = $variables['node'];
+  if ($node && ($node->bundle() == 'audio_story') && $node->audio && $node->audio->entity) {
+    $variables['content']['transcript'] = $node->audio->entity->transcript->view('default');
+  }
+
+  if ($node) {
+    // Set a "linkable" value to let templates know if the node has a full page view.
+    $variables['linkable'] = ! ($node->rh_action && in_array($node->rh_action->value, ['access_denied', 'page_not_found']));
+    switch ($node->bundle()) {
+      case 'audio_story':
+        break;
+      case 'meeting':
+        // Crude hack to preserve cache tagging.
+        $variables['content']['location_backup'] = isset($variables['content']['location']) ? $variables['content']['location'] : '';
+        $variables['content']['occurrence_backup'] = isset($variables['content']['occurrence']) ? $variables['content']['occurrence'] : '';
+        $variables['content']['meeting_minutes_backup'] = isset($variables['content']['meeting_minutes']) ? $variables['content']['meeting_minutes'] : '';
+        $variables['content']['documents_backup'] = isset($variables['content']['documents']) ? $variables['content']['documents'] : '';
+
+        // Replace location and occurrence render arrays so node template can render them its way.
+        if ($node->location && $node->location->entity) {
+          $variables['content']['location'] = LocationProcessor::processLocation($node->location->entity);
+        }
+        $variables['content']['occurrence'] = standard_patterns_datetime_range($node->occurrence);
+
+        // Calculate related meetings to show.
+        $parent_id = ($node->parent_meeting && $node->parent_meeting->target_id) ? $node->parent_meeting->target_id : $node->id();
+        $variables['content']['related_meetings'] = standard_patterns_related_meetings($parent_id);
+
+        // Render meeting minutes and a simple array of documents.
+        if ($node->meeting_minutes && $node->meeting_minutes->entity) {
+          $variables['content']['meeting_minutes'] = DocumentProcessor::processDocument($node->meeting_minutes->entity);
+        }
+        $variables['content']['documents'] = [];
+        foreach ($node->documents->referencedEntities() as $document) {
+          $variables['content']['documents'][] = DocumentProcessor::processDocument($document);
+        }
+        break;
+      case 'practice':
+        PracticeProcessor::process($variables);
+        break;
+    }
+
+    if ($variables['view_mode'] == 'card') {
+      CardProcessor::processNode($variables);
+    }
+  }
+}
+
+function standard_patterns_related_meetings($nid) {
+  $values = [];
+
+  // Get published nodes
+  $query = \Drupal::entityQuery('node')
+    ->condition('status', 1);
+
+  // Children or parent.
+  $group = $query->orConditionGroup()
+    ->condition('parent_meeting.target_id', $nid, '=')
+    ->condition('nid', $nid);
+
+  // Sort by the occurrence field and go.
+  $nids = $query->condition($group)
+    ->sort('occurrence')
+    ->execute();
+  $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($nids);
+
+  // If one or fewer items are returned, there are no related meetings.
+  if (count($nodes) > 1) {
+    foreach ($nodes as $node) {
+      if ($node->occurrence->start_date) {
+        $start = $node->occurrence->start_date->getTimestamp();
+        $date = Drupal::service('date.formatter')->format($start, 'custom', 'M. j');
+      }
+      $values[$date][] = [
+        'linkable' =>! ($node->rh_action && in_array($node->rh_action->value, ['access_denied', 'page_not_found'])),
+        'text' => $node->label(),
+        'url' => $node->toUrl()->toString()
+      ];
+    }
+  }
+
+  return $values;
+}
+
+/**
+ * Adds granular items for occurrences.
+ * @param $variables
+ */
+function standard_patterns_datetime_range($dr) {
+  $values = [];
+  if ($dr && $dr->start_date) {
+    $formatter = \Drupal::service('date.formatter');
+    $start = $dr->start_date->getTimestamp();
+    $end = $dr->end_date->getTimestamp();
+    if (in_array($formatter->format($start, 'custom', 'M'), ['May', 'Jul', 'Jun'])) {
+      $values['start_date'] = $formatter->format($start, 'custom', 'F j, Y');
+    }
+    else {
+      $values['start_date'] = $formatter->format($start, 'custom', 'M. j, Y');
+    }
+    $values['start_time'] = $formatter->format($start, 'custom', 'g:i A');
+    $values['end_time'] = $formatter->format($end, 'custom', 'g:i A');
+    $values['passed'] = time() > $end;
+  }
+  return $values;
+}
+
+/**
+ * Allow themer to decide what to do with everything location related within the node template.
+ * @param $variables
+ */
+function standard_patterns_location($location) {
+  $values = [];
+  if ($location && $location->entity) {
+    // First let's add the label and basic fields from a location term.
+    $term = $location->entity;
+    $values['name'] = $term->label();
+    if ($term->building->value) {
+      $values['building'] = [
+        'code' => $term->building->value,
+        'url' => 'https://www.osu.edu/map/building.php?building=' . urlencode($term->building->value)
+      ];
+    }
+
+    // Addresses can be very complicated objects with complex localization rules.
+    // Let the address_plain formatter do the heavy work of parsing a the
+    // address into a set of template variables and then expose those directly.
+    if ($term->address && $term->address[0]) {
+      $render = $term->address[0]->view([
+        'type' => 'address_plain',
+        'label' => 'hidden',
+        'settings' => array(
+        ),
+      ]);
+      $fields = [
+        'given_name', 'additional_name', 'family_name', 'organization',
+        'address_line1', 'address_line2', 'postal_code', 'sorting_code',
+        'administrative_area', 'locality', 'dependent_locality', 'country'
+        ];
+      foreach ($fields as $field) {
+        $values['address'][$field] = $render['#' . $field];
+      }
+
+      // Add a google map url.
+      $mapLinkManager = \Drupal::service('plugin.manager.map_link');
+      $mapLinkType = $mapLinkManager->createInstance('google_maps_directions');
+      $values['address']['url'] = $mapLinkType->getAddressUrl($term->address[0])->toString();
+    }
+  }
+  return $values;
+}
+
+function standard_patterns_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+  $term = $variables['elements']['#taxonomy_term'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+}
+
+/**
+ * Adds install path to theme to js drupal settings.
+ * @param $variables
+ */
+function standard_patterns_preprocess_html(&$variables) {
+  $xuacompatible = [
+    '#tag' => 'meta',
+    '#attributes' => [
+      'http-equiv' => 'X-UA-Compatible',
+      'content' => 'IE=edge',
+    ],
+  ];
+
+  $variables['page']['#attached']['html_head'][] = [$xuacompatible, 'x-ua-compatible'];
+  $variables['theme_path'] = '/' . \Drupal::theme()->getActiveTheme()->getPath();
+  $variables['#attached']['drupalSettings']['path']['activeTheme'] = \Drupal::theme()->getActiveTheme()->getPath();
+}
+
+function standard_patterns_preprocess_item_list__search_results(&$variables) {
+  if (!isset($_GET['keys'])) {
+    $variables['empty']['#markup'] = '<p class="search-null-text">The search can search all content on the site except for file uploads.</p>';
+  }
+}
+
+function standard_patterns_preprocess_page_title(&$variables) {
+
+  // Alter the title of the search route to add lquo and rquo around terms .
+  if ((\Drupal::routeMatch()->getRouteName()== 'search.view_node_search') && ($variables['title'] != 'Search')) {
+    $variables['title'] = str_replace('Search for ', 'Search for ‘', $variables['title']) . '’';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ * @param array $suggestions
+ * @param array $variables
+ */
+function standard_patterns_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}
+
+/**
+ * Implements HOOK_preprocess_block().
+ *
+ * @param $variables
+ */
+function standard_patterns_preprocess_block(&$variables) {
+  $content = $variables['elements']['content'];
+  if (isset($content['#block_content']) && $content['#block_content'] instanceof BlockContentInterface) {
+    if ($content['#block_content']->bundle() == 'banner') {
+      $b = $content['#block_content'];
+      if ($b->image && $b->image->entity && $b->image->entity->image && $b->image->entity->image->entity) {
+        $url = Drupal\Core\Url::fromUri(file_create_url($b->image->entity->image->entity->uri->value));
+        $variables['content']['image_url'] = $url->toString();
+      }
+      $variables['entity']['height']['value'] = $b->get('height')->value;
+      $variables['entity']['preserve']['value'] = $b->get('preserve')->value;
+    }
+    if ($content['#block_content']->bundle() == 'mailchimp_signup') {
+      $b = $content['#block_content'];
+      $variables['entity']['heading'] = $b->get('heading')->value;
+      $variables['entity']['introduction'] = $b->get('introduction')->value;
+      $variables['entity']['user_id'] = $b->get('user_id')->value;
+      $variables['entity']['list_id'] = $b->get('list_id')->value;
+      $variables['entity']['host'] = $b->get('host')->value;
+      $variables['entity']['success_message'] = $b->get('success_message')->value;
+      $hidden = [];
+      $lines = preg_split('/\r\n|\r|\n/', $b->get('field_values')->value);
+      foreach ($lines as $line) {
+        $line = trim($line);
+        if (strlen($line) > 0) {
+          $parts = explode('|', $line);
+          if (count($parts) == 2) {
+            $hidden[$parts[0]] = $parts[1];
+          }
+        }
+      }
+      $variables['entity']['hidden'] = $hidden;
+    }
+  }
+}
+
+function standard_patterns_preprocess_video_embed_iframe__youtube(&$variables) {
+  $variables['url'] = str_replace('youtube.com/', 'youtube-nocookie.com/', $variables['url']);
+}
+
+function standard_patterns_preprocess_video_embed_iframe__vimeo(&$variables) {
+  $variables['query']['dnt'] = true;
+}

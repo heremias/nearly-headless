@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.link
+    - paragraphs.paragraphs_type.directory
+  module:
+    - link
+id: paragraph.directory.link
+field_name: link
+entity_type: paragraph
+bundle: directory
+label: Link
+description: "Footer link for this list of people.<br />\r\nNot used on all sites."
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

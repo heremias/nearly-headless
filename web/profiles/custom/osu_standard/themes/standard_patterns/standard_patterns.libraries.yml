@@ -1,0 +1,43 @@
+global:
+  css:
+    base:
+      //www.osu.edu/assets/fonts/webfonts.css: { external: true }
+      //use.fontawesome.com/releases/v5.5.0/css/all.css: { external: true }
+      //use.fontawesome.com/releases/v5.5.0/css/v4-shims.css: { external: true }
+
+    theme:
+      dist/css/style.css: { preprocess: false }
+      dist/css/chunk-vendors.css: { preprocess: false }
+      //d3nrbksa8xb0xp.cloudfront.net/bux-icons/bux-icons.css: { external: true }
+
+  js:
+    dist/js/chunk-vendors.js:
+      preprocess: false
+      minified: true
+    dist/js/script.js: { preprocess: false }
+  dependencies:
+    - core/drupal.debounce
+    - core/jquery
+    - core/drupalSettings
+    - core/jquery.once
+    - slick/slick
+
+vue-web-components:
+  css:
+    theme:
+      dist/css/vue-components.css:
+        preprocess: false
+  js:
+    libraries/es6-promise.auto.min.js:
+      preprocess: false
+      minified: true
+    libraries/vue.js:
+      preprocess: false
+      minified: true
+    dist/js/vue-components.js:
+      preprocess: false
+      minified: true
+    libraries/init-vue.js:
+      preprocess: false
+      minified: true
+

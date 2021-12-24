@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: square_focal_small
+label: 'Square (1:1) Focal - Small'
+effects:
+  7a208c07-6ca1-42bf-a975-04a87c698503:
+    uuid: 7a208c07-6ca1-42bf-a975-04a87c698503
+    id: focal_point_scale_and_crop
+    weight: 4
+    data:
+      width: 320
+      height: 320
+      crop_type: focal_point

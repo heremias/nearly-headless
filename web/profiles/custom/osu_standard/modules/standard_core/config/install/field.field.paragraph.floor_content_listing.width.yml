@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.width
+    - paragraphs.paragraphs_type.floor_content_listing
+  module:
+    - options
+id: paragraph.floor_content_listing.width
+field_name: width
+entity_type: paragraph
+bundle: floor_content_listing
+label: 'Horizontal Style'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: wide
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.heading_level
+    - paragraphs.paragraphs_type.floor_uneven_columns
+  module:
+    - options
+id: paragraph.floor_uneven_columns.heading_level
+field_name: heading_level
+entity_type: paragraph
+bundle: floor_uneven_columns
+label: 'Heading Level'
+description: 'Using appropriate heading levels helps structure your page visually and for individuals using screen readers.'
+required: false
+translatable: false
+default_value:
+  -
+    value: h2
+default_value_callback: ''
+settings: {  }
+field_type: list_string

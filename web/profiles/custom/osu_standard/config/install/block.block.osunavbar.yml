@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - osu_brand
+  theme:
+    - standard_patterns
+id: osunavbar
+theme: standard_patterns
+region: site_header
+weight: -3
+provider: null
+plugin: osu_brand_navbar
+settings:
+  id: osu_brand_navbar
+  label: 'OSU Navbar'
+  provider: osu_brand
+  label_display: '0'
+visibility: {  }

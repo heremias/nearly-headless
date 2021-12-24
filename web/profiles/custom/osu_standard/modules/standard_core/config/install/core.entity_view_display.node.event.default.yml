@@ -1,0 +1,210 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.allowed_roles
+    - field.field.node.event.audiences
+    - field.field.node.event.body
+    - field.field.node.event.buckets
+    - field.field.node.event.colleges
+    - field.field.node.event.contact_link
+    - field.field.node.event.documents
+    - field.field.node.event.extra_links
+    - field.field.node.event.host
+    - field.field.node.event.introduction
+    - field.field.node.event.location
+    - field.field.node.event.meta_title
+    - field.field.node.event.occurrences
+    - field.field.node.event.ours
+    - field.field.node.event.places
+    - field.field.node.event.pricing
+    - field.field.node.event.registration_link
+    - field.field.node.event.registration_window
+    - field.field.node.event.slug
+    - field.field.node.event.speakers
+    - field.field.node.event.sponsors
+    - field.field.node.event.summary
+    - field.field.node.event.teaser_image
+    - field.field.node.event.topics
+    - field.field.node.event.types
+    - node.type.event
+  module:
+    - datetime_range
+    - entity_reference_revisions
+    - link
+    - options
+    - text
+    - user
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  allowed_roles:
+    weight: 17
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  body:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  contact_link:
+    weight: 9
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  documents:
+    weight: 14
+    label: hidden
+    settings:
+      view_mode: reference
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  extra_links:
+    weight: 15
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  host:
+    weight: 8
+    label: hidden
+    settings:
+      view_mode: reference
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  introduction:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  location:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: reference
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  occurrences:
+    weight: 2
+    label: hidden
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  pricing:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  registration_link:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  registration_window:
+    weight: 3
+    label: hidden
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  slug:
+    weight: 11
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  speakers:
+    type: entity_reference_revisions_entity_view
+    weight: 10
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  sponsors:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: reference
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  summary:
+    weight: 12
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  teaser_image:
+    weight: 13
+    label: hidden
+    settings:
+      view_mode: teaser_medium
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  audiences: true
+  buckets: true
+  colleges: true
+  meta_title: true
+  ours: true
+  places: true
+  search_api_excerpt: true
+  topics: true
+  types: true

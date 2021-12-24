@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.facebook
+  module:
+    - crop
+name: facebook
+label: 'Facebook (1.91)'
+effects:
+  41a3d341-c3a5-4217-b8a6-7a6787f7d77e:
+    uuid: 41a3d341-c3a5-4217-b8a6-7a6787f7d77e
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: facebook

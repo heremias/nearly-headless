@@ -1,0 +1,26 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "body": "fields-paragraph-body-mega",
+    "heading": "fields-paragraph-heading",
+    "introduction": "fields-paragraph-introduction",
+    "link": "fields-paragraph-link"
+  },
+  "entity": {
+    "heading": {
+      "value": "Formatted Text Floor"
+    },
+    "heading_level": {
+      "value": "h2"
+    },
+    "introduction": {
+      "value": "This is an introduction for formatted text."
+    }
+  },
+  "style": {
+    "horizontal": "narrow",
+    "vertical": "regular"
+  }
+}

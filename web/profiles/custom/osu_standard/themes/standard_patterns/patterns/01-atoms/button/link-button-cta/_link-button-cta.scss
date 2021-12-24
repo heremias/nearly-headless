@@ -1,0 +1,20 @@
+@mixin a-link-button-cta() {
+  display: inline-block;
+  background: $scarlet;
+  border: 1px solid $scarlet;
+  color: $white;
+  font-family: $ff--proxima;
+  font-size: 1.214em;
+  margin: 0;
+  padding: 0 20px;
+  line-height: 56px;
+
+  &:hover {
+    background: $white;
+    color: $scarlet;
+  }
+}
+
+.a-link-button-cta {
+  @include a-link-button-cta();
+}

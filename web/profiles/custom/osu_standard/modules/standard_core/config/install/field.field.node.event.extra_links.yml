@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.extra_links
+    - node.type.event
+  module:
+    - link
+id: node.event.extra_links
+field_name: extra_links
+entity_type: node
+bundle: event
+label: Links
+description: 'One or more links to appear under "More Information"<br />To use an email address, enter "mailto:example@osu.edu"'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

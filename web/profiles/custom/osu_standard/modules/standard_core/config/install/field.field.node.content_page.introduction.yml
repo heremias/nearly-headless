@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.introduction
+    - node.type.content_page
+  module:
+    - text
+id: node.content_page.introduction
+field_name: introduction
+entity_type: node
+bundle: content_page
+label: Introduction
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

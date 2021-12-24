@@ -1,0 +1,113 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.items
+    - paragraphs.paragraphs_type.card_formatted_text
+    - paragraphs.paragraphs_type.card_image_titles
+    - paragraphs.paragraphs_type.section_cards
+  module:
+    - entity_reference_revisions
+id: paragraph.section_cards.items
+field_name: items
+entity_type: paragraph
+bundle: section_cards
+label: Cards
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      card_formatted_text: card_formatted_text
+      card_image_titles: card_image_titles
+    target_bundles_drag_drop:
+      audio_story:
+        weight: 29
+        enabled: false
+      callout:
+        weight: 30
+        enabled: false
+      card_download:
+        weight: 31
+        enabled: false
+      card_facts:
+        weight: 32
+        enabled: false
+      card_formatted_text:
+        enabled: true
+        weight: 33
+      card_image_titles:
+        enabled: true
+        weight: 34
+      card_tile:
+        weight: 35
+        enabled: false
+      cards:
+        weight: 36
+        enabled: false
+      section_cards:
+        weight: 37
+        enabled: false
+      columns:
+        weight: 38
+        enabled: false
+      cta:
+        weight: 39
+        enabled: false
+      directory:
+        weight: 40
+        enabled: false
+      floor_uneven_columns:
+        weight: 41
+        enabled: false
+      formatted_text:
+        weight: 42
+        enabled: false
+      list:
+        weight: 43
+        enabled: false
+      list_item:
+        weight: 44
+        enabled: false
+      media_item:
+        weight: 45
+        enabled: false
+      news_listing:
+        weight: 46
+        enabled: false
+      parousel:
+        weight: 47
+        enabled: false
+      parousel_item:
+        weight: 48
+        enabled: false
+      qa_item:
+        weight: 49
+        enabled: false
+      qa_list:
+        weight: 50
+        enabled: false
+      quote:
+        weight: 51
+        enabled: false
+      section_formatted_text:
+        weight: 52
+        enabled: false
+      speaker:
+        weight: 53
+        enabled: false
+      timeline:
+        weight: 54
+        enabled: false
+      timeline_item:
+        weight: 55
+        enabled: false
+      video:
+        weight: 56
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,27 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "column_narrow": "fields-paragraph-column-narrow",
+    "column_wide": "fields-paragraph-column-wide",
+    "heading": "fields-paragraph-heading",
+    "introduction": "fields-paragraph-introduction",
+    "link": "fields-paragraph-link"
+  },
+  "entity": {
+    "heading": {
+      "value": "Uneven Columns"
+    },
+    "heading_level": {
+      "value": "h2"
+    },
+    "introduction": {
+      "value": "This is an introduction for uneven columns."
+    }
+  },
+  "style": {
+    "horizontal": "narrow",
+    "vertical": "regular"
+  }
+}

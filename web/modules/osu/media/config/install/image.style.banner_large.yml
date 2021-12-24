@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.banner
+  module:
+    - crop
+name: banner_large
+label: 'Banner (4:1) - Large'
+effects:
+  fc26a1db-649c-4dac-b4d9-10d41b3c79ba:
+    uuid: fc26a1db-649c-4dac-b4d9-10d41b3c79ba
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: banner
+  6a00b15b-217e-403d-b705-c862c18dc14a:
+    uuid: 6a00b15b-217e-403d-b705-c862c18dc14a
+    id: image_scale
+    weight: -8
+    data:
+      width: 1280
+      height: 320
+      upscale: true
+  7904dc4e-1e94-4af2-8c41-c74c56f1af55:
+    uuid: 7904dc4e-1e94-4af2-8c41-c74c56f1af55
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 1280
+      height: 320
+      anchor: center-center

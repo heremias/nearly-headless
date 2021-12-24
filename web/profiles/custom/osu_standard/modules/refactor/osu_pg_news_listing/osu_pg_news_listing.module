@@ -1,0 +1,5 @@
+<?php
+
+function osu_pg_news_listing_preprocess_paragraph__news_listing(&$variables) {
+  $variables['content']['listing'] = views_embed_view('news_listing', 'embed_1');
+}

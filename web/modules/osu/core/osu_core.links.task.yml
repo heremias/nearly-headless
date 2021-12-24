@@ -1,0 +1,16 @@
+osu_core.unaliased_report:
+  route_name: osu_core.unaliased_report
+  title: Unaliased Report
+  base_route: osu_core.unaliased_report
+osu_core.aliased_report:
+  route_name: osu_core.aliased_report
+  title: Aliased Report
+  base_route: osu_core.aliased_report
+osu_core.ownership_settings_tab:
+  route_name: osu_core.ownership_settings
+  title: Settings
+  base_route: osu_core.ownership_settings
+osu_core.developer_settings_tab:
+  route_name: osu_core.developer_settings
+  title: Developer Settings
+  base_route: osu_core.admin_settings_form

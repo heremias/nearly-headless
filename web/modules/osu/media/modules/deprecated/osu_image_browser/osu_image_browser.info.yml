@@ -1,0 +1,6 @@
+name: 'OSU / Media / Image Browser'
+description: 'Locally uploaded image with crops.'
+package: 'OSU / Media'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9

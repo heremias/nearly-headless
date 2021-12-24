@@ -1,0 +1,39 @@
+.c-menu {
+  .menu__item--active a {
+    pointer-events: none;
+    color: $black;
+  }
+
+  a,
+  a:hover {
+    color: $scarlet;
+  }
+
+  a.menu__link::before {
+    content: "\25B8";
+    padding-right: 5px;
+  }
+
+  .menu__link {
+    font-size: initial;
+    font-weight: initial;
+    letter-spacing: initial;
+    text-transform: initial;
+    text-decoration: initial;
+  }
+
+  ul.menu li {
+    display: block;
+  }
+
+  .menu__item {
+    margin: 0 1em 0.5em 0;
+  }
+
+  @media (min-width: 48em) {
+    .menu__item {
+      display: inline;
+      margin-bottom: 1em;
+    }
+  }
+}

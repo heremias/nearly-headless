@@ -1,0 +1,7 @@
+name: 'OSU / Core / Devel'
+description: 'Configuration needed for development'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'OSU / Core'
+

@@ -1,0 +1,6 @@
+administer osu siteinfo:
+  title: 'Administer Site Information (OSU)'
+  description: 'Edit organizational information for the site'
+administer osu siteinfo publisher:
+  title: 'Administer Site Information Publisher (OSU)'
+  description: 'Edit the publisher field'

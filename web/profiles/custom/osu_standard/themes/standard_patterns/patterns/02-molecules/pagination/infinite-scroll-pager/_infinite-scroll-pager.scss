@@ -1,0 +1,10 @@
+.infinite-scroll-pager {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  list-style: none;
+
+  button {
+    display: inline-block;
+  }
+}

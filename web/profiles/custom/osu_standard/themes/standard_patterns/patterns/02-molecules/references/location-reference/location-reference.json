@@ -1,0 +1,36 @@
+{
+  "name": "Hitchcock Hall, Room 035",
+  "campus_map_url": "https://www.osu.edu/map/building.php?building=274",
+  "google_map_directions_url": "https://www.google.com/maps/dir//2070+Neil+Ave,+Columbus,+OH+43210",
+  "content": {
+    "address": {
+      "include()": {
+        "pattern": "atoms-field",
+        "with": {
+          "items": [
+            {
+              "content": {
+                "include()": {
+                  "pattern": "molecules-address",
+                  "with": {
+                    "address_line1": "1480 West Lane",
+                    "address_line2": "",
+                    "locality": "Columbus",
+                    "administrative_area": {
+                      "code": "OH",
+                      "name": "Ohio"
+                    },
+                    "country_code": {
+                      "code": "US",
+                      "name": "United States"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+
+{% set columns_desired = 3 %}
+{% set col1 = [] %}
+{% set col2 = [] %}
+{% set col3 = [] %}
+
+{# Keeps track of the index of the current item #}
+{% set item_current = 1 %}
+
+{# iterate over items in batches of 2 and assign each to a column #}
+{% for item in items %}
+  {% set col = item_current % columns_desired %}
+
+  {# concat appropriate columns content #}
+  {% if col == 1 %}
+    {% set col1 = col1|merge([item]) %}
+  {% elseif col == 2 %}
+    {% set col2 = col2|merge([item]) %}
+  {% else %}
+    {% set col3 = col3|merge([item]) %}
+  {% endif %}
+
+  {# Increment our counter #}
+  {% set item_current = item_current + 1 %}
+{% endfor %}
+
+<div class="{{ column_classes }} column-first">
+  {% for item in col1 %}
+    {{ item.content }}
+  {% endfor %}
+</div>
+<div class="{{ column_classes }} column-second">
+  {% for item in col2 %}
+    {{ item.content }}
+  {% endfor %}
+</div>
+<div class="{{ column_classes }} column-third">
+  {% for item in col3 %}
+    {{ item.content }}
+  {% endfor %}
+</div>

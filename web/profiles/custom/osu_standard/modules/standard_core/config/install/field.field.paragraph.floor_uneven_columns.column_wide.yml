@@ -1,0 +1,113 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.column_wide
+    - paragraphs.paragraphs_type.floor_uneven_columns
+    - paragraphs.paragraphs_type.section_cards
+    - paragraphs.paragraphs_type.section_formatted_text
+  module:
+    - entity_reference_revisions
+id: paragraph.floor_uneven_columns.column_wide
+field_name: column_wide
+entity_type: paragraph
+bundle: floor_uneven_columns
+label: 'Wide Column'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      section_cards: section_cards
+      section_formatted_text: section_formatted_text
+    target_bundles_drag_drop:
+      audio_story:
+        weight: 27
+        enabled: false
+      callout:
+        weight: 28
+        enabled: false
+      section_cards:
+        enabled: true
+        weight: 29
+      card_download:
+        weight: 29
+        enabled: false
+      card_facts:
+        weight: 30
+        enabled: false
+      card_formatted_text:
+        weight: 31
+        enabled: false
+      card_image_titles:
+        weight: 32
+        enabled: false
+      card_tile:
+        weight: 33
+        enabled: false
+      cards:
+        weight: 34
+        enabled: false
+      columns:
+        weight: 35
+        enabled: false
+      cta:
+        weight: 36
+        enabled: false
+      directory:
+        weight: 37
+        enabled: false
+      floor_uneven_columns:
+        weight: 38
+        enabled: false
+      formatted_text:
+        weight: 39
+        enabled: false
+      list:
+        weight: 40
+        enabled: false
+      list_item:
+        weight: 41
+        enabled: false
+      media_item:
+        weight: 42
+        enabled: false
+      news_listing:
+        weight: 43
+        enabled: false
+      parousel:
+        weight: 44
+        enabled: false
+      parousel_item:
+        weight: 45
+        enabled: false
+      qa_item:
+        weight: 46
+        enabled: false
+      qa_list:
+        weight: 47
+        enabled: false
+      quote:
+        weight: 48
+        enabled: false
+      speaker:
+        weight: 49
+        enabled: false
+      section_formatted_text:
+        enabled: true
+        weight: 50
+      timeline:
+        weight: 50
+        enabled: false
+      timeline_item:
+        weight: 51
+        enabled: false
+      video:
+        weight: 52
+        enabled: false
+field_type: entity_reference_revisions

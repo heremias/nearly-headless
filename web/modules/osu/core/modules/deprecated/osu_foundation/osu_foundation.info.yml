@@ -1,0 +1,6 @@
+name: 'OSU / Core / Foundation'
+description: 'Enables standard distribution functionality so you can keep your install profile lean'
+type: module
+package: 'OSU / Core'
+core: 8.x
+core_version_requirement: ^8 || ^9

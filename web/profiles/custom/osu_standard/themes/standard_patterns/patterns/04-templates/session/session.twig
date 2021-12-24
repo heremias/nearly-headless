@@ -1,0 +1,98 @@
+<div {{ attributes.addClass("t-session") }} >
+  <div class="container">
+    <div class="t-session__inner">
+      <div class="t-session__left-column">
+
+        <div class="t-session__datetime">
+          <div class="t-session__time">{{ content.timeslot }}</div>
+          <div class="t-session__date">{{ content.date }}</div>
+        </div>
+
+        <div class="t-session__room-label">Room:</div>
+        <div class="t-session__room">{{ content.room }}</div>
+
+        <div class="t-session__session-type-label">Sessions type:</div>
+        <div class="t-session__session-type">{{ content.session_type }}</div>
+
+      </div>
+
+      <div class="t-session__right-column">
+
+        <div class="t-session__content">
+          {{ content.body }}
+        </div>
+
+        <div class="t-session__speakers">
+
+          <h2>Speakers</h2>
+          <div class="t-session__speakers-wrap">
+            {{ content.session_speakers }}
+          </div>
+        </div>
+
+        <div class="t-session__resources">
+
+          <h2>Resources</h2>
+
+          <!-- TODO: replace with appropriate Resources pattern -->
+          <div class="x-resource">
+            <div class="x-resource__name">
+              <a href="#">Name of file attachment</a>
+            </div>
+            <div class="x-resource__filesize">
+              <span class="fa fa-file-powerpoint-o"></span> 1.2MB
+            </div>
+            <div class="x-resource__content">
+              Lorem ipsum description of attachment lorem ipsum dolar description of attachment lorem ipsum dolar amet
+            </div>
+          </div>
+          <!-- END TODO -->
+
+          <!-- TODO: replace with appropriate Resources pattern -->
+          <div class="x-resource">
+            <div class="x-resource__name">
+              <a href="#">Name of file attachment</a>
+            </div>
+            <div class="x-resource__filesize">
+              <span class="fa fa-file-pdf-o"></span> 2.3MB
+            </div>
+            <div class="x-resource__content">
+              Lorem ipsum description of attachment lorem ipsum dolar description of attachment lorem ipsum dolar amet
+            </div>
+          </div>
+          <!-- END TODO -->
+        </div>
+
+        <div class="t-session__videos">
+
+          <h2>Videos</h2>
+
+          <!-- TODO: replace with appropriate Videos pattern -->
+          <div class="x-video">
+            <div class="x-video__video-wrap">
+
+            </div>
+            <div class="x-video__content-wrap">
+              <div class="x-video__title"><a href="#">Name of video</a></div>
+              <div class="x-video__content">Lorem ipsum dolar description of attachment lorem ipsum dolar description of attachment lorem ipsum dolar</div>
+            </div>
+          </div>
+          <!-- END TODO -->
+
+          <!-- TODO: replace with appropriate Videos pattern -->
+          <div class="x-video">
+            <div class="x-video__video-wrap">
+
+            </div>
+            <div class="x-video__content-wrap">
+              <div class="x-video__title"><a href="#">Name of video</a></div>
+              <div class="x-video__content">Lorem ipsum dolar description of attachment lorem ipsum dolar description of attachment lorem ipsum dolar</div>
+            </div>
+          </div>
+          <!-- END TODO -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

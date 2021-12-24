@@ -1,0 +1,22 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "items": "fields-paragraph-items-card-formatted-text"
+  },
+  "entity": {
+    "items": {
+      "getvalue": [null, null]
+    },
+    "heading": {
+      "value": "Section Cards"
+    },
+    "heading_level": {
+      "value": "h2"
+    },
+    "introduction": {
+      "value": "This is an introduction for section cards."
+    }
+  }
+}

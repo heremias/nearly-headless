@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hero_cta_banner
+label: 'Calls to Action Banner'
+icon_uuid: null
+icon_default: null
+description: 'A banner image with a text heading overlay and 1-2 CTA buttons.'
+behavior_plugins: {  }

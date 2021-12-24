@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.audio
+    - views.view.audio_browser
+  module:
+    - dropzonejs_eb_widget
+    - media
+    - views
+name: audio_browser
+label: audio_browser
+display: modal
+display_configuration:
+  width: '1245'
+  height: ''
+  link_text: 'Select audio file(s)'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  1c98ebbe-5ab8-46d0-bf41-99e4c9cf57e4:
+    settings:
+      view: audio_browser
+      view_display: entity_browser_1
+      submit_text: 'Select audio file(s)'
+      auto_select: false
+    uuid: 1c98ebbe-5ab8-46d0-bf41-99e4c9cf57e4
+    weight: 1
+    label: 'Select existing'
+    id: view
+  80fc193e-d87a-4af6-850c-55a95b378755:
+    settings:
+      form_mode: default
+      media_type: audio
+      upload_location: 'public://audio/[date:custom:Y]/[date:custom:m]'
+      dropzone_description: 'Drop files here to upload them'
+      max_filesize: 20M
+      extensions: 'mp3 wav'
+      clientside_resize: false
+      resize_width: 0
+      resize_height: 0
+      resize_quality: !!float 1
+      resize_method: contain
+      thumbnail_method: contain
+      submit_text: 'Select audio file(s)'
+    uuid: 80fc193e-d87a-4af6-850c-55a95b378755
+    weight: 2
+    label: 'Import audio file'
+    id: dropzonejs_media_entity_inline_entity_form

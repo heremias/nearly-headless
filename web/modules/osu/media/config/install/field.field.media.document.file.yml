@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.file
+    - media.type.document
+  module:
+    - file
+id: media.document.file
+field_name: file
+entity_type: media
+bundle: document
+label: File
+description: "PDFs are preferred for portability but you may also upload common office documents.<br>\r\nAllowed Formats: csv, doc, docx, pdf, ppt, pptx, txt, xls, xlsx\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'documents/[date:custom:Y]/[date:custom:m]'
+  file_extensions: 'csv doc docx pdf ppt pptx txt xls xlsx'
+  max_filesize: 20M
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Pattern for events.
+ *
+ * Available variables:
+ * -
+ */
+#}
+<div class="o-events d-md-flex">
+  {% for item in items %}
+    {% include "@molecules/card/third-teaser-event/third-teaser-event.twig"
+    with {
+      year: item.year,
+      month: item.month,
+      day: item.day,
+      title: item.title,
+      description: item.description,
+      location_text: item.location_text,
+      location: item.location
+    }
+    %}
+  {% endfor %}
+</div>

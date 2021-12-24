@@ -1,0 +1,10 @@
+osu_taxonomy_api.json:
+  path: '/api/vocabulary/{machine_name}'
+  defaults:
+    _title: 'Alexa Flash Briefing Feed'
+    _controller: '\Drupal\osu_taxonomy_api\Controller\ApiController::json'
+  requirements:
+    machine_name: '^[a-zA-Z0-9_]+'
+    _permission: 'access content'
+  options:
+    no_cache: TRUE

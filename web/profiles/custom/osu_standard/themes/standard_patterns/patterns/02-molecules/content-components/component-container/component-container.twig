@@ -1,0 +1,6 @@
+{% set container_width = entity.width.value == 'narrow' ? 'component-width--narrow' : '' %}
+<div {{ attributes.addClass(["m-content-container", container_width]) }}>
+  {% for key,value in content %}
+    {{ value }}
+  {% endfor %}
+</div>

@@ -1,0 +1,63 @@
+osu_core.unaliased_report:
+  path: '/admin/report/unaliased'
+  defaults:
+    _controller: '\Drupal\osu_core\Controller\UnaliasedContentReport::content'
+    _title: 'Unaliased Content Report'
+  requirements:
+    _permission: 'access site reports'
+osu_core.aliased_report:
+  path: '/admin/report/aliased'
+  defaults:
+    _form: '\Drupal\osu_core\Form\AliasedReportForm'
+    _title: 'Aliased Content Report'
+  requirements:
+    _permission: 'access site reports'
+osu_core.ckeditor_image:
+  path: '/admin/osu_core/images/{name}'
+  defaults:
+    _controller: '\Drupal\osu_core\Controller\CkeditorController::image'
+  requirements:
+    _permission: 'access content'
+    name: '[a-zA-Z]+\.(jpg|png|gif)$'
+osu_core.osu_rich_template:
+  path: '/admin/osu_core/template'
+  defaults:
+    _controller: '\Drupal\osu_core\Controller\CkeditorController::template'
+  requirements:
+    _permission: 'access content'
+osu_core.ownership_settings:
+  path: '/admin/config/system/osu-core-ownership'
+  defaults:
+    _form: '\Drupal\osu_core\Form\OwnershipSettingsForm'
+    _title: 'Site Ownership'
+  requirements:
+    _permission: 'administer osu core ownership settings'
+osu_core.developer_settings:
+  path: '/admin/config/development/osu-core-settings'
+  defaults:
+    _form: '\Drupal\osu_core\Form\DeveloperSettingsForm'
+    _title: 'Core Settings'
+  requirements:
+    _permission: 'administer osu core developer settings'
+osu_core.login:
+  path: '/login'
+  defaults:
+    _controller: '\Drupal\osu_core\Controller\LoginRedirector::samlLogin'
+    _title: 'Login'
+  requirements:
+    _permission: 'access content'
+osu_core.manager:
+  path: '/manager'
+  defaults:
+    _controller: '\Drupal\osu_core\Controller\LoginRedirector::samlLogin'
+    _title: 'Login'
+  requirements:
+    _permission: 'access content'
+osu_core.redirector:
+  path: '/osu_core/redirector'
+  defaults:
+    _controller: '\Drupal\osu_core\Controller\LoginRedirector::redirector'
+    _title: 'Redirect'
+  requirements:
+    _permission: 'access content'
+

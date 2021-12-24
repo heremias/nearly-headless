@@ -1,0 +1,37 @@
+{
+  "tabs": [
+    {
+      "title": "Events",
+      "href": "/events",
+      "active": false
+    },
+    {
+      "title": "News",
+      "href": "/news",
+      "active": true
+    },
+    {
+      "title": "Archive",
+      "href": "/event/archive",
+      "active": false
+    }
+  ],
+  "filters": [
+    {
+      "title": "All",
+      "href": "#",
+      "active": false
+    },
+    {
+      "title": "Womens Place",
+      "href": "#",
+      "active": false
+    },
+    {
+      "title": "Other",
+      "href": "#",
+      "active": false
+    }
+  ],
+  "listing": "organisms-news"
+}

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: entity_browser_thumbnail
+label: 'Entity Browser Thumbnail'
+effects:
+  60160546-259f-4c25-b416-f3e00680ee1c:
+    uuid: 60160546-259f-4c25-b416-f3e00680ee1c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 192
+      height: 108
+      anchor: center-center

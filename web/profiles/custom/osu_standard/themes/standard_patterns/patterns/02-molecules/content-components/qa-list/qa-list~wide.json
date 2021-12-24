@@ -1,0 +1,13 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "entity": {
+    "width": {
+      "value": "wide"
+    }
+  },
+  "content": {
+    "node": "fields-paragraph-items-qa-list"
+  }
+}

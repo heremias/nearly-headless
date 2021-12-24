@@ -1,0 +1,10 @@
+<?php
+
+function osu_topic_mediamagnet_vocab() {
+  return [
+    'topic' => [
+      'category' => 'topic',
+      'name' => 'slug',
+    ]
+  ];
+}

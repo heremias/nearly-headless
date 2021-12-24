@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Pattern for a page title block.
+ *
+ * Available variables:
+ * - content: rendered contents of block from drupal, should be set to render with_page-title.twig
+ * - title: title of page
+ * - prefix: any prefix before the title "Department of"
+ * - suffix: any suffix for the title "Maybe a tagline?"
+ */
+#}
+{% set variant_class = variant %}
+
+{% if title is defined and content is not defined %}
+  {% set content %}
+    {% include "@molecules/page/page-title-block/_page-title.twig" with {
+      title: title,
+      prefix: prefix,
+      suffix: suffix
+    } %}
+  {% endset %}
+{% endif %}
+<div {{ attributes.addClass(["m-page-title-block", variant_class]) }}>
+  <div class="container">
+    {{ content }}
+  </div>
+</div>

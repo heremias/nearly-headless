@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.card_components
+    - paragraphs.paragraphs_type.floor_content_listing
+  module:
+    - options
+id: paragraph.floor_content_listing.card_components
+field_name: card_components
+entity_type: paragraph
+bundle: floor_content_listing
+label: 'Excluded Components'
+description: 'Select the components you would like to exclude.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

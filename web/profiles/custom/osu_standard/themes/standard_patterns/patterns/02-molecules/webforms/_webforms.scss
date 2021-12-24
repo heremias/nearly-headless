@@ -1,0 +1,317 @@
+.webform-submission-form {
+  @include copy();
+
+  h2 {
+    @include heading-large();
+  }
+
+  h3 {
+    @include heading-medium();
+  }
+
+  h4,
+  h5,
+  h6 {
+    @include heading-small();
+  }
+
+  a:not(.rich-button):hover {
+    border-color: #b00;
+    background-size: 100% 100%;
+    text-decoration: none;
+  }
+
+  a:not(.rich-button) {
+    color: inherit;
+    border-bottom: 1px solid #b00;
+    background-image: linear-gradient(120deg, #ccc 0%, #ccc 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0;
+    background-position: 0 100%;
+    transition: background-size 0.125s ease-in;
+    text-decoration: none;
+  }
+
+  .form-item {
+    margin: 1.1rem 0 1.4rem;
+  }
+
+  .form-fieldset {
+    margin-top: 1.3rem;
+    margin-bottom: 0;
+  }
+
+  legend .form-required {
+    color: #b00;
+
+    &::after {
+      content: ' *';
+    }
+  }
+
+  label {
+    font-size: 17px;
+    font-weight: normal;
+    color: #43464d;
+    margin-bottom: 0;
+    padding: 0 0 6px;
+
+    &.form-required {
+      color: #b00;
+
+      &::after {
+        content: ' *';
+      }
+    }
+  }
+
+  .webform-element-description {
+    font-style: italic;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select.form-item__select {
+    height: 50px;
+  }
+
+  select.form-item__select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url(../images/form/select-arrow.png);
+    background-position: 97% 50%;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    padding: 0 2rem 0 1rem;
+
+    &::-ms-expand {
+      display: none; /* ie11 */
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .form-item__dropdown {
+    border-style: none;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    border: 2px solid #eee;
+    border-bottom: 2px solid #222;
+    color: #666;
+    padding: 15px;
+    font-size: 16px;
+    caret-color: #b00;
+
+    &:focus {
+      border: 2px solid #eee;
+      border-bottom: 2px solid #b00;
+    }
+
+    label {
+      color: #222;
+      cursor: pointer;
+      background: none;
+      border: none;
+      border-radius: 0;
+      transition: none;
+      padding: 20px 20px 20px 45px;
+      display: block;
+      text-align: left;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -ms-border-radius: 0;
+      -o-border-radius: 0;
+      position: relative;
+    }
+  }
+
+  .form-managed-file {
+    .form-checkbox {
+      display: inline-block;
+    }
+
+    label {
+      display: inline-block;
+
+      &.button {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .status--error {
+    text-align: left;
+  }
+
+  .checkboxes--wrapper,
+  .webform-checkboxes-other--wrapper,
+  .radios--wrapper,
+  .webform-radios-other--wrapper,
+  .webform-select--wrapper,
+  .webform-select-other--wrapper,
+  .form-managed-file {
+    legend {
+      font-size: 17px;
+      color: #43464d;
+      font-weight: normal;
+
+      &.h2 {
+        line-height: inherit;
+      }
+    }
+
+    .form-item {
+      margin: 0;
+      vertical-align: middle;
+    }
+
+    input[type=checkbox],
+    input[type=radio] {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+      height: 0;
+      width: 0;
+    }
+
+    input[type=checkbox] + label::before,
+    input[type=radio] + label::before {
+      border: none;
+      content: '';
+      display: inline-block;
+      height: 20px;
+      transform: translateY(4px);
+      width: 20px;
+      margin: auto 12px auto 0;
+    }
+
+    input[type=checkbox] + label::before {
+      background: url(https://www.osu.edu/assets/voc/images/checkbox.png) 0 0 no-repeat;
+    }
+
+    input[type=checkbox]:checked + label::before {
+      background: url(https://www.osu.edu/assets/voc/images/checkbox.png) -20px 0 no-repeat;
+    }
+
+    input[type=radio] + label::before {
+      background: url(../images/form/radio.png) 0 0 no-repeat;
+    }
+
+    input[type=radio]:checked + label::before {
+      background: url(../images/form/radio.png) -20px 0 no-repeat;
+    }
+
+    input:focus + label {
+      background: #eee;
+      border-color: #8c8c8c;
+    }
+
+    input[type=radio] + label,
+    input[type=checkbox] + label {
+      display: block;
+      margin: auto 12px auto 0;
+      padding: 9px 9px 9px 13px;
+      color: #43464d;
+
+      /* height: 44px; */
+
+      &:hover {
+        background: #eee;
+        border-color: #8c8c8c;
+      }
+    }
+  }
+
+  fieldset.form-item {
+    max-width: 100%;
+  }
+
+  .button {
+    margin-top: 1.65rem;
+    height: 50px;
+  }
+
+  .webform-button--previous,
+  .webform-file-button,
+  input[value="Remove selected"] {
+    @include button-secondary();
+
+    margin-bottom: 0.75em;
+  }
+
+  .webform-button--next,
+  .webform-button--submit {
+    @include button-primary();
+
+    margin-bottom: 0.75em;
+  }
+
+  .container--nested {
+    border-left: 2px solid #eee;
+    margin-left: 0;
+    padding-left: 20px;
+  }
+
+  .webform-progress-bar__page--current {
+    background-color: #b00;
+    color: #fff;
+  }
+
+  .webform-progress-bar__page--current + .webform-progress-bar__page {
+    b::before {
+      border-left-color: #b00;
+    }
+  }
+
+  .webform-progress-bar__page b {
+    font-weight: 400;
+  }
+
+  /* This is exactly overriding styles provided by webform. */
+  .webform-options-display-two-columns {
+    @media screen and (min-width: 400px) {
+      column-count: 1;
+      -moz-column-count: 1;
+      -webkit-column-count: 1;
+    }
+
+    /* We set these to large partly to mitigate radio/checkbox wrap issues. */
+    @include media-breakpoint-up(lg) {
+      column-count: 2;
+      -moz-column-count: 2;
+      -webkit-column-count: 2;
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.webform-confirmation-modal {
+  border-radius: 0;
+  font-family: $ff--proxima;
+
+  .ui-dialog-titlebar {
+    border-radius: 0;
+  }
+
+  button {
+    border-radius: 0;
+  }
+}

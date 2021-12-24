@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.description
+    - paragraphs.paragraphs_type.hero_text
+id: paragraph.hero_text.description
+field_name: description
+entity_type: paragraph
+bundle: hero_text
+label: Text
+description: 'Add text to introduce the site.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

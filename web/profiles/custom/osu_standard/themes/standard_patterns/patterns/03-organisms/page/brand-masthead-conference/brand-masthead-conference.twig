@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Pattern for brand_masthead.
+ *
+ * Available variables:
+ * - site_title: unstyled title of site.
+ * - variant: determine align right, otherwise
+ * - default left logo placement
+ */
+#}
+<div class="o-brand-masthead-conference">
+  <div class="container">
+    <div class="o-brand-masthead-wrapper">
+
+    <img src="{{ base_path ~ directory }}/images/osu_logo.png" alt="The Ohio State University logo" class="logo d-none d-sm-none d-md-block"  />
+    <img src="https://www.osu.edu/assets/web/logo-web/1.1.0/osu-web-header-horiz.png" alt="The Ohio State University logo" class="logo d-md-none d-lg-none d-xl-none" />
+
+    <div class="o-brand-masthead__title">
+      <a href="/">{{ title }}</a>
+    </div>
+
+    <div class="o-brand-masthead__date">
+      {{ dates }}
+    </div>
+
+    </div>
+  </div>
+</div>

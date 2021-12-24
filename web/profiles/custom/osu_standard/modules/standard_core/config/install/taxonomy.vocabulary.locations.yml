@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Locations
+vid: locations
+description: 'Collection of physical or virtual locations for events or other content.'
+weight: 0

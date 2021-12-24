@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Pattern for news collection.
+ *
+ * Available variables:
+ * -
+ */
+#}
+<div {{ attributes.addClass('o-news-teaser-list') }} >
+  {% for item in items %}
+    {{ item.content }}
+  {% endfor %}
+</div>

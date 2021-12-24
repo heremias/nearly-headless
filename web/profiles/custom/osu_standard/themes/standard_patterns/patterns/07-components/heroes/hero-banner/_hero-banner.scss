@@ -1,0 +1,133 @@
+.c-hero-banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* Original preserve was middle, so this should be default. */
+  background-position: center center;
+
+  /* Original size was 65vh so this should be default if no other classes present */
+  height: 40vh;
+  overflow: hidden;
+  position: relative;
+
+  &.c-hero-banner--height-large {
+    height: 40vh;
+    min-height: 375px;
+  }
+
+  &.c-hero-banner--height-medium {
+    height: 30vh;
+    min-height: 250px;
+  }
+
+  &.c-hero-banner--height-small {
+    height: 20vh;
+    min-height: 125px;
+  }
+
+  &.c-hero-banner--preserve-top {
+    background-position: center top;
+  }
+
+  &.c-hero-banner--preserve-middle {
+    background-position: center center;
+  }
+
+  &.c-hero-banner--preserve-bottom {
+    background-position: center bottom;
+  }
+}
+
+div.c-hero-banner--header.c-floor.c-floor--horizontal-narrow {
+  margin: -100px auto 60px auto !important;
+  text-align: center;
+
+  h1,
+  .c-hero-cta-banner--title {
+    color: #333;
+    font-size: 3rem;
+    margin-top: 0;
+    font-family: 'proximanova', Arial, san-serif;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.1em;
+  }
+
+  hr {
+    border: 2px solid #b00;
+    width: 120px;
+  }
+
+  .c-hero-banner--subheading {
+    color: #333;
+    font-size: 1rem;
+    margin-top: 0;
+    font-family: 'proximanova', Arial, san-serif;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.1em;
+    text-transform: uppercase;
+  }
+
+  .c-hero-banner--header-inner {
+    background: #fff;
+    border-top: 5px solid #666;
+    min-height: 100px;
+    position: relative;
+    top: 0;
+
+    @include media-breakpoint-up(md) {
+      z-index: 65;
+    }
+  }
+
+  $breadcrumb-active: #bbb;
+
+  .breadcrumb {
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 0;
+    line-height: 20px;
+    list-style-type: none;
+    margin: 20px 0 0;
+    padding: 0;
+  }
+
+  .breadcrumb__link,
+  .breadcrumb__link:link,
+  .breadcrumb__link:visited,
+  .breadcrumb__link:focus {
+    color: $scarlet;
+    text-decoration: none;
+  }
+
+  .breadcrumb__item {
+    color: #666;
+  }
+
+  .breadcrumb__link:hover {
+    color: $scarlet;
+    text-decoration: underline;
+  }
+
+  .breadcrumb__item {
+    display: inline-block;
+    font-family: $ff--proxima;
+    font-size: 0.93rem;
+    padding: 0;
+
+    &:not(:last-child)::after {
+      color: #ccc;
+      margin: 0 8px;
+      content: "|";
+    }
+  }
+
+  .breadcrumb_link:active {
+    color: $scarlet;
+  }
+
+  .c-hero-banner--header-inner-inner {
+    margin-top: 40px;
+  }
+}

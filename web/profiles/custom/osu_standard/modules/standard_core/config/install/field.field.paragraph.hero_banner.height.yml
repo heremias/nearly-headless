@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.height
+    - paragraphs.paragraphs_type.hero_banner
+  module:
+    - options
+id: paragraph.hero_banner.height
+field_name: height
+entity_type: paragraph
+bundle: hero_banner
+label: Height
+description: "Select the height of the banner image. <br>\r\n<em>Average</em> or <em>Short</em> are preferred since they allow visitors to get to your content faster. \r\n"
+required: true
+translatable: false
+default_value:
+  -
+    value: medium
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,99 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.practice.description
+    - field.field.node.practice.error
+    - field.field.node.practice.example
+    - field.field.node.practice.how_to
+    - field.field.node.practice.include_share_links
+    - field.field.node.practice.meta_title
+    - field.field.node.practice.rationale
+    - field.field.node.practice.requirement
+    - field.field.node.practice.site_tags
+    - field.field.node.practice.slug
+    - field.field.node.practice.sources
+    - field.field.node.practice.teaser_image
+    - node.type.practice
+  module:
+    - link
+    - text
+    - user
+id: node.practice.default
+targetEntityType: node
+bundle: practice
+mode: default
+content:
+  description:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  error:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  example:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  how_to:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  rationale:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  requirement:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  site_tags:
+    weight: 8
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  sources:
+    weight: 7
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  include_share_links: true
+  meta_title: true
+  search_api_excerpt: true
+  slug: true
+  teaser_image: true

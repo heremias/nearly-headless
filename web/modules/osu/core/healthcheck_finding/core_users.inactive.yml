@@ -1,0 +1,16 @@
+id: core_users.inactive
+check: core_users
+finding_action_requested:
+  label: Remove inactive editor accounts
+  message: >
+    @count editors have not logged in within the past 365 days.
+    Site managers should remove access to accounts that do not require it.
+finding_needs_review:
+  label: Review inactive editor accounts
+  message: >
+    @count editors have not logged in within the past 180 days.
+    Site managers should remove access to accounts that do not require it.
+finding_no_action_required:
+  label: No inactive editor accounts found
+  message: >
+    All editor accounts have logged in within the past 180 days.

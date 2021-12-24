@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: user
+label: User
+tags:
+  title: '[user:standard_seo_title]'
+  description: '[site:name]'

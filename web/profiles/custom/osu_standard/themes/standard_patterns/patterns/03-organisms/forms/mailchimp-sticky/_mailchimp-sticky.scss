@@ -1,0 +1,122 @@
+.mailchimp-sticky {
+  background: #f7f7f7;
+  padding: 8px 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1500;
+  display: none;
+
+  .container {
+    padding-right: 0;
+  }
+
+  .mailchimp-sticky--success {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  svg {
+    max-width: 2.7rem;
+    color: #b00;
+  }
+
+  h2 {
+    @include component-heading();
+
+    display: inline-block;
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
+
+  label span {
+    position: absolute;
+    left: -500px;
+  }
+
+  label {
+    width: calc(100% - 9rem);
+    max-width: 400px;
+  }
+
+  input[type="email"] {
+    height: 44px;
+    font-size: 17px;
+    width: 100%;
+    margin: 0;
+    padding-left: 0.5rem;
+    display: inline-block;
+    border: solid 1px #ccc;
+    border-bottom: solid 2px black;
+  }
+
+  input[type="submit"] {
+    background-color: #c00;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    height: 44px;
+    line-height: 1.4;
+    margin: 2px 0 2px -2px;
+    padding: 0.5rem 2.25rem 0.5rem 1.5rem;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    text-transform: none;
+    width: 8rem;
+
+    &:hover {
+      background-color: #700000;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 5px 0;
+
+    form {
+      width: 100%;
+    }
+
+    .mailchimp-sticky--label p {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .mailchimp-sticky--label {
+      display: inline-block;
+      width: 15rem;
+    }
+
+    form {
+      display: inline-block;
+      width: calc(100% - 16rem);
+
+      .mailchimp-sticky--form-inner {
+        text-align: right;
+      }
+    }
+
+    .mailchimp-sticky--label p {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .mailchimp-sticky--label {
+      display: inline-block;
+      width: 33rem;
+    }
+
+    .mailchimp-sticky--label p {
+      display: inline-block;
+      font-size: 1rem;
+    }
+
+    form {
+      width: calc(100% - 34rem);
+    }
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "page": {
+    "highlighted": "",
+    "site_header": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "site-header",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-brand-navbar"
+                }
+              },
+              {
+                "include()": {
+                  "pattern": "organisms-brand_masthead",
+                  "with": {
+                    "variant": "left",
+                    "site_name": "Women's Place"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "page_header": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "page-header",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "molecules-page-title-block",
+                  "with": {
+                    "title": "About and History"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "primary_menu": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "primary-menu",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-core-menu"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "content_before": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "content",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-tab-filter",
+                  "with": {
+
+                  }
+                }
+              },
+              {
+                "include()": {
+                  "pattern": "molecules-calendar",
+                  "with": {
+
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "content": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "content",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "molecules-full-search",
+                  "with": {
+                    "full_search_type": "News",
+                    "full_search_link": "https://www.google.com",
+                    "full_search_title": "Havercamp promoted to AAIDD Fellow",
+                    "full_search_description": "...Susan Havercamp, director of health promotion and healthcare parity at the Nisonger Center and associat..."
+                  }
+                }
+              },
+              {
+                "include()": {
+                  "pattern": "molecules-full-search",
+                  "with": {
+                    "full_search_title": "Three female professors among new AAAS Fellows",
+                    "full_search_description": "...ology, epidemiology, and otolaryngology; Heather Allen, professor of chemistry and pathology; and Susan Olesik, professor and chair of chemistry and biochemistry, were among 18 Ohio State University f..."
+                  }
+                }
+              },
+              {
+                "include()": {
+                  "pattern": "molecules-full-search",
+                  "with": {
+                    "full_search_type": "Events",
+                    "full_search_date": "Jul 28, 2017",
+                    "full_search_link": "https://www.google.com",
+                    "full_search_title": "Event name lorem ipsum dolar amet lorem ipsum",
+                    "full_search_description": "...lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu ultricies lorem, ac porta libero. Susan ut cursus risus. Suspendisse nec varius eros, ac vulputate dolor..."
+                  }
+                }
+              },
+              {
+                "include()": {
+                  "pattern": "molecules-full-search",
+                  "with": {
+                    "full_search_type": "News",
+                    "full_search_link": "https://www.google.com",
+                    "full_search_title": "Havercamp promoted to AAIDD Fellow",
+                    "full_search_description": "...Susan Havercamp, director of health promotion and healthcare parity at the Nisonger Center and associat..."
+                  }
+                }
+              },
+              {
+                "include()": {
+                  "pattern": "molecules-full-search",
+                  "with": {
+                    "full_search_title": "Three female professors among new AAAS Fellows",
+                    "full_search_description": "...ology, epidemiology, and otolaryngology; Heather Allen, professor of chemistry and pathology; and Susan Olesik, professor and chair of chemistry and biochemistry, were among 18 Ohio State University f..."
+                  }
+                }
+              },
+              {
+                "include()": {
+                  "pattern": "molecules-full-search",
+                  "with": {
+                    "full_search_type": "Events",
+                    "full_search_date": "Jul 28, 2017",
+                    "full_search_link": "https://www.google.com",
+                    "full_search_title": "Event name lorem ipsum dolar amet lorem ipsum",
+                    "full_search_description": "...lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu ultricies lorem, ac porta libero. Susan ut cursus risus. Suspendisse nec varius eros, ac vulputate dolor..."
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "page_footer": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "page-footer",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-footer"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "site_footer": ""
+  }
+}

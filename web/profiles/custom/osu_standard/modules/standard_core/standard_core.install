@@ -1,0 +1,658 @@
+<?php
+
+use Drupal\standard_core\Service\Updater;
+use Drupal\standard_core\Service\WebformManager;
+/**
+ * Installer for the module.
+ */
+function standard_core_install() {
+  WebformManager::purgeUnwanted();
+  \Drupal::service('features.manager')->import(['standard_core']);
+}
+
+/**
+ * Update module dependencies.
+ * @param $sandbox
+ */
+function standard_core_update_8101(&$sandbox) {
+  $add = [
+    'rh_node'
+  ];
+  $remove = [
+    'osu_content_page', 'osu_content_page_roles', 'osu_content_page_schema', 'osu_form',
+    'osu_node_body', 'osu_node_content', 'osu_node_introduction', 'osu_node_mode_full',
+    'osu_node_mode_large', 'osu_node_mode_search', 'osu_node_mode_small',
+    'osu_node_mode_teaser', 'osu_pg_description', 'osu_pg_heading', 'osu_pg_link',
+    'osu_pg_width', 'standard_content_page', 'search', 'color_field'
+  ];
+  \Drupal::service('module_installer')->install($add, TRUE);
+  \Drupal::service('module_installer')->uninstall($remove, FALSE);
+
+  $config_to_purge = [
+    // Get rid of entity views first.
+    'core.entity_view_display.paragraph.card_download.default',
+    'core.entity_view_display.paragraph.card_facts.default',
+    'core.entity_view_display.paragraph.card_tile.default',
+    'core.entity_view_display.paragraph.cta.default',
+    'core.entity_view_display.paragraph.list.default',
+    'core.entity_view_display.paragraph.list_item.default',
+    'core.entity_view_display.paragraph.timeline.default',
+    'core.entity_view_display.paragraph.timeline_item.default',
+
+    // Then purge form views.
+    'core.entity_form_display.paragraph.card_download.default',
+    'core.entity_form_display.paragraph.card_facts.default',
+    'core.entity_form_display.paragraph.card_tile.default',
+    'core.entity_form_display.paragraph.cta.default',
+    'core.entity_form_display.paragraph.list.default',
+    'core.entity_form_display.paragraph.list_item.default',
+    'core.entity_form_display.paragraph.timeline.default',
+    'core.entity_form_display.paragraph.timeline_item.default',
+
+    // Then field instances.
+    'field.field.paragraph.card_facts.attribution',
+    'field.field.paragraph.card_facts.context',
+    'field.field.paragraph.card_download.description',
+    'field.field.paragraph.card_download.document',
+    'field.field.paragraph.card_download.image',
+    'field.field.paragraph.card_download.heading',
+    'field.field.paragraph.card_facts.line1',
+    'field.field.paragraph.card_facts.line2',
+    'field.field.paragraph.card_tile.color',
+    'field.field.paragraph.card_tile.description',
+    'field.field.paragraph.card_tile.heading',
+    'field.field.paragraph.card_tile.image',
+    'field.field.paragraph.cta.variant',
+    'field.field.paragraph.cta.width',
+    'field.field.paragraph.list.items',
+    'field.field.paragraph.list.starts_at',
+    'field.field.paragraph.list.width',
+    'field.field.paragraph.list_item.body',
+    'field.field.paragraph.list_item.heading',
+    'field.field.paragraph.list_item.image',
+    'field.field.paragraph.timeline.items',
+    'field.field.paragraph.timeline.width',
+    'field.field.paragraph.timeline_item.body',
+    'field.field.paragraph.timeline_item.date',
+    'field.field.paragraph.timeline_item.heading',
+    'field.field.paragraph.timeline_item.image',
+
+    // Then the field storage if applicable.
+    'field.storage.paragraph.color',
+    'field.storage.paragraph.line1',
+    'field.storage.paragraph.line2',
+
+    // Then entity types.
+    'paragraphs.paragraphs_type.card_download',
+    'paragraphs.paragraphs_type.card_facts',
+    'paragraphs.paragraphs_type.card_tile',
+    'paragraphs.paragraphs_type.cta',
+    'paragraphs.paragraphs_type.list',
+    'paragraphs.paragraphs_type.list_item',
+    'paragraphs.paragraphs_type.timeline',
+    'paragraphs.paragraphs_type.timeline_item'
+
+  ];
+
+  foreach ($config_to_purge as $config) {
+    Drupal::configFactory()->getEditable($config)->delete();
+  }
+}
+
+/**
+ * Add vertical style and initialize to 'auto' for all floors.
+ */
+function standard_core_update_8102 (&$sandbox) {
+  $floors = [
+    'audio_story', 'callout', 'cards', 'columns', 'formatted_text',
+    'floor_highlight_list', 'floor_meetings', 'directory', 'qa_list',
+    'quote', 'parousel', 'floor_uneven_columns', 'video'
+  ];
+  $updater = new Updater();
+  $updater->updateValues($sandbox, 'paragraph', $floors, 'vertical_style', 'auto');
+}
+
+/**
+ * Forces metatag companion modules on.
+ */
+function standard_core_update_8103(&$sandbox) {
+  $add = [
+    'metatag',
+    'metatag_open_graph',
+    'metatag_twitter_cards'
+  ];
+  \Drupal::service('module_installer')->install($add, TRUE);
+}
+
+/**
+ * Initialize include breadcrumbs/page title to off on banner images.
+ */
+function standard_core_update_8104 (&$sandbox) {
+  $updater = new Updater();
+  $updater->updateValues($sandbox, 'paragraph', ['hero_banner'], 'include_breadcrumbs', '0');
+  $updater->updateValues($sandbox, 'paragraph', ['hero_banner'], 'include_page_title', '0');
+}
+
+/**
+ * Forces allowed formats on.
+ */
+function standard_core_update_8105(&$sandbox) {
+  $add = [
+    'allowed_formats'
+  ];
+  \Drupal::service('module_installer')->install($add, TRUE);
+}
+
+/**
+ * Forces entity_clone on.
+ */
+function standard_core_update_8106(&$sandbox) {
+  \Drupal::service('module_installer')->install(['entity_clone'], TRUE);
+}
+
+/**
+ * Turns on webform stuff.
+ */
+function standard_core_update_8107(&$sandbox) {
+  \Drupal::service('module_installer')->install(['honeypot', 'webform_submission_log', 'webform_node', 'webform_ui', 'content_moderation', 'workflows'], TRUE);
+  WebformManager::purgeUnwanted();
+  //\Drupal::service('features.manager')->import(['standard_core']);
+}
+
+/**
+ * Forces entity_clone on.
+ */
+function standard_core_update_8108(&$sandbox) {
+  \Drupal::service('module_installer')->install(['jsonapi'], TRUE);
+}
+
+/**
+ * Install Restful Web Services
+ */
+function standard_core_update_8109(&$sandbox) {
+  \Drupal::service('module_installer')->install(['rest'], TRUE);
+}
+
+function standard_core_update_8110(&$sandbox) {
+  $block = \Drupal\block\Entity\Block::create([
+    'id' => 'share_links',
+    'plugin' => 'share_links',
+    'region' => 'content_before',
+    'settings' => array(
+      'id' => 'share_links',
+      'label' => 'Share Links',
+      'provider' => 'osu_core',
+      'label_display' => 0
+    ),
+    'theme' => 'standard_patterns',
+    'visibility' => [],
+    'weight' => -1000,
+  ]);
+  $block->save();
+  //\Drupal::service('features.manager')->import(['standard_core']);
+}
+
+/**
+ * Install Twig Tweak
+ */
+function standard_core_update_8111(&$sandbox) {
+  \Drupal::service('module_installer')->install(['twig_tweak'], TRUE);
+  //\Drupal::service('features.manager')->import(['standard_core']);
+}
+
+/**
+ * Update mailchimp block.
+ */
+function standard_core_update_8112(&$sandbox) {
+  //\Drupal::service('features.manager')->import(['standard_core']);
+}
+
+/**
+ * Updates several modules including field_group.
+ */
+function standard_core_update_8113(&$sandbox) {
+  // All of these modules are in composer but are not used.
+  $remove = [
+    'config_direct_save', 'ds', 'formtips',
+    'linkchecker', 'material_admin_support',
+    'module_missing_message_fixer', 'shield',
+    'view_mode_selector'
+  ];
+  \Drupal::service('module_installer')->uninstall($remove, FALSE);
+  if (\Drupal::service('theme_handler')->themeExists('material_admin')) {
+    \Drupal::service('theme_installer')->uninstall(['material_admin']);
+  }
+
+
+  // Reimport configuration.
+  //\Drupal::service('features.manager')->import(['standard_core']);
+
+}
+
+/**
+ * Enable buckeye_alert module.
+ */
+function standard_core_update_8114(&$sandbox) {
+  \Drupal::service('module_installer')->install(['buckeye_alert'], TRUE);
+}
+
+/**
+ * Reimport configuration.
+ */
+function standard_core_update_8115(&$sandbox) {
+  \Drupal::service('features.manager')->import(['standard_core']);
+}
+
+/**
+ * Remove taxonomy_access_fix and osu_central_tooling.
+ */
+function standard_core_update_8116(&$sandbox) {
+  \Drupal::service('module_installer')->uninstall(['taxonomy_access_fix', 'osu_central_tooling']);
+}
+
+/**
+ * Add allowed_roles fields.
+ */
+function standard_core_update_8117(&$sandbox) {
+  \Drupal::service('features.manager')->import(['standard_core']);
+}
+
+/**
+ * Ensure access_unblished is enabled.
+ */
+function standard_core_update_8118(&$sandbox) {
+  \Drupal::service('module_installer')->install(['access_unpublished'], TRUE);
+}
+
+/**
+ * Null action, formerly removal of healthcheck.
+ */
+function standard_core_update_8119(&$sandbox) {
+}
+
+/**
+ * Ensure deprecated modules removed.
+ */
+function standard_core_update_8120(&$sandbox) {
+  $remove = [
+    'osu_audio_story',
+    'osu_audio_story_roles',
+    'osu_audio_story_schema',
+    'osu_content_article',
+    'osu_content_article_roles',
+    'osu_content_article_schema',
+    'osu_content_page',
+    'osu_content_page_roles',
+    'osu_content_page_schema',
+    'osu_default_content_user',
+    'osu_event',
+    'osu_event_roles',
+    'osu_event_schema',
+    'osu_external_article',
+    'osu_external_article_roles',
+    'osu_external_article_schema',
+    'osu_external_event',
+    'osu_external_event_roles',
+    'osu_external_event_schema',
+    'osu_form',
+    'osu_node_audio',
+    'osu_node_body',
+    'osu_node_buckets',
+    'osu_node_canonical_link',
+    'osu_node_common_fields',
+    'osu_node_common_modes',
+    'osu_node_contact_link',
+    'osu_node_content',
+    'osu_node_documents',
+    'osu_node_extra_links',
+    'osu_node_host',
+    'osu_node_image',
+    'osu_node_introduction',
+    'osu_node_location',
+    'osu_node_mode_full',
+    'osu_node_mode_large',
+    'osu_node_mode_search',
+    'osu_node_mode_small',
+    'osu_node_mode_teaser',
+    'osu_node_ours',
+    'osu_node_preferred_email',
+    'osu_node_preferred_organization',
+    'osu_node_preferred_phone',
+    'osu_node_preferred_title',
+    'osu_node_pricing',
+    'osu_node_quote',
+    'osu_node_registration_link',
+    'osu_node_social_profiles',
+    'osu_node_speakers',
+    'osu_node_sponsors',
+    'osu_node_subject',
+    'osu_node_subject_description',
+    'osu_node_teaser_image',
+    'osu_person',
+    'osu_person_roles',
+    'osu_person_schema',
+    'osu_pg_answer',
+    'osu_pg_attribution',
+    'osu_pg_body',
+    'osu_pg_card_formatted_text',
+    'osu_pg_card_image_titles',
+    'osu_pg_cards_common',
+    'osu_pg_columns',
+    'osu_pg_common',
+    'osu_pg_common_fields',
+    'osu_pg_context',
+    'osu_pg_date',
+    'osu_pg_description',
+    'osu_pg_heading',
+    'osu_pg_image',
+    'osu_pg_items',
+    'osu_pg_link',
+    'osu_pg_list_item',
+    'osu_pg_media',
+    'osu_pg_media_item',
+    'osu_pg_name',
+    'osu_pg_node_field',
+    'osu_pg_parousel_item',
+    'osu_pg_people',
+    'osu_pg_qa_item',
+    'osu_pg_question',
+    'osu_pg_quote_field',
+    'osu_pg_speaker',
+    'osu_pg_starts_at',
+    'osu_pg_subheading',
+    'osu_pg_timeline',
+    'osu_pg_timeline_item',
+    'osu_pg_tweet_text',
+    'osu_pg_tweetable',
+    'osu_pg_variant',
+    'osu_pg_video',
+    'osu_pg_video_field',
+    'osu_pg_width',
+    'osu_tax_address',
+    'osu_tax_analytics_code',
+    'osu_tax_mode_reference',
+    'osu_tax_slug',
+    'osu_tax_website',
+    'osu_webforms',
+    'standard_audio_story',
+    'standard_content_article',
+    'standard_content_page',
+    'standard_event',
+    'standard_external_article',
+    'standard_external_event',
+    'standard_person',
+    'standard_roles',
+    'standard_sink'
+  ];
+  // Enable core add
+  \Drupal::service('module_installer')->install(['osu_core'], TRUE);
+  \Drupal::service('module_installer')->uninstall($remove, FALSE);
+}
+
+/**
+ * Remove healthcheck.
+ */
+function standard_core_update_8121(&$sandbox) {
+  \Drupal::service('module_installer')->uninstall(['healthcheck'], FALSE);
+}
+
+
+/**
+ * Ensure more deprecated modules removed.
+ */
+function standard_core_update_8122(&$sandbox) {
+  $remove = [
+    'osu_audio_story',
+    'osu_audio_story_roles',
+    'osu_audio_story_schema',
+    'osu_content_article',
+    'osu_content_article_roles',
+    'osu_content_article_schema',
+    'osu_content_page',
+    'osu_content_page_roles',
+    'osu_content_page_schema',
+    'osu_event',
+    'osu_event_roles',
+    'osu_event_schema',
+    'osu_external_article',
+    'osu_external_article_roles',
+    'osu_external_article_schema',
+    'osu_external_event',
+    'osu_external_event_roles',
+    'osu_external_event_schema',
+    'osu_form',
+    'osu_node_audiences',
+    'osu_node_audio',
+    'osu_node_body',
+    'osu_node_buckets',
+    'osu_node_canonical_link',
+    'osu_node_colleges',
+    'osu_node_common_fields',
+    'osu_node_common_modes',
+    'osu_node_contact_link',
+    'osu_node_content',
+    'osu_node_documents',
+    'osu_node_extra_links',
+    'osu_node_host',
+    'osu_node_image',
+    'osu_node_introduction',
+    'osu_node_location',
+    'osu_node_mode_full',
+    'osu_node_mode_large',
+    'osu_node_mode_search',
+    'osu_node_mode_small',
+    'osu_node_mode_teaser',
+    'osu_node_ours',
+    'osu_node_places',
+    'osu_node_preferred_email',
+    'osu_node_preferred_organization',
+    'osu_node_preferred_phone',
+    'osu_node_preferred_title',
+    'osu_node_pricing',
+    'osu_node_publish_date',
+    'osu_node_quote',
+    'osu_node_registration_link',
+    'osu_node_registration_window',
+    'osu_node_slug',
+    'osu_node_social_profiles',
+    'osu_node_source',
+    'osu_node_speakers',
+    'osu_node_sponsors',
+    'osu_node_subject',
+    'osu_node_subject_description',
+    'osu_node_subtitle',
+    'osu_node_summary',
+    'osu_node_teaser_image',
+    'osu_node_title_prefix',
+    'osu_node_topics',
+    'osu_node_types',
+    'osu_person',
+    'osu_person_roles',
+    'osu_person_schema',
+    'osu_pg_answer',
+    'osu_pg_attribution',
+    'osu_pg_audio_story',
+    'osu_pg_body',
+    'osu_pg_card_formatted_text',
+    'osu_pg_card_image_titles',
+    'osu_pg_cards',
+    'osu_pg_cards_common',
+    'osu_pg_columns',
+    'osu_pg_common',
+    'osu_pg_common_fields',
+    'osu_pg_context',
+    'osu_pg_cta',
+    'osu_pg_date',
+    'osu_pg_description',
+    'osu_pg_directory',
+    'osu_pg_formatted_text',
+    'osu_pg_heading',
+    'osu_pg_image',
+    'osu_pg_items',
+    'osu_pg_link',
+    'osu_pg_list_item',
+    'osu_pg_media',
+    'osu_pg_media_item',
+    'osu_pg_name',
+    'osu_pg_node_field',
+    'osu_pg_parousel',
+    'osu_pg_parousel_item',
+    'osu_pg_people',
+    'osu_pg_qa_item',
+    'osu_pg_qa_list',
+    'osu_pg_question',
+    'osu_pg_quote_field',
+    'osu_pg_speaker',
+    'osu_pg_starts_at',
+    'osu_pg_subheading',
+    'osu_pg_timeline',
+    'osu_pg_timeline_item',
+    'osu_pg_tweet_text',
+    'osu_pg_tweetable',
+    'osu_pg_variant',
+    'osu_pg_video',
+    'osu_pg_video_field',
+    'osu_pg_width',
+    'osu_search',
+    'osu_tax_address',
+    'osu_tax_analytics_code',
+    'osu_tax_mode_reference',
+    'osu_tax_slug',
+    'osu_tax_website',
+    'osu_webforms',
+    'standard_audio_story',
+    'standard_content_article',
+    'standard_content_page',
+    'standard_event',
+    'standard_external_article',
+    'standard_external_event',
+    'standard_person',
+    'standard_roles',
+    'standard_sink',
+  ];
+  \Drupal::service('module_installer')->uninstall($remove, TRUE);
+}
+
+/**
+ * Remove various contrib modules
+ */
+function standard_core_update_8123(&$sandbox) {
+  $remove = [
+    'search_api',
+    'search_api_db',
+    'search_api_solr',
+    'osu_search',
+    'acquia_connector',
+    'acquia_lift',
+    'acquia_lift_inspector',
+    'acquia_search',
+    'acquia_contenthub',
+    'acquia_contenthub_audit',
+    'acquia_contenthub_diagnostic',
+    'acquia_contenthub_status',
+    'acquia_contenthub_subscriber',
+    'material_admin_support',
+    'features_ui',
+    'shield',
+    'ds',
+    'ds_devel',
+    'ds_extras',
+    'ds_switch_view_mode',
+  ];
+  \Drupal::service('module_installer')->uninstall($remove, TRUE);
+}
+
+
+/**
+ * Remove various contrib modules
+ */
+function standard_core_update_8124(&$sandbox) {
+  $remove = [
+    'color_field',
+    'default_content',
+    'osu_datalayer',
+    'slick_media'
+  ];
+  \Drupal::service('module_installer')->uninstall($remove, TRUE);
+}
+
+/**
+ * Remove various contrib modules
+ */
+function standard_core_update_8125(&$sandbox) {
+  $remove = [
+    'auto_entitylabel',
+    'better_exposed_filters',
+    'devel',
+    'devel_generate',
+    'kint',
+    'environment_indicator',
+    'layout_plugin',
+    'media_entity_actions',
+    'migrate_file',
+    'field_group_migrate',
+    'migrate',
+    'migrate_drupal',
+    'migrate_drupal_ui',
+    'migrate_plus',
+    'migrate_tools',
+    'standard_migrate',
+    'vem_migrate_oembed',
+    'module_missing_message_fixer',
+    'seckit',
+    'taxonomy_access_fix',
+    'view_mode_selector',
+    'view_modes_display'
+  ];
+  \Drupal::service('module_installer')->uninstall($remove, TRUE);
+
+}
+
+/**
+ * Remove various contrib modules
+ */
+function standard_core_update_8126(&$sandbox) {
+  $remove = [
+    'media_entity',
+    'slick_media',
+    'search_api',
+    'search_api_db',
+  ];
+  \Drupal::service('module_installer')->uninstall($remove, TRUE);
+
+}
+/**
+ * Add honeypot.
+ */
+function standard_core_update_8127(&$sandbox) {
+  $add = [
+    'honeypot',
+    'jquery_ui_accordion'
+  ];
+  \Drupal::service('module_installer')->install($add);
+
+}
+
+/**
+ * Updates core and media config.
+ */
+function standard_core_update_8128(&$sandbox) {
+  \Drupal::service('features.manager')->import(['osu_core']);
+  \Drupal::service('features.manager')->import(['osu_media']);
+}
+
+/**
+ * Updates core and media config.
+ */
+function standard_core_update_9000(&$sandbox) {
+  \Drupal::service('features.manager')->import(['osu_core']);
+  \Drupal::service('features.manager')->import(['osu_media']);
+}
+
+/**
+ * Reimports config with directory changes.
+ */
+function standard_core_update_9101(&$sandbox) {
+  \Drupal::service('module_installer')->install(['views_bulk_operations']);
+  \Drupal::service('features.manager')->import(['standard_core']);
+}

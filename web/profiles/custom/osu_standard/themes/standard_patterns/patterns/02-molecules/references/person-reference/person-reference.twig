@@ -1,0 +1,14 @@
+<div {{ attributes.addClass(["m-person-reference"]) }} >
+  <div class="m-person-reference--image">
+    <a href="{{ url }}">{{ content.image }}</a>
+  </div>
+
+  <div class="m-person-reference--content">
+    <span class="m-person-reference--name"><a href="{{ url }}">{{ entity.label }}</a></span>
+
+    {% if entity.twitter.uri %}<a href="{{ entity.twitter.uri }}" class="m-person-reference--social"><span class="fa fa-twitter"></span></a>{% endif %}
+    {% if entity.linkedin.uri %}<a href="{{ entity.linkedin.uri }}" class="m-person-reference--social"><span class="fa fa-linkedin"></span></a>{% endif %}
+
+    <div class="m-person-reference--title">{{ content.preferred_title }}</div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.floor_meetings.heading
+    - field.field.paragraph.floor_meetings.heading_level
+    - field.field.paragraph.floor_meetings.introduction
+    - field.field.paragraph.floor_meetings.link
+    - field.field.paragraph.floor_meetings.recent_days
+    - field.field.paragraph.floor_meetings.upcoming_days
+    - field.field.paragraph.floor_meetings.vertical_style
+    - field.field.paragraph.floor_meetings.width
+    - paragraphs.paragraphs_type.floor_meetings
+  module:
+    - link
+    - options
+id: paragraph.floor_meetings.default
+targetEntityType: paragraph
+bundle: floor_meetings
+mode: default
+content:
+  heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  heading_level:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  introduction:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  recent_days: true
+  search_api_excerpt: true
+  upcoming_days: true
+  vertical_style: true
+  width: true

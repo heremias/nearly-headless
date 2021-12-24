@@ -1,0 +1,209 @@
+{
+  "variant": "standard",
+  "color_scheme": "osu-dark",
+  "attributes": {
+    "Attribute()": {}
+  },
+  "page": {
+    "highlighted": "",
+    "site_header": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "site-header",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-brand-navbar"
+                }
+              },
+              {
+                "include()": {
+                  "pattern": "organisms-brand_masthead",
+                  "with": {
+                    "variant": "left",
+                    "site_name": "Women's Place"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "page_header": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "page-header",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "molecules-page-title-block",
+                  "with": {
+                    "title": "About and History"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "primary_menu": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "primary-menu",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-core-menu"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "breadcrumb": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "breadcrumb",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "molecules-breadcrumbs-block",
+                  "with": {
+                    "breadcrumb": [
+                      {
+                        "url": "#",
+                        "text": "Home"
+                      },
+                      {
+                        "url": "#",
+                        "text": "About"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "local_tasks": "",
+    "content_before": "",
+    "content": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "content",
+          "content": {
+            "include()": {
+              "pattern": "templates-content-page",
+              "with": {
+                "introduction": {
+                  "include()": {
+                    "pattern": "molecules-introduction",
+                    "with": {
+                      "content": "<p>This is a page pattern with all available content components in wide and narrow variants.</p>"
+                    }
+                  }
+                },
+                "content": {
+                  "include()": {
+                    "pattern": "atoms-field-content",
+                    "with": {
+                      "items": [
+                        {
+                          "content": "molecules-audio-story-component-wide"
+                        },
+                        {
+                          "content": "molecules-callout-wide"
+                        },
+                        {
+                          "content": "molecules-cards-wide"
+                        },
+                        {
+                          "content": "molecules-columns-image"
+                        },
+                        {
+                          "content": "organisms-person-cards-wide"
+                        },
+                        {
+                          "content": "molecules-formatted-text-wide"
+                        },
+                        {
+                          "content": "molecules-qa-list-wide"
+                        },
+                        {
+                          "content": "molecules-quote-wide"
+                        },
+                        {
+                          "content": "molecules-video-component-wide"
+                        },
+                        {
+                          "content": "molecules-audio-story-component"
+                        },
+                        {
+                          "content": "molecules-callout"
+                        },
+                        {
+                          "content": "molecules-cards"
+                        },
+                        {
+                          "content": "molecules-columns"
+                        },
+                        {
+                          "content": "organisms-person-cards"
+                        },
+                        {
+                          "content": "molecules-formatted-text"
+                        },
+                        {
+                          "content": "molecules-qa-list"
+                        },
+                        {
+                          "content": "molecules-quote"
+                        },
+                        {
+                          "content": "molecules-video-component"
+                        }
+                      ]
+                    },
+                    "only": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "page_footer": {
+      "include()": {
+        "pattern": "pages-region",
+        "with": {
+          "region": "page-footer",
+          "content": {
+            "join()": [
+              {
+                "include()": {
+                  "pattern": "organisms-footer"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "site_footer": ""
+  }
+}

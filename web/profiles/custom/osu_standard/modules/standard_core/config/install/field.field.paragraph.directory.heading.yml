@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.heading
+    - paragraphs.paragraphs_type.directory
+id: paragraph.directory.heading
+field_name: heading
+entity_type: paragraph
+bundle: directory
+label: Heading
+description: "Section heading for this list of people.<br />\r\nNot used on all sites."
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,43 @@
+<?php
+use Drupal\Core\Messenger\MessengerInterface;
+/**
+ * Implementation of hook_views_pre_view.
+ */
+function osu_audio_stories_views_pre_view( $view, $display_id, array &$args) {
+  if ($view->id() == 'audio_stories') {
+
+    // Help a privileged user figure out how to configure this listing.
+    $user = \Drupal::currentUser();
+    if ($user->hasPermission('administer audio stories')) {
+      $message = \Drupal\Core\Render\Markup::create('<strong>Editor Tip:</strong> This listing is automatically generated from existing audio stories. While the listing itself cannot be edited, you can <a href="/admin/config/system/osu-audio-stories">edit the title and introduction here</a>.');
+      $messenger = \Drupal::messenger();
+      $messenger->addMessage($message, $messenger::TYPE_STATUS);
+    }
+
+    // Set some default values.
+    $title = 'Audio Stories';
+    $introduction = '';
+
+    // Get values from configuration if set.
+    $config = \Drupal::config('osu_audio_stories.settings');
+    $title = $config->get('title') ? $config->get('title') : $title;
+    $introduction = $config->get('introduction') ? $config->get('introduction') : $introduction;
+
+    $options = array(
+      'id' => 'area_text_custom',
+      'table' => 'views',
+      'field' => 'area_text_custom',
+      'relationship' => 'none',
+      'group_type' => 'none',
+      'admin_label' => '',
+      'empty' => TRUE,
+      'tokenize' => FALSE,
+      'content' => strip_tags($introduction, '<a><p>'),
+      'plugin_id' => 'text_custom',
+    );
+
+    $view->display_handler->setOption('title', strip_tags($title));
+
+    $view->setHandler($display_id, 'header', 'area_text_custom', $options);
+  }
+}

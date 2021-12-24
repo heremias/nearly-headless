@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Corrects permissions for media.
+ */
+function osu_media_update_8101(&$sandbox) {
+  \Drupal::service('features.manager')->import(['osu_media']);
+}
+
+/**
+ * Adds medium large view mode.
+ */
+function osu_media_update_8102(&$sandbox) {
+  \Drupal::service('features.manager')->import(['osu_media']);
+}
+
+/**
+ * Turn on media routes.
+ */
+function osu_media_update_8103(&$sandbox) {
+  \Drupal::service('features.manager')->import(['osu_media']);
+}
+/**
+ * Add fields for caption and credit.
+ */
+function osu_media_update_8104(&$sandbox) {
+  \Drupal::service('features.manager')->import(['osu_media']);
+}

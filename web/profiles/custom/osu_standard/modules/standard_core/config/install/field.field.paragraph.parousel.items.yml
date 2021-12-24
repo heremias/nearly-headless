@@ -1,0 +1,68 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.items
+    - paragraphs.paragraphs_type.parousel
+    - paragraphs.paragraphs_type.parousel_item
+  module:
+    - entity_reference_revisions
+id: paragraph.parousel.items
+field_name: items
+entity_type: paragraph
+bundle: parousel
+label: Items
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      parousel_item: parousel_item
+    target_bundles_drag_drop:
+      callout:
+        weight: 15
+        enabled: false
+      carousel:
+        weight: 16
+        enabled: false
+      cta:
+        weight: 17
+        enabled: false
+      formatted_text:
+        weight: 18
+        enabled: false
+      list:
+        weight: 19
+        enabled: false
+      list_item:
+        weight: 20
+        enabled: false
+      parousel:
+        weight: 21
+        enabled: false
+      parousel_item:
+        enabled: true
+        weight: 22
+      qa_item:
+        weight: 23
+        enabled: false
+      qa_list:
+        weight: 24
+        enabled: false
+      quote:
+        weight: 25
+        enabled: false
+      timeline:
+        weight: 26
+        enabled: false
+      timeline_item:
+        weight: 27
+        enabled: false
+      video:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

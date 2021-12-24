@@ -1,0 +1,10 @@
+<?php
+
+function osu_place_mediamagnet_vocab() {
+  return [
+    'place' => [
+      'category' => 'location',
+      'name' => 'slug',
+    ]
+  ];
+}

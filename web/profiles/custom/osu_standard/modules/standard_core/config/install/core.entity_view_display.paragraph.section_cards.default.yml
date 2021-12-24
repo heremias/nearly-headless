@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section_cards.heading
+    - field.field.paragraph.section_cards.heading_level
+    - field.field.paragraph.section_cards.items
+    - paragraphs.paragraphs_type.section_cards
+  module:
+    - entity_reference_revisions
+id: paragraph.section_cards.default
+targetEntityType: paragraph
+bundle: section_cards
+mode: default
+content:
+  heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  items:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  heading_level: true
+  search_api_excerpt: true

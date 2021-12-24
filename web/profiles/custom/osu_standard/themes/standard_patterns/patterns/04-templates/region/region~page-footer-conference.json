@@ -1,0 +1,12 @@
+{
+  "region": "page-footer",
+  "content": {
+    "join()": [
+      {
+        "include()": {
+          "pattern": "organisms-subfooter"
+        }
+      }
+    ]
+  }
+}

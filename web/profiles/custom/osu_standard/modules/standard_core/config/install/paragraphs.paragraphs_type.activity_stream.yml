@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: activity_stream
+label: 'Activity Stream'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

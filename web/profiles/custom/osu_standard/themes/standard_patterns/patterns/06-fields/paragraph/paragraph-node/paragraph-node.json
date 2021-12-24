@@ -1,0 +1,15 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "node",
+  "field_type": "unknown",
+  "label": "Node",
+  "label_hidden": true,
+  "multiple": true,
+  "items": [
+    {
+      "content": "This is a placeholder"
+    }
+  ]
+}

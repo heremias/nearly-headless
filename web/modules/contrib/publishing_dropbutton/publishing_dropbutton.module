@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * The publishing_dropbutton module file.
+ */
+
+use Drupal\content_moderation\Plugin\Field\ModerationStateFieldItemList;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeForm;
+use Drupal\node\NodeInterface;
+use Drupal\publishing_dropbutton\NodePublishingDropbutton;
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function publishing_dropbutton_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form_object = $form_state->getFormObject();
+  if (!($form_object instanceof NodeForm)) {
+    return;
+  }
+  NodePublishingDropbutton::updateActions($form['actions'], $form_state, $form_object->getEntity());
+  $form['#entity_builders']['update_status'] = [NodePublishingDropbutton::class, 'updateStatus'];
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function publishing_dropbutton_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
+  if (isset($fields['moderation_state']) && $fields['moderation_state']->getClass() === ModerationStateFieldItemList::class) {
+    $fields['moderation_state']->setDisplayOptions('form', [
+      'type' => 'moderation_state_dropbutton',
+      'weight' => 5,
+      'settings' => [],
+    ]);
+  }
+}

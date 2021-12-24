@@ -1,0 +1,129 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "body": "fields-node-body",
+    "deadline": "October 5",
+    "documents": [
+      {
+        "extension": "pptx",
+        "name": "Powerpoint Slides",
+        "mime": "something/ugly",
+        "size": "1.2MB",
+        "url": "#"
+      },
+      {
+        "extension": "pdf",
+        "name": "Slides",
+        "mime": "something-else/ugly",
+        "size": "2.4MB",
+        "url": "#"
+      }
+    ],
+    "introduction": "fields-node-introduction",
+    "location": {
+      "name": "Advancement",
+      "building": {
+        "code": "HI",
+        "name": "Hitchcock Hall",
+        "url": "https://www.osu.edu/map/building.php?building=HI"
+      },
+      "address": {
+        "given_name": "",
+        "additional_name": "",
+        "family_name": "",
+        "organization": "",
+        "address_line1": "1480 West Lane",
+        "address_line2": "",
+        "postal_code": "43201",
+        "sorting_code": "",
+        "administrative_area": {
+          "code": "OH",
+          "name": "Ohio"
+        },
+        "locality": "Columbus",
+        "dependent_locality": "",
+        "country": {
+          "code": "US",
+          "name": "United States"
+        },
+        "url": "#googledirectionslink"
+      }
+    },
+    "meeting_minutes": {
+      "extension": "pdf",
+      "name": "Maybe this should be hard coded to 'Meeting Minutes'",
+      "mime": "something-else/ugly",
+      "size": "1.5MB",
+      "url": "#"
+    },
+    "occurrence": {
+      "start_date": "Nov. 16, 2018",
+      "start_time": "1:00 PM",
+      "end_time": "3:00 PM",
+      "passed": true
+    },
+    "related_meetings": {
+      "Nov. 14": [
+        {
+          "linkable": true,
+          "text": "Wexner Medical Center Board",
+          "url": "#"
+        }
+      ],
+      "Nov. 15": [
+        {
+          "linkable": true,
+          "text": "Master Planning and Facilities Committee",
+          "url": "#"
+        },
+        {
+          "linkable": true,
+          "text": "Talent and Compensation Committee",
+          "url": "#"
+        },
+        {
+          "linkable": true,
+          "text": "Advancement Committee",
+          "url": "#"
+        },
+        {
+          "linkable": false,
+          "text": "Audit and Compliance Committee",
+          "url": "#"
+        },
+        {
+          "linkable": true,
+          "text": "Academic Affairs and Student Life Committee",
+          "url": "#"
+        },
+        {
+          "linkable": true,
+          "text": "Finance Committee",
+          "url": "#"
+        },
+        {
+          "linkable": true,
+          "text": "Executive Session",
+          "url": "#"
+        }
+      ],
+      "Nov. 16": [
+        {
+          "linkable": false,
+          "text": "Governance Committee",
+          "url": "#"
+        }
+      ]
+    }
+  },
+  "entity": {
+    "title": {
+      "value": "My Meeting Title"
+    },
+    "intro": {
+      "value": "My meeting introduction"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+name: 'OSU Taxonomy API'
+type: module
+core_version_requirement: '^8.8 || ^9'
+dependencies:
+  - taxonomy

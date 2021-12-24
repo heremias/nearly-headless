@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_mixin
+third_party_settings:
+  role_mixin:
+    parent_roles: {  }
+id: content_editor
+label: 'Content Editor'
+weight: 3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access site reports'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer nodes'
+  - 'clone node entity'
+  - 'clone paragraph entity'
+  - 'use text format plain'
+  - 'use text format rich'
+  - 'use text format simple'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view the administration theme'

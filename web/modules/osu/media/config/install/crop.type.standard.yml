@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: standard
+label: 'Standard (4:3)'
+description: 'Standard cropping aspect ratio like that found in old televisions (pre-widescreen)'
+aspect_ratio: '4:3'
+soft_limit_width: 1280
+soft_limit_height: 960
+hard_limit_width: null
+hard_limit_height: null

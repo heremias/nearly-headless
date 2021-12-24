@@ -1,0 +1,47 @@
+.m-breadcrumbs-block {
+  $breadcrumb-active: #bbb;
+
+  .breadcrumb {
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 0;
+    line-height: 20px;
+    list-style-type: none;
+    margin: 20px 0 0;
+    padding: 0;
+  }
+
+  .breadcrumb__link,
+  .breadcrumb__link:link,
+  .breadcrumb__link:visited,
+  .breadcrumb__link:focus {
+    color: $scarlet;
+    text-decoration: none;
+  }
+
+  .breadcrumb__item {
+    color: #666;
+  }
+
+  .breadcrumb__link:hover {
+    color: $scarlet;
+    text-decoration: underline;
+  }
+
+  .breadcrumb__item {
+    display: inline-block;
+    font-family: $ff--proxima;
+    font-size: 0.93rem;
+    padding: 0;
+
+    &:not(:last-child)::after {
+      color: #ccc;
+      margin: 0 8px;
+      content: "|";
+    }
+  }
+
+  .breadcrumb_link:active {
+    color: $scarlet;
+  }
+}

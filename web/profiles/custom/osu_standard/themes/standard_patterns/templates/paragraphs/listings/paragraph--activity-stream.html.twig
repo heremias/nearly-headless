@@ -1,0 +1,9 @@
+{% extends "@components/listings/listing/listing.twig" %}
+{% block navigation %}
+{% endblock %}
+{% block listing %}
+<div id="activity_stream">
+  <activity-stream></activity-stream>
+  </div>
+  {{ attach_library('standard_patterns/vue-web-components') }}
+{% endblock %}

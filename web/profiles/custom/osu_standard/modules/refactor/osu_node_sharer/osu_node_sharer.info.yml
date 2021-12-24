@@ -1,0 +1,4 @@
+name: 'OSU Node Sharer'
+description: 'A service for building node share links'
+type: module
+core_version_requirement: '^8.8 || ^9'

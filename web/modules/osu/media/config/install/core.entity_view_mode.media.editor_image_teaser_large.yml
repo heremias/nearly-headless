@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.editor_image_teaser_large
+label: 'Teaser (1.91)'
+targetEntityType: media
+cache: true

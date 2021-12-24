@@ -1,0 +1,118 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.hero
+    - node.type.content_page
+    - paragraphs.paragraphs_type.hero_banner
+    - paragraphs.paragraphs_type.hero_cta_banner
+    - paragraphs.paragraphs_type.hero_text
+  module:
+    - entity_reference_revisions
+id: node.content_page.hero
+field_name: hero
+entity_type: node
+bundle: content_page
+label: Hero
+description: 'Use this field to add a hero section to your page *instead* of a normal page title and breadcrumb. You should only use this on the home page or landing pages. Most of the time, this field should be left blank in order to give your site''s users a consistent look and feel.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      hero_banner: hero_banner
+      hero_cta_banner: hero_cta_banner
+      hero_text: hero_text
+    target_bundles_drag_drop:
+      hero_banner:
+        enabled: true
+        weight: -59
+      hero_cta_banner:
+        enabled: true
+        weight: -58
+      hero_text:
+        enabled: true
+        weight: -57
+      audio_story:
+        weight: -56
+        enabled: false
+      callout:
+        weight: -55
+        enabled: false
+      cards:
+        weight: -54
+        enabled: false
+      card_formatted_text:
+        weight: -53
+        enabled: false
+      card_image_titles:
+        weight: -52
+        enabled: false
+      columns:
+        weight: -51
+        enabled: false
+      cta:
+        weight: -50
+        enabled: false
+      directory:
+        weight: -49
+        enabled: false
+      floor_uneven_columns:
+        weight: -48
+        enabled: false
+      formatted_text:
+        weight: -47
+        enabled: false
+      formatted_text_component:
+        weight: -46
+        enabled: false
+      link_list:
+        weight: -45
+        enabled: false
+      parousel:
+        weight: -44
+        enabled: false
+      parousel_item:
+        weight: -43
+        enabled: false
+      qa_item:
+        weight: -42
+        enabled: false
+      floor_highlight_list:
+        weight: -41
+        enabled: false
+      qa_list:
+        weight: -40
+        enabled: false
+      quote:
+        weight: -39
+        enabled: false
+      floor_meetings:
+        weight: -38
+        enabled: false
+      section_cards:
+        weight: -37
+        enabled: false
+      section_formatted_text:
+        weight: -36
+        enabled: false
+      speaker:
+        weight: -35
+        enabled: false
+      video:
+        weight: -34
+        enabled: false
+      highlight_list_item:
+        weight: -33
+        enabled: false
+      listing_meeting:
+        weight: -32
+        enabled: false
+      menu_component:
+        weight: -31
+        enabled: false
+field_type: entity_reference_revisions

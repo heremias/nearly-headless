@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.error
+    - node.type.practice
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    plain: plain
+    unrestricted: unrestricted
+    rich: '0'
+    simple: '0'
+    plain_text: '0'
+id: node.practice.error
+field_name: error
+entity_type: node
+bundle: practice
+label: Error
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

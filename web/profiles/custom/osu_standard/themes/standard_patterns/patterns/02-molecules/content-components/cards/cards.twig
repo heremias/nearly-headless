@@ -1,0 +1,6 @@
+{% set card_count =  entity.items.getvalue | length %}
+{% set card_inality = card_count > 3 ? 'many' : card_count %}
+
+<div class="m-cards m-cards-{{ card_inality }}">
+  {{ content.items }}
+</div>

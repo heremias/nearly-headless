@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.header_huge_url
+    - field.field.media.image.caption
+    - field.field.media.image.credit
+    - field.field.media.image.image
+    - image.style.header_huge
+    - media.type.image
+  module:
+    - image
+id: media.image.header_huge_url
+targetEntityType: media
+bundle: image
+mode: header_huge_url
+content:
+  image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: header_huge
+    third_party_settings: {  }
+    type: image_url
+    region: content
+hidden:
+  caption: true
+  created: true
+  credit: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

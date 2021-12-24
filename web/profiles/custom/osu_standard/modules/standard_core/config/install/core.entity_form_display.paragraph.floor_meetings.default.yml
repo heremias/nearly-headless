@@ -1,0 +1,95 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.floor_meetings.heading
+    - field.field.paragraph.floor_meetings.heading_level
+    - field.field.paragraph.floor_meetings.introduction
+    - field.field.paragraph.floor_meetings.link
+    - field.field.paragraph.floor_meetings.recent_days
+    - field.field.paragraph.floor_meetings.upcoming_days
+    - field.field.paragraph.floor_meetings.vertical_style
+    - field.field.paragraph.floor_meetings.width
+    - paragraphs.paragraphs_type.floor_meetings
+  module:
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_style:
+      children:
+        - width
+        - vertical_style
+      parent_name: ''
+      weight: 6
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: Style
+      region: content
+id: paragraph.floor_meetings.default
+targetEntityType: paragraph
+bundle: floor_meetings
+mode: default
+content:
+  heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  heading_level:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  introduction:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  link:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  recent_days:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  upcoming_days:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  vertical_style:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  width:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

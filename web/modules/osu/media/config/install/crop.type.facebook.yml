@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: facebook
+label: 'Facebook (1.91)'
+description: "Use images that are at least 1200 x 630 pixels for the best display on high \r\nresolution devices. At the minimum, you should use images that are 600 x 315 pixels to display link page posts with larger images. Images can be up to 8MB in size.\r\n\r\nTry to keep your images as close to 1.91:1 aspect ratio as possible to display the full image in News Feed without any cropping.\r\n\r\nhttps://developers.facebook.com/docs/sharing/best-practices#images"
+aspect_ratio: '40:21'
+soft_limit_width: 1200
+soft_limit_height: 630
+hard_limit_width: null
+hard_limit_height: null

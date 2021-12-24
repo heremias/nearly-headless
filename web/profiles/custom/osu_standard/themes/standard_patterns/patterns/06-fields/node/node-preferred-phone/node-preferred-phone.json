@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "preferred_phone",
+  "field_type": "telephone",
+  "label": "Phone",
+  "label_hidden": true,
+  "multiple": false,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "<a href=\"tel:867-555-5309\">867-555-5309</a>"
+    }
+  ]
+}

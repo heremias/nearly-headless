@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: formatted_text
+label: 'Formatted Text Floor'
+icon_uuid: null
+icon_default: null
+description: 'Formatted text in a floor context. There are probably non-floor contexts this is used (columns?). If so, this is a problem and we need to migrate that content and/or conditionally render a different template based on the paragraphs parent entity.'
+behavior_plugins: {  }

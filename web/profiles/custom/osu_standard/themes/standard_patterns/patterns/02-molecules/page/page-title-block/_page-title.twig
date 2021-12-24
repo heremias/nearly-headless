@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Theme override to display a page title block.
+ *
+ * Available variables:
+ * - prefix: Text before title like "Department of".
+ * - title: The main event.
+ * - suffix: a bit of text after the main event.
+ */
+#}
+
+{{ prefix }}
+{% if title %}
+  <h1>{{ title }}</h1>
+{% endif %}
+{{ suffix }}

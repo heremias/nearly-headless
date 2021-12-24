@@ -1,0 +1,16 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "introduction": "fields-node-introduction"
+  },
+  "entity": {
+    "title": {
+      "value": "My Title"
+    },
+    "introduction": {
+      "value": "My introduction"
+    }
+  }
+}

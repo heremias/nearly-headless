@@ -1,0 +1,36 @@
+<div {{ attributes.addClass(["m-full-teaser-meetings"]) }} >
+  <div class="m-full-teaser-meetings__publish-date--wrapper">
+    <div class="m-full-teaser-meetings__publish-date d-flex align-items-center justify-content-center">{{ content.publish_date }}</div>
+  </div>
+
+  <div class="m-full-teaser-meetings__list--wrapper">
+    <ul class="m-full-teaser-meetings__list">
+      {% for meeting_item in content.meetings_list %}
+        <li>
+          <div class="m-full-teaser-meetings__name">
+            {% if meeting_item.linkable %}
+              <a href="{{ meeting_item.url }}">{{ meeting_item.name }}</a>
+            {% else %}
+              {{ meeting_item.name }}
+            {% endif %}
+          </div>
+          {% if meeting_item.location %}
+          <div class="m-full-teaser-news__location">
+            <span class="m-full-teaser-news__location-label">Location:</span>
+            {{ meeting_item.location.name }}{% if meeting_item.location.building and meeting_item.location.building.name %},
+              {{ meeting_item.location.building.name}}{% endif %}{% if meeting_item.location.address.address_line1 %},
+              {{ meeting_item.location.address.address_line1  }}{% endif %}{% if meeting_item.location.address.address_line2 %},
+              {{ meeting_item.location.address.address_line2  }}
+            {% endif %}
+            {% if meeting_item.location.address.locality | trim != 'Columbus' %},
+              {{ meeting_item.location.address.locality }},
+              {{ meeting_item.location.address.administrative_area.code}}
+              {{ meeting_item.location.address.postal_code }}
+            {% endif %}
+          </div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

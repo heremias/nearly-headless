@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: social_focal_large
+label: 'Social (1.91) Focal - Large'
+effects:
+  c7a451a1-215d-4fbd-9bf8-228e53457730:
+    uuid: c7a451a1-215d-4fbd-9bf8-228e53457730
+    id: focal_point_scale_and_crop
+    weight: 4
+    data:
+      width: 1200
+      height: 630
+      crop_type: focal_point

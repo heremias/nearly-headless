@@ -1,0 +1,101 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.content
+    - node.type.content_article
+    - paragraphs.paragraphs_type.callout
+    - paragraphs.paragraphs_type.cards
+    - paragraphs.paragraphs_type.columns
+    - paragraphs.paragraphs_type.formatted_text
+    - paragraphs.paragraphs_type.parousel
+    - paragraphs.paragraphs_type.qa_list
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.video
+  module:
+    - entity_reference_revisions
+id: node.content_article.content
+field_name: content
+entity_type: node
+bundle: content_article
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      formatted_text: formatted_text
+      cards: cards
+      callout: callout
+      parousel: parousel
+      columns: columns
+      quote: quote
+      qa_list: qa_list
+      video: video
+    target_bundles_drag_drop:
+      formatted_text:
+        enabled: true
+        weight: -41
+      cards:
+        enabled: true
+        weight: -40
+      list_item:
+        weight: -39
+        enabled: false
+      callout:
+        enabled: true
+        weight: -38
+      parousel:
+        enabled: true
+        weight: -37
+      columns:
+        enabled: true
+        weight: -36
+      list:
+        enabled: false
+        weight: -35
+      qa_item:
+        weight: -34
+        enabled: false
+      quote:
+        enabled: true
+        weight: -33
+      qa_list:
+        enabled: true
+        weight: -32
+      video:
+        enabled: true
+        weight: -31
+      parousel_item:
+        weight: -30
+        enabled: false
+      audio_story:
+        weight: -29
+        enabled: false
+      card_formatted_text:
+        weight: -28
+        enabled: false
+      card_image_titles:
+        weight: -27
+        enabled: false
+      cta:
+        weight: -26
+        enabled: false
+      directory:
+        weight: -25
+        enabled: false
+      speaker:
+        weight: -24
+        enabled: false
+      timeline:
+        weight: -23
+        enabled: false
+      timeline_item:
+        weight: -22
+        enabled: false
+field_type: entity_reference_revisions

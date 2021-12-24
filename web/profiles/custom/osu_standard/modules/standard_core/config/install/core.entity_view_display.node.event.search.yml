@@ -1,0 +1,97 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search
+    - field.field.node.event.allowed_roles
+    - field.field.node.event.audiences
+    - field.field.node.event.body
+    - field.field.node.event.buckets
+    - field.field.node.event.colleges
+    - field.field.node.event.contact_link
+    - field.field.node.event.documents
+    - field.field.node.event.extra_links
+    - field.field.node.event.host
+    - field.field.node.event.introduction
+    - field.field.node.event.location
+    - field.field.node.event.meta_title
+    - field.field.node.event.occurrences
+    - field.field.node.event.ours
+    - field.field.node.event.places
+    - field.field.node.event.pricing
+    - field.field.node.event.registration_link
+    - field.field.node.event.registration_window
+    - field.field.node.event.slug
+    - field.field.node.event.speakers
+    - field.field.node.event.sponsors
+    - field.field.node.event.summary
+    - field.field.node.event.teaser_image
+    - field.field.node.event.topics
+    - field.field.node.event.types
+    - node.type.event
+  module:
+    - datetime_range
+    - text
+    - user
+id: node.event.search
+targetEntityType: node
+bundle: event
+mode: search
+content:
+  introduction:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  occurrences:
+    weight: 0
+    label: hidden
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  summary:
+    type: basic_string
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  teaser_image:
+    type: entity_reference_entity_view
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      view_mode: teaser_medium
+      link: false
+    third_party_settings: {  }
+hidden:
+  allowed_roles: true
+  audiences: true
+  body: true
+  buckets: true
+  colleges: true
+  contact_link: true
+  documents: true
+  extra_links: true
+  host: true
+  links: true
+  location: true
+  meta_title: true
+  ours: true
+  places: true
+  pricing: true
+  registration_link: true
+  registration_window: true
+  search_api_excerpt: true
+  slug: true
+  speakers: true
+  sponsors: true
+  topics: true
+  types: true

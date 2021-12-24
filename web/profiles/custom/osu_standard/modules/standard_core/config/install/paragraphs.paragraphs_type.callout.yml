@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: callout
+label: 'Callout Floor'
+icon_uuid: null
+icon_default: null
+description: 'Callouts are essentially big, optionally tweetable text. They are used similarly to quotes but they lack attribution fields and don''t get quote marks automatically added.'
+behavior_plugins: {  }

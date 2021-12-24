@@ -1,0 +1,14 @@
+{% extends "@components/components/component/component.twig" %}
+{% set class = 'c-menu' %}
+
+{% block component %}
+  {% if links %}
+  <ul class="menu" style="padding-left:0px;">
+    {% for link in links %}
+      <li class="menu__item {% if link.active %} menu__item--active {% endif %}">
+        <a class="menu__link" href="{{link.href}}">{{ link.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endblock %}

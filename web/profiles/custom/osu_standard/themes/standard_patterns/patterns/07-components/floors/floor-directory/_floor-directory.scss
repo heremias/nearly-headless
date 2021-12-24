@@ -1,0 +1,54 @@
+.c-floor-directory {
+  .c-floor-directory--people {
+    .field--name-people {
+      & > .field__item {
+        margin-bottom: 20px;
+      }
+
+      @include media-breakpoint-up(md) {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        /* Establish a 20% margin between items horizontally and vertically. */
+        & > .field__item {
+          width: calc(50% - 10px);
+          margin-bottom: 20px;
+        }
+      }
+
+      /* Adjust and OVERRIDE fonts for key elements within our people teasers. */
+      .n-teaser-person__name {
+        font-weight: bold;
+
+        /* Shrink text when we are in medium. */
+        @include media-breakpoint-only(md) {
+          font-size: 1em;
+        }
+
+        /* Restore it at large. */
+        @include media-breakpoint-up(lg) {
+          font-size: 1.429em;
+        }
+      }
+
+      .n-teaser-person__job-title,
+      .n-teaser-person__email,
+      .n-teaser-person__phone {
+        /* Shrink text at medium. */
+        @include media-breakpoint-only(md) {
+          font-size: 1em;
+        }
+
+        /* Restore it at large. */
+        @include media-breakpoint-up(lg) {
+          font-size: 1.071em;
+        }
+      }
+    }
+  }
+}

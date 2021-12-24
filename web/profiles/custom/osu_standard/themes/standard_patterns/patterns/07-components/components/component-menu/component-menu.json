@@ -1,0 +1,16 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "content": {
+    "menu" : "organisms-menu-component"
+  },
+  "entity": {
+    "heading": {
+      "value": "Menu Component"
+    },
+    "heading_level": {
+      "value": "h2"
+    }
+  }
+}

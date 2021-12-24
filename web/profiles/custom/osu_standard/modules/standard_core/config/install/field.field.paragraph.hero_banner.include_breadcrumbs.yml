@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.include_breadcrumbs
+    - paragraphs.paragraphs_type.hero_banner
+id: paragraph.hero_banner.include_breadcrumbs
+field_name: include_breadcrumbs
+entity_type: paragraph
+bundle: hero_banner
+label: Breadcrumbs
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

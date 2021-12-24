@@ -1,0 +1,21 @@
+{% set width = width ? width : 'wide' %}
+<div {{ attributes.addClass(['n-full', class]) }} >
+
+  <div class="container">
+    {# introduction is used in some nodes and is rich, intro is used in others and is plain. #}
+    {% if entity.intro.value %}
+    <div class="n-full__introduction">
+      {{ content.intro }}
+    </div>
+    {% elseif entity.introduction.value %}
+      {{ content.introduction }}
+    {% endif %}
+
+    <div class="n-full__{{ width }}">
+    {% block content %}
+      This text should be replaced in the template.
+    {% endblock %}
+    </div>
+  </div>
+
+</div>

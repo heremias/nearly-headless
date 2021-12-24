@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.square
+  module:
+    - crop
+name: square_small
+label: 'Square (1:1) - Small'
+effects:
+  fd84b5e1-f35a-4aa3-84f8-5d0c53d0b641:
+    uuid: fd84b5e1-f35a-4aa3-84f8-5d0c53d0b641
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: square
+  620adbe6-450f-4cee-abd3-e9ba1d318246:
+    uuid: 620adbe6-450f-4cee-abd3-e9ba1d318246
+    id: image_scale
+    weight: -8
+    data:
+      width: 320
+      height: 320
+      upscale: false
+  78b01700-3cac-463e-997e-78608658f4cd:
+    uuid: 78b01700-3cac-463e-997e-78608658f4cd
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 320
+      height: 320
+      anchor: center-center

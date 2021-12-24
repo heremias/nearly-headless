@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.content_types
+    - paragraphs.paragraphs_type.floor_content_listing
+  module:
+    - options
+id: paragraph.floor_content_listing.content_types
+field_name: content_types
+entity_type: paragraph
+bundle: floor_content_listing
+label: 'Types of Content'
+description: 'Select the types of content that should appear in this listing.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

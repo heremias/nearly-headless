@@ -1,0 +1,394 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.node.event.allowed_roles
+    - field.field.node.event.audiences
+    - field.field.node.event.body
+    - field.field.node.event.buckets
+    - field.field.node.event.colleges
+    - field.field.node.event.contact_link
+    - field.field.node.event.documents
+    - field.field.node.event.extra_links
+    - field.field.node.event.host
+    - field.field.node.event.introduction
+    - field.field.node.event.location
+    - field.field.node.event.meta_title
+    - field.field.node.event.occurrences
+    - field.field.node.event.ours
+    - field.field.node.event.places
+    - field.field.node.event.pricing
+    - field.field.node.event.registration_link
+    - field.field.node.event.registration_window
+    - field.field.node.event.slug
+    - field.field.node.event.speakers
+    - field.field.node.event.sponsors
+    - field.field.node.event.summary
+    - field.field.node.event.teaser_image
+    - field.field.node.event.topics
+    - field.field.node.event.types
+    - node.type.event
+  module:
+    - chosen_field
+    - datetime_range
+    - entity_browser
+    - entity_browser_entity_form
+    - field_group
+    - inline_entity_form
+    - link
+    - paragraphs
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_event_details:
+      children:
+        - occurrences
+        - location
+      parent_name: ''
+      weight: 8
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: 'When and Where'
+      region: content
+    group_event_contributors:
+      children:
+        - sponsors
+        - speakers
+      parent_name: ''
+      weight: 9
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: 'Sponsors and Speakers'
+      region: content
+    group_event_registration:
+      children:
+        - registration_link
+        - registration_window
+        - pricing
+      parent_name: ''
+      weight: 10
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: Registration
+      region: content
+    group_event_admin:
+      children:
+        - host
+        - contact_link
+        - ours
+      parent_name: ''
+      weight: 11
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: 'Host and Contact'
+      region: content
+    group_metadata:
+      children:
+        - audiences
+        - buckets
+        - colleges
+        - places
+        - types
+        - topics
+      parent_name: ''
+      weight: 12
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: Metadata
+      region: content
+    group_flyers_and_links:
+      children:
+        - documents
+        - extra_links
+      parent_name: ''
+      weight: 7
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: 'Flyers and Links'
+      region: content
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  allowed_roles:
+    weight: 59
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  audiences:
+    weight: 52
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  body:
+    weight: 5
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  buckets:
+    weight: 54
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  colleges:
+    weight: 55
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  contact_link:
+    weight: 11
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  documents:
+    weight: 6
+    settings:
+      entity_browser: document_browser
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      open: false
+      field_widget_display_settings: {  }
+      field_widget_replace: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  extra_links:
+    weight: 8
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  host:
+    weight: 10
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: host
+      label_plural: hosts
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  introduction:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  location:
+    weight: 4
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: location
+      label_plural: locations
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  meta_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  occurrences:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  ours:
+    weight: 13
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  path:
+    type: path
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  places:
+    weight: 56
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  pricing:
+    weight: 9
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  registration_link:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  registration_window:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  slug:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  speakers:
+    type: entity_reference_paragraphs
+    weight: 29
+    settings:
+      title: Speaker
+      title_plural: Speakers
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: speaker
+    third_party_settings: {  }
+    region: content
+  sponsors:
+    weight: 28
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: sponsor
+      label_plural: sponsors
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  summary:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  teaser_image:
+    weight: 6
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: preview
+      field_widget_replace: false
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  topics:
+    weight: 58
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  types:
+    weight: 57
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  url_redirects:
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

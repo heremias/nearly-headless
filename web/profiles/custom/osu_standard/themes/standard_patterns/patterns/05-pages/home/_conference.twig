@@ -1,0 +1,31 @@
+
+{% set classes = ["layout-container", "page--home", "page--home--conference"] %}
+<div {{ attributes.addClass(classes) }}>
+
+  {{ page.highlighted }}
+  {{ page.site_header }}
+  {{ page.primary_menu }}
+  <a id="page-content" tabindex="-1"></a>
+  {{ page.page_header }}
+
+  <main>
+    <div class="container">
+      {{ page.breadcrumb }}
+      {{ page.local_tasks }}
+      {{ page.help }}
+      {{ messages }}
+
+      <a id="main-content" tabindex="-1"></a>
+      <div class="layout-content">
+        {{ page.content_before }}
+        {{ page.content }}
+        {{ page.content_after }}
+
+      </div>{# /.layout-content #}
+    </div>
+  </main>
+
+  {{ page.page_footer }}
+  {{ page.site_footer }}
+
+</div>{# /.layout-container #}

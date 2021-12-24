@@ -1,0 +1,7 @@
+{% extends "@components/floors/floor/floor.twig" %}
+{% set class = 'c-floor-content-listing' %}
+{% block component %}
+  <div class="{% for exclude in excluded %} c-listing-card--exclude-{{ exclude }} {% endfor %}">
+  {{ content.listing }}
+  </div>
+{% endblock %}

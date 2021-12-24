@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hero
+label: 'Hero (1.4)'
+description: ''
+aspect_ratio: '7:5'
+soft_limit_width: 1120
+soft_limit_height: 800
+hard_limit_width: null
+hard_limit_height: null

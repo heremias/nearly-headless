@@ -1,0 +1,19 @@
+.m-person-reference {
+  .m-person-reference--image {
+    width: 42px;
+    height: 42px;
+    float: left;
+    margin-right: 8px;
+  }
+
+  a,
+  a.visited,
+  a:active {
+    text-decoration: none;
+    color: #666;
+  }
+
+  .m-person-reference--name {
+    margin-right: 8px;
+  }
+}

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.portrait_small
+label: 'Portrait (3:4) - Small'
+targetEntityType: media
+cache: true

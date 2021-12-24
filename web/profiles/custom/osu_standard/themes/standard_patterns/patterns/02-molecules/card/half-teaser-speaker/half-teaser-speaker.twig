@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Pattern for half-teaser-person.
+ *
+ * Available variables:
+ * -
+ */
+#}
+<div {{ attributes.addClass("m-half-teaser-speaker") }}>
+  <div class="x-speaker__image-wrap">
+    <div class="x-speaker__image">
+      {{ content.image }}
+    </div>
+    {% if entity.featured.value %}
+    <div class="x-speaker__featured">
+      Keynote
+    </div>
+    {% endif %}
+  </div>
+  <div class="x-speaker__content">
+    <div class="x-speaker__name"><a href="{{ url }}">{{ entity.label }}</a></div>
+    <div class="x-speaker__title"> {{ content.preferred_title }}</div>
+  </div>
+</div>

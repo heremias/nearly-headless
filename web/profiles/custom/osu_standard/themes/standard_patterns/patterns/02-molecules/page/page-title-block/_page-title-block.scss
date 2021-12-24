@@ -1,0 +1,57 @@
+.m-page-title-block {
+  background: $gray-1;
+  padding: 10px 0;
+
+  @include media-breakpoint-up(sm) {
+    padding: 36px 0;
+  }
+
+  h1 {
+    color: $gray-2;
+    font-family: $ff--proxima;
+    font-size: 1.25em;
+    font-weight: 400;
+    margin: 0;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 2.714em;
+    }
+  }
+}
+
+.m-page-title-block.conference {
+  background: none;
+  padding: 10px 0;
+
+  @include media-breakpoint-up(sm) {
+    padding: 90px 0 0;
+  }
+
+  h1 {
+    color: $gray-2;
+    font-family: $ff--proxima;
+    font-size: 2.285em;
+    font-weight: bold;
+    margin: 40px 0 0;
+    padding: 0 0 30px;
+    position: relative;
+    text-align: center;
+
+    &::after {
+      background: $gray-light;
+      bottom: 0;
+      content: '';
+      height: 4px;
+      position: absolute;
+      left: 0;
+      margin: 0 auto;
+      right: 0;
+      width: 40px;
+    }
+
+    @include media-breakpoint-up(sm) {
+      font-size: 2.714em;
+      margin: 0;
+    }
+  }
+}

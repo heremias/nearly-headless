@@ -1,0 +1,28 @@
+{
+  "attributes": {
+    "Attribute()": {
+      "class": ["media", "media-image", "view-mode-large"]
+    }
+  },
+  "media": {},
+  "name": "Sample Image",
+  "content": {
+    "image": {
+      "include()": {
+        "pattern": "atoms-field",
+        "with": {
+          "attributes": {
+            "Attribute()": {}
+          },
+          "label_hidden": true,
+          "multiple": false,
+          "items": [
+            {
+              "content": "<img src='/pattern-lab/public/images/stock/425x287.jpg' />"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

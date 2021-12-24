@@ -1,0 +1,7 @@
+name: 'OSU / Media / Image Embed'
+description: 'Control to embed images'
+package: 'OSU / Media'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+

@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.audio.file
+    - field.field.media.audio.transcript
+    - media.type.audio
+  module:
+    - audiofield
+    - text
+id: media.audio.default
+targetEntityType: media
+bundle: audio
+mode: default
+content:
+  file:
+    weight: 0
+    label: hidden
+    settings:
+      audio_player: default_mp3_player
+      audio_player_jplayer_theme: none
+      audio_player_wordpress_animation: '1'
+      audio_player_soundmanager_theme: default
+      audio_player_initial_volume: '8'
+      audio_player_wavesurfer_combine_files: 0
+      audio_player_wordpress_combine_files: 0
+      audio_player_autoplay: 0
+      download_link: 0
+    third_party_settings: {  }
+    type: audiofield_audioplayer
+    region: content
+  transcript:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

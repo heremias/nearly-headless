@@ -1,0 +1,7 @@
+name: 'OSU / Core / SiteInfo'
+description: 'Defines a module in '
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'OSU / Core'
+dependencies:

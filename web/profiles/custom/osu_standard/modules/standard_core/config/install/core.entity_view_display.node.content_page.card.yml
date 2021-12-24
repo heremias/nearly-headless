@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.content_page.access_denied_message
+    - field.field.node.content_page.allowed_roles
+    - field.field.node.content_page.audiences
+    - field.field.node.content_page.buckets
+    - field.field.node.content_page.colleges
+    - field.field.node.content_page.content
+    - field.field.node.content_page.hero
+    - field.field.node.content_page.include_share_links
+    - field.field.node.content_page.introduction
+    - field.field.node.content_page.meta_title
+    - field.field.node.content_page.places
+    - field.field.node.content_page.site_tags
+    - field.field.node.content_page.slug
+    - field.field.node.content_page.summary
+    - field.field.node.content_page.teaser_image
+    - field.field.node.content_page.topics
+    - field.field.node.content_page.types
+    - node.type.content_page
+  module:
+    - text
+    - user
+id: node.content_page.card
+targetEntityType: node
+bundle: content_page
+mode: card
+content:
+  introduction:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  teaser_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: above
+    settings:
+      view_mode: teaser_medium
+      link: false
+    third_party_settings: {  }
+hidden:
+  access_denied_message: true
+  allowed_roles: true
+  audiences: true
+  buckets: true
+  colleges: true
+  content: true
+  hero: true
+  include_share_links: true
+  links: true
+  meta_title: true
+  places: true
+  search_api_excerpt: true
+  site_tags: true
+  slug: true
+  summary: true
+  topics: true
+  types: true

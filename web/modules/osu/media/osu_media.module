@@ -1,0 +1,24 @@
+<?php
+
+function osu_media_preprocess_image(&$variables) {
+  if (isset($variables['alt']) && $variables['alt']=='[none]') {
+  	$variables['alt'] = '';
+  	$variables['attributes']['alt'] = '';
+  }
+}
+
+
+function osu_media_preprocess_views_view(&$variables) {
+
+  $thunder_media_browser = [
+    'photo_gallery_browser',
+    'image_browser',
+    'video_browser',
+    'media_browser',
+    'video_clip_browser'
+  ];
+
+  if (in_array($variables['view']->id(), $thunder_media_browser)) {
+    $variables['view_array']['#attached']['library'][] = 'osu_media/entity_browser_view';
+  }
+}

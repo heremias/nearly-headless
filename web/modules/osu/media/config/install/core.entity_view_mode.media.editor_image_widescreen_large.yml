@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.editor_image_widescreen_large
+label: 'Widescreen (16:9)'
+targetEntityType: media
+cache: true

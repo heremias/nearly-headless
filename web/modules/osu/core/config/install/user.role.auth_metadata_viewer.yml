@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - role_mixin
+third_party_settings:
+  role_mixin:
+    parent_roles:
+      anonymous: anonymous
+      authenticated: authenticated
+id: auth_metadata_viewer
+label: 'Auth Metadata Viewer'
+weight: 5
+is_admin: null
+permissions:
+  - 'view sp metadata'

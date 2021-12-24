@@ -1,0 +1,11 @@
+{
+  "location_type": "internal",
+  "date": "Jul 28, 2017",
+  "title": "News title lorem ipsum dolor consec amet elit",
+  "description": "Lorem ipsum dolar amet, consec tetur, adipiscing elit, sedi eiusmod tempor",
+  "location": "The Women's Place",
+  "url": "#",
+  "content": {
+    "teaser_image": "fields-node-teaser-image-small"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "standard_patterns",
+  "description": "Theme for Marketing's standard drupal distribution.",
+  "version": "2.0.0",
+  "scripts": {
+    "dev": "npm --prefix web/profiles/custom/osu_standard/themes/standard_patterns run watch",
+    "serve": "npm --prefix web/profiles/custom/osu_standard/themes/standard_patterns run serve",
+    "build": "npm --prefix web/profiles/custom/osu_standard/themes/standard_patterns run build",
+    "watch": "npm --prefix web/profiles/custom/osu_standard/themes/standard_patterns run watch"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@vue/cli": "^4.5.15"
+  }
+}

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hero_banner
+label: 'Banner Image'
+icon_uuid: null
+icon_default: null
+description: 'An abstract banner without any text. '
+behavior_plugins: {  }

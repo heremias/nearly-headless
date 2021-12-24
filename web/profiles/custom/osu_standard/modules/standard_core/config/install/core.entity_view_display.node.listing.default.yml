@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.listing.include_share_links
+    - field.field.node.listing.introduction
+    - field.field.node.listing.listing
+    - field.field.node.listing.meta_title
+    - field.field.node.listing.slug
+    - field.field.node.listing.summary
+    - field.field.node.listing.teaser_image
+    - node.type.listing
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.listing.default
+targetEntityType: node
+bundle: listing
+mode: default
+content:
+  introduction:
+    type: text_default
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  listing:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  include_share_links: true
+  links: true
+  meta_title: true
+  search_api_excerpt: true
+  slug: true
+  summary: true
+  teaser_image: true

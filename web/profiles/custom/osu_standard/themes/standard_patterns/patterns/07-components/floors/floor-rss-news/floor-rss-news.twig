@@ -1,0 +1,24 @@
+{% extends "@components/floors/floor/floor.twig" %}
+{% set class = 'c-floor-rss-news' %}
+{% block component %}
+  {% if source %}
+    <h{{ source.heading_level }}>
+    <a href="{{ source.url }}" target="_blank">{{ source.text }}</a>
+    </h{{ source.heading_level }}>
+  {% endif %}
+
+  <div class="c-floor-rss-news--items">
+    {% for item in items %}
+      <article>
+        <a target="_blank" href="{{ item.url }}">
+          <div class="c-floor-rss-news--image-container">
+            <img src="{{ item.image }}" />
+          </div>
+          <div class="c-floor-rss-news--text">
+            {{ item.title }}
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+{% endblock %}

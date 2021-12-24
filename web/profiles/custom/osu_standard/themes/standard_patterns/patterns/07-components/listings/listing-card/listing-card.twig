@@ -1,0 +1,9 @@
+{% extends "@components/listings/listing/listing.twig" %}
+{% set class = 'c-listing-card' %}
+{% block navigation %}
+{% endblock %}
+{% block listing %}
+  <div class="{% for exclude in excluded %} c-listing-card--exclude-{{ exclude }} {% endfor %}">
+  {{ content.listing }}
+  </div>
+{% endblock %}

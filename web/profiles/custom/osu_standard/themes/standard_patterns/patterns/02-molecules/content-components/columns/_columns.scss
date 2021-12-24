@@ -1,0 +1,35 @@
+.m-columns {
+  padding-left: 0;
+  padding-right: 0;
+
+  @include media-breakpoint-up(md) {
+    .field--name-items {
+      @include make-row();
+
+      div.field__item:first-child {
+        padding-left: 0;
+      }
+
+      div.field__item:last-child {
+        padding-right: 0;
+      }
+    }
+
+    .m-columns-1 > .field--name-items > div,
+    .m-columns-2 > .field--name-items > div {
+      @include make-col(1, 2);
+      @include make-col-ready();
+    }
+
+    .m-columns-3 > .field--name-items > div {
+      @include make-col(1, 3);
+      @include make-col-ready();
+    }
+
+    .m-content-components-formatted-text {
+      width: 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}

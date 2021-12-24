@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.summary
+    - node.type.event
+id: node.event.summary
+field_name: summary
+entity_type: node
+bundle: event
+label: Description
+description: 'A summary of the content for use in social sharing and in search engines.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: small
+label: Small
+effects:
+  bba6b908-9655-41a4-b14d-e3f673a4082c:
+    uuid: bba6b908-9655-41a4-b14d-e3f673a4082c
+    id: image_scale
+    weight: 1
+    data:
+      width: 320
+      height: null
+      upscale: true

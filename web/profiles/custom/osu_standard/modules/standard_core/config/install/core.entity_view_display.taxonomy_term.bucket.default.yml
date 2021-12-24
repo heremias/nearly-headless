@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.bucket.analytics_code
+    - taxonomy.vocabulary.bucket
+  module:
+    - text
+id: taxonomy_term.bucket.default
+targetEntityType: taxonomy_term
+bundle: bucket
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  analytics_code: true
+  search_api_excerpt: true

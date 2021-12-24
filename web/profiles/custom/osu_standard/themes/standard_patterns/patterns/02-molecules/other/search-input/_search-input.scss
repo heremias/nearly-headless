@@ -1,0 +1,32 @@
+.search-input {
+  background: $gray-4;
+  font-family: $ff--proxima;
+
+  .container {
+    font-size: 0;
+  }
+
+  input {
+    background: transparent;
+    border: none;
+    color: $white;
+    font-size: 38px;
+    line-height: 60px;
+    width: 80%;
+  }
+
+  .search-input__button-wrap {
+    width: 20%;
+  }
+}
+
+.page--search {
+  .search-icon-wrap {
+    background: $gray-4;
+    height: 43px;
+
+    @include media-breakpoint-up(lg) {
+      height: 65px;
+    }
+  }
+}

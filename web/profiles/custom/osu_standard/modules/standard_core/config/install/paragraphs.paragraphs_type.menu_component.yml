@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: menu_component
+label: 'Menu Component'
+icon_uuid: null
+icon_default: null
+description: 'A menu for display in a narrow column.'
+behavior_plugins: {  }

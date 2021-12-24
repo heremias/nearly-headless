@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.square_small
+label: 'Square (1:1) - Small'
+targetEntityType: media
+cache: true

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.allowed_roles
+    - node.type.content_page
+  module:
+    - options
+id: node.content_page.allowed_roles
+field_name: allowed_roles
+entity_type: node
+bundle: content_page
+label: 'Allowed Roles'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

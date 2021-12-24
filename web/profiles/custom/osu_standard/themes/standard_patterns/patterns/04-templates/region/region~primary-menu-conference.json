@@ -1,0 +1,12 @@
+{
+  "region": "primary-menu",
+  "content": {
+    "join()": [
+      {
+        "include()": {
+          "pattern": "organisms-core-menu-conference"
+        }
+      }
+    ]
+  }
+}

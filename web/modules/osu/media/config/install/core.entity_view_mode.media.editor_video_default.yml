@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.editor_video_default
+label: 'Default (Video)'
+targetEntityType: media
+cache: true

@@ -1,0 +1,4 @@
+standard_core.developer_settings:
+  route_name: standard_core.devel_settings_form
+  title: Standard Developer Settings
+  base_route: standard_core.devel_settings_form

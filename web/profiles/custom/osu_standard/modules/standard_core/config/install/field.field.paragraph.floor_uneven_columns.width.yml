@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.width
+    - paragraphs.paragraphs_type.floor_uneven_columns
+  module:
+    - options
+id: paragraph.floor_uneven_columns.width
+field_name: width
+entity_type: paragraph
+bundle: floor_uneven_columns
+label: 'Horizontal Style'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: narrow
+default_value_callback: ''
+settings: {  }
+field_type: list_string

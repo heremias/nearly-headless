@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "Attribute()": {}
+  },
+  "field_name": "body",
+  "field_type": "text-long",
+  "label": "Body",
+  "label_hidden": true,
+  "multiple": false,
+  "items": [
+    {
+      "attributes": {
+        "Attribute()": {}
+      },
+      "content": "<p>Lorem ipsum dolor sit amet, consul deseruisse ex duo, et pro agam quaestio. Mea in audire deserunt consequat, id mea quaestio incorrupte liberavisse, in duo discere molestie. Vel natum labore ea, oratio perfecto indoctum his ne, no adhuc verear interesset nec. His veri alterum equidem cu, solum ridens oporteat mei ea. </p><p>Ei mel simul appetere adversarium, salutatus comprehensam ius no, et eum commodo detraxit. Et pericula tincidunt dissentias usu, eos suas vivendo ullamcorper at. Ex aeterno fierent eum. Principes honestatis sit cu, eum tempor reprimique sadipscing an.</p><p>Sed ei mandamus petentium, accumsan mediocritatem nam id. Ad nam sumo dicunt. Justo audire ad quo, ex vocent mandamus sed. Persius euismod lobortis ad sea, te eam vitae omittam sadipscing, has tantas aperiri menandri cu. Dicit ceteros officiis est cu. Vis aliquam laoreet ne. Expetenda omittantur persequeris ea quo, ut mazim incorrupte eam, fuisset luptatum assentior id has.</p>"
+    }
+  ]
+}

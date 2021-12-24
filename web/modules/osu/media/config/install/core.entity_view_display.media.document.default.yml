@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.document.file
+    - media.type.document
+id: media.document.default
+targetEntityType: media
+bundle: document
+mode: default
+content:
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  file: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

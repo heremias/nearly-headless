@@ -1,0 +1,6 @@
+name: 'OSU / Core / Admin'
+description: 'Configuration and styles to improve the administration interface'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'OSU / Core'

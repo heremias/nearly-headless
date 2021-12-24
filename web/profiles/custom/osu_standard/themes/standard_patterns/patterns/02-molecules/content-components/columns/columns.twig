@@ -1,0 +1,7 @@
+{% set columns = entity.items.getvalue | length > 3 ? 'many' : entity.items.getvalue | length %}
+
+<div class="m-columns m-columns-{{ entity.width.value }}">
+  <div class="m-columns-{{ columns }}">
+    {{ content.items }}
+  </div>
+</div>

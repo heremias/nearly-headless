@@ -1,0 +1,22 @@
+<div class="accordion">
+{% for item in items %}
+    {% set heading = 'accordion--item--' ~ id ~ '-' ~ loop.index ~'--heading' %}
+    {% set collapse = 'accordion--item--' ~ id ~ '-' ~  loop.index ~ '--collapse' %}
+
+    <div class="accordion--item">
+        <div class="accordion--item--heading" id="{{ heading }}">
+
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#{{ collapse }}" aria-expanded="false" aria-controls="{{ collapse }}">
+                {{ item.heading }}
+            </button>
+
+        </div>
+
+        <div id="{{ collapse }}" class="accordion--item--body collapse" aria-labelledby="{{ heading }}">
+            <div class="f-body">
+                {{ item.body }}
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>

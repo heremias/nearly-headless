@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: portrait
+label: 'Portrait (3:4)'
+description: 'A 3:4 crop ratio'
+aspect_ratio: '3:4'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

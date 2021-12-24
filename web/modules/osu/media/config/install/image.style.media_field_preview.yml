@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: media_field_preview
+label: 'Media Field Preview'
+effects:
+  7301bd79-45e9-4fa5-88c1-af2a2a89c789:
+    uuid: 7301bd79-45e9-4fa5-88c1-af2a2a89c789
+    id: image_scale
+    weight: 1
+    data:
+      width: 150
+      height: null
+      upscale: false

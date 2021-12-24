@@ -1,0 +1,5 @@
+.c-section {
+  .c-section--heading {
+    @include component-heading();
+  }
+}

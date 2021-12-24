@@ -1,0 +1,118 @@
+.page--search {
+  .tabs__nav--local-tasks,
+  .search-advanced,
+  .search-help-link,
+  .pager__item--first,
+  .pager__item--last,
+  .pager__item--ellipsis {
+    display: none;
+  }
+
+  h2 {
+    color: #333;
+  }
+
+  .search-form {
+    border-bottom: 5px solid #ededed;
+    padding-bottom: 30px;
+    margin-bottom: 24px;
+
+    .form-item__label {
+      color: black;
+      display: block;
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 0;
+      margin-top: 30px;
+    }
+
+    .js-form-item {
+      display: inline-block;
+      font-size: 17px;
+      line-height: 28px;
+      width: calc(100% - 120px);
+    }
+
+    .form-item__textfield {
+      width: 100%;
+    }
+
+    .form-submit {
+      background: #b00;
+      border: 1px solid #fff;
+      color: #fff;
+      display: inline-block;
+      font-size: 17px;
+      margin: 0;
+      padding: 0;
+      line-height: 50px;
+      width: 96px;
+      text-transform: capitalize;
+    }
+  }
+
+  .region--content {
+    ol {
+      font-size: 17px;
+      line-height: 28px;
+      list-style-type: none;
+      padding-left: 0;
+
+      h3 {
+        font-size: 20px;
+        margin-top: 30px;
+      }
+
+      strong {
+        background-color: #ededed;
+        display: inline-block;
+      }
+
+      li {
+        border-bottom: 1px solid #ededed;
+      }
+    }
+
+    .pager__items {
+      margin-top: 40px;
+
+      li {
+        margin: 5px 3px;
+        width: 50px;
+      }
+
+      .pager__item--previous,
+      .pager__item--next {
+        width: 120px;
+      }
+
+      a {
+        border: 2px solid #b00;
+        color: #b00;
+        display: block;
+        font-size: 20px;
+        line-height: 28px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        height: 100%;
+        width: 100%;
+
+        &:hover {
+          background: #b00;
+          color: #fff;
+        }
+      }
+
+      li.is-active {
+        a {
+          background: #b00;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .search-null-text {
+    font-size: 17px;
+  }
+}

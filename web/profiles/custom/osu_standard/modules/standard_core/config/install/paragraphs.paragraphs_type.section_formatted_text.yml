@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: section_formatted_text
+label: 'Formatted Text Section'
+icon_uuid: null
+icon_default: null
+description: 'Formatted text in a section context.'
+behavior_plugins: {  }

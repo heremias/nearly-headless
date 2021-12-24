@@ -1,0 +1,281 @@
+.share-links {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  display: block;
+  left: 0;
+  margin: 0;
+  min-width: 44px;
+  position: fixed;
+  text-align: center;
+  top: 30%;
+  width: 44px;
+  z-index: 99;
+
+  /* Base Elements */
+  a {
+    color: #666;
+    display: block;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  ul {
+    background: none;
+    border: none;
+    border-radius: 0;
+    display: block;
+    margin: 0;
+    min-width: 44px;
+    width: 44px;
+    text-align: center;
+    top: 43px;
+
+    &.open {
+      box-shadow: 0 0 8px 0 rgba(34, 34, 34, 0.3);
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  li.email {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  /* Share icon is only used for one node and children */
+  li.share-icon {
+    box-shadow: 0 0 8px 0 rgba(34, 34, 34, 0.3);
+    display: block;
+    height: 56px;
+    margin-bottom: 15px;
+
+    &:focus,
+    &:hover {
+      background: #b00;
+      color: #fff;
+
+      a::before {
+        color: #fff;
+      }
+    }
+
+    &::after {
+      border: 7px solid white;
+      border-left-color: rgba(34, 34, 34, 0.1);
+      border-right-color: rgba(34, 34, 34, 0.1);
+      border-top-color: rgba(34, 34, 34, 0.1);
+      bottom: 7px;
+      content: '';
+      display: none;
+      position: relative;
+      height: 0;
+      width: 0;
+      left: 50%;
+      margin-left: -7px;
+    }
+
+    &.open {
+      box-shadow: none;
+      margin-bottom: 7px;
+    }
+
+    a {
+      color: #b00;
+      padding-top: 6px;
+
+      &::before {
+        content: 'Share';
+        color: #222;
+        display: block;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20px;
+        margin-bottom: -10px;
+        padding: 0;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  li.share-icon.open::after {
+    display: block;
+    box-shadow: 0 0 0 18px rgba(34, 34, 34, 0.1);
+    z-index: -1;
+  }
+
+  ul li {
+    background: #fff;
+    cursor: pointer;
+    display: block;
+  }
+
+  .share-text {
+    text-transform: uppercase;
+    font-size: 0.688em;
+    line-height: 1em;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+    padding: 5px 0;
+    display: inline-block;
+    width: 75%;
+    outline: none;
+  }
+
+  ul li {
+    display: none;
+  }
+
+  ul li.open ~ li {
+    display: block;
+  }
+
+  li:hover,
+  li:focus {
+    color: white;
+    outline: none;
+
+    &.facebook {
+      background: #3b5998;
+    }
+
+    &.twitter {
+      background: #0084b4;
+    }
+
+    &.linkedin {
+      background: #0077b5;
+    }
+
+    &.email {
+      background: #b00;
+
+      svg .cls-1 {
+        fill: #fff;
+      }
+
+      svg .cls-2 {
+        fill: #b00;
+      }
+    }
+  }
+
+  @media screen and (max-width: 819px) {
+    ul li.email svg {
+      height: 24px !important;
+      margin-top: 5px;
+    }
+
+    ul {
+      height: 40px;
+    }
+
+    li.email {
+      padding-top: unset;
+      padding-bottom: unset;
+      height: 40px;
+    }
+
+    ul li.email svg .cls-1,
+    ul li.email svg .cls-1 {
+      fill: #fff;
+    }
+
+    ul li.email svg .cls-2,
+    ul li.email svg .cls-2 {
+      fill: #666;
+    }
+  }
+}
+
+@media screen and (max-width: 819px) {
+  .share-links ul li.email:hover a,
+  .share-links ul li.email:focus a {
+    background: #b00;
+    color: white;
+    outline: none;
+  }
+
+  .share-links ul li.facebook:hover a,
+  .share-links ul li.facebook:focus a {
+    background: #3b5998;
+    color: white;
+    outline: none;
+  }
+
+  .share-links ul li.twitter:hover a,
+  .share-links ul li.twitter:focus a {
+    background: #0084b4;
+    color: white;
+    outline: none;
+  }
+
+  .share-links ul li.linkedin:hover a,
+  .share-links ul li.linkedin:focus a {
+    background: #0077b5;
+    color: white;
+    outline: none;
+  }
+
+  .share-links ul li {
+    display: block;
+    width: 25%;
+    float: left;
+    text-align: center;
+    background: #666;
+    outline: none;
+  }
+
+  .share-text,
+  .share-links ul li.share-icon {
+    display: none;
+  }
+
+  .share-links {
+    bottom: 0;
+    top: auto;
+  }
+
+  .share-links ul li a {
+    color: #fff;
+    display: block;
+    background: #666;
+    padding: 0;
+  }
+
+  .share-links ul li a span {
+    display: block;
+  }
+
+  .share-links ul {
+    border: none;
+    display: block;
+    float: none;
+    position: fixed;
+    box-shadow: none;
+    top: inherit;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .share-links ul .share-text {
+    display: none;
+  }
+
+  #page-footer {
+    padding-bottom: 45px;
+  }
+}
+
+.share-links .fa {
+  font-size: 20px;
+  line-height: 200%;
+}
+
+.share-links li:hover .fa {
+  color: #fff;
+}

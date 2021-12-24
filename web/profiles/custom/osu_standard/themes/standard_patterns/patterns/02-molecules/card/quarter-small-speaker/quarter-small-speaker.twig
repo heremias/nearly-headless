@@ -1,0 +1,21 @@
+<div {{ attributes.addClass(["m-quarter-small-speaker"]) }} >
+  <div class="m-quarter-small-speaker__image">
+    <a href="{{ url }}">{{ content.image }}</a>
+  </div>
+
+
+  {% if entity.session_type and entity.session_type.entity and entity.session_type.entity.name %}
+    <div class="m-quarter-small-speaker__featured">
+      {{ entity.session_type.entity.name.value }}
+    </div>
+  {% endif %}
+
+  <div class="m-quarter-small-speaker__content">
+    <h3 class="m-quarter-small-speaker__name"><a href="{{ url }}">{{ entity.label }}</a></h3>
+
+    {% if entity.twitter.uri %}<a href="{{ entity.twitter.uri }}" class="m-quarter-small-speaker__social"><span class="fa fa-twitter"></span></a>{% endif %}
+    {% if entity.linkedin.uri %}<a href="{{ entity.linkedin.uri }}" class="m-quarter-small-speaker__social"><span class="fa fa-linkedin"></span></a>{% endif %}
+
+    <div class="m-quarter-small-speaker__title">{{ content.preferred_title }}</div>
+  </div>
+</div>

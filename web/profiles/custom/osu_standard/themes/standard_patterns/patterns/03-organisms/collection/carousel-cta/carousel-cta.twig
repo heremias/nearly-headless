@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Pattern for carousel-cta.
+ *
+ * Available variables:
+ * -
+ */
+#}
+{% set container_width = entity.width.value == 'narrow' ? 'component-width--narrow' : '' %}
+
+<div {{ attributes.addClass(["o-carousel-cta d-md-flex justify-content-md-between", container_width]) }}>
+{% for item in items %}
+  {% include "@molecules/card/third-cta/third-cta.twig"
+  with {
+    third_cta_image: item.third_cta_image,
+    third_cta_title: item.third_cta_title,
+    third_cta_label: item.third_cta_label,
+    url: item.url,
+    title: item.title
+
+  }
+  %}
+{% endfor %}

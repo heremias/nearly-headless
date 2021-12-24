@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Pattern for a breadcrumbs block.
+ *
+ * Available variables:
+ * - content: rendered contents of block from drupal, should be set to render with_page-title.twig
+ * - breadcrumb: array of breadcrumbs
+ */
+#}
+{% if breadcrumb is defined and content is not defined %}
+  {% set content %}
+    {% include "@molecules/nav/breadcrumbs-block/_breadcrumbs.twig" with {
+      breadcrumb: breadcrumb
+    }%}
+  {% endset %}
+{% endif %}
+<div class="m-breadcrumbs-block">
+  {{ content }}
+</div>

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.summary
+    - node.type.form
+id: node.form.summary
+field_name: summary
+entity_type: node
+bundle: form
+label: Description
+description: 'Used in shares and search engines.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

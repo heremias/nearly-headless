@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.heading_level
+    - paragraphs.paragraphs_type.parousel
+  module:
+    - options
+id: paragraph.parousel.heading_level
+field_name: heading_level
+entity_type: paragraph
+bundle: parousel
+label: 'Heading Level'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: h2
+default_value_callback: ''
+settings: {  }
+field_type: list_string

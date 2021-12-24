@@ -1,0 +1,9 @@
+administer editorial users:
+  title: 'Administer Editorial Users'
+  description: 'Allows users to manage normal site users.'
+administer osu core developer settings:
+  title: 'Administer Core Developer Settings'
+  description: 'Change advanced settings common to all drupal projects'
+administer ownership settings:
+  title: 'Administer Ownership Settings'
+  description: 'Allows users to administer site ownership settings.'

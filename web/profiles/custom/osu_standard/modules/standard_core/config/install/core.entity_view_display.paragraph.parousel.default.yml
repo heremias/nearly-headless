@@ -1,0 +1,77 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.parousel.heading
+    - field.field.paragraph.parousel.heading_level
+    - field.field.paragraph.parousel.introduction
+    - field.field.paragraph.parousel.items
+    - field.field.paragraph.parousel.link
+    - field.field.paragraph.parousel.vertical_style
+    - field.field.paragraph.parousel.width
+    - paragraphs.paragraphs_type.parousel
+  module:
+    - link
+    - slick_paragraphs
+id: paragraph.parousel.default
+targetEntityType: paragraph
+bundle: parousel
+mode: default
+content:
+  heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  introduction:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  items:
+    weight: 2
+    label: hidden
+    settings:
+      optionset: default
+      skin: default
+      view_mode: default
+      cache: 0
+      override: true
+      overridables:
+        arrows: arrows
+        dots: dots
+        infinite: infinite
+        autoplay: '0'
+        draggable: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      current_view_mode: default
+      skin_arrows: ''
+      skin_dots: ''
+      style: ''
+    third_party_settings: {  }
+    type: slick_paragraphs_vanilla
+    region: content
+  link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  heading_level: true
+  search_api_excerpt: true
+  vertical_style: true
+  width: true
